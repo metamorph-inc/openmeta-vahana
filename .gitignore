@@ -10,3 +10,11 @@ results/
 stats/
 test-benches/
 *.mga
+Metalink_*/
+*.log
+trail.txt.*
+/*.asm
+config.pro
+std.out
+/parts/
+*.acm
