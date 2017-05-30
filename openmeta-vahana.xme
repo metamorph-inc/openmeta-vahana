@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{59370E93-B558-4785-9DD3-CA4D2E7B1092}" cdate="Wed May 24 11:38:31 2017" mdate="Wed May 24 11:38:31 2017" version="" metaguid="{F286737F-C0F7-0916-13EA-27FB39BF171D}" metaversion="14.13-t17" metaname="CyPhyML">
+<project guid="{5BC0C27F-8F49-497B-A33D-1167AC6F5E24}" cdate="Wed May 24 11:38:31 2017" mdate="Wed May 24 11:38:31 2017" version="" metaguid="{F286737F-C0F7-0916-13EA-27FB39BF171D}" metaversion="14.13-t17" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
@@ -23537,9 +23537,9 @@
 				<value>131394477710000000</value>
 			</regnode>
 		</folder>
-		<folder id="id-006a-00000018" relid="0x6" childrelidcntr="0xf" kind="Components" guid="{f6e5604a-1a5d-47b1-a29f-8e62d728458d}">
+		<folder id="id-006a-00000018" relid="0x6" childrelidcntr="0x10" kind="Components" guid="{f6e5604a-1a5d-47b1-a29f-8e62d728458d}">
 			<name>Components</name>
-			<model id="id-0065-00000260" kind="Component" guid="{3f7ab58e-1b56-42de-b146-43ffc1dbf681}" relid="0x1" childrelidcntr="0x26">
+			<model id="id-0065-00000260" kind="Component" guid="{3f7ab58e-1b56-42de-b146-43ffc1dbf681}" relid="0x1" childrelidcntr="0x39">
 				<name>Fuselage</name>
 				<attribute kind="AVMID">
 					<value>2cb83499-79a4-4db3-8b3d-8f04d6de94f0</value>
@@ -23585,6 +23585,12 @@
 							<value></value>
 							<regnode name="Position" isopaque="yes">
 								<value>1120,385</value>
+							</regnode>
+						</regnode>
+						<regnode name="ConnectorAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>70,70</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -23781,14 +23787,14 @@
 						</attribute>
 					</atom>
 				</model>
-				<model id="id-0065-00000299" kind="Connector" role="Connector" guid="{bcbf2786-0c88-4f0b-9747-085e95bda830}" derivedfrom="id-0065-00000287" isinstance="yes" isprimary="yes" relid="0x16" childrelidcntr="0x0">
-					<name>Skid_base</name>
+				<model id="id-0065-000004dd" kind="Connector" role="Connector" guid="{f29c5e9e-d8dd-4252-a3c2-d7590b956e9d}" derivedfrom="id-0065-000004a2" isinstance="yes" isprimary="yes" relid="0x32" childrelidcntr="0x0">
+					<name>strut_connector</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>679,616</value>
+								<value>749,616</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -23799,16 +23805,13 @@
 						<value></value>
 					</attribute>
 					<attribute kind="ID">
-						<value>id-bcbf2786-0c88-4f0b-9747-085e95bda830</value>
+						<value>id-f29c5e9e-d8dd-4252-a3c2-d7590b956e9d</value>
 					</attribute>
 					<attribute kind="InstanceNotes" status="meta">
 						<value></value>
 					</attribute>
-					<atom id="id-0066-000001bf" kind="Surface" role="Surface" guid="{05ba067b-6c7f-4847-9f99-cb9f391a0de8}" derivedfrom="id-0066-00000131" isinstance="yes" isprimary="no">
-						<name>Surface</name>
-						<attribute kind="Alignment" status="meta">
-							<value>ALIGN</value>
-						</attribute>
+					<atom id="id-0066-00000d51" kind="Axis" role="Axis" guid="{df86bcf1-7794-4140-a5e7-1f5fcf778925}" derivedfrom="id-0066-00000c10" isinstance="yes" isprimary="no">
+						<name>FRONT_STRUT</name>
 						<attribute kind="DatumName" status="meta">
 							<value></value>
 						</attribute>
@@ -23822,7 +23825,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-05ba067b-6c7f-4847-9f99-cb9f391a0de8</value>
+							<value>id-df86bcf1-7794-4140-a5e7-1f5fcf778925</value>
 						</attribute>
 						<attribute kind="InstanceNotes" status="meta">
 							<value></value>
@@ -23831,11 +23834,8 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001c0" kind="Surface" role="Surface" guid="{85962995-40c3-4cc7-9824-57e296fe1c21}" derivedfrom="id-0066-00000130" isinstance="yes" isprimary="no">
-						<name>Surface</name>
-						<attribute kind="Alignment" status="meta">
-							<value>ALIGN</value>
-						</attribute>
+					<atom id="id-0066-00000d52" kind="Axis" role="Axis" guid="{6dc566c1-6950-42b4-bc32-6902f3f71487}" derivedfrom="id-0066-00000c11" isinstance="yes" isprimary="no">
+						<name>BACK_STRUT</name>
 						<attribute kind="DatumName" status="meta">
 							<value></value>
 						</attribute>
@@ -23849,7 +23849,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-85962995-40c3-4cc7-9824-57e296fe1c21</value>
+							<value>id-6dc566c1-6950-42b4-bc32-6902f3f71487</value>
 						</attribute>
 						<attribute kind="InstanceNotes" status="meta">
 							<value></value>
@@ -23858,8 +23858,8 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001c1" kind="Surface" role="Surface" guid="{f5d84f5a-0e92-4093-8ad4-24321ba39b59}" derivedfrom="id-0066-0000012f" isinstance="yes" isprimary="no">
-						<name>Surface</name>
+					<atom id="id-0066-00000d53" kind="Surface" role="Surface" guid="{cd1fc45c-79c1-41f9-99f7-cbc769c72143}" derivedfrom="id-0066-00000c12" isinstance="yes" isprimary="no">
+						<name>CENTER_PLN</name>
 						<attribute kind="Alignment" status="meta">
 							<value>ALIGN</value>
 						</attribute>
@@ -23876,7 +23876,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-f5d84f5a-0e92-4093-8ad4-24321ba39b59</value>
+							<value>id-cd1fc45c-79c1-41f9-99f7-cbc769c72143</value>
 						</attribute>
 						<attribute kind="InstanceNotes" status="meta">
 							<value></value>
@@ -23886,7 +23886,7 @@
 						</attribute>
 					</atom>
 				</model>
-				<model id="id-0065-000002a5" kind="CADModel" role="CADModel" guid="{daaf0e46-e0f8-4803-a76f-83e5ac8cd112}" relid="0x1e" childrelidcntr="0x9">
+				<model id="id-0065-000004df" kind="CADModel" role="CADModel" guid="{7a7432b5-b9fa-4fab-80c9-decd5e18c501}" relid="0x37" childrelidcntr="0x12">
 					<name>CADModel</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
@@ -23924,7 +23924,7 @@
 					<attribute kind="Notes">
 						<value></value>
 					</attribute>
-					<atom id="id-0066-000001eb" kind="Surface" role="Surface" guid="{85934744-f51d-430b-a87f-df283a399876}" relid="0x3">
+					<atom id="id-0066-00000d64" kind="Surface" role="Surface" guid="{a5365dff-8121-420d-a231-df780e8efb5a}" relid="0x3">
 						<name>ASM_RIGHT</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -23951,7 +23951,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-85934744-f51d-430b-a87f-df283a399876</value>
+							<value>id-a5365dff-8121-420d-a231-df780e8efb5a</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -23960,7 +23960,7 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001ec" kind="Surface" role="Surface" guid="{2a8d70ce-3036-4381-9711-28af85907315}" relid="0x4">
+					<atom id="id-0066-00000d65" kind="Surface" role="Surface" guid="{06afa46c-37d3-4348-9f22-ff5ca2129ace}" relid="0x4">
 						<name>ASM_TOP</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -23987,7 +23987,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-2a8d70ce-3036-4381-9711-28af85907315</value>
+							<value>id-06afa46c-37d3-4348-9f22-ff5ca2129ace</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -23996,7 +23996,7 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001ed" kind="Surface" role="Surface" guid="{79c5043d-922a-4f0f-857f-5413f9bab996}" relid="0x5">
+					<atom id="id-0066-00000d66" kind="Surface" role="Surface" guid="{1531c8b1-4af5-4d77-a566-d5906a1134ea}" relid="0x5">
 						<name>ASM_FRONT</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -24023,7 +24023,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-79c5043d-922a-4f0f-857f-5413f9bab996</value>
+							<value>id-1531c8b1-4af5-4d77-a566-d5906a1134ea</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -24032,7 +24032,7 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001ee" kind="CoordinateSystem" role="CoordinateSystem" guid="{dc9e8f9f-cd5a-427f-be18-12461f6f1332}" relid="0x6">
+					<atom id="id-0066-00000d67" kind="CoordinateSystem" role="CoordinateSystem" guid="{5f3c3c19-69da-429a-a8c3-73ce823bd47c}" relid="0x6">
 						<name>ASM_DEF_CSYS</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -24056,7 +24056,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-dc9e8f9f-cd5a-427f-be18-12461f6f1332</value>
+							<value>id-5f3c3c19-69da-429a-a8c3-73ce823bd47c</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -24065,14 +24065,14 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001ef" kind="Axis" role="Axis" guid="{fe246ca7-0279-45d8-aeec-83aef0a63e0a}" relid="0x7">
+					<atom id="id-0066-00000d68" kind="Axis" role="Axis" guid="{ddcf1c12-1498-46d7-a889-4967188f2ab9}" relid="0x7">
 						<name>CANARD_AXIS</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
 							<regnode name="SolidModeling" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>425,25</value>
+									<value>371,7</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -24089,7 +24089,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-fe246ca7-0279-45d8-aeec-83aef0a63e0a</value>
+							<value>id-ddcf1c12-1498-46d7-a889-4967188f2ab9</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -24098,8 +24098,41 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001f0" kind="Surface" role="Surface" guid="{f302a83d-e9f9-48e0-af61-fe7106743d44}" relid="0x8">
-						<name>COINCIDENT_PLN</name>
+					<atom id="id-0066-00000d69" kind="Axis" role="Axis" guid="{1e64e685-67a5-47b6-9521-e3023d8e9f37}" relid="0x8">
+						<name>WING_AXIS</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>805,154</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>WING_AXIS</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-1e64e685-67a5-47b6-9521-e3023d8e9f37</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000d6a" kind="Surface" role="Surface" guid="{234d47f5-efb9-4ea9-8063-8cc0050d13a5}" relid="0x9">
+						<name>CANARD_COINCIDENT_PLN</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
 							<regnode name="SolidModeling" status="undefined">
@@ -24113,7 +24146,7 @@
 							<value>ALIGN</value>
 						</attribute>
 						<attribute kind="DatumName">
-							<value>COINCIDENT_PLN</value>
+							<value>CANARD_COINCIDENT_PLN</value>
 						</attribute>
 						<attribute kind="Definition">
 							<value></value>
@@ -24125,7 +24158,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-f302a83d-e9f9-48e0-af61-fe7106743d44</value>
+							<value>id-234d47f5-efb9-4ea9-8063-8cc0050d13a5</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -24134,14 +24167,14 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001f1" kind="Surface" role="Surface" guid="{01ee37e8-b710-4d4c-bf61-c29b045a43be}" relid="0x9">
-						<name>REFERENCE_PLN</name>
+					<atom id="id-0066-00000d6b" kind="Surface" role="Surface" guid="{64acac72-72b4-49a9-b674-9f9fcb20e7d6}" relid="0xa">
+						<name>CANARD_REFERENCE_PLN</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
 							<regnode name="SolidModeling" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>25,150</value>
+									<value>625,25</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -24149,7 +24182,7 @@
 							<value>ALIGN</value>
 						</attribute>
 						<attribute kind="DatumName">
-							<value>REFERENCE_PLN</value>
+							<value>CANARD_REF_PLN</value>
 						</attribute>
 						<attribute kind="Definition">
 							<value></value>
@@ -24161,7 +24194,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-01ee37e8-b710-4d4c-bf61-c29b045a43be</value>
+							<value>id-64acac72-72b4-49a9-b674-9f9fcb20e7d6</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -24170,7 +24203,280 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<reference id="id-0067-00000391" kind="CADParameter" role="CADParameter" guid="{1b516476-ecd3-4754-ba21-bff6e988eb31}" relid="0x1">
+					<atom id="id-0066-00000d6c" kind="Point" role="Point" guid="{271372a4-746d-4729-a56c-dd53492a926e}" relid="0xb">
+						<name>FRONT_MOUNT_PNT1</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>70,98</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>FRONT_MOUNT_PNT1</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-271372a4-746d-4729-a56c-dd53492a926e</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000d6d" kind="Point" role="Point" guid="{d53cb401-9d2e-4ed7-ba85-c43bc88ab7e3}" relid="0xc">
+						<name>FRONT_MOUNT_PNT_2</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>975,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>FRONT_MOUNT_PNT_2</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-d53cb401-9d2e-4ed7-ba85-c43bc88ab7e3</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000d6e" kind="Surface" role="Surface" guid="{4da65322-4582-411f-abbb-ad11589fcf8b}" relid="0xd">
+						<name>SKID_FRONT_MOUNT_PLN</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>575,150</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Alignment" status="meta">
+							<value>ALIGN</value>
+						</attribute>
+						<attribute kind="DatumName">
+							<value>SKID_FRONT_MOUNT_PLN</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-4da65322-4582-411f-abbb-ad11589fcf8b</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000d6f" kind="Point" role="Point" guid="{5f3976d0-a77a-446b-b0a0-b319d16d4a6b}" relid="0xe">
+						<name>FACE_MOUNT_PNT_1</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>875,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>FACE_MOUNT_PNT_1</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-5f3976d0-a77a-446b-b0a0-b319d16d4a6b</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000d70" kind="Surface" role="Surface" guid="{f1c44f65-dbc1-4b65-82e8-3d4ba06c7be6}" relid="0xf">
+						<name>SKID_FACE_MOUNT_PLN</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>475,150</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Alignment" status="meta">
+							<value>ALIGN</value>
+						</attribute>
+						<attribute kind="DatumName">
+							<value>SKID_FACE_MOUNT_PLN</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-f1c44f65-dbc1-4b65-82e8-3d4ba06c7be6</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000d71" kind="Surface" role="Surface" guid="{4abd44e4-37c8-4611-871a-39a2dd56ed78}" relid="0x10">
+						<name>WING_REF_PLN</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>775,150</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Alignment" status="meta">
+							<value>ALIGN</value>
+						</attribute>
+						<attribute kind="DatumName">
+							<value>WING_REF_PLN</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-4abd44e4-37c8-4611-871a-39a2dd56ed78</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000d72" kind="Axis" role="Axis" guid="{ef072965-0023-46a1-a35f-62921ccb335c}" relid="0x11">
+						<name>BACK_STRUT</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>425,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>BACK_STRUT</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-ef072965-0023-46a1-a35f-62921ccb335c</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000d73" kind="Axis" role="Axis" guid="{a366ce0f-b3bd-4bfd-b45a-21ec897135fb}" relid="0x12">
+						<name>FRONT_STRUT</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>325,150</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>FRONT_STRUT</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-a366ce0f-b3bd-4bfd-b45a-21ec897135fb</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<reference id="id-0067-00000621" kind="CADParameter" role="CADParameter" guid="{d5d050d0-647b-4419-a114-95a181301118}" relid="0x1">
 						<name>DESCRIPTION</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -24203,7 +24509,7 @@
 							<value></value>
 						</attribute>
 					</reference>
-					<reference id="id-0067-00000392" kind="CADParameter" role="CADParameter" guid="{e44250cf-4e34-447d-8b1f-d71295856934}" relid="0x2">
+					<reference id="id-0067-00000622" kind="CADParameter" role="CADParameter" guid="{64cb8c5f-832d-4271-8903-27225e75a816}" relid="0x2">
 						<name>MODELED_BY</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -24244,7 +24550,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>994,147</value>
+								<value>854,84</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -24528,32 +24834,62 @@
 				<connection id="id-0068-0000006c" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{58475682-26b4-461f-9373-2401142535af}" relid="0x19">
 					<name>MODELED_BY</name>
 					<connpoint role="src" target="id-0067-0000038f"/>
-					<connpoint role="dst" target="id-0067-00000392"/>
+					<connpoint role="dst" target="id-0067-00000622"/>
 				</connection>
 				<connection id="id-0068-0000006d" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{af0befb6-6004-4f0f-8128-a3ac7e0749c1}" relid="0x1b">
 					<name>DESCRIPTION</name>
 					<connpoint role="src" target="id-0067-00000390"/>
-					<connpoint role="dst" target="id-0067-00000391"/>
+					<connpoint role="dst" target="id-0067-00000621"/>
 				</connection>
 				<connection id="id-0068-0000006f" kind="UsesResource" role="UsesResource" guid="{ed944834-2609-4c71-bd4c-7ff765fdab9a}" relid="0x23">
 					<name></name>
-					<connpoint role="src" target="id-0065-000002a5"/>
+					<connpoint role="src" target="id-0065-000004df"/>
 					<connpoint role="dst" target="id-0066-000001ea"/>
 				</connection>
 				<connection id="id-0068-00000070" kind="PortComposition" role="PortComposition" guid="{f63ad73e-2215-4bd4-a158-e0bebdfc081a}" relid="0x24">
 					<name>PortComposition</name>
 					<connpoint role="dst" target="id-0066-000000f3"/>
-					<connpoint role="src" target="id-0066-000001ef"/>
+					<connpoint role="src" target="id-0066-00000d68"/>
 				</connection>
-				<connection id="id-0068-00000071" kind="PortComposition" role="PortComposition" guid="{61c5257c-2c7d-4501-a265-a8f2a330b609}" relid="0x25">
+				<connection id="id-0068-000000f5" kind="PortComposition" role="PortComposition" guid="{178f7ed6-b213-40fc-b8e7-bd0e64091ba6}" relid="0x2b">
 					<name>PortComposition</name>
-					<connpoint role="dst" target="id-0066-000000f1"/>
-					<connpoint role="src" target="id-0066-000001f1"/>
+					<connpoint role="dst" target="id-0066-000000f0"/>
+					<connpoint role="src" target="id-0066-00000d69"/>
 				</connection>
-				<connection id="id-0068-00000072" kind="PortComposition" role="PortComposition" guid="{9412b888-1918-4954-91b0-db270e20dcb7}" relid="0x26">
+				<connection id="id-0068-000000f6" kind="PortComposition" role="PortComposition" guid="{739f4c92-5070-42e1-a95a-65201f8bdcb5}" relid="0x2d">
 					<name>PortComposition</name>
-					<connpoint role="dst" target="id-0066-000000f2"/>
-					<connpoint role="src" target="id-0066-000001f0"/>
+					<connpoint role="src" target="id-0066-000000ee"/>
+					<connpoint role="dst" target="id-0066-00000d71"/>
+				</connection>
+				<connection id="id-0068-000000f7" kind="PortComposition" role="PortComposition" guid="{301c154d-0b29-4da9-a527-029ca2a1ce6e}" relid="0x2e">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-000000ef"/>
+					<connpoint role="dst" target="id-0066-00000d64"/>
+				</connection>
+				<connection id="id-0068-000000f8" kind="PortComposition" role="PortComposition" guid="{6d7d7e3e-2991-4803-9819-19fe9150756f}" relid="0x2f">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-000000f2"/>
+					<connpoint role="dst" target="id-0066-00000d6a"/>
+				</connection>
+				<connection id="id-0068-000000f9" kind="PortComposition" role="PortComposition" guid="{a4c53d60-d40d-4b9e-8937-1a69fa75305d}" relid="0x30">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-000000f1"/>
+					<connpoint role="dst" target="id-0066-00000d6b"/>
+				</connection>
+				<connection id="id-0068-0000057f" kind="PortComposition" role="PortComposition" guid="{f97530dd-c157-4c00-8b96-5d0579c23620}" relid="0x36">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-00000d53"/>
+					<connpoint role="dst" target="id-0066-00000d64"/>
+				</connection>
+				<connection id="id-0068-00000583" kind="PortComposition" role="PortComposition" guid="{7e0db94f-26ab-45de-8059-95c31851afc6}" relid="0x38">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-00000d51"/>
+					<connpoint role="dst" target="id-0066-00000d73"/>
+				</connection>
+				<connection id="id-0068-00000584" kind="PortComposition" role="PortComposition" guid="{d37716ee-3771-470e-9465-9e897563e722}" relid="0x39">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-00000d52"/>
+					<connpoint role="dst" target="id-0066-00000d72"/>
 				</connection>
 			</model>
 			<model id="id-0065-00000267" kind="Component" guid="{3201dbdd-dfab-48ee-88cf-f3e2e7b5ec2f}" relid="0x8" childrelidcntr="0x1d">
@@ -25321,7 +25657,7 @@
 					<connpoint role="src" target="id-0066-00000193"/>
 				</connection>
 			</model>
-			<model id="id-0065-00000283" kind="Component" guid="{0207d81b-0efd-41f0-978f-c28696dcc7ad}" relid="0xa" childrelidcntr="0x1d">
+			<model id="id-0065-00000283" kind="Component" guid="{0207d81b-0efd-41f0-978f-c28696dcc7ad}" relid="0xa" childrelidcntr="0x1f">
 				<name>Wings</name>
 				<attribute kind="AVMID">
 					<value>5821c4f0-346d-45ef-937d-a7a4d989806a</value>
@@ -25461,7 +25797,7 @@
 						</attribute>
 					</atom>
 				</model>
-				<model id="id-0065-00000298" kind="CADModel" role="CADModel" guid="{e8c1e31c-9261-4d5d-a1ee-44d2c19f503f}" relid="0x16" childrelidcntr="0x7">
+				<model id="id-0065-000002cc" kind="CADModel" role="CADModel" guid="{071efc28-c563-42a1-acb4-4f7c14d98c67}" relid="0x1e" childrelidcntr="0x9">
 					<name>CADModel</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
@@ -25499,8 +25835,8 @@
 					<attribute kind="Notes">
 						<value></value>
 					</attribute>
-					<atom id="id-0066-000001b7" kind="Surface" role="Surface" guid="{fedf3d59-6ecb-4248-a08a-de63e293a70c}" relid="0x3">
-						<name>COINCIDENT_PLN</name>
+					<atom id="id-0066-000002c7" kind="Surface" role="Surface" guid="{2b5d3471-d990-4c7d-9ec1-69063dd52c07}" relid="0x3">
+						<name>ASM_RIGHT</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
 							<regnode name="SolidModeling" status="undefined">
@@ -25514,7 +25850,7 @@
 							<value>ALIGN</value>
 						</attribute>
 						<attribute kind="DatumName">
-							<value>COINCIDENT_PLN</value>
+							<value>ASM_RIGHT</value>
 						</attribute>
 						<attribute kind="Definition">
 							<value></value>
@@ -25526,7 +25862,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-fedf3d59-6ecb-4248-a08a-de63e293a70c</value>
+							<value>id-2b5d3471-d990-4c7d-9ec1-69063dd52c07</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -25535,7 +25871,7 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001b8" kind="Surface" role="Surface" guid="{bcf195cd-c09c-4338-9ccc-31e566f0b5b6}" relid="0x4">
+					<atom id="id-0066-000002c8" kind="Surface" role="Surface" guid="{82ffdfd8-c8a1-4ae9-9777-dbb58a75f88d}" relid="0x4">
 						<name>ASM_TOP</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -25562,7 +25898,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-bcf195cd-c09c-4338-9ccc-31e566f0b5b6</value>
+							<value>id-82ffdfd8-c8a1-4ae9-9777-dbb58a75f88d</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -25571,7 +25907,145 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001b9" kind="Surface" role="Surface" guid="{eca9caa2-3764-4366-9795-e82320b55e78}" relid="0x5">
+					<atom id="id-0066-000002c9" kind="Surface" role="Surface" guid="{c3c21979-3c83-4552-8910-a05aeb486887}" relid="0x5">
+						<name>ASM_FRONT</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>125,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Alignment" status="meta">
+							<value>ALIGN</value>
+						</attribute>
+						<attribute kind="DatumName">
+							<value>ASM_FRONT</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-c3c21979-3c83-4552-8910-a05aeb486887</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-000002ca" kind="CoordinateSystem" role="CoordinateSystem" guid="{a128f0a3-543f-4bf9-812b-97c8e0d79151}" relid="0x6">
+						<name>ASM_DEF_CSYS</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>25,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>ASM_DEF_CSYS</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-a128f0a3-543f-4bf9-812b-97c8e0d79151</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-000002cb" kind="Axis" role="Axis" guid="{25dfe64c-c366-4a04-b41b-573bffb126ac}" relid="0x7">
+						<name>ROTATION_AXIS</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>925,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>ROTATION_AXIS</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-25dfe64c-c366-4a04-b41b-573bffb126ac</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-000002cc" kind="Surface" role="Surface" guid="{736ec0d1-114c-41a7-9028-87afee9eb7a0}" relid="0x8">
+						<name>COINCIDENT_PLN</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>225,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Alignment" status="meta">
+							<value>ALIGN</value>
+						</attribute>
+						<attribute kind="DatumName">
+							<value>COINCIDENT_PLN</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-736ec0d1-114c-41a7-9028-87afee9eb7a0</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-000002cd" kind="Surface" role="Surface" guid="{b9c94a8c-8a42-4389-9d3d-0992049950f0}" relid="0x9">
 						<name>REF_PLN</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -25598,7 +26072,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-eca9caa2-3764-4366-9795-e82320b55e78</value>
+							<value>id-b9c94a8c-8a42-4389-9d3d-0992049950f0</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -25607,73 +26081,7 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001ba" kind="CoordinateSystem" role="CoordinateSystem" guid="{e22ada70-fd54-4fa4-a76d-75afe44c206a}" relid="0x6">
-						<name>ASM_DEF_CSYS</name>
-						<regnode name="PartRegs" status="undefined">
-							<value></value>
-							<regnode name="SolidModeling" status="undefined">
-								<value></value>
-								<regnode name="Position" isopaque="yes">
-									<value>25,25</value>
-								</regnode>
-							</regnode>
-						</regnode>
-						<attribute kind="DatumName">
-							<value>ASM_DEF_CSYS</value>
-						</attribute>
-						<attribute kind="Definition">
-							<value></value>
-						</attribute>
-						<attribute kind="DefinitionNotes">
-							<value></value>
-						</attribute>
-						<attribute kind="GeometricMarker" status="meta">
-							<value></value>
-						</attribute>
-						<attribute kind="ID">
-							<value>id-e22ada70-fd54-4fa4-a76d-75afe44c206a</value>
-						</attribute>
-						<attribute kind="InstanceNotes">
-							<value></value>
-						</attribute>
-						<attribute kind="IsGuide" status="meta">
-							<value>false</value>
-						</attribute>
-					</atom>
-					<atom id="id-0066-000001bb" kind="Axis" role="Axis" guid="{8b30266d-ca9e-44b2-94a2-966f0dfb4258}" relid="0x7">
-						<name>ROTATION_AXIS</name>
-						<regnode name="PartRegs" status="undefined">
-							<value></value>
-							<regnode name="SolidModeling" status="undefined">
-								<value></value>
-								<regnode name="Position" isopaque="yes">
-									<value>925,25</value>
-								</regnode>
-							</regnode>
-						</regnode>
-						<attribute kind="DatumName">
-							<value>ROTATION_AXIS</value>
-						</attribute>
-						<attribute kind="Definition">
-							<value></value>
-						</attribute>
-						<attribute kind="DefinitionNotes">
-							<value></value>
-						</attribute>
-						<attribute kind="GeometricMarker" status="meta">
-							<value></value>
-						</attribute>
-						<attribute kind="ID">
-							<value>id-8b30266d-ca9e-44b2-94a2-966f0dfb4258</value>
-						</attribute>
-						<attribute kind="InstanceNotes">
-							<value></value>
-						</attribute>
-						<attribute kind="IsGuide" status="meta">
-							<value>false</value>
-						</attribute>
-					</atom>
-					<reference id="id-0067-0000037d" kind="CADParameter" role="CADParameter" guid="{441c19e5-ede2-4bf5-bfa8-f2b0ea0c9c3c}" relid="0x1">
+					<reference id="id-0067-000003c4" kind="CADParameter" role="CADParameter" guid="{09902c59-e7fc-4548-9cf6-3e9dd33e94b5}" relid="0x1">
 						<name>DESCRIPTION</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -25706,7 +26114,7 @@
 							<value></value>
 						</attribute>
 					</reference>
-					<reference id="id-0067-0000037e" kind="CADParameter" role="CADParameter" guid="{4d84ee66-5e67-4429-90ab-6b2f89dad678}" relid="0x2">
+					<reference id="id-0067-000003c5" kind="CADParameter" role="CADParameter" guid="{d335b76d-c3f1-4a84-82a2-6396aa8c9397}" relid="0x2">
 						<name>MODELED_BY</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -26031,38 +26439,43 @@
 				<connection id="id-0068-0000005a" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{a4bd2605-327f-4a5f-9ddf-73aafd867c64}" relid="0xb">
 					<name>MODELED_BY</name>
 					<connpoint role="src" target="id-0067-00000377"/>
-					<connpoint role="dst" target="id-0067-0000037e"/>
+					<connpoint role="dst" target="id-0067-000003c5"/>
 				</connection>
 				<connection id="id-0068-0000005b" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{2217961f-80a7-4a54-8160-f40302a50622}" relid="0xd">
 					<name>DESCRIPTION</name>
 					<connpoint role="src" target="id-0067-00000378"/>
-					<connpoint role="dst" target="id-0067-0000037d"/>
+					<connpoint role="dst" target="id-0067-000003c4"/>
 				</connection>
 				<connection id="id-0068-0000005c" kind="UsesResource" role="UsesResource" guid="{308d0119-ab76-44a9-9cfa-61d8fb5ee04b}" relid="0xf">
 					<name></name>
-					<connpoint role="dst" target="id-0065-00000298"/>
+					<connpoint role="dst" target="id-0065-000002cc"/>
 					<connpoint role="src" target="id-0066-0000018f"/>
 				</connection>
 				<connection id="id-0068-00000060" kind="PortComposition" role="PortComposition" guid="{90bfff6d-623d-4ad5-9988-17be9333c1f0}" relid="0x1b">
 					<name>PortComposition</name>
 					<connpoint role="dst" target="id-0066-00000137"/>
-					<connpoint role="src" target="id-0066-000001bb"/>
+					<connpoint role="src" target="id-0066-000002cb"/>
 				</connection>
 				<connection id="id-0068-00000061" kind="PortComposition" role="PortComposition" guid="{e7af13c4-53f5-40be-aa76-0f955fb0f42c}" relid="0x1c">
 					<name>PortComposition</name>
 					<connpoint role="dst" target="id-0066-00000136"/>
-					<connpoint role="src" target="id-0066-000001b7"/>
+					<connpoint role="src" target="id-0066-000002cc"/>
 				</connection>
 				<connection id="id-0068-00000062" kind="PortComposition" role="PortComposition" guid="{16bce014-9040-4998-89fd-f299cca7eb91}" relid="0x1d">
 					<name>PortComposition</name>
 					<connpoint role="dst" target="id-0066-00000135"/>
-					<connpoint role="src" target="id-0066-000001b9"/>
+					<connpoint role="src" target="id-0066-000002cd"/>
+				</connection>
+				<connection id="id-0068-000000fa" kind="UsesResource" role="UsesResource" guid="{39bca07e-03e0-4280-a060-d69a585f1409}" relid="0x1f">
+					<name></name>
+					<connpoint role="src" target="id-0065-000002cc"/>
+					<connpoint role="dst" target="id-0066-0000018f"/>
 				</connection>
 			</model>
-			<model id="id-0065-000002a7" kind="Component" guid="{e53321b4-493d-4ac9-86b1-4ce226871504}" relid="0xf" childrelidcntr="0x8">
-				<name>Skids</name>
+			<model id="id-0065-000003e5" kind="Component" guid="{2e06e623-8d1e-47fb-9182-f97497845800}" relid="0x10" childrelidcntr="0x17">
+				<name>⁯Skids</name>
 				<attribute kind="AVMID">
-					<value>c91d20fc-ed30-41c4-8feb-29c9b50a2aa5</value>
+					<value>58f5ed95-1e69-4ebe-81ef-2946ba10bd56</value>
 				</attribute>
 				<attribute kind="Cardinality" status="meta">
 					<value></value>
@@ -26074,10 +26487,10 @@
 					<value></value>
 				</attribute>
 				<attribute kind="ID">
-					<value>1</value>
+					<value>7</value>
 				</attribute>
 				<attribute kind="InstanceGUID">
-					<value>e53321b4-493d-4ac9-86b1-4ce226871504</value>
+					<value>2e06e623-8d1e-47fb-9182-f97497845800</value>
 				</attribute>
 				<attribute kind="ManagedGUID" status="meta">
 					<value></value>
@@ -26086,7 +26499,7 @@
 					<value></value>
 				</attribute>
 				<attribute kind="Path">
-					<value>components/0u23yd4q/</value>
+					<value>components/Skid_Assembly/</value>
 				</attribute>
 				<attribute kind="Revision" status="meta">
 					<value></value>
@@ -26097,14 +26510,113 @@
 				<attribute kind="Version" status="meta">
 					<value></value>
 				</attribute>
-				<model id="id-0065-000002a8" kind="CADModel" role="CADModel" guid="{980ce4ff-6426-49de-a111-236ef85eedc0}" relid="0x1" childrelidcntr="0x8">
-					<name>skid_assem.asm</name>
+				<model id="id-0065-000004a3" kind="Connector" role="Connector" guid="{f325e248-5c52-476d-aee5-d0a687028ccb}" derivedfrom="id-0065-000004a2" isinstance="yes" isprimary="yes" relid="0xf" childrelidcntr="0x0">
+					<name>strut_connector</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>270,200</value>
+								<value>49,133</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Definition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="DefinitionNotes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ID">
+						<value>id-f325e248-5c52-476d-aee5-d0a687028ccb</value>
+					</attribute>
+					<attribute kind="InstanceNotes" status="meta">
+						<value></value>
+					</attribute>
+					<atom id="id-0066-00000c13" kind="Axis" role="Axis" guid="{ed9082ef-9cee-4dc3-9c7f-41432448bf22}" derivedfrom="id-0066-00000c10" isinstance="yes" isprimary="no">
+						<name>FRONT_STRUT</name>
+						<attribute kind="DatumName" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Definition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-ed9082ef-9cee-4dc3-9c7f-41432448bf22</value>
+						</attribute>
+						<attribute kind="InstanceNotes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000c14" kind="Axis" role="Axis" guid="{67058f5f-9f9d-4fff-a4e2-524b5a921223}" derivedfrom="id-0066-00000c11" isinstance="yes" isprimary="no">
+						<name>BACK_STRUT</name>
+						<attribute kind="DatumName" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Definition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-67058f5f-9f9d-4fff-a4e2-524b5a921223</value>
+						</attribute>
+						<attribute kind="InstanceNotes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000c15" kind="Surface" role="Surface" guid="{708c6fd8-ef99-4b8a-8f58-b3278b341efd}" derivedfrom="id-0066-00000c12" isinstance="yes" isprimary="no">
+						<name>CENTER_PLN</name>
+						<attribute kind="Alignment" status="meta">
+							<value>ALIGN</value>
+						</attribute>
+						<attribute kind="DatumName" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="Definition" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-708c6fd8-ef99-4b8a-8f58-b3278b341efd</value>
+						</attribute>
+						<attribute kind="InstanceNotes" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+				</model>
+				<model id="id-0065-000004a4" kind="CADModel" role="CADModel" guid="{6dc5368b-edfc-4e22-93eb-01835b2616db}" relid="0x10" childrelidcntr="0xe">
+					<name>CADModel</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>1141,315</value>
 							</regnode>
 						</regnode>
 						<regnode name="SchematicAspect" status="undefined">
@@ -26129,13 +26641,13 @@
 					<attribute kind="FilePathWithinResource" status="meta">
 						<value></value>
 					</attribute>
-					<attribute kind="FileType" status="meta">
+					<attribute kind="FileType">
 						<value>Part</value>
 					</attribute>
 					<attribute kind="Notes">
 						<value></value>
 					</attribute>
-					<atom id="id-0066-000001fc" kind="Surface" role="Surface" guid="{b3ab8280-0ec2-4ff4-8d20-4a634c4170c7}" relid="0x3">
+					<atom id="id-0066-00000c16" kind="Surface" role="Surface" guid="{a7531569-b477-4d06-8eee-e7e7bdfc98b9}" relid="0x3">
 						<name>ASM_RIGHT</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -26162,7 +26674,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-b3ab8280-0ec2-4ff4-8d20-4a634c4170c7</value>
+							<value>id-a7531569-b477-4d06-8eee-e7e7bdfc98b9</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -26171,7 +26683,7 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001fd" kind="Surface" role="Surface" guid="{9f027b8e-cdca-4b04-ba25-d529d078a19c}" relid="0x4">
+					<atom id="id-0066-00000c17" kind="Surface" role="Surface" guid="{cfc23fe1-b47c-4e50-ab81-f7f8a1f84dcc}" relid="0x4">
 						<name>ASM_TOP</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -26198,7 +26710,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-9f027b8e-cdca-4b04-ba25-d529d078a19c</value>
+							<value>id-cfc23fe1-b47c-4e50-ab81-f7f8a1f84dcc</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -26207,7 +26719,7 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001fe" kind="Surface" role="Surface" guid="{616b6110-3277-4813-87bd-c84ab65c71bd}" relid="0x5">
+					<atom id="id-0066-00000c18" kind="Surface" role="Surface" guid="{cff14cb9-3f72-4a51-91b7-8d91f571be81}" relid="0x5">
 						<name>ASM_FRONT</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -26234,7 +26746,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-616b6110-3277-4813-87bd-c84ab65c71bd</value>
+							<value>id-cff14cb9-3f72-4a51-91b7-8d91f571be81</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -26243,7 +26755,7 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-000001ff" kind="CoordinateSystem" role="CoordinateSystem" guid="{e8d24747-0bfd-401a-9e80-33e254b96471}" relid="0x6">
+					<atom id="id-0066-00000c19" kind="CoordinateSystem" role="CoordinateSystem" guid="{87297607-e46e-4971-90f2-4fd911faa602}" relid="0x6">
 						<name>ASM_DEF_CSYS</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -26267,7 +26779,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-e8d24747-0bfd-401a-9e80-33e254b96471</value>
+							<value>id-87297607-e46e-4971-90f2-4fd911faa602</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -26276,14 +26788,14 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-00000200" kind="Surface" role="Surface" guid="{400281cd-ad2f-4952-8a0d-1518d2095d4f}" relid="0x7">
+					<atom id="id-0066-00000c1a" kind="Surface" role="Surface" guid="{96a94b2a-3a6c-411f-b6de-05ec6729785f}" relid="0x7">
 						<name>TOP_PLN_LOCK</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
 							<regnode name="SolidModeling" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>25,150</value>
+									<value>325,150</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -26303,7 +26815,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-400281cd-ad2f-4952-8a0d-1518d2095d4f</value>
+							<value>id-96a94b2a-3a6c-411f-b6de-05ec6729785f</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -26312,14 +26824,14 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<atom id="id-0066-00000201" kind="Surface" role="Surface" guid="{fc7a34f3-9e8a-4ce5-af2b-d2ded2e52ada}" relid="0x8">
+					<atom id="id-0066-00000c1b" kind="Surface" role="Surface" guid="{b49df393-98a1-4d5d-ae35-da6fbae10ee2}" relid="0x8">
 						<name>RIGHT_PLN_LOCK</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
 							<regnode name="SolidModeling" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>925,25</value>
+									<value>25,150</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -26339,7 +26851,7 @@
 							<value></value>
 						</attribute>
 						<attribute kind="ID">
-							<value>id-fc7a34f3-9e8a-4ce5-af2b-d2ded2e52ada</value>
+							<value>id-b49df393-98a1-4d5d-ae35-da6fbae10ee2</value>
 						</attribute>
 						<attribute kind="InstanceNotes">
 							<value></value>
@@ -26348,7 +26860,211 @@
 							<value>false</value>
 						</attribute>
 					</atom>
-					<reference id="id-0067-00000397" kind="CADParameter" role="CADParameter" guid="{57fd58eb-6f7b-4f69-a44e-fd0e8dbde67d}" relid="0x1">
+					<atom id="id-0066-00000c1c" kind="Point" role="Point" guid="{932fbf9e-1bdd-4526-9dbb-364cd8cedc04}" relid="0x9">
+						<name>SKID_FACE_PNT1</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>125,150</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>SKID_FACE_PNT1</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-932fbf9e-1bdd-4526-9dbb-364cd8cedc04</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000c1d" kind="Point" role="Point" guid="{6e418b51-0d01-484f-ad31-bb293b69497b}" relid="0xa">
+						<name>SKID_FACE_PNT2</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>225,150</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>SKID_FACE_PNT2</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-6e418b51-0d01-484f-ad31-bb293b69497b</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000c1e" kind="Surface" role="Surface" guid="{5c841665-5499-4008-b456-f35ca9c70fc9}" relid="0xb">
+						<name>FUSELAGE_FACE_MOUNT_PLN</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>675,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Alignment" status="meta">
+							<value>ALIGN</value>
+						</attribute>
+						<attribute kind="DatumName">
+							<value>FUSELAGE_FACE_MOUNT_PLN</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-5c841665-5499-4008-b456-f35ca9c70fc9</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000c1f" kind="Surface" role="Surface" guid="{5974218c-6a2b-4e03-8d62-821364475268}" relid="0xc">
+						<name>FUSELAGE_FRONT_MOUNT_PLN</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>775,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="Alignment" status="meta">
+							<value>ALIGN</value>
+						</attribute>
+						<attribute kind="DatumName">
+							<value>FUSELAGE_FRONT_MOUNT_PLN</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-5974218c-6a2b-4e03-8d62-821364475268</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000c20" kind="Axis" role="Axis" guid="{667ac863-49e9-4829-8599-91432d24ec3c}" relid="0xd">
+						<name>BACK_STRUT</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>425,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>BACK_STRUT</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-667ac863-49e9-4829-8599-91432d24ec3c</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<atom id="id-0066-00000c21" kind="Axis" role="Axis" guid="{c46398bc-3d07-44e0-a876-f4acc3016d17}" relid="0xe">
+						<name>FRONT_STRUT</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="SolidModeling" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>775,25</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<attribute kind="DatumName">
+							<value>FRONT_STRUT</value>
+						</attribute>
+						<attribute kind="Definition">
+							<value></value>
+						</attribute>
+						<attribute kind="DefinitionNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="GeometricMarker" status="meta">
+							<value></value>
+						</attribute>
+						<attribute kind="ID">
+							<value>id-c46398bc-3d07-44e0-a876-f4acc3016d17</value>
+						</attribute>
+						<attribute kind="InstanceNotes">
+							<value></value>
+						</attribute>
+						<attribute kind="IsGuide" status="meta">
+							<value>false</value>
+						</attribute>
+					</atom>
+					<reference id="id-0067-000005dd" kind="CADParameter" role="CADParameter" guid="{aae4c2b8-4a0d-4e6d-96bd-43c986dc3de5}" relid="0x1">
 						<name>DESCRIPTION</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
@@ -26365,8 +27081,8 @@
 						<attribute kind="DefaultValue" status="meta">
 							<value></value>
 						</attribute>
-						<attribute kind="ID">
-							<value>id-57fd58eb-6f7b-4f69-a44e-fd0e8dbde67d</value>
+						<attribute kind="ID" status="meta">
+							<value></value>
 						</attribute>
 						<attribute kind="ParameterName">
 							<value>DESCRIPTION</value>
@@ -26378,17 +27094,17 @@
 							<value></value>
 						</attribute>
 						<attribute kind="Value">
-							<value>0</value>
+							<value></value>
 						</attribute>
 					</reference>
-					<reference id="id-0067-00000398" kind="CADParameter" role="CADParameter" guid="{19acca59-4a2a-44e6-a6ed-aecb55a7354d}" relid="0x2">
+					<reference id="id-0067-000005de" kind="CADParameter" role="CADParameter" guid="{1672ab11-758f-43aa-bcd8-6fb0457c50d5}" relid="0x2">
 						<name>MODELED_BY</name>
 						<regnode name="PartRegs" status="undefined">
 							<value></value>
 							<regnode name="SolidModeling" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>675,25</value>
+									<value>875,25</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -26398,8 +27114,8 @@
 						<attribute kind="DefaultValue" status="meta">
 							<value></value>
 						</attribute>
-						<attribute kind="ID">
-							<value>id-19acca59-4a2a-44e6-a6ed-aecb55a7354d</value>
+						<attribute kind="ID" status="meta">
+							<value></value>
 						</attribute>
 						<attribute kind="ParameterName">
 							<value>MODELED_BY</value>
@@ -26411,18 +27127,18 @@
 							<value></value>
 						</attribute>
 						<attribute kind="Value">
-							<value>0</value>
+							<value></value>
 						</attribute>
 					</reference>
 				</model>
-				<atom id="id-0066-00000202" kind="Resource" role="Resource" guid="{b26028bb-3e47-439e-ace3-36b7ae32ec06}" relid="0x6">
+				<atom id="id-0066-00000868" kind="Resource" role="Resource" guid="{970e1929-d6fd-4b13-904a-dd115132ace5}" relid="0x6">
 					<name>skid_assem.asm</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>609,98</value>
+								<value>1519,315</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -26430,7 +27146,7 @@
 						<value></value>
 					</attribute>
 					<attribute kind="ID">
-						<value>id-b26028bb-3e47-439e-ace3-36b7ae32ec06</value>
+						<value>id-970e1929-d6fd-4b13-904a-dd115132ace5</value>
 					</attribute>
 					<attribute kind="Notes">
 						<value>CAD Model Import tool added this resource object for the imported CAD file</value>
@@ -26439,14 +27155,14 @@
 						<value>CAD\skid_assem.asm</value>
 					</attribute>
 				</atom>
-				<atom id="id-0066-00000203" kind="Resource" role="Resource" guid="{e3f1544b-11ae-4527-9ef2-07888cf75f69}" relid="0x8">
-					<name>skid_strut.prt</name>
+				<atom id="id-0066-00000c22" kind="Resource" role="Resource" guid="{de83e8ca-77bb-4b75-b2f9-aaa871aef6c0}" relid="0x11">
+					<name>RIGHT_SKID.PRT</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>609,168</value>
+								<value>1694,56</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -26454,23 +27170,71 @@
 						<value></value>
 					</attribute>
 					<attribute kind="ID">
-						<value>id-e3f1544b-11ae-4527-9ef2-07888cf75f69</value>
+						<value>id-de83e8ca-77bb-4b75-b2f9-aaa871aef6c0</value>
 					</attribute>
-					<attribute kind="Notes">
-						<value>CAD Model Import tool added this resource object for the imported CAD file</value>
+					<attribute kind="Notes" status="meta">
+						<value></value>
 					</attribute>
 					<attribute kind="Path">
-						<value>CAD\skid_strut.prt</value>
+						<value>CAD\RIGHT_SKID.PRT</value>
 					</attribute>
 				</atom>
-				<reference id="id-0067-00000399" kind="Property" role="Property" guid="{2cde7f04-3a76-4bb9-9bca-662f239b1447}" relid="0x2">
-					<name>MODELED_BY</name>
+				<atom id="id-0066-00000c23" kind="Resource" role="Resource" guid="{03ab7ae8-7044-477b-b6fb-212f78fc8aaa}" relid="0x12">
+					<name>LEFT_SKID.PRT</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>20,200</value>
+								<value>1694,112</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Hash" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ID">
+						<value>id-03ab7ae8-7044-477b-b6fb-212f78fc8aaa</value>
+					</attribute>
+					<attribute kind="Notes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Path">
+						<value>CAD\LEFT_SKID.PRT</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000c24" kind="Resource" role="Resource" guid="{4cdb5d0d-a8ea-4fe9-a4ca-e4112d5d037d}" relid="0x13">
+					<name>SKID_STRUT.PRT</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>1694,168</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Hash" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ID">
+						<value>id-4cdb5d0d-a8ea-4fe9-a4ca-e4112d5d037d</value>
+					</attribute>
+					<attribute kind="Notes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Path">
+						<value>CAD\SKID_STRUT.PRT</value>
+					</attribute>
+				</atom>
+				<reference id="id-0067-00000501" kind="Property" role="Property" guid="{a7695392-faa8-4e46-905e-1136bd9d4468}" relid="0x2">
+					<name>DESCRIPTION</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>889,315</value>
 							</regnode>
 						</regnode>
 						<regnode name="BehaviorModelsAspect" status="undefined">
@@ -26529,7 +27293,7 @@
 						<value>false</value>
 					</attribute>
 					<attribute kind="ID">
-						<value>id-2cde7f04-3a76-4bb9-9bca-662f239b1447</value>
+						<value>id-a7695392-faa8-4e46-905e-1136bd9d4468</value>
 					</attribute>
 					<attribute kind="IsProminent" status="meta">
 						<value>false</value>
@@ -26547,14 +27311,14 @@
 						<value></value>
 					</attribute>
 				</reference>
-				<reference id="id-0067-0000039a" kind="Property" role="Property" guid="{d22c8c13-d20e-4912-af17-4a4f0bca1d11}" relid="0x4">
-					<name>DESCRIPTION</name>
+				<reference id="id-0067-00000502" kind="Property" role="Property" guid="{191bf7c0-4b32-49de-bfd9-c462ebb51e2c}" relid="0x4">
+					<name>MODELED_BY</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>20,240</value>
+								<value>889,357</value>
 							</regnode>
 						</regnode>
 						<regnode name="BehaviorModelsAspect" status="undefined">
@@ -26613,7 +27377,7 @@
 						<value>false</value>
 					</attribute>
 					<attribute kind="ID">
-						<value>id-d22c8c13-d20e-4912-af17-4a4f0bca1d11</value>
+						<value>id-191bf7c0-4b32-49de-bfd9-c462ebb51e2c</value>
 					</attribute>
 					<attribute kind="IsProminent" status="meta">
 						<value>false</value>
@@ -26631,26 +27395,41 @@
 						<value></value>
 					</attribute>
 				</reference>
-				<connection id="id-0068-00000079" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{5b3c0830-6fc3-40f1-9c9c-f76b29360b56}" relid="0x3">
-					<name>MODELED_BY</name>
-					<connpoint role="dst" target="id-0067-00000398"/>
-					<connpoint role="src" target="id-0067-00000399"/>
-				</connection>
-				<connection id="id-0068-0000007a" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{d56645c2-5010-4005-9423-1635e72d6294}" relid="0x5">
+				<connection id="id-0068-00000369" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{9e0d40b2-41cd-445e-b79d-7b627c86384b}" relid="0x3">
 					<name>DESCRIPTION</name>
-					<connpoint role="dst" target="id-0067-00000397"/>
-					<connpoint role="src" target="id-0067-0000039a"/>
+					<connpoint role="src" target="id-0067-00000501"/>
+					<connpoint role="dst" target="id-0067-000005dd"/>
 				</connection>
-				<connection id="id-0068-0000007b" kind="UsesResource" role="UsesResource" guid="{9e1c1494-4311-4693-9c10-6bd44c158a09}" relid="0x7">
+				<connection id="id-0068-0000036a" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{289cde34-fc92-427e-b862-ad7a18814c42}" relid="0x5">
+					<name>MODELED_BY</name>
+					<connpoint role="src" target="id-0067-00000502"/>
+					<connpoint role="dst" target="id-0067-000005de"/>
+				</connection>
+				<connection id="id-0068-000004fe" kind="UsesResource" role="UsesResource" guid="{3ded3ba2-779a-4825-834d-cb74f3c474c6}" relid="0x14">
 					<name></name>
-					<connpoint role="dst" target="id-0065-000002a8"/>
-					<connpoint role="src" target="id-0066-00000202"/>
+					<connpoint role="src" target="id-0065-000004a4"/>
+					<connpoint role="dst" target="id-0066-00000868"/>
+				</connection>
+				<connection id="id-0068-00000539" kind="PortComposition" role="PortComposition" guid="{7103611a-750e-4301-be80-2966acc34ed6}" relid="0x15">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-00000c13"/>
+					<connpoint role="dst" target="id-0066-00000c21"/>
+				</connection>
+				<connection id="id-0068-0000053a" kind="PortComposition" role="PortComposition" guid="{82ef6213-3c9f-4ac8-903f-58873c8a0cf2}" relid="0x16">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-00000c14"/>
+					<connpoint role="dst" target="id-0066-00000c20"/>
+				</connection>
+				<connection id="id-0068-0000053b" kind="PortComposition" role="PortComposition" guid="{3219fc76-01f6-4486-84fc-230b6c536b20}" relid="0x17">
+					<name>PortComposition</name>
+					<connpoint role="src" target="id-0066-00000c15"/>
+					<connpoint role="dst" target="id-0066-00000c1b"/>
 				</connection>
 			</model>
 		</folder>
-		<folder id="id-006a-00000019" relid="0x7" childrelidcntr="0x2" kind="ComponentAssemblies" guid="{3ad000cf-7fb9-4ac9-94c8-92f968997321}">
+		<folder id="id-006a-00000019" relid="0x7" childrelidcntr="0x3" kind="ComponentAssemblies" guid="{3ad000cf-7fb9-4ac9-94c8-92f968997321}">
 			<name>ComponentAssemblies</name>
-			<model id="id-0065-00000268" kind="ComponentAssembly" guid="{d3ff1d49-7edc-43e7-aefe-dc1a61736759}" relid="0x1" childrelidcntr="0x1d">
+			<model id="id-0065-0000035c" kind="ComponentAssembly" guid="{680bc5f9-a762-4daf-99c5-08bb96b02026}" relid="0x3" childrelidcntr="0xd">
 				<name>Vahana</name>
 				<attribute kind="Cardinality" status="meta">
 					<value></value>
@@ -26665,7 +27444,7 @@
 					<value></value>
 				</attribute>
 				<attribute kind="ID">
-					<value>5</value>
+					<value>2</value>
 				</attribute>
 				<attribute kind="ManagedGUID" status="meta">
 					<value></value>
@@ -26674,16 +27453,100 @@
 					<value></value>
 				</attribute>
 				<attribute kind="Path">
-					<value>designs\qud5afsh5yd</value>
+					<value>designs\fqnwndh5xvg</value>
 				</attribute>
-				<reference id="id-0067-00000181" kind="ComponentRef" role="ComponentRef" guid="{8efe1ec1-6995-4431-bf28-348a69dab9fe}" relid="0x1" referred="id-0065-00000260">
-					<name>Fuselage</name>
+				<reference id="id-0067-0000046b" kind="ComponentRef" role="ComponentRef" guid="{0e6c618a-336d-406d-b118-5db5922cc763}" relid="0x1" referred="id-0065-00000260">
+					<name>ComponentRef</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
+						<regnode name="AbstractPortAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>749,280</value>
+								<value>553,203</value>
+							</regnode>
+						</regnode>
+						<regnode name="BondGraphAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="Car" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="ConnectorAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="DynamicsAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="ModelicaAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="PcbLayoutAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="RFAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="SchematicAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>280,133</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -26691,23 +27554,107 @@
 						<value></value>
 					</attribute>
 					<attribute kind="ID">
-						<value>6</value>
+						<value>3</value>
 					</attribute>
 					<attribute kind="InstanceGUID">
-						<value>8efe1ec1-6995-4431-bf28-348a69dab9fe</value>
+						<value>0e6c618a-336d-406d-b118-5db5922cc763</value>
 					</attribute>
 					<attribute kind="NumAssociatedConfigs" status="meta">
 						<value></value>
 					</attribute>
 				</reference>
-				<reference id="id-0067-00000184" kind="ComponentRef" role="ComponentRef" guid="{aacfa08f-3f8f-4b0e-92cd-181004e9d579}" relid="0x4" referred="id-0065-00000267">
+				<reference id="id-0067-00000474" kind="ComponentRef" role="ComponentRef" guid="{c9b8d4d4-a9dd-49fe-9909-8974de78d45e}" relid="0x2" referred="id-0065-00000267">
 					<name>Canards</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
+						<regnode name="AbstractPortAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>441,238</value>
+								<value>336,203</value>
+							</regnode>
+						</regnode>
+						<regnode name="BondGraphAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="Car" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="ConnectorAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="DynamicsAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="ModelicaAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="PcbLayoutAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="RFAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="SchematicAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>266,364</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -26715,107 +27662,107 @@
 						<value></value>
 					</attribute>
 					<attribute kind="ID">
-						<value>9</value>
+						<value>4</value>
 					</attribute>
 					<attribute kind="InstanceGUID">
-						<value>aacfa08f-3f8f-4b0e-92cd-181004e9d579</value>
+						<value>c9b8d4d4-a9dd-49fe-9909-8974de78d45e</value>
 					</attribute>
 					<attribute kind="NumAssociatedConfigs" status="meta">
 						<value></value>
 					</attribute>
 				</reference>
-				<reference id="id-0067-0000034f" kind="ComponentRef" role="ComponentRef" guid="{08de544e-ee6b-48fb-a6e2-8761f6e872f2}" relid="0x18" referred="id-0065-00000283">
+				<reference id="id-0067-00000495" kind="ComponentRef" role="ComponentRef" guid="{76aa17eb-93e8-476e-bcf7-92e654691c3f}" relid="0x4" referred="id-0065-00000283">
 					<name>Wings</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
 						<regnode name="AbstractPortAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>1092,231</value>
+								<value>966,154</value>
 							</regnode>
 						</regnode>
 						<regnode name="BondGraphAspect2" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="Car" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="ConnectorAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="DynamicsAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="ModelicaAspect2" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="PcbLayoutAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="RFAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="SchematicAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="SimulinkAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="SimulinkAspect2" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="SolidModeling" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="SystemCAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 						<regnode name="ValueFlowAspect" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>560,651</value>
+								<value>567,329</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -26823,28 +27770,141 @@
 						<value></value>
 					</attribute>
 					<attribute kind="ID">
-						<value>17</value>
+						<value>5</value>
 					</attribute>
 					<attribute kind="InstanceGUID">
-						<value>08de544e-ee6b-48fb-a6e2-8761f6e872f2</value>
+						<value>76aa17eb-93e8-476e-bcf7-92e654691c3f</value>
 					</attribute>
 					<attribute kind="NumAssociatedConfigs" status="meta">
 						<value></value>
 					</attribute>
 				</reference>
-				<connection id="id-0068-0000002d" kind="ConnectorComposition" role="ConnectorComposition" guid="{d76d5b3e-a401-46d7-87e4-b057b0cc84eb}" relid="0xe">
+				<reference id="id-0067-0000063d" kind="ComponentRef" role="ComponentRef" guid="{7d4e6bc5-0905-41a2-a05c-5a5e687c4fd7}" relid="0xc" referred="id-0065-000003e5">
+					<name>Skids</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="AbstractPortAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>966,245</value>
+							</regnode>
+						</regnode>
+						<regnode name="BondGraphAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="Car" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="ConnectorAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="DynamicsAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="ModelicaAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="PcbLayoutAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="RFAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="SchematicAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect2" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>469,511</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Cardinality" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ID">
+						<value>11</value>
+					</attribute>
+					<attribute kind="InstanceGUID">
+						<value>7d4e6bc5-0905-41a2-a05c-5a5e687c4fd7</value>
+					</attribute>
+					<attribute kind="NumAssociatedConfigs" status="meta">
+						<value></value>
+					</attribute>
+				</reference>
+				<connection id="id-0068-00000271" kind="ConnectorComposition" role="ConnectorComposition" guid="{62beb8f0-2aaa-46a3-b31c-90ebfc65c4b4}" relid="0x3">
 					<name>ConnectorComposition</name>
-					<connpoint role="dst" target="id-0065-0000026d" refs="id-0067-00000181"/>
-					<connpoint role="src" target="id-0065-00000275" refs="id-0067-00000184"/>
+					<connpoint role="dst" target="id-0065-0000026d" refs="id-0067-0000046b"/>
+					<connpoint role="src" target="id-0065-00000275" refs="id-0067-00000474"/>
 				</connection>
-				<connection id="id-0068-0000003d" kind="ConnectorComposition" role="ConnectorComposition" guid="{76af83b5-6884-45e1-975b-8bfa35414076}" relid="0x1b">
+				<connection id="id-0068-000002c8" kind="ConnectorComposition" role="ConnectorComposition" guid="{ba8881f4-8ceb-4635-9155-87833945d924}" relid="0x5">
 					<name>ConnectorComposition</name>
-					<connpoint role="dst" target="id-0065-0000026c" refs="id-0067-00000181"/>
-					<connpoint role="src" target="id-0065-00000289" refs="id-0067-0000034f"/>
+					<connpoint role="dst" target="id-0065-0000026c" refs="id-0067-0000046b"/>
+					<connpoint role="src" target="id-0065-00000289" refs="id-0067-00000495"/>
+				</connection>
+				<connection id="id-0068-000005f8" kind="ConnectorComposition" role="ConnectorComposition" guid="{9d49254a-937e-4007-b3e8-bb2529237c4a}" relid="0xd">
+					<name>ConnectorComposition</name>
+					<connpoint role="dst" target="id-0065-000004a3" refs="id-0067-0000063d"/>
+					<connpoint role="src" target="id-0065-000004dd" refs="id-0067-0000046b"/>
 				</connection>
 			</model>
 		</folder>
-		<folder id="id-006a-0000001a" relid="0x8" childrelidcntr="0x4" kind="Connectors" guid="{60ac0e67-2759-473e-b10b-fb2443b0f9e8}">
+		<folder id="id-006a-0000001a" relid="0x8" childrelidcntr="0x5" kind="Connectors" guid="{60ac0e67-2759-473e-b10b-fb2443b0f9e8}">
 			<name>Connectors</name>
 			<model id="id-0065-00000269" kind="Connector" guid="{2266608e-9e95-4063-855f-7f1f828c2548}" relid="0x2" childrelidcntr="0xa">
 				<name>RotationalJoint</name>
@@ -27116,6 +28176,141 @@
 					</attribute>
 					<attribute kind="ID">
 						<value>id-8050fd48-a8d6-4ff7-aec1-78a2ca3ce817</value>
+					</attribute>
+					<attribute kind="InstanceNotes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsGuide" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+			</model>
+			<model id="id-0065-000004a2" kind="Connector" guid="{a1fa69e7-7ee7-464d-b54b-d674467aa7fc}" relid="0x5" childrelidcntr="0x3">
+				<name>strut_connector</name>
+				<attribute kind="Definition" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="DefinitionNotes" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="ID">
+					<value>id-a1fa69e7-7ee7-464d-b54b-d674467aa7fc</value>
+				</attribute>
+				<attribute kind="InstanceNotes" status="meta">
+					<value></value>
+				</attribute>
+				<atom id="id-0066-00000c10" kind="Axis" role="Axis" guid="{96720b8d-333a-4166-9808-d2970f0b7b8a}" relid="0x1">
+					<name>FRONT_STRUT</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>126,154</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>126,154</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DatumName" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Definition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="DefinitionNotes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GeometricMarker" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ID">
+						<value>id-96720b8d-333a-4166-9808-d2970f0b7b8a</value>
+					</attribute>
+					<attribute kind="InstanceNotes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsGuide" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000c11" kind="Axis" role="Axis" guid="{97626111-1106-4438-85e8-2bef73a50192}" relid="0x2">
+					<name>BACK_STRUT</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>126,231</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>126,231</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="DatumName" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Definition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="DefinitionNotes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GeometricMarker" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ID">
+						<value>id-97626111-1106-4438-85e8-2bef73a50192</value>
+					</attribute>
+					<attribute kind="InstanceNotes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsGuide" status="meta">
+						<value>false</value>
+					</attribute>
+				</atom>
+				<atom id="id-0066-00000c12" kind="Surface" role="Surface" guid="{91f353e8-2851-4241-a450-f670010b0e02}" relid="0x3">
+					<name>CENTER_PLN</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>119,308</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>119,308</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Alignment" status="meta">
+						<value>ALIGN</value>
+					</attribute>
+					<attribute kind="DatumName" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Definition" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="DefinitionNotes" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="GeometricMarker" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ID">
+						<value>id-91f353e8-2851-4241-a450-f670010b0e02</value>
 					</attribute>
 					<attribute kind="InstanceNotes" status="meta">
 						<value></value>
