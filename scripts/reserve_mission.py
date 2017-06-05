@@ -27,10 +27,10 @@ from __future__ import print_function
 from openmdao.api import Component
 import math
 
-class reserveMission(Component):
+class reserve_mission(Component):
 
 	def __init__(self):
-		super(reserveMission, self).__init__()
+		super(reserve_mission, self).__init__()
 		self.add_param('vehicle', val='unknown', desciption='vehicle type - tilt-wing or helicopter')
 		self.add_param('rProp', val='0', description='propellor/rotor radius')
 		self.add_param('V', val='0', description='cruise speed')
