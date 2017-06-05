@@ -10,17 +10,18 @@
 
 # Estimate time and energy use for a reserve VTOL mission
 # Inputs:
-# 	vehicle 				- vehicle type
-# 	rProp   				- prop/rotor radius
-# 	V       				- cruise speed
-# 	W       				- weight
-#	hoverOutput_PBattery	- #TODO
-#	cruiseOutput_PBattery	- #TODO
-#	loiterOutput_PBattery	- #TODO
+# ...vehicle ............- vehicle type
+# ...rProp   ............- prop/rotor radius
+# ...V       ............- cruise speed
+# ...W       ............- weight
+#   range                   - range
+#...hoverOutputPBattery...- #TODO
+#...cruiseOutputPBattery...- #TODO
+#...loiterOutputPBattery...- #TODO
 
 # Outputs:
-# 	E            - Total energy use in reserve mission
-# 	t            - Flight time for reserve mission
+# ...E            - Total energy use in reserve mission
+# ...t            - Flight time for reserve mission
 
 from __future__ import print_function
 
@@ -29,36 +30,37 @@ import math
 
 class reserve_mission(Component):
 
-	def __init__(self):
-		super(reserve_mission, self).__init__()
-		self.add_param('vehicle', val='unknown', desciption='vehicle type - tilt-wing or helicopter')
-		self.add_param('rProp', val='0', description='propellor/rotor radius')
-		self.add_param('V', val='0', description='cruise speed')
-		self.add_param('W', val='0', description='weight')
-		self.add_param('hoverOutput_PBattery', val='0', description='TODO')
-		self.add_param('cruiseOutput_PBattery', val='0', description='TODO')		
-		self.add_param('loiterOutput_PBattery', val='0', description='TODO')
-	
-		self.add_output('E', val='0', description='total energy use in reserve mission')
-		self.add_output('t', val='0', description='flight time for reserve mission')
-		
-		
-	def solve_nonlinear(self, params, unknowns, resids): #QUESTION: does this always need to be named solve_nonlinear
-		if (params['vehicle'] == 'tiltwing' or 'helicopter'):
-			# Reserve mission
-			hoverTime = 180 * 2	# sec to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing and repeated for diversion
+    def __init__(self):
+        super(reserve_mission, self).__init__()
+        self.add_param('vehicle', val=0.0, desciption='vehicle type - tilt-wing or helicopter')
+        self.add_param('rProp', val=0.0, description='propellor/rotor radius')
+        self.add_param('V', val=0.0, description='cruise speed')
+        self.add_param('W', val=0.0, description='weight')
+        self.add_param('range', val=0.0, description='range')
+        self.add_param('hoverOutputPBattery', val=0.0, description='TODO')
+        self.add_param('cruiseOutputPBattery', val=0.0, description='TODO')
+        self.add_param('loiterOutputPBattery', val=0.0, description='TODO')
 
-			# Compute cruise time
-			cruiseTime = params['range'] / V # sec
+        self.add_output('E', val=0.0, description='total energy use in reserve mission')
+        self.add_output('t', val=0.0, description='flight time for reserve mission')
 
-			# Loiter time
-			loiterTime = 17 * 60 # 20 minute total reserve
 
-			# Compute total energy use (kW-hr)
-			E = (hoverOutput_PBattery * hoverTime + cruiseOutput_PBattery * cruiseTime + loiterOutput_PBattery * loiterTime) * 2.77778e-7 # kW-hr
+    def solve_nonlinear(self, params, unknowns, resids): #QUESTION: does this always need to be named solve_nonlinear
+        if (params['vehicle'] == 0 or params['vehicle'] == 1):
+            # Reserve mission
+            hoverTime = 180 * 2 # sec to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing and repeated for diversion
 
-			# Compute total flight time
-			t = hoverTime + cruiseTime + loiterTime;
-		
-		else:
-			print('Unrecognized vehicle!')
+            # Compute cruise time
+            cruiseTime = params['range'] / params['V'] # sec
+
+            # Loiter time
+            loiterTime = 17 * 60 # 20 minute total reserve
+
+            # Compute total energy use (kW-hr)
+            E = (params['hoverOutputPBattery'] * hoverTime + params['cruiseOutputPBattery'] * cruiseTime + params['loiterOutputPBattery'] * loiterTime) * 2.77778e-7 # kW-hr
+
+            # Compute total flight time
+            t = hoverTime + cruiseTime + loiterTime;
+
+        else:
+            print('Unrecognized vehicle!')

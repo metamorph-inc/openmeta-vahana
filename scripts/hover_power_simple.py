@@ -58,7 +58,7 @@ class hover_power(Component):
             omega = Vtip / params['rProp']
             
             # Thrust per prop / rotor at hover
-            THover = W / nProp
+            THover = params['W'] / nProp
             
             # Compute thrust coefficient
             Ct = THover / (rho * math.pi * params['rProp']**2 * Vtip**2)
@@ -101,7 +101,7 @@ class hover_power(Component):
             Vtip = omega * params['rProp']
             
             # Thrust per prop / rotor at hover
-            THover = W / nProp
+            THover = params['W'] / nProp
             
             # Compute thrust coefficient
             Ct = THover / (rho * math.pi * params['rProp']**2 * Vtip**2)
