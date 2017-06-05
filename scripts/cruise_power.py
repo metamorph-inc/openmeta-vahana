@@ -1,8 +1,19 @@
-"""
-Translating MatLab to Python 2.7
+# Company: MetaMorph, Inc.
+# Author(s): Austin Tabulog
+# Email: jcoombe@metamorphsoftware.com
+# Create Date: 6/5/2017
+# Edit Date: 6/5/2017
 
-built from A^3's CruisePower.m code
-"""
+# Conversion of Airbus A^3's vahanaTradeStudy>reserveMission.mat code
+# (located here: https://github.com/VahanaOpenSource/vahanaTradeStudy ) 
+# to Python 2.7 for use in the MetaMorph, Inc. OpenMETA environment.
+
+# Estimate time and energy use for a reserve VTOL mission
+# Inputs:
+#	#TODO
+
+# Outputs:
+#	#TODO
 
 from __future__ import print_function
 
@@ -25,7 +36,8 @@ class CruisePower(Component):
 
         self.add_output('etaProp', val=1.0, description='efficiency of Prop')
         self.add_output('etaMotor', val=1.0, description='efficiency of motor')
-        self.add_output('VStall', val=35, description='Stall speed [m/s]')      self.add_output('CLmax', val=1.0, description='maximum CL for aircraft, section cl is much higher')
+        self.add_output('VStall', val=35, description='Stall speed [m/s]')      
+		self.add_output('CLmax', val=1.0, description='maximum CL for aircraft, section cl is much higher')
         self.add_output('rho', val=1.0, description='density of air at cruise altitude. should be solved for using a database of altitude information')
 
         self.add_output('b', val=1.0, description='reference wingspan assuming 2 props per wing with outboard props are at wingtips, 1 meter wide fuselage plus clearance between props and fuselage')
@@ -58,7 +70,7 @@ class CruisePower(Component):
         
         
     def solve_nonlinear(self, params, unknowns, resids):
-       unknowns['SCdFuse'] = 0.35
+		unknowns['SCdFuse'] = 0.35
        
         if(params['vehicle'] == 0):
             unknowns['VStall'] = 35 # m/s
@@ -97,7 +109,7 @@ class CruisePower(Component):
 
             # Estimate drag at cruise using quadratic drag polar
             unknowns['D'] = 0.5 * unknowns['rho'] * params['V']^2 * (unknowns['S'] * (unknowns['Cd0'] + ...
-                unknowns['CL']^2 / (math.pi * unknowns['AR'] * unknowns['e'])) + unknowns['SCdFuse'])
+			unknowns['CL']^2 / (math.pi * unknowns['AR'] * unknowns['e'])) + unknowns['SCdFuse'])
 
             # Compute cruise power estimate
             unknowns['PCruise'] = unknowns['D'] * params['V']
@@ -148,7 +160,6 @@ class CruisePower(Component):
                     unknowns['Ct'] / 2 * (unknowns['mu']^2 + 2*unknowns['lambda']^2) / ...
                     (unknowns['mu']^2 + unknowns['lambda']^2)^1.5) / ...
                     (1 + unknowns['Ct']/2 * unknowns['lambda'] / (unknowns['mu']^2 + unknowns['lambda']^2)^1.5)
-            end
             unknowns['v'] = unknowns['lambda'] * unknowns['omega'] * params['rProp'] - params['V'] * math.sin(unknowns['alpha'])
 
             # Power in forward flight (see "Helicopter Theory" section 5-12)
@@ -167,8 +178,6 @@ class CruisePower(Component):
             # Battery power
             unknowns['PBattery'] = unknowns['PCruise'] / etaMotor
 
-            else
+		else
 
             error('Unrecognized vehicle!')
-
-            end
