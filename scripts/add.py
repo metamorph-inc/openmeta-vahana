@@ -11,6 +11,7 @@ class Add(Component):
         
         self.add_param('x', val=1.0, description='thing one to add')
         self.add_param('y', val=2.0, description='thing two to add')
+        self.add_param('z', val=2.0, description='thing two to add')
 		
         self.add_output('a', val=3.0, description='results of adding thing one and thing two')
         

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{13842D28-B1CC-40DA-9D4D-5B06030E2BDF}" cdate="Fri Jun 02 10:55:01 2017" mdate="Fri Jun 02 10:55:01 2017" version="" metaguid="{6A4988F6-2BA5-034A-269C-7F3F38BF0261}" metaversion="14.13-t15" metaname="CyPhyML">
+<project guid="{C0023121-90BD-477D-96C8-31A8E941B324}" cdate="Fri Jun 02 10:55:01 2017" mdate="Fri Jun 02 10:55:01 2017" version="" metaguid="{6A4988F6-2BA5-034A-269C-7F3F38BF0261}" metaversion="14.13-t15" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
@@ -26201,7 +26201,7 @@
 					<connpoint role="src" target="id-0067-0000018a"/>
 				</connection>
 			</model>
-			<model id="id-0065-00000264" kind="Component" guid="{0207d81b-0efd-41f0-978f-c28696dcc7ad}" relid="0xa" childrelidcntr="0x24">
+			<model id="id-0065-00000264" kind="Component" guid="{0207d81b-0efd-41f0-978f-c28696dcc7ad}" relid="0xa" childrelidcntr="0x26">
 				<name>Wings</name>
 				<attribute kind="AVMID">
 					<value>5821c4f0-346d-45ef-937d-a7a4d989806a</value>
@@ -26630,7 +26630,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>70,154</value>
+								<value>70,252</value>
 							</regnode>
 						</regnode>
 					</regnode>
@@ -26845,6 +26845,54 @@
 						<value>CAD\COUNTERCLOCKWISEROTOR.PRT</value>
 					</attribute>
 				</atom>
+				<atom id="id-0066-0000147a" kind="CustomFormula" role="CustomFormula" guid="{395f6c28-7325-4aac-85ec-bdbf55ae6d65}" relid="0x26">
+					<name>CustomFormula</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>315,203</value>
+							</regnode>
+						</regnode>
+						<regnode name="ManufacturingAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>329,490</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>329,490</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>329,490</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>329,490</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>329,490</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Expression" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+				</atom>
 				<reference id="id-0067-0000018e" kind="Property" role="Property" guid="{6a092d5f-904d-4e75-a4ec-f43a0109fc74}" relid="0xa">
 					<name>MODELED_BY</name>
 					<regnode name="PartRegs" status="undefined">
@@ -27020,7 +27068,7 @@
 						<regnode name="All" status="undefined">
 							<value></value>
 							<regnode name="Position" isopaque="yes">
-								<value>7,7</value>
+								<value>56,70</value>
 							</regnode>
 						</regnode>
 						<regnode name="BehaviorModelsAspect" status="undefined">
@@ -27257,6 +27305,90 @@
 					</attribute>
 					<attribute kind="Value">
 						<value>0.2</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-000009dc" kind="Property" role="Property" guid="{c354fc89-c808-4a56-8fc7-4127383e0db7}" relid="0x25">
+					<name>Mass</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>98,413</value>
+							</regnode>
+						</regnode>
+						<regnode name="BehaviorModelsAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>98,413</value>
+							</regnode>
+						</regnode>
+						<regnode name="ManufacturingAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>98,413</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>98,413</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>98,413</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>98,413</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>98,413</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="IsProminent" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Tolerance" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value" status="meta">
+						<value></value>
 					</attribute>
 				</reference>
 				<connection id="id-0068-00000040" kind="CADParameterPortMap" role="CADParameterPortMap" guid="{a4bd2605-327f-4a5f-9ddf-73aafd867c64}" relid="0xb">
@@ -29861,7 +29993,7 @@
 				</atom>
 			</model>
 		</folder>
-		<folder id="id-006a-0000001b" relid="0x9" childrelidcntr="0xa" kind="Testing" guid="{8f0f1fc0-9dcb-456b-b37f-f883b87968cb}">
+		<folder id="id-006a-0000001b" relid="0x9" childrelidcntr="0xb" kind="Testing" guid="{8f0f1fc0-9dcb-456b-b37f-f883b87968cb}">
 			<name>Testing</name>
 			<folder id="id-006a-0000001c" relid="0x2" childrelidcntr="0x1" kind="WorkflowDefinitionFolder" guid="{3d2d9aae-e442-4712-a220-fe20cafda631}">
 				<name>WorkflowDefinitions</name>
@@ -29890,9 +30022,474 @@
 					</atom>
 				</model>
 			</folder>
-			<folder id="id-006a-0000001d" relid="0x3" childrelidcntr="0x1" kind="ParametricExplorationFolder" guid="{9f47ef8e-4c60-4ee8-98a1-6d0702b0812a}">
+			<folder id="id-006a-0000001d" relid="0x3" childrelidcntr="0x2" kind="ParametricExplorationFolder" guid="{9f47ef8e-4c60-4ee8-98a1-6d0702b0812a}">
 				<name>ParametricExploration</name>
-				<model id="id-0065-00000504" kind="ParametricExploration" guid="{26f66001-184b-442f-af90-d13a8d58fa59}" relid="0x1" childrelidcntr="0x45">
+				<folder id="id-006a-00000027" relid="0x2" childrelidcntr="0x2" kind="ParametricExplorationFolder" guid="{358651e3-6226-4ba5-945a-0acbc37acbfa}">
+					<name>Debug</name>
+					<model id="id-0065-00000628" kind="ParametricExploration" guid="{41ab99c5-1547-422c-bd32-b174b73a7c54}" relid="0x1" childrelidcntr="0x4d">
+						<name>TestMissions</name>
+						<model id="id-0065-00000629" kind="ParameterStudy" role="ParameterStudy" guid="{479219cd-8d00-4acf-a867-a5e4214226ac}" relid="0x2" childrelidcntr="0x11">
+							<name>ParameterStudy</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="TestBenchCompositionAspect" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>266,56</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="portLabelLength" isopaque="yes">
+								<value>0</value>
+							</regnode>
+							<attribute kind="Code">
+								<value>num_samples = 4</value>
+							</attribute>
+							<attribute kind="DOEType">
+								<value>Uniform</value>
+							</attribute>
+							<attribute kind="SurrogateType" status="meta">
+								<value>None</value>
+							</attribute>
+							<reference id="id-0067-000009e4" kind="DesignVariable" role="DesignVariable" guid="{539fb15c-cf84-4cb7-b372-876781e6dad2}" relid="0x1">
+								<name>TripDistance</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>322,84</value>
+										</regnode>
+									</regnode>
+								</regnode>
+								<attribute kind="Range">
+									<value>10000,200000</value>
+								</attribute>
+							</reference>
+							<reference id="id-0067-000009e5" kind="DesignVariable" role="DesignVariable" guid="{1bfc4025-9c2e-4c58-af94-79c026eb857c}" relid="0x2">
+								<name>RotorRadius</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>322,154</value>
+										</regnode>
+									</regnode>
+								</regnode>
+								<attribute kind="Range">
+									<value>1,10</value>
+								</attribute>
+							</reference>
+							<reference id="id-0067-000009e6" kind="Objective" role="Objective" guid="{d85945bc-b40b-44db-821b-50b0782cd287}" relid="0x3">
+								<name>EReserve</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>770,238</value>
+										</regnode>
+									</regnode>
+								</regnode>
+							</reference>
+							<reference id="id-0067-000009e7" kind="DesignVariable" role="DesignVariable" guid="{dc22b480-06b3-428d-bbab-8b5239fe3d94}" relid="0x7">
+								<name>CruiseSpeed</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>322,224</value>
+										</regnode>
+									</regnode>
+								</regnode>
+								<attribute kind="Range">
+									<value>30,80</value>
+								</attribute>
+							</reference>
+							<reference id="id-0067-000009ea" kind="DesignVariable" role="DesignVariable" guid="{b51ba7fe-51f8-4eab-b876-9d63cae9e15d}" relid="0xa">
+								<name>MaxTakeoffMass</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>322,434</value>
+										</regnode>
+									</regnode>
+								</regnode>
+								<attribute kind="Range">
+									<value>100,9999</value>
+								</attribute>
+							</reference>
+							<reference id="id-0067-000009ed" kind="Objective" role="Objective" guid="{4d9cb4dd-7560-4786-af26-a68156bdb755}" relid="0x10">
+								<name>ENominal</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>770,168</value>
+										</regnode>
+									</regnode>
+								</regnode>
+							</reference>
+						</model>
+						<reference id="id-0067-000009ef" kind="TestBenchRef" role="TestBenchRef" guid="{31111bb6-ac37-4274-b1dc-ee9f598a491f}" relid="0x13" referred="id-0065-00000517">
+							<name>ComputePerformance</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="TestBenchCompositionAspect" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>1736,7</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="portLabelLength" isopaque="yes">
+								<value>0</value>
+							</regnode>
+						</reference>
+						<reference id="id-0067-000009f0" kind="TestBenchRef" role="TestBenchRef" guid="{1e451e4b-4252-4b21-8188-521f65cdcbd2}" relid="0x14" referred="id-0065-0000056e">
+							<name>SimpleMission</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="TestBenchCompositionAspect" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>301,224</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="portLabelLength" isopaque="yes">
+								<value>0</value>
+							</regnode>
+						</reference>
+						<reference id="id-0067-000009f6" kind="TestBenchRef" role="TestBenchRef" guid="{e5336087-db94-40ca-8014-2d8349ac7c70}" relid="0x22" referred="id-0065-0000056b">
+							<name>ReserveMission</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="TestBenchCompositionAspect" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>301,350</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="portLabelLength" isopaque="yes">
+								<value>0</value>
+							</regnode>
+						</reference>
+						<connection id="id-0068-00000961" kind="VariableSweep" role="VariableSweep" guid="{09821957-d569-498d-8d10-4863a3027f84}" relid="0x23">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-0000082b" refs="id-0067-000009f6"/>
+							<connpoint role="src" target="id-0067-000009e4"/>
+						</connection>
+						<connection id="id-0068-00000962" kind="VariableSweep" role="VariableSweep" guid="{cf68998d-bb04-49d2-925b-195850a879f4}" relid="0x24">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009a8" refs="id-0067-000009f6"/>
+							<connpoint role="src" target="id-0067-000009e5"/>
+						</connection>
+						<connection id="id-0068-00000963" kind="VariableSweep" role="VariableSweep" guid="{2cea47d1-befd-46f9-b842-f389903dba19}" relid="0x25">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009a9" refs="id-0067-000009f6"/>
+							<connpoint role="src" target="id-0067-000009e7"/>
+						</connection>
+						<connection id="id-0068-00000964" kind="VariableSweep" role="VariableSweep" guid="{fd33585e-b65c-4eed-88dd-4391535682e0}" relid="0x26">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009aa" refs="id-0067-000009f6"/>
+							<connpoint role="src" target="id-0067-000009ea"/>
+						</connection>
+						<connection id="id-0068-0000096a" kind="VariableSweep" role="VariableSweep" guid="{2daf8deb-c153-4ac8-882c-d29fc6b5a7e8}" relid="0x30">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009c3" refs="id-0067-000009f0"/>
+							<connpoint role="src" target="id-0067-000009ea"/>
+						</connection>
+						<connection id="id-0068-0000096b" kind="VariableSweep" role="VariableSweep" guid="{98186446-a40e-4305-99ee-918aac58dcb7}" relid="0x31">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009c2" refs="id-0067-000009f0"/>
+							<connpoint role="src" target="id-0067-000009e7"/>
+						</connection>
+						<connection id="id-0068-0000096c" kind="VariableSweep" role="VariableSweep" guid="{c88f5b0c-0835-4c9e-a5e5-02578741d0e8}" relid="0x32">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009c1" refs="id-0067-000009f0"/>
+							<connpoint role="src" target="id-0067-000009e5"/>
+						</connection>
+						<connection id="id-0068-0000096d" kind="VariableSweep" role="VariableSweep" guid="{43dbfdfe-dd6e-4dad-b23f-d41bc03642b3}" relid="0x33">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009bf" refs="id-0067-000009f0"/>
+							<connpoint role="src" target="id-0067-000009e4"/>
+						</connection>
+						<connection id="id-0068-00000982" kind="ObjectiveMapping" role="ObjectiveMapping" guid="{65141338-8251-4f01-894b-4bf221da630c}" relid="0x4c">
+							<name>ObjectiveMapping</name>
+							<regnode name="color" isopaque="yes">
+								<value>0x7cadde</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="src" target="id-0067-000009c8" refs="id-0067-000009f0"/>
+							<connpoint role="dst" target="id-0067-000009ed"/>
+						</connection>
+						<connection id="id-0068-00000983" kind="ObjectiveMapping" role="ObjectiveMapping" guid="{ba693dc2-ff67-4fba-8c82-4aa6eaf8e528}" relid="0x4d">
+							<name>ObjectiveMapping</name>
+							<regnode name="color" isopaque="yes">
+								<value>0x7cadde</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="src" target="id-0067-000009ab" refs="id-0067-000009f6"/>
+							<connpoint role="dst" target="id-0067-000009e6"/>
+						</connection>
+					</model>
+					<model id="id-0065-0000062b" kind="ParametricExploration" guid="{0a249be7-3ac5-480b-b7cc-cf433c4a3797}" relid="0x2" childrelidcntr="0x4d">
+						<name>TestReserveMission</name>
+						<model id="id-0065-0000062c" kind="ParameterStudy" role="ParameterStudy" guid="{2f43d753-909b-47e5-80d4-367815179d23}" relid="0x2" childrelidcntr="0x11">
+							<name>ParameterStudy</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="TestBenchCompositionAspect" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>266,56</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="portLabelLength" isopaque="yes">
+								<value>0</value>
+							</regnode>
+							<attribute kind="Code">
+								<value>num_samples = 4</value>
+							</attribute>
+							<attribute kind="DOEType">
+								<value>Uniform</value>
+							</attribute>
+							<attribute kind="SurrogateType" status="meta">
+								<value>None</value>
+							</attribute>
+							<reference id="id-0067-000009fa" kind="DesignVariable" role="DesignVariable" guid="{f7ba52a4-de04-48f3-a7ed-594ec21efc2e}" relid="0x1">
+								<name>TripDistance</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>322,84</value>
+										</regnode>
+									</regnode>
+								</regnode>
+								<attribute kind="Range">
+									<value>10000,200000</value>
+								</attribute>
+							</reference>
+							<reference id="id-0067-000009fb" kind="DesignVariable" role="DesignVariable" guid="{00701317-05f2-4bc6-9420-b94be6c2df24}" relid="0x2">
+								<name>RotorRadius</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>322,154</value>
+										</regnode>
+									</regnode>
+								</regnode>
+								<attribute kind="Range">
+									<value>1,10</value>
+								</attribute>
+							</reference>
+							<reference id="id-0067-000009fc" kind="DesignVariable" role="DesignVariable" guid="{655ec26c-67cc-4b30-a038-88d970e0b4f2}" relid="0xa">
+								<name>MaxTakeoffMass</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>322,434</value>
+										</regnode>
+									</regnode>
+								</regnode>
+								<attribute kind="Range">
+									<value>100,9999</value>
+								</attribute>
+							</reference>
+							<reference id="id-0067-000009fd" kind="Objective" role="Objective" guid="{874005c2-84a8-46a6-b91b-b02528d847db}" relid="0x3">
+								<name>EReserve</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>770,238</value>
+										</regnode>
+									</regnode>
+								</regnode>
+							</reference>
+							<reference id="id-0067-000009fe" kind="DesignVariable" role="DesignVariable" guid="{6417db84-18fa-42bc-aa0c-71399a6886cc}" relid="0x7">
+								<name>CruiseSpeed</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>322,224</value>
+										</regnode>
+									</regnode>
+								</regnode>
+								<attribute kind="Range">
+									<value>30,80</value>
+								</attribute>
+							</reference>
+							<reference id="id-0067-000009ff" kind="Objective" role="Objective" guid="{c5c2d4fd-c886-442c-b5cb-9d287bf8534c}" relid="0x10">
+								<name>ENominal</name>
+								<regnode name="PartRegs" status="undefined">
+									<value></value>
+									<regnode name="TestBenchCompositionAspect" status="undefined">
+										<value></value>
+										<regnode name="Position" isopaque="yes">
+											<value>770,168</value>
+										</regnode>
+									</regnode>
+								</regnode>
+							</reference>
+						</model>
+						<reference id="id-0067-000009f7" kind="TestBenchRef" role="TestBenchRef" guid="{55d450d3-1287-4dd8-9c04-caccf70d9943}" relid="0x22" referred="id-0065-0000056b">
+							<name>ReserveMission</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="TestBenchCompositionAspect" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>301,210</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="portLabelLength" isopaque="yes">
+								<value>0</value>
+							</regnode>
+						</reference>
+						<reference id="id-0067-000009f9" kind="TestBenchRef" role="TestBenchRef" guid="{f7b01770-4d78-4d2c-b764-0aaf0b898ed7}" relid="0x13" referred="id-0065-00000517">
+							<name>ComputePerformance</name>
+							<regnode name="PartRegs" status="undefined">
+								<value></value>
+								<regnode name="TestBenchCompositionAspect" status="undefined">
+									<value></value>
+									<regnode name="Position" isopaque="yes">
+										<value>1736,7</value>
+									</regnode>
+								</regnode>
+							</regnode>
+							<regnode name="portLabelLength" isopaque="yes">
+								<value>0</value>
+							</regnode>
+						</reference>
+						<connection id="id-0068-00000988" kind="VariableSweep" role="VariableSweep" guid="{d87423ed-88d8-4aff-9fad-660db6096c99}" relid="0x26">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009aa" refs="id-0067-000009f7"/>
+							<connpoint role="src" target="id-0067-000009fc"/>
+						</connection>
+						<connection id="id-0068-00000989" kind="VariableSweep" role="VariableSweep" guid="{fd584281-523c-416e-8b1f-d1f98afd6355}" relid="0x25">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009a9" refs="id-0067-000009f7"/>
+							<connpoint role="src" target="id-0067-000009fe"/>
+						</connection>
+						<connection id="id-0068-0000098a" kind="VariableSweep" role="VariableSweep" guid="{4d57173d-b642-46a6-bf3e-a15d505b90f2}" relid="0x24">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-000009a8" refs="id-0067-000009f7"/>
+							<connpoint role="src" target="id-0067-000009fb"/>
+						</connection>
+						<connection id="id-0068-0000098b" kind="VariableSweep" role="VariableSweep" guid="{b6b5d33c-a7a7-4dcf-9069-29c164ec8c4e}" relid="0x23">
+							<name>VariableSweep</name>
+							<regnode name="color" isopaque="yes">
+								<value>0xff80c0</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="dst" target="id-0067-0000082b" refs="id-0067-000009f7"/>
+							<connpoint role="src" target="id-0067-000009fa"/>
+						</connection>
+						<connection id="id-0068-0000098d" kind="ObjectiveMapping" role="ObjectiveMapping" guid="{97e6e4a1-196d-41db-88cc-35fbf9b91bf7}" relid="0x4d">
+							<name>ObjectiveMapping</name>
+							<regnode name="color" isopaque="yes">
+								<value>0x7cadde</value>
+							</regnode>
+							<regnode name="dstStyle" isopaque="yes">
+								<value>arrow</value>
+							</regnode>
+							<connpoint role="src" target="id-0067-000009ab" refs="id-0067-000009f7"/>
+							<connpoint role="dst" target="id-0067-000009fd"/>
+						</connection>
+					</model>
+				</folder>
+				<model id="id-0065-00000504" kind="ParametricExploration" guid="{26f66001-184b-442f-af90-d13a8d58fa59}" relid="0x1" childrelidcntr="0x4c">
 					<name>VahanaPET</name>
 					<model id="id-0065-00000505" kind="ParameterStudy" role="ParameterStudy" guid="{e689bab7-718b-414c-b39e-66fc3cc71ea5}" relid="0x2" childrelidcntr="0x11">
 						<name>ParameterStudy</name>
@@ -30078,7 +30675,7 @@
 							<regnode name="TestBenchCompositionAspect" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>1862,182</value>
+									<value>483,875</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -30093,7 +30690,7 @@
 							<regnode name="TestBenchCompositionAspect" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>917,504</value>
+									<value>693,322</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -30108,7 +30705,7 @@
 							<regnode name="TestBenchCompositionAspect" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>560,329</value>
+									<value>413,203</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -30138,7 +30735,7 @@
 							<regnode name="TestBenchCompositionAspect" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>266,525</value>
+									<value>105,413</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -30153,7 +30750,7 @@
 							<regnode name="TestBenchCompositionAspect" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>266,637</value>
+									<value>105,539</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -30168,7 +30765,22 @@
 							<regnode name="TestBenchCompositionAspect" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>1302,588</value>
+									<value>686,574</value>
+								</regnode>
+							</regnode>
+						</regnode>
+						<regnode name="portLabelLength" isopaque="yes">
+							<value>0</value>
+						</regnode>
+					</reference>
+					<reference id="id-0067-000009dd" kind="TestBenchRef" role="TestBenchRef" guid="{300f0819-1714-4c7c-9de2-be55060daa6c}" relid="0x47" referred="id-0065-00000627">
+						<name>Extract</name>
+						<regnode name="PartRegs" status="undefined">
+							<value></value>
+							<regnode name="TestBenchCompositionAspect" status="undefined">
+								<value></value>
+								<regnode name="Position" isopaque="yes">
+									<value>140,812</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -30458,9 +31070,42 @@
 						<connpoint role="src" target="id-0067-000009ce" refs="id-0067-000009c9"/>
 						<connpoint role="dst" target="id-0067-000009d3"/>
 					</connection>
+					<connection id="id-0068-0000095e" kind="VariableSweep" role="VariableSweep" guid="{5216cec6-c86b-4983-9e20-e68244a87361}" relid="0x48">
+						<name>VariableSweep</name>
+						<regnode name="color" isopaque="yes">
+							<value>0xff80c0</value>
+						</regnode>
+						<regnode name="dstStyle" isopaque="yes">
+							<value>arrow</value>
+						</regnode>
+						<connpoint role="src" target="id-0067-0000071b"/>
+						<connpoint role="dst" target="id-0067-000009d9" refs="id-0067-000009dd"/>
+					</connection>
+					<connection id="id-0068-0000095f" kind="VariableSweep" role="VariableSweep" guid="{47832c89-c89d-46bd-bb97-f1000568a6e1}" relid="0x49">
+						<name>VariableSweep</name>
+						<regnode name="color" isopaque="yes">
+							<value>0xff80c0</value>
+						</regnode>
+						<regnode name="dstStyle" isopaque="yes">
+							<value>arrow</value>
+						</regnode>
+						<connpoint role="src" target="id-0067-00000998"/>
+						<connpoint role="dst" target="id-0067-000009e1" refs="id-0067-000009dd"/>
+					</connection>
+					<connection id="id-0068-00000960" kind="VariableSweep" role="VariableSweep" guid="{6e4e3568-1053-4494-a197-ff75dcfe2989}" relid="0x4a">
+						<name>VariableSweep</name>
+						<regnode name="color" isopaque="yes">
+							<value>0xff80c0</value>
+						</regnode>
+						<regnode name="dstStyle" isopaque="yes">
+							<value>arrow</value>
+						</regnode>
+						<connpoint role="src" target="id-0067-0000071a"/>
+						<connpoint role="dst" target="id-0067-000009e2" refs="id-0067-000009dd"/>
+					</connection>
 				</model>
 			</folder>
-			<model id="id-0065-0000046f" kind="TestBench" guid="{e6afb848-9971-4c45-b256-8bb8c8a53367}" relid="0x1" childrelidcntr="0x10">
+			<model id="id-0065-0000046f" kind="TestBench" guid="{e6afb848-9971-4c45-b256-8bb8c8a53367}" relid="0x1" childrelidcntr="0x12">
 				<name>CAD</name>
 				<regnode name="TestBenchUniqueName" isopaque="yes">
 					<value>CAD</value>
@@ -30873,6 +31518,51 @@
 						<value></value>
 					</attribute>
 				</reference>
+				<reference id="id-0067-000009d4" kind="Metric" role="Metric" guid="{d5e6a04c-c703-4d75-a4bb-2d22c6d9ce29}" relid="0x11">
+					<name>Metric</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>700,147</value>
+							</regnode>
+						</regnode>
+						<regnode name="ExternalPorts" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>700,147</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>700,147</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>700,147</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>700,147</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value" status="meta">
+						<value></value>
+					</attribute>
+				</reference>
 				<connection id="id-0068-000004f9" kind="CADComputation2Metric" role="CADComputation2Metric" guid="{f76d61e0-a493-4700-ae48-a4113a265724}" relid="0x6">
 					<name>CADComputation2Metric</name>
 					<connpoint role="src" target="id-0066-00000c10"/>
@@ -30912,6 +31602,17 @@
 					</attribute>
 					<connpoint role="src" target="id-0067-0000073f"/>
 					<connpoint role="dst" target="id-0067-0000074b" refs="id-0067-00000776"/>
+				</connection>
+				<connection id="id-0068-00000958" kind="ValueFlow" role="ValueFlow" guid="{61f44744-8ed8-4fc2-862c-cf83d6ed6d8b}" relid="0x12">
+					<name>ValueFlow</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>w</value>
+					</regnode>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="src" target="id-0067-0000074a" refs="id-0067-00000776"/>
+					<connpoint role="dst" target="id-0067-000009d4"/>
 				</connection>
 			</model>
 			<model id="id-0065-00000517" kind="TestBench" guid="{46332ea3-176d-4d91-907b-3794cccce82b}" relid="0x4" childrelidcntr="0x19">
@@ -32059,18 +32760,6 @@
 						<value></value>
 					</attribute>
 				</reference>
-				<reference id="id-0067-0000083b" kind="TopLevelSystemUnderTest" role="TopLevelSystemUnderTest" guid="{89a2f37e-5050-4992-8d64-9daed3acf80c}" relid="0x3" referred="id-0065-00000518">
-					<name>VahanaDS</name>
-					<regnode name="PartRegs" status="undefined">
-						<value></value>
-						<regnode name="All" status="undefined">
-							<value></value>
-							<regnode name="Position" isopaque="yes">
-								<value>406,182</value>
-							</regnode>
-						</regnode>
-					</regnode>
-				</reference>
 				<reference id="id-0067-000009b1" kind="Parameter" role="Parameter" guid="{bf788afe-6448-44f0-9bc4-6127c739d223}" relid="0x4">
 					<name>RotorRadius</name>
 					<regnode name="PartRegs" status="undefined">
@@ -33189,18 +33878,6 @@
 					<attribute kind="Value" status="meta">
 						<value></value>
 					</attribute>
-				</reference>
-				<reference id="id-0067-0000083d" kind="TopLevelSystemUnderTest" role="TopLevelSystemUnderTest" guid="{fdfeec82-dbbe-4e5b-ae99-c78eb8c0515b}" relid="0x4" referred="id-0065-00000518">
-					<name>VahanaDS</name>
-					<regnode name="PartRegs" status="undefined">
-						<value></value>
-						<regnode name="All" status="undefined">
-							<value></value>
-							<regnode name="Position" isopaque="yes">
-								<value>525,231</value>
-							</regnode>
-						</regnode>
-					</regnode>
 				</reference>
 				<reference id="id-0067-000009b7" kind="Parameter" role="Parameter" guid="{5453312c-2852-4bdc-b079-7e91a9e04c80}" relid="0x5">
 					<name>RotorRadius</name>
@@ -34661,6 +35338,337 @@
 					</attribute>
 				</reference>
 			</model>
+			<model id="id-0065-00000627" kind="TestBench" guid="{3a929e0d-980f-4f64-a818-670bad19f166}" relid="0xb" childrelidcntr="0x11">
+				<name>Extract</name>
+				<regnode name="borderColor" isopaque="yes">
+					<value>0xa52a00</value>
+				</regnode>
+				<regnode name="color" isopaque="yes">
+					<value>0xffad5b</value>
+				</regnode>
+				<regnode name="itemShadowCast" isopaque="yes">
+					<value>true</value>
+				</regnode>
+				<regnode name="shadowColor" isopaque="yes">
+					<value>0x666666</value>
+				</regnode>
+				<regnode name="shadowThickness" isopaque="yes">
+					<value>12</value>
+				</regnode>
+				<attribute kind="CopyResults" status="meta">
+					<value>false</value>
+				</attribute>
+				<attribute kind="SpreadsheetLoc" status="meta">
+					<value></value>
+				</attribute>
+				<attribute kind="Type" status="meta">
+					<value>SimpleCalc</value>
+				</attribute>
+				<reference id="id-0067-000009d5" kind="TopLevelSystemUnderTest" role="TopLevelSystemUnderTest" guid="{947c2e7e-4431-44a4-9369-6ea83d752f73}" relid="0x1" referred="id-0065-00000518">
+					<name>VahanaDS</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>392,119</value>
+							</regnode>
+						</regnode>
+					</regnode>
+				</reference>
+				<reference id="id-0067-000009d6" kind="Metric" role="Metric" guid="{d38e9f27-5cb1-4f0a-aeaa-e49655ba9092}" relid="0x2">
+					<name>Metric</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>805,245</value>
+							</regnode>
+						</regnode>
+						<regnode name="ExternalPorts" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>805,245</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>805,245</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>805,245</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>805,245</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value" status="meta">
+						<value></value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-000009d9" kind="Parameter" role="Parameter" guid="{e36aef2f-d6fa-41c9-989b-2432f4bc31b0}" relid="0x7" referred="id-0065-000000aa">
+					<name>RProp</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,112</value>
+							</regnode>
+						</regnode>
+						<regnode name="BehaviorModelsAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>105,322</value>
+							</regnode>
+						</regnode>
+						<regnode name="DesignSpaceAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>77,77</value>
+							</regnode>
+						</regnode>
+						<regnode name="ManufacturingAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>105,322</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>105,322</value>
+							</regnode>
+						</regnode>
+						<regnode name="SolidModeling" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>105,322</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>105,322</value>
+							</regnode>
+						</regnode>
+						<regnode name="ValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>105,322</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value">
+						<value>0.2</value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-000009e1" kind="Parameter" role="Parameter" guid="{2d65ed9e-3c45-4848-9e42-4b03249b0654}" relid="0x10">
+					<name>BatteryMass</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,70</value>
+							</regnode>
+						</regnode>
+						<regnode name="ExternalPorts" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,49</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,49</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,49</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,49</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value" status="meta">
+						<value></value>
+					</attribute>
+				</reference>
+				<reference id="id-0067-000009e2" kind="Parameter" role="Parameter" guid="{807ac2df-deec-4728-b634-9188d8021443}" relid="0x11">
+					<name>Range</name>
+					<regnode name="PartRegs" status="undefined">
+						<value></value>
+						<regnode name="All" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,154</value>
+							</regnode>
+						</regnode>
+						<regnode name="ExternalPorts" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,154</value>
+							</regnode>
+						</regnode>
+						<regnode name="SimulinkAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,154</value>
+							</regnode>
+						</regnode>
+						<regnode name="SystemCAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,154</value>
+							</regnode>
+						</regnode>
+						<regnode name="TBValueFlowAspect" status="undefined">
+							<value></value>
+							<regnode name="Position" isopaque="yes">
+								<value>56,154</value>
+							</regnode>
+						</regnode>
+					</regnode>
+					<attribute kind="ComputationType" status="meta">
+						<value>Addition</value>
+					</attribute>
+					<attribute kind="DataType" status="meta">
+						<value>String</value>
+					</attribute>
+					<attribute kind="DefaultValue" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Description" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Dimension" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Disable" status="meta">
+						<value>false</value>
+					</attribute>
+					<attribute kind="ID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="ManagedGUID" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Range" status="meta">
+						<value>-inf..inf</value>
+					</attribute>
+					<attribute kind="Type" status="meta">
+						<value></value>
+					</attribute>
+					<attribute kind="Value" status="meta">
+						<value></value>
+					</attribute>
+				</reference>
+				<connection id="id-0068-00000959" kind="ValueFlow" role="ValueFlow" guid="{e49f7af6-cf6e-4c92-924c-6dffd7dcb893}" relid="0x3">
+					<name>ValueFlow</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>w</value>
+					</regnode>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="src" target="id-0067-0000074a" refs="id-0067-000009d5"/>
+					<connpoint role="dst" target="id-0067-000009d6"/>
+				</connection>
+				<connection id="id-0068-0000095d" kind="ValueFlow" role="ValueFlow" guid="{1af3dfb1-57e6-429d-8489-990744e18b18}" relid="0xc">
+					<name>ValueFlow</name>
+					<regnode name="autorouterPref" isopaque="yes">
+						<value>E</value>
+					</regnode>
+					<attribute kind="FormulaVariableName" status="meta">
+						<value></value>
+					</attribute>
+					<connpoint role="dst" target="id-0067-0000074b" refs="id-0067-000009d5"/>
+					<connpoint role="src" target="id-0067-000009d9"/>
+				</connection>
+			</model>
 		</folder>
 		<folder id="id-006a-0000001e" relid="0xa" childrelidcntr="0x1" kind="DesignSpace" guid="{a9b7143c-3d53-4def-8e16-6336be6eaed6}">
 			<name>DesignSpaces</name>
@@ -34687,7 +35695,7 @@
 				<attribute kind="NumAssociatedConfigs">
 					<value>2/2</value>
 				</attribute>
-				<model id="id-0065-0000051a" kind="DesignContainer" role="DesignContainer" guid="{1e79623b-5e08-4c9d-9ef4-3a26dd447656}" relid="0x7" childrelidcntr="0x1d">
+				<model id="id-0065-0000051a" kind="DesignContainer" role="DesignContainer" guid="{1e79623b-5e08-4c9d-9ef4-3a26dd447656}" relid="0x7" childrelidcntr="0x1f">
 					<name>TiltWing</name>
 					<regnode name="PartRegs" status="undefined">
 						<value></value>
@@ -34807,7 +35815,7 @@
 							<regnode name="All" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>385,399</value>
+									<value>259,490</value>
 								</regnode>
 							</regnode>
 							<regnode name="SimulinkAspect" status="undefined">
@@ -34999,7 +36007,7 @@
 							<regnode name="All" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>119,259</value>
+									<value>35,364</value>
 								</regnode>
 							</regnode>
 							<regnode name="BehaviorModelsAspect" status="undefined">
@@ -35083,7 +36091,7 @@
 							<regnode name="All" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>119,301</value>
+									<value>42,406</value>
 								</regnode>
 							</regnode>
 							<regnode name="BehaviorModelsAspect" status="undefined">
@@ -35296,7 +36304,7 @@
 							<regnode name="All" status="undefined">
 								<value></value>
 								<regnode name="Position" isopaque="yes">
-									<value>1183,497</value>
+									<value>910,511</value>
 								</regnode>
 							</regnode>
 						</regnode>
@@ -35421,6 +36429,25 @@
 						</attribute>
 						<connpoint role="dst" target="id-0066-00000f73"/>
 						<connpoint role="src" target="id-0067-00000720" refs="id-0067-00000760"/>
+					</connection>
+					<connection id="id-0068-00000956" kind="ValueFlow" role="ValueFlow" guid="{23eabc86-205b-41af-823d-c451cad62355}" relid="0x1e">
+						<name>ValueFlow</name>
+						<regnode name="autorouterPref" isopaque="yes">
+							<value>E</value>
+						</regnode>
+						<attribute kind="FormulaVariableName" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="dst" target="id-0067-00000745" refs="id-0067-0000075d"/>
+						<connpoint role="src" target="id-0067-0000075c"/>
+					</connection>
+					<connection id="id-0068-00000957" kind="ValueFlow" role="ValueFlow" guid="{127cb510-d02c-4753-b025-51a095b24ebc}" relid="0x1f">
+						<name>ValueFlow</name>
+						<attribute kind="FormulaVariableName" status="meta">
+							<value></value>
+						</attribute>
+						<connpoint role="dst" target="id-0067-00000746" refs="id-0067-0000075e"/>
+						<connpoint role="src" target="id-0067-0000075c"/>
 					</connection>
 				</model>
 				<model id="id-0065-0000051b" kind="DesignContainer" role="DesignContainer" guid="{d6ab5c45-a57b-466a-bf8e-11b08c0eefc9}" relid="0x8" childrelidcntr="0x1f">
