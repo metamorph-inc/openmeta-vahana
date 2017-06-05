@@ -1,0 +1,23 @@
+{
+  "Project": {
+    "Components": [],
+    "DesignSpaceModels": [],
+    "Configurations": [],
+    "TestBenches": [],
+    "Results": {
+      "UrlHints": [
+        "./results/results.metaresults.json"
+      ]
+    },
+    "Requirements": {
+      "UrlHints": [
+        "./requirements/requirements.json"
+      ],
+      "id": "",
+      "vfLink": "",
+      "text": ""
+    },
+    "CyPhyProjectFileName": "openmeta-vahana.mga",
+    "LastModified": "2017-06-05 18-30-11"
+  }
+}
