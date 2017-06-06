@@ -1,3 +1,5 @@
+'''
+# Name: config_weight.py
 # Company: MetaMorph, Inc.
 # Author(s): Joseph Coombe
 # Email: jcoombe@metamorphsoftware.com
@@ -9,6 +11,7 @@
 # to Python 2.7 for use in the MetaMorph, Inc. OpenMETA environment.
 
 # Mass & weight models for both the tilt-wing and helicopter configurations
+
 # Inputs:
 #   vehicle                 - vehicle type
 #   rProp                   - prop/rotor radius [m]
@@ -45,7 +48,7 @@
 #   mass_tailRotor      - tail rotor mass [kg]
 #   mass_transmission   - transmission mass [kg]
 #   mass_W              - total weight + 10% fudge factor [N]
-
+'''
 
 from __future__ import print_function
 
