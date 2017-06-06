@@ -11,10 +11,10 @@
 # Estimate time and energy use for a simple VTOL mission
 # Inputs:
 #   vehicle                 - vehicle type
-#   rProp                   - prop/rotor radius
-#   V                       - cruise speed
-#   W                       - weight
-#   range                   - range
+#   rProp                   - prop/rotor radius [m]
+#   V                       - cruise speed [m/s]
+#   W                       - weight [N]
+#   range                   - range [m]
 #   hoverOutputPBattery     - #TODO
 #   cruiseOutputPBattery    - #TODO
 #   loiterOutputPBattery    - #TODO

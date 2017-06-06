@@ -1,0 +1,16 @@
+{
+  "SourceDatasets": [
+    {
+      "Kind": 0,
+      "Time": "2017-06-06 09-39-44",
+      "Name": "TestReserveMission",
+      "DesignName": "",
+      "Status": "",
+      "Count": 1,
+      "Folders": [
+        "./r2017-06-06--09-39-47_pojnozmq/testbench_manifest.json"
+      ],
+      "Selected": true
+    }
+  ]
+}

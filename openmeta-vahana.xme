@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE project SYSTEM "mga.dtd">
 
-<project guid="{CA3418F5-406C-47E5-85F3-D272BC0BD473}" cdate="Fri Jun 02 10:55:01 2017" mdate="Fri Jun 02 10:55:01 2017" version="" metaguid="{6A4988F6-2BA5-034A-269C-7F3F38BF0261}" metaversion="14.13-t15" metaname="CyPhyML">
+<project guid="{5C3BC4A0-8089-4AE7-B9EE-60853D018849}" cdate="Fri Jun 02 10:55:01 2017" mdate="Fri Jun 02 10:55:01 2017" version="" metaguid="{6A4988F6-2BA5-034A-269C-7F3F38BF0261}" metaversion="14.13-t15" metaname="CyPhyML">
 	<name>RootFolder</name>
 	<comment></comment>
 	<author></author>
@@ -30292,7 +30292,7 @@
 							<connpoint role="dst" target="id-0067-000009e6"/>
 						</connection>
 					</model>
-					<model id="id-0065-0000062b" kind="ParametricExploration" guid="{0a249be7-3ac5-480b-b7cc-cf433c4a3797}" relid="0x2" childrelidcntr="0x82">
+					<model id="id-0065-0000062b" kind="ParametricExploration" guid="{0a249be7-3ac5-480b-b7cc-cf433c4a3797}" relid="0x2" childrelidcntr="0x86">
 						<name>TestReserveMission</name>
 						<model id="id-0065-0000062c" kind="ParameterStudy" role="ParameterStudy" guid="{2f43d753-909b-47e5-80d4-367815179d23}" relid="0x2" childrelidcntr="0x13">
 							<name>ParameterStudy</name>
@@ -30309,7 +30309,7 @@
 								<value>0</value>
 							</regnode>
 							<attribute kind="Code">
-								<value>num_samples = 40</value>
+								<value>num_samples = 400</value>
 							</attribute>
 							<attribute kind="DOEType">
 								<value>Uniform</value>
@@ -33353,7 +33353,7 @@
 							<connpoint role="src" target="id-0067-00000a29"/>
 							<connpoint role="dst" target="id-0067-00000a63"/>
 						</connection>
-						<connection id="id-0068-000009bd" kind="ObjectiveMapping" role="ObjectiveMapping" guid="{54e79053-9ce9-4e54-9df9-f71ba5e5801a}" relid="0x81">
+						<connection id="id-0068-000009c1" kind="ObjectiveMapping" role="ObjectiveMapping" guid="{2ad4c3c0-be33-4a41-b98c-6f6bf2003f16}" relid="0x85">
 							<name>ObjectiveMapping</name>
 							<regnode name="color" isopaque="yes">
 								<value>0x7cadde</value>
@@ -33364,7 +33364,7 @@
 							<connpoint role="dst" target="id-0067-000009fd"/>
 							<connpoint role="src" target="id-0067-00000a04"/>
 						</connection>
-						<connection id="id-0068-000009be" kind="ObjectiveMapping" role="ObjectiveMapping" guid="{df7c7622-0a4d-4881-857a-9f506fbbeb79}" relid="0x82">
+						<connection id="id-0068-000009c2" kind="ObjectiveMapping" role="ObjectiveMapping" guid="{11dd9935-e1d7-4e64-8093-e96fb01b4b61}" relid="0x86">
 							<name>ObjectiveMapping</name>
 							<regnode name="color" isopaque="yes">
 								<value>0x7cadde</value>
