@@ -31,7 +31,7 @@ if __name__ == '__main__':
                                     arrays.append(unknown)
                                 for c in captures:
                                     if c not in unknowns_new:
-                                        unknowns_new.append(c)
+                                        unknowns_new.append(c.replace('.', '_'))
                     for param in params_orig:
                         if param in line:
                             captures = re.findall('({}\\.\\w+)'.format(param), line)
@@ -40,7 +40,7 @@ if __name__ == '__main__':
                                     arrays.append(param)
                                 for c in captures:
                                     if c not in params_new:
-                                        params_new.append(c)
+                                        params_new.append(c.replace('.', '_'))
                                 
             for name in arrays:
                 if name in params_orig:
