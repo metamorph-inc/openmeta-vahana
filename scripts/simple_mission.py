@@ -8,7 +8,7 @@
 # (located here: https://github.com/VahanaOpenSource/vahanaTradeStudy ) 
 # to Python 2.7 for use in the MetaMorph, Inc. OpenMETA environment.
 
-# Estimate time and energy use for a reserve VTOL mission
+# Estimate time and energy use for a simple VTOL mission
 # Inputs:
 #   vehicle                 - vehicle type
 #   rProp                   - prop/rotor radius
@@ -28,10 +28,10 @@ from __future__ import print_function
 from openmdao.api import Component
 import math
 
-class reserve_mission(Component):
+class simple_mission(Component):
 
     def __init__(self):
-        super(reserve_mission, self).__init__()
+        super(simple_mission, self).__init__()
         self.add_param('vehicle', val=0.0, desciption='vehicle type - tilt-wing or helicopter')
         self.add_param('rProp', val=0.0, description='propellor/rotor radius')
         self.add_param('V', val=0.0, description='cruise speed')
@@ -47,15 +47,15 @@ class reserve_mission(Component):
 
     def solve_nonlinear(self, params, unknowns, resids): #QUESTION: does this always need to be named solve_nonlinear
         if (params['vehicle'] == 0 or params['vehicle'] == 1):
-            # Reserve mission
-            hoverTime = 180 * 2 # sec to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing and repeated for diversion
+            # Basic mission
+            hoverTime = 180 * 1 # sec to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing
 
             # Compute cruise time
             cruiseTime = params['range'] / params['V'] # sec
 
             # Loiter time
-            loiterTime = 17 * 60 # 20 minute total reserve
-
+            loiterTime = 0 # no reserve        
+            
             # Compute total energy use (kW-hr)
             E = (params['hoverOutputPBattery'] * hoverTime + params['cruiseOutputPBattery'] * cruiseTime + params['loiterOutputPBattery'] * loiterTime) * 2.77778e-7 # kW-hr
 
