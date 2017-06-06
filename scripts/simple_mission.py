@@ -54,13 +54,13 @@ class simple_mission(Component):
             cruiseTime = params['range'] / params['V'] # sec
 
             # Loiter time
-            loiterTime = 0 # no reserve        
+            loiterTime = 0 # no reserve
             
             # Compute total energy use (kW-hr)
-            E = (params['hoverOutputPBattery'] * hoverTime + params['cruiseOutputPBattery'] * cruiseTime + params['loiterOutputPBattery'] * loiterTime) * 2.77778e-7 # kW-hr
+            unknowns['E'] = (params['hoverOutputPBattery'] * hoverTime + params['cruiseOutputPBattery'] * cruiseTime + params['loiterOutputPBattery'] * loiterTime) * 2.77778e-7 # kW-hr
 
             # Compute total flight time
-            t = hoverTime + cruiseTime + loiterTime;
+            unknowns['t'] = hoverTime + cruiseTime + loiterTime;
 
         else:
             print('Unrecognized vehicle!')

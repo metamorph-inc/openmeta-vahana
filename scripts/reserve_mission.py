@@ -57,10 +57,10 @@ class reserve_mission(Component):
             loiterTime = 17 * 60 # 20 minute total reserve
 
             # Compute total energy use (kW-hr)
-            E = (params['hoverOutputPBattery'] * hoverTime + params['cruiseOutputPBattery'] * cruiseTime + params['loiterOutputPBattery'] * loiterTime) * 2.77778e-7 # kW-hr
+            unknowns['E'] = (params['hoverOutputPBattery'] * hoverTime + params['cruiseOutputPBattery'] * cruiseTime + params['loiterOutputPBattery'] * loiterTime) * 2.77778e-7 # kW-hr
 
             # Compute total flight time
-            t = hoverTime + cruiseTime + loiterTime;
+            unknowns['t'] = hoverTime + cruiseTime + loiterTime;
 
         else:
             print('Unrecognized vehicle!')
