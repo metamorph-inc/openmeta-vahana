@@ -1,0 +1,17 @@
+{
+  "Kind": 1,
+  "SourceDatasets": [
+    {
+      "Kind": 0,
+      "Time": "",
+      "Name": "6f562116-453d-4073-b61b-196e8bb9074d",
+      "DesignName": "",
+      "Status": "",
+      "Count": 0,
+      "Folders": [
+        ".\\r2017-06-08--18-01-02_dnzfr35c\\testbench_manifest.json"
+      ],
+      "Selected": true
+    }
+  ]
+}

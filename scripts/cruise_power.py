@@ -125,7 +125,7 @@ class CruisePower(Component):
             unknowns['sigma'] = 0.1
 
             # Blade profile drag coefficient
-            Cd0 = 0.012
+            unknowns['Cd0'] = 0.012
 
             # Compute rotation rate at cruise to be at tip mach limit
             unknowns['omega'] = (340.2940 * MTip - params['V']) / params['rProp']

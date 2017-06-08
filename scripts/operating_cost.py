@@ -43,7 +43,7 @@ class operating_cost(Component):
         self.add_param('mass_structural', val=0.0)
         self.add_param('mass_battery', val=0.0)
         self.add_param('mass_motors', val=0.0)
-        self.add_param('costBuildup_toolCostPerVehicle', val=0.0)
+        self.add_param('toolingCost', val=0.0)
         
         self.add_output('C_flightHoursPerYear', val=0.0)
         self.add_output('C_flightsPerYear', val=0.0)
@@ -89,7 +89,7 @@ class operating_cost(Component):
         unknowns['C_nVehiclesPerFacility'] = 200 # Size of storage depot
         
         # Tooling cost
-        unknowns['C_toolCostPerVehicle'] = params['costBuildup_toolCostPerVehicle']
+        unknowns['C_toolCostPerVehicle'] = params['toolingCost']
         
         # Material cost
         unknowns['C_materialCostPerKg'] = 220 # Material plus assmebly cost
