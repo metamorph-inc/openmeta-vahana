@@ -8,29 +8,31 @@
 # (located here: https://github.com/VahanaOpenSource/vahanaTradeStudy ) 
 # to Python 2.7 for use in the MetaMorph, Inc. OpenMETA environment.
 
-# Estimate time and energy use for either a simple or reserve VTOL mission
+# Estimate time and energy use for VTOL missions of varying vehicle types, ranges, loiter time, and trip legs
 # Inputs:
 #   vehicle                 - vehicle type
 #   rProp                   - prop/rotor radius [m]
 #   V                       - cruise speed [m/s]
 #   W                       - weight [N]
 #   range                   - range [m]
-#   hoverOutput_PBattery     - #TODO
-#   cruiseOutput_PBattery    - #TODO
-#   loiterOutput_PBattery    - #TODO
+#   loiterTime              - time spent loitering [s]
+#   hops                    - number of legs or "hops" in the mission
+#   hoverOutput_PBattery    - #TODO
+#   cruiseOutput_PBattery   - #TODO
+#   loiterOutput_PBattery   - #TODO
 
 # Outputs:
-#   E            - Total energy use in reserve mission
-#   t            - Flight time for reserve mission
+#   E            - Total energy use [KW-hr]
+#   t            - Flight time for reserve mission [s]
 
 from __future__ import print_function
 
 from openmdao.api import Component
 import math
 
-class mission(component):
+class mission(Component):
 
-    def__init__(self):
+    def __init__(self):
         super(mission, self).__init__()
         self.add_param('vehicle', val=0.0, desciption='vehicle type - tilt-wing or helicopter')
         self.add_param('rProp', val=0.0, description='propellor/rotor radius')
@@ -43,21 +45,19 @@ class mission(component):
         self.add_param('cruiseOutput_PBattery', val=0.0, description='TODO')
         self.add_param('loiterOutput_PBattery', val=0.0, description='TODO')
         
-        
         self.add_output('E', val=0.0, description='total energy use in reserve mission')
         self.add_output('t', val=0.0, description='flight time for reserve mission')
         
     def solve_nonlinear(self, params, unknowns, resids):
         if (params['vehicle'] == 0 or params['vehicle'] == 1):
             # Mission
-            hoverTime = 180 * params['hops'] #time to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing
+            hoverTime = 180 * params['hops']  # time to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing
             
             # Compute cruise time [s]
             cruiseTime = params['range'] / params['V']
-            cruiseTime = params['range'] / params['V']
             
             # Compute total energy use [KW-hr]
-            unknowns['E'] = (params['hoverOutputPBattery'] * hoverTime + params['cruiseOutputPBattery'] * cruiseTime + params['loiterOutputPBattery'] * params['loiterTime']) * 2.77778e-7
+            unknowns['E'] = (params['hoverOutput_PBattery'] * hoverTime + params['cruiseOutput_PBattery'] * cruiseTime + params['loiterOutput_PBattery'] * params['loiterTime']) * 2.77778e-7
             
             # Compute total flight time [s]
             unknowns['t'] = params['loiterTime'] + hoverTime + cruiseTime
@@ -65,3 +65,4 @@ class mission(component):
         else:
             print('unrecognized vehicle!')
             pass
+            

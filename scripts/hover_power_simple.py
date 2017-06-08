@@ -27,11 +27,12 @@ class hover_power(Component):
         super(hover_power, self).__init__()
         
         self.add_param('vehicle', val=0.0, description='0=tiltwing, 1=helicopter')
-        self.add_param('rProp', val=1.0, description='radius of prop/rotor')
-        self.add_param('W', val=1.0, description='Weight')
-        self.add_param('cruiseOutputOmega', val=2.0, description='Cruise data omega')
+        self.add_param('rProp', val=0.0, description='radius of prop/rotor')
+        self.add_param('W', val=0.0, description='Weight')
+        self.add_param('cruisePower_omega', val=0.0, description='Cruise data omega')
 		
-        self.add_output('PBattery', val=1.0)
+        self.add_output('hoverPower_PBattery', val=0.0)
+        self.add_output('hoverPower_PMax', val=0.0)
         
     def solve_nonlinear(self, params, unknowns, resids):
         # Altitude, compute atmospheric properties
@@ -73,22 +74,22 @@ class hover_power(Component):
             FOM = nProp * THover * math.sqrt(THover / (2 * rho * math.pi * params['rProp']**2)) / PHover
             
             # Battery power
-            unknowns['PBattery'] = PHover / etaMotor
+            unknowns['hoverPower_PBattery'] = PHover / etaMotor
             
             # Maximum thrust per motor
             TMax = THover * ToverW
             
             # Maximum shaft power required (for motor sizing)
             # Note: Tilt-wing multirotor increases thrust by increasing RPM at constant collective
-            PMax = nProp * TMax * \
+            unknowns['hoverPower_PMax'] = nProp * TMax * \
                 (k * math.sqrt(TMax / (2 * rho * math.pi * params['rProp']**2)) + \
                 sigma * Cd0 / 8 * (Vtip * math.sqrt(ToverW))**3 / (TMax / (rho * math.pi * params['rProp']**2)))
             
             # Max battery power
-            PMaxBattery = PMax / etaMotor
+            PMaxBattery = unknowns['hoverPower_PMax'] / etaMotor
             
             # Maximum torque per motor
-            QMax = PMax / (omega * math.sqrt(ToverW))
+            QMax = unknowns['hoverPower_PMax'] / (omega * math.sqrt(ToverW))
 
         elif (params['vehicle'] == 1):
             
@@ -97,7 +98,7 @@ class hover_power(Component):
             k = 1.15 # Effective disk area factor (see "Helicopter Theory" Section 2-6.2)
             etaMotor = 0.85 * 0.98 # Assumed motor and gearbox efficiencies (85% and 98% respectively)
             
-            omega = params['cruiseOutputOmega']
+            omega = params['cruisePower_omega']
             Vtip = omega * params['rProp']
             
             # Thrust per prop / rotor at hover
@@ -121,25 +122,25 @@ class hover_power(Component):
             # Battery power
             # ~10% power to tail rotor (see "Princples of Helicopter Aerodynamics" by Leishman)
             PTailRotor = 0.1 * PHover
-            unknowns['PBattery'] = (PHover + PTailRotor) / etaMotor
+            unknowns['hoverPower_PBattery'] = (PHover + PTailRotor) / etaMotor
             
             # Maximum thrust per motor
             TMax = THover * ToverW
             
             # Maximum shaft power required (for motor sizing)
             # Note: Helicopter increases thrust by increasing collective with constant RPM
-            PMax = nProp * TMax * \
+            unknowns['hoverPower_PMax'] = nProp * TMax * \
                 (k * math.sqrt(TMax / (2 * rho * math.pi * params['rProp']**2)) + \
                 sigma * Cd0 / 8 * (Vtip)**3 / (TMax / (rho * math.pi * params['rProp']**2)))
                 
             # ~15% power to tail rotor for sizing (see "Princples of Helicopter Aerodynamics" by Leishman)
-            PMax = 1.15 * PMax
+            unknowns['hoverPower_PMax'] = 1.15 * unknowns['hoverPower_PMax']
             
             # Max battery power
-            PMaxBattery = PMax / etaMotor
+            PMaxBattery = unknowns['hoverPower_PMax'] / etaMotor
             
             # Maximum torque per motor
-            QMax = PMax / omega
+            QMax = unknowns['hoverPower_PMax'] / omega
             
         else:
             pass
