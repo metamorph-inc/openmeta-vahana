@@ -32,7 +32,9 @@ class hover_power(Component):
         self.add_param('cruisePower_omega', val=0.0, description='Cruise data omega')
 		
         self.add_output('hoverPower_PBattery', val=0.0)
-        self.add_output('hoverPower_PMax', val=0.0)
+        self.add_output('hoverPower_PMax', val=0.0)        
+        self.add_output('hoverPower_VAutoRotation', val=0.0)
+        self.add_output('hoverPower_Vtip', val=0.0)
         
     def solve_nonlinear(self, params, unknowns, resids):
         # Altitude, compute atmospheric properties
@@ -55,14 +57,14 @@ class hover_power(Component):
             MTip = 0.65
             
             # Tip speed limit
-            Vtip = 340.2940 * MTip / math.sqrt(ToverW) # Limit tip speed at max thrust, not hover
-            omega = Vtip / params['rProp']
+            unknowns['hoverPower_Vtip'] = 340.2940 * MTip / math.sqrt(ToverW) # Limit tip speed at max thrust, not hover
+            omega = unknowns['hoverPower_Vtip'] / params['rProp']
             
             # Thrust per prop / rotor at hover
             THover = params['W'] / nProp
             
             # Compute thrust coefficient
-            Ct = THover / (rho * math.pi * params['rProp']**2 * Vtip**2)
+            Ct = THover / (rho * math.pi * params['rProp']**2 * unknowns['hoverPower_Vtip']**2)
             
             # Average blade CL (see "Helicopter Theory" section 2-6.3)
             AvgCL = 6 * Ct / sigma
@@ -70,7 +72,7 @@ class hover_power(Component):
             # Hover Power
             PHover = nProp * THover * \
                 (k * math.sqrt(THover / (2 * rho * math.pi * params['rProp']**2)) + \
-                sigma * Cd0 / 8 * (Vtip)**3 / (THover / (rho * math.pi * params['rProp']**2)))
+                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'])**3 / (THover / (rho * math.pi * params['rProp']**2)))
             FOM = nProp * THover * math.sqrt(THover / (2 * rho * math.pi * params['rProp']**2)) / PHover
             
             # Battery power
@@ -83,7 +85,7 @@ class hover_power(Component):
             # Note: Tilt-wing multirotor increases thrust by increasing RPM at constant collective
             unknowns['hoverPower_PMax'] = nProp * TMax * \
                 (k * math.sqrt(TMax / (2 * rho * math.pi * params['rProp']**2)) + \
-                sigma * Cd0 / 8 * (Vtip * math.sqrt(ToverW))**3 / (TMax / (rho * math.pi * params['rProp']**2)))
+                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'] * math.sqrt(ToverW))**3 / (TMax / (rho * math.pi * params['rProp']**2)))
             
             # Max battery power
             PMaxBattery = unknowns['hoverPower_PMax'] / etaMotor
@@ -99,24 +101,24 @@ class hover_power(Component):
             etaMotor = 0.85 * 0.98 # Assumed motor and gearbox efficiencies (85% and 98% respectively)
             
             omega = params['cruisePower_omega']
-            Vtip = omega * params['rProp']
+            unknowns['hoverPower_Vtip'] = omega * params['rProp']
             
             # Thrust per prop / rotor at hover
             THover = params['W'] / nProp
             
             # Compute thrust coefficient
-            Ct = THover / (rho * math.pi * params['rProp']**2 * Vtip**2)
+            Ct = THover / (rho * math.pi * params['rProp']**2 * unknowns['hoverPower_Vtip']**2)
             
             # Average blade CL (see "Helicopter Theory" Section 2-6.4)
             AvgCL = 6 * Ct / sigma
             
             # Auto-rotation descent rate (see "Helicopter Theory" Section 3-2)
-            VAutoRotation = 1.16 * math.sqrt(THover / (math.pi * params['rProp']**2))
+            unknowns['hoverPower_VAutoRotation'] = 1.16 * math.sqrt(THover / (math.pi * params['rProp']**2))
             
             # Hover Power
             PHover = nProp * THover * \
                 (k * math.sqrt(THover / (2 * rho * math.pi * params['rProp']**2)) + \
-                sigma * Cd0 / 8 * (Vtip)**3 / (THover / (rho * math.pi * params['rProp']**2)))
+                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'])**3 / (THover / (rho * math.pi * params['rProp']**2)))
             FOM = nProp * THover * math.sqrt(THover / (2 * rho * math.pi * params['rProp']**2)) / PHover
             
             # Battery power
@@ -131,7 +133,7 @@ class hover_power(Component):
             # Note: Helicopter increases thrust by increasing collective with constant RPM
             unknowns['hoverPower_PMax'] = nProp * TMax * \
                 (k * math.sqrt(TMax / (2 * rho * math.pi * params['rProp']**2)) + \
-                sigma * Cd0 / 8 * (Vtip)**3 / (TMax / (rho * math.pi * params['rProp']**2)))
+                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'])**3 / (TMax / (rho * math.pi * params['rProp']**2)))
                 
             # ~15% power to tail rotor for sizing (see "Princples of Helicopter Aerodynamics" by Leishman)
             unknowns['hoverPower_PMax'] = 1.15 * unknowns['hoverPower_PMax']

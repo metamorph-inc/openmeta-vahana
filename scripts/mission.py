@@ -1,3 +1,5 @@
+'''
+# Name: mission.py
 # Company: MetaMorph, Inc.
 # Author(s): Austin Tabulog, Joseph Coombe
 # Email: jcoombe@metamorphsoftware.com
@@ -22,8 +24,9 @@
 #   loiterOutput_PBattery   - #TODO
 
 # Outputs:
-#   E            - Total energy use [KW-hr]
+#   E            - Total energy use [kW-hr]
 #   t            - Flight time for reserve mission [s]
+'''
 
 from __future__ import print_function
 

@@ -15,13 +15,13 @@
 # insurance cost, operating facility cost, energy cost, and maintenance. 
 
 # Inputs:
-#   vehicle         - Vehicle type ('tiltwing' or 'helicopter')
-#  rProp            - Propeller or rotor radius [m]
-#  flightTime       - Flight time for nominal flight [sec]
-#  E                - Energy use for flight [kW-hr]
-#  mass_structural  - structural mass [kg]
-#  mass_battery     - battery mass [kg]
-#  mass_motors      - motor mass[kg]
+#   vehicle          - Vehicle type ('tiltwing' or 'helicopter')
+#   rProp            - Propeller or rotor radius [m]
+#   flightTime       - Flight time for nominal flight [sec]
+#   E                - Energy use for flight [kW-hr]
+#   mass_structural  - structural mass [kg]
+#   mass_battery     - battery mass [kg]
+#   mass_motors      - motor mass[kg]
 
 # Outputs:
 #   C               - #TODO

@@ -1,0 +1,195 @@
+{
+  "pet_config": "pet_config.json",
+  "raw_data": "mergedPET.csv",
+  "tabs": ["Explore.R", "DataTable.R", "PETRefinement.R"],
+  "augmented_data": "visualizer_config_data.csv",
+  "variables": {
+    "BatteryMass": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "BatteryMass"
+    },
+    "canard_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "canard_mass"
+    },
+    "CfgID": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "CfgID"
+    },
+    "ConstraintsTest": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "ConstraintsTest"
+    },
+    "CostPerFlight": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "CostPerFlight"
+    },
+    "CruiseSpeed": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "CruiseSpeed"
+    },
+    "ENominal": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "ENominal"
+    },
+    "EReserve": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "EReserve"
+    },
+    "fuselage_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "fuselage_mass"
+    },
+    "GUID": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "GUID"
+    },
+    "hops": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "hops"
+    },
+    "hops.1": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "hops.1"
+    },
+    "loiterTime": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "loiterTime"
+    },
+    "loiterTime.1": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "loiterTime.1"
+    },
+    "MaxTakeoffMass": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "MaxTakeoffMass"
+    },
+    "MotorMass": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "MotorMass"
+    },
+    "payload_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "payload_mass"
+    },
+    "prop_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "prop_mass"
+    },
+    "Range": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "Range"
+    },
+    "RotorRadius": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "RotorRadius"
+    },
+    "tNominal": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "tNominal"
+    },
+    "toolCostPerVehicle": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "toolCostPerVehicle"
+    },
+    "tReserve": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "tReserve"
+    },
+    "Vehicle": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "Vehicle"
+    },
+    "wing_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "wing_mass"
+    },
+    "wire_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "wire_mass"
+    }
+  },
+  "colorings": [],
+  "sets": [],
+  "inputs": {
+    "coloring_source": "None",
+    "DataTable-process_method": "None",
+    "DataTable-use_filtered": true,
+    "DataTable-weightMetrics": {},
+    "Explore-add_contour": false,
+    "Explore-add_pareto": false,
+    "Explore-auto_render": true,
+    "Explore-contour_var": "BatteryMass",
+    "Explore-display": "GUID",
+    "Explore-explore_tabset": "Pairs Plot",
+    "Explore-pairs_click": {},
+    "Explore-pairs_plot_collapse": {},
+    "Explore-pairs_plot_marker": "1",
+    "Explore-pairs_plot_marker_size": 1,
+    "Explore-pairs_trendlines": false,
+    "Explore-pairs_upper_panel": false,
+    "Explore-single_plot_collapse": "Variables",
+    "Explore-single_plot_marker": "1",
+    "Explore-single_plot_marker_size": 1,
+    "Explore-x_input": "GUID",
+    "Explore-y_input": "BatteryMass",
+    "filter_BatteryMass": [-85.6, 1093],
+    "filter_CostPerFlight": [-282.9, 3714],
+    "filter_CruiseSpeed": [25, 84.99],
+    "filter_ENominal": [-2376, 26210],
+    "filter_EReserve": [-3107, 34350],
+    "filter_GUID": ["1. 0036915c-78f2-442a-ba8f-71ba1160bc60", "2. 0165c74f-9f51-4f0d-b7be-38a799e6a319", "3. 01932e9d-5dec-4112-a3d0-15cace82dd01", "4. 0308e0b8-1a57-490b-bf28-0d9bb90060af", "5. 03481f9d-583a-4a5a-a20e-232879510be4", "6. 0686d755-5751-4a52-8549-9f6c163e1fc3", "7. 072bb7cb-4573-49bb-b075-f4643394a5bf", "8. 07658b8c-a866-4c45-be9d-d77f3c8628ce", "9. 07b95e93-e0f0-40b0-87aa-19c05ced4682", "10. 07c62be2-ce19-4b8b-abb6-261732e65e4c", "11. 0810fecc-3dc7-4b3c-b546-aa82d7be44cb", "12. 085daf04-d015-4d09-8162-a5bd4150a257", "13. 09765178-e044-4e44-9294-2b1b7cafe27c", "14. 09ca81a0-0c68-41c1-987b-a8b233924c46", "15. 0a04e63e-cf46-4f90-b1ce-7bdb708f116d", "16. 0ae79598-bcda-4945-aa72-e335a746a65d", "17. 0b16364d-e55b-4609-82fe-c3df364224dc", "18. 0bbc51d6-418f-407d-95fc-a2d77995234c", "19. 0c1fad98-da93-44c9-89c9-34bec9de224c", "20. 0c33c58f-6a6b-4c67-8734-406f533c2abb", "21. 0c9bc0d0-9f3b-4e1c-b340-b454c97368a2", "22. 0d3603af-3e52-43c0-b094-c7ce81e443b3", "23. 0d3da076-191c-421b-ba09-d994ff9242d1", "24. 0dcd25de-81a5-43cd-bb56-339a9f5a5c54", "25. 0dd8b8ab-c002-49ea-ad90-88338442e9c0", "26. 0e0c721f-b803-4b50-b8b2-901bc41fbead", "27. 0e5f2ee4-958f-40db-9e3c-ad97fcbe064d", "28. 0ef4bb82-eba9-4b93-969f-5dc5cd8a85cc", "29. 10204fe1-ccb1-46f4-ac36-ca4798fbedae", "30. 1274d218-ee6b-4d38-8085-a8f210d63d88", "31. 141851ad-e3d2-4738-abd3-a22deee380ea", "32. 143ee277-b362-49d5-81c6-2b9100384ac5", "33. 14425920-5a1a-4a92-abae-f2017feebc23", "34. 14a74fef-3358-4ec1-8d02-5cf29b341045", "35. 153fdaa5-d129-4d63-957d-fa12e230917c", "36. 15a41eaf-e624-4090-bb67-3af94dc55175", "37. 15a43847-f3a2-4e32-9d1c-42360218dcda", "38. 1706ccb5-a6b8-405f-91b4-0e820eb5bc90", "39. 182fdcfa-3d1f-4aa7-918b-4b7f3a4fe36b", "40. 184ca072-eee2-430d-95b0-f10d9e995483", "41. 194ab4fb-e5de-4d5e-bca8-5366c6f30ff1", "42. 197b6601-8bf7-4b6b-8a02-87ea5aa9ff9a", "43. 19dae3c5-2b52-495e-986a-926bd2e095b3", "44. 1b62efbd-bb04-4c1b-b746-5678ce0363d6", "45. 1bd3d9cd-ecaf-4424-9a13-ce99979601a3", "46. 1dbc8338-944d-43ad-9715-38f6e4496315", "47. 1fb4da48-4504-44e9-bb1c-1dd134ddfab8", "48. 2048092f-f9c8-4c89-b027-a49e8e861e6d", "49. 204852d4-dd48-4bd5-a19b-dcafd00cfd16", "50. 23846aeb-daaa-4f86-8403-8108a3b7af31", "51. 24281057-163b-43a5-a44e-1033eeaa2faf", "52. 24461f69-caf0-47fa-a2be-f5e04eff56b7", "53. 248225d1-d7e3-4bfc-8ab4-f6b7594edeef", "54. 2493978a-345d-4131-a03a-285d69be500d", "55. 25db5113-812e-4e6e-8d79-573735255d2d", "56. 2766ebd2-6d6a-480e-bfec-5eae345abe24", "57. 277f7fc2-6cd5-49f5-b6f2-aae38df3980d", "58. 2781df16-b943-4eae-aa5a-1fb88989d7de", "59. 27cd048f-7931-4fa3-b7dd-f60955c5a64e", "60. 28bf098a-6ec7-427b-9eed-449d4f75c2f2", "61. 28fee928-6dde-4b36-892d-183b49ecbaa6", "62. 29584d8d-2d8a-45b4-a5ee-5777c5291787", "63. 2a28d7a6-0078-4a97-8db7-644343f3eb93", "64. 2af66da4-e4c5-4bac-b9ad-67c1e818fe0c", "65. 2cd71c93-dd66-4093-a69d-36f2c220b8e4", "66. 2ce77931-51ec-4529-826b-055ef3ac0cff", "67. 2cf15aa0-15df-44fd-9267-12df628d8fbf", "68. 2e1806f2-1198-42fe-8957-077126edf1fa", "69. 2f89eaa5-8e54-487c-8ccc-e18e1e81abcb", "70. 30490e4e-29b0-4f67-a0a5-880463f55b79", "71. 30a06e4b-15f4-47b0-8ecc-7083c8cf690c", "72. 30d24caa-46cb-4b24-b64a-fd801fd8532a", "73. 30d4180f-4df2-4a17-9b63-d837fa540bec", "74. 31a37f0d-84db-424e-9c23-5a712878be45", "75. 31ab1552-70db-4281-bd57-3d5a2999f3e6", "76. 32012084-2cbe-4226-a819-e3f61ec4fbd2", "77. 3220d2ab-b0d8-4770-a36c-f4de1fcdd502", "78. 32340cfc-e5e4-418b-ba7c-e387e9fb4e6f", "79. 333608be-9f9c-48e3-ab2b-28c25380b984", "80. 34cd9ade-ed08-40fa-b4e9-ebe703c4f910", "81. 35816232-c4eb-4002-83c3-79df6088c930", "82. 358b6f47-dbfa-45a0-84b2-37a36b5e7ee1", "83. 35a1dc01-bae5-4224-a985-e8a153cf40a0", "84. 35a36ce0-9f85-4848-8704-4307a04880b1", "85. 36470949-a220-402c-9fa9-a6f90724622d", "86. 385e3469-c680-478f-b718-c0617bb7e175", "87. 389ffd4c-419e-45bd-a336-053c604a1efb", "88. 38bd61cd-9251-4609-a78f-6bc184631fa9", "89. 38cd69ae-4c3b-41ef-b1a0-316feea1c1b0", "90. 3a377e40-e796-4456-98f1-c5054eb9ac4f", "91. 3a6fba86-a0b6-4b48-8119-a88c478c5753", "92. 3aa85104-5573-4eea-a632-93b698f37f10", "93. 3ab01c4b-3f73-4080-ab74-bc1e3324222d", "94. 3b254b90-9ad5-4049-9407-de964dc90765", "95. 3bb30ef6-2a11-49f9-a620-f629e597a339", "96. 3bcc5b51-3caf-4d05-bc1e-b020ea9b5b03", "97. 3cff069e-f89d-4bde-9678-c7852982517a", "98. 3d1c1541-6038-4731-852a-b1285136c8ce", "99. 3d84b540-5f6c-4dd6-b16d-d798bf9d93ba", "100. 3d86a5fb-9b73-47a3-ad1c-4ed9dcc018bd", "101. 3e3b6ec2-9f92-4f23-a88f-1f1b5406ecb8", "102. 3f38ca4e-eb6b-4a3c-8de0-691fc73a8e00", "103. 3f8964c1-d8f5-4fd1-9138-c6b293922a27", "104. 41c11d78-c69a-4fd8-b3a4-3830ccd1559a", "105. 42232c34-ebcf-4f45-a304-bef4db09b241", "106. 4253e4d1-2b70-4cc2-9a9c-bc2fa8f4dada", "107. 4258695b-475f-4417-8571-8792708ce6ac", "108. 42a2b917-4af4-43ff-b185-c0074244aa62", "109. 43043127-f76e-4fee-b238-0dc0fdcc50a6", "110. 439d994e-4167-40b5-b167-cd8326ecdc2a", "111. 43ba1d69-9209-46cf-9db4-5ef4d2fd1165", "112. 44141819-027b-4df4-8c88-d3e2222fd974", "113. 45307855-6de1-431b-8ef2-e3f46b6ef8a9", "114. 456312e0-f081-4889-b979-a5073272b343", "115. 4567af6b-3743-4add-8be1-ec8ba57ba07b", "116. 458482b6-a18b-4729-b23d-d342ea5bffdd", "117. 45cbbd8f-0e24-4e9a-9c9b-71e221b59be6", "118. 4657ce41-30ec-45c5-b198-862491bcd692", "119. 47513dea-221c-4867-b1fc-4f952d6270e1", "120. 476978f7-d23d-4a77-8177-8569346a5e4f", "121. 4884b941-7711-4a91-87e2-fd6a7d185076", "122. 48cd914f-45ef-4398-91cf-2616a8f889b6", "123. 49173218-db75-43ef-a5ca-8f2642cfa2a8", "124. 49509006-9417-4ab5-9a7c-5731458b26c7", "125. 4ada25ad-b138-4e4d-8169-79554ea6f46e", "126. 4b546ba9-d679-4920-9963-4516cbf0e5aa", "127. 4bd9f528-d5a7-4cf1-864c-ad41814205a7", "128. 4c38af47-f3d3-4fe8-95c1-655ce20741eb", "129. 4d6929a0-9121-4c1e-b740-0411fec83017", "130. 4da4ed6d-df53-42dc-bf0c-2f63075266a4", "131. 4db0146e-93c1-4749-96ff-5214ad579246", "132. 4e0d2276-073d-48f2-815e-cfc1bead9157", "133. 4ea61a90-f9da-4f94-bc51-789490af8520", "134. 4f22dd14-61d3-4103-ab9a-966c3ffea1c6", "135. 4fa936e5-6f83-451c-a792-a0a129079392", "136. 500f4228-f7d7-46b3-9ca6-60fc705bbc52", "137. 5195b9f4-4741-4ca7-bd60-a0665ea70d13", "138. 52588c40-a3a3-43de-9282-a5518b2738c8", "139. 52618fac-2086-4d66-809e-b00c57c2e9e4", "140. 528f39e2-b0b2-4309-af6e-10d37a61cf98", "141. 52abe5b1-9fe5-482a-92bc-29cfe9dfa6c3", "142. 53535a9e-ccad-406e-81d0-857fa025c344", "143. 53e0088a-724f-4dfe-b7f9-f76185d054dc", "144. 54c7937b-f397-4768-bf54-a047c7297497", "145. 5503768c-0269-45e0-9daf-44630dcf41f1", "146. 5585f1b4-72f2-49e2-9a9d-f80917c493a9", "147. 560020f9-e1b9-44cb-a0d4-b2411e932cdc", "148. 56ca3f6a-952a-4dc8-a82c-2395d2ebbe1d", "149. 56e0ca9e-f149-4e56-af29-613acc765f40", "150. 5795b703-13b5-4e3e-bc6b-a2664d754cb2", "151. 57aea5de-2a91-465b-a062-b9bd7039efbb", "152. 57c720b2-22d9-415c-8a1c-03d635ef067e", "153. 583e8676-3e73-4ea2-9112-473ca6c301c9", "154. 589fbccb-2f56-4cc9-a730-81eec0780917", "155. 5916864e-30bc-4aca-9d96-cdd3ea612073", "156. 597b1014-8735-4a98-b46d-b1cd2bb0f935", "157. 59fc6183-b36c-4f93-8ca2-032643364bb0", "158. 5ac1994e-40fb-4d8c-9c63-317c897cd8dd", "159. 5bd6f4bc-360d-4bd4-88de-4da030781e93", "160. 5c5f748f-adef-4332-a56c-64d32fc1cea1", "161. 5ea0ff46-7b25-4ffe-922c-cb4662379c34", "162. 5f4c41d2-318a-494f-9b01-d750e47c0826", "163. 5f70ecc6-1a04-4329-a3dd-989012a657ef", "164. 607ab071-c03a-4606-b85a-28a3055fca8b", "165. 6118c252-c508-4c39-9fdd-1901b874cb52", "166. 612a72f6-fc0b-41e7-bc4b-eb16f92c0a39", "167. 616c9d7e-d6e0-4e23-afcd-cd8daaa84d1e", "168. 6181a49d-c29e-4007-874e-952dab00faaa", "169. 62313895-7a0f-477c-8664-7f598ccd8b94", "170. 63eb80fb-2346-449c-9976-fb5c24dd0280", "171. 6495712f-c4bb-4f1d-a713-53bc4878f589", "172. 660bb016-305a-4d1d-824c-e430425dc9cc", "173. 66348b78-1da5-49fe-8872-60e9d8a3d305", "174. 6769a03b-3738-4a5e-a8a9-67cee683b4b7", "175. 676d495d-3ca6-4aca-b449-6c3b4c09587f", "176. 67923d41-fe83-4d40-8396-1294ccc036ab", "177. 68813763-dd0f-45cd-985e-986cd10fac16", "178. 6902dad2-694d-4728-aa93-c4748ef24def", "179. 6af4735b-1687-4f19-bbc3-87a242afd904", "180. 6bb12bab-1c59-42b5-89ff-05a1fb51777a", "181. 6c8299d7-d0b7-4a4f-8d58-3443d6e4e0e6", "182. 6d07a661-ff54-4147-8ff3-70df08e0b01f", "183. 6eb956bf-2b97-4fb2-8758-85334d3702e7", "184. 6f5bc273-f7b2-496a-83d4-d63f0c3a2e3b", "185. 6fdea7a6-ba72-4050-af79-39a3ccc2ca9d", "186. 6ffbc513-6384-4109-a661-cb484d3176d4", "187. 70000a14-98a1-4c9a-a478-1a8beb5cfc73", "188. 71b78472-c3a7-48a8-a22c-9f194188e88a", "189. 71bcf73d-391b-4928-b183-848273de1d6c", "190. 72c50a52-25ec-461c-817d-eee3f8f9f8df", "191. 7367a323-665a-4c89-bcb8-7a126be9802a", "192. 73ce87ce-9802-4881-970f-67ec55397efb", "193. 73f821cc-3eb3-4c05-9762-2acdc41a2da5", "194. 73ffdbec-0b18-4839-aec1-ecc0e22d8410", "195. 755f335f-a62b-45ea-93ca-cf6bcb4c0694", "196. 75b175a6-b26e-48f6-966c-6df39b1ce465", "197. 75b1b475-bf91-48d8-95fc-288200dc4198", "198. 76645886-d4bd-4fe1-8d40-366f9c6e0203", "199. 7774937a-029a-4e16-91d2-775dfc0941ca", "200. 7807326e-df58-4f5c-8f8e-95f5d0988dcd", "201. 7846dd8e-c8d6-42a4-ab6d-1c3d24722944", "202. 78f98843-195f-4ba9-b5cb-4e274e5d930d", "203. 798938d1-5574-4447-9fd4-b67b2c0d3756", "204. 7b4864bf-6937-4025-9f41-af2a4542901b", "205. 7c98e26f-7aad-4bd3-b4a9-d5f1171bad9b", "206. 7ce537c9-7fa8-4b56-b3d8-96270ba48878", "207. 7d1006da-da1f-40a7-bed2-426fe3e18a2a", "208. 7d36144c-751c-453b-9ed8-0c73e85cbf54", "209. 7d3d0466-eb2a-4cc3-a695-182b9f99e208", "210. 7dac0231-772c-423b-8bf9-7d35d446aeff", "211. 7ddd2727-e90f-4269-bceb-e05cfac32bfd", "212. 7f40372d-b3e7-4c8d-8330-f7b72db74174", "213. 7f5e3d01-ab6b-4573-a56d-530d5aefe17c", "214. 7f6f57b3-b712-430d-bb41-fabca82fb7aa", "215. 805b6553-ff93-490f-a2b3-4fa31d3f693c", "216. 812bf974-6089-4e79-ac4a-9f832421ca47", "217. 8183a081-e3be-48de-90c7-e57d8f5f6c09", "218. 81a29da4-f147-40e9-a818-ca6b7958a7df", "219. 81d3ab7b-ab14-4a2a-b662-887c4d199c6c", "220. 81ecba7c-502c-4318-8c39-2dd7228311b6", "221. 84ad9506-3fb3-4728-9fb6-1583e64f0483", "222. 84e87cb0-845c-477e-8a02-3ff6cab83c90", "223. 85b232be-0f1c-4bfb-a250-595cf9c94500", "224. 85f03331-93b4-4e28-8bd0-80702169625c", "225. 86004271-0c22-4dfc-b7cd-52d9166c8698", "226. 86aca5ac-db1b-434c-a698-12b494f7c3de", "227. 87e33cec-ea58-4127-867c-e2476474849d", "228. 89a84bdc-dd27-4e4f-9d3a-fbd24204e6b3", "229. 8a525700-7af1-44bd-a392-75973164d0fa", "230. 8b1d1dbe-f38f-49ab-a126-8e5aebc05c17", "231. 8b8961d7-dc59-477d-a627-7c7f4fb76604", "232. 8bc3faab-9a27-461e-9feb-1ba202725333", "233. 8ca954c3-4370-4ef4-bd08-656221f1c661", "234. 8ea03803-79cc-43b3-97fa-9385bea08929", "235. 8ea2518a-78fa-4780-a008-c4edf2e85ef3", "236. 902bd7d0-3e1d-4e44-ba1f-2a7334b1a4b8", "237. 907e9fe7-5d88-4099-b1a3-37bc7cefb424", "238. 910165fb-4506-473c-9c9b-ff9f810cd6a6", "239. 9186e3ae-5d0e-4222-95f8-7e32b12f01e7", "240. 92b14502-edc3-4862-b543-d7c1ab913ba0", "241. 92d16019-cfe7-4cfa-a408-7579c00ab22d", "242. 930ec08b-c12c-4613-9fd1-a6f75c251375", "243. 93a353e0-3702-4b0e-bc51-bcf141abf35f", "244. 93b82b73-08c7-4b41-998c-17597c83a22d", "245. 95137b2a-d8c0-4c6c-a62b-777c39a5802a", "246. 955e5aa2-7a5b-4446-a828-9b0c35e4b027", "247. 9697a244-4f75-4d86-935d-7dad32004c2c", "248. 9738a3c7-2cce-437d-8910-007408e12c3e", "249. 975cb08d-a3c6-4759-88e0-663360ea00b7", "250. 980632ee-75b2-4119-a541-ead271e59891", "251. 9842f743-b640-42ea-b64c-f31c6ce8dca9", "252. 9947cdd5-b0ad-4b44-a88f-287a72bd2332", "253. 99fce955-16a0-40a2-bd5d-c11826be9e5c", "254. 9a1df43a-2f5e-4d70-be2a-242fa8217699", "255. 9a6de025-2e2a-4116-a150-56f52ba542af", "256. 9aba7c23-5647-41cb-b37b-5c835fae8d24", "257. 9af4f302-a0b4-4021-86a0-04eeb267828e", "258. 9b4d07ec-d759-4ce7-a53d-a6e7eb4cdd5c", "259. 9ba2bab1-d04a-4a76-99b7-b335d5eaccf2", "260. 9da372d2-8fd8-409a-b25e-9643daa81103", "261. 9dcd186c-f469-4c98-b85c-dc7e5d5695f7", "262. 9e7665f5-141d-4ea6-b96e-9c7880d06fc5", "263. 9f9303f6-9c63-470c-bd3b-45e9815d099a", "264. 9fcfbe6c-e0c4-447e-b93d-2b92cc0564c0", "265. a273548b-2e20-4472-88c3-12711c96c254", "266. a274a8a8-6288-41de-9e8a-97e5acbe5e74", "267. a2c60edc-2b53-408b-aa4b-2fffc4c86ec4", "268. a38b0e61-d876-4e4c-9edf-18b9f08b62ab", "269. a409180c-f399-4412-90c7-f2d2db8ee8b5", "270. a43df316-fa3c-486b-b77f-67f1ff39b754", "271. a479f79e-25b5-4ee8-b8c0-e592608bb9d1", "272. a51c43c6-2667-4c8f-9590-cc6d0f9d461b", "273. a6a759d9-4b42-4099-b979-0f42f083611d", "274. a7594860-b56c-46d1-890e-dc5e7d769f9c", "275. a9001016-1ca3-461e-a393-de2caaaacbb9", "276. a90953ba-b716-4559-b9d5-ace7f235fc5b", "277. a9543983-9cc3-4f15-b5e4-51621596777d", "278. a9bb1869-0831-4189-90cf-5443785bb509", "279. ac04f0d9-5164-4a61-8c04-9ed172170672", "280. ac0e8634-7ddd-4635-9ed7-9d9455370c1f", "281. acc8e5b0-a8a1-4197-870a-2f5dc0ecf15b", "282. ade7f258-5cad-4438-97a7-269f2e609b55", "283. af826057-999d-4373-bdaf-6cda9f8beb19", "284. af9e3655-df6e-419b-8b91-dcda62c1f25d", "285. b057a5bd-a613-4445-8438-bd27ee3bb119", "286. b0ef0561-f649-4d39-9f3c-65ddad3faa14", "287. b0f01fb9-ec63-4cc1-b8e6-3f21e85900c7", "288. b1048cba-7a61-4da6-a15b-509b58315174", "289. b340015b-7a8b-47ef-b72e-3436eee804c3", "290. b374a0bc-1fc3-4a27-8351-ba393123b992", "291. b3c1356f-bf4d-4104-a3c4-461f0ae2fe0e", "292. b46e945d-ec1d-45d3-9ccb-c280ec2e01bb", "293. b489d4cd-4d62-49d6-924b-46ec18c9d45a", "294. b70128b6-814f-465f-935a-b3a504e30b15", "295. b7137da6-7e40-4d34-bc62-e45bedf2cb8e", "296. b945fe54-ccda-4e3f-8af0-2452ee91c9ba", "297. bb48e7f9-24ac-42f2-9327-ba4c5a609c60", "298. bce2a629-c740-472c-aa41-21428b2ffc27", "299. c019fb87-1a64-4b51-abeb-98652057b1b7", "300. c150aabf-7e1a-4a3c-8943-0feddda8f173", "301. c18f91d0-0ba5-48a6-9f8f-0a358063d030", "302. c1c18bdf-0d94-4623-b507-7fda54019189", "303. c2d760dc-4376-482e-b4d4-1967943f7a39", "304. c3ec833a-b7a1-4356-809c-3a0815b1b80f", "305. c4d1a515-8dc2-4ee1-83fa-1635e79dc733", "306. c60ecad4-4508-4468-a529-03aee277f712", "307. c77cfd73-23bf-44d0-8934-ead0c44617f1", "308. c7cc0627-20bb-4beb-9a13-e6290ac04d80", "309. c80ac9b5-e4c6-416d-90c0-0d08925de373", "310. c816ebb5-406c-47bc-8ddd-60ade99936dc", "311. c8a68252-c0a2-41ab-8c9e-327bfeff1d47", "312. c8f18339-b465-4083-a52e-bb47b6aa6691", "313. c92f92be-1443-41e3-85f6-3a9f013009bf", "314. c97c0f87-fc2a-4f4f-94de-a96aad94c301", "315. c9851e77-76b8-41bb-8d23-920cc0708ab3", "316. c9e26d64-6453-430b-a305-7dc57ac35d1a", "317. ca4a8831-c7f7-4137-9041-9386ac261497", "318. ca6f7a3d-e3c4-4f24-9ec8-ad6e73eabcd5", "319. cbda6551-6dfb-47f2-ac38-a575a1d3b2f8", "320. ccf2aa8c-e849-4bdf-bf63-dc94d7097ab2", "321. cd7bf9fa-3ed3-472f-ad3e-13d27e869fe2", "322. ce33e44a-b256-4a5b-a1ef-17784c11fcae", "323. ce3cad5b-2aa0-44c3-9035-50d305ed62f5", "324. ce802f82-2c01-440f-b2d0-58f529ac1204", "325. cf4f43fa-2f29-4c92-9422-99c87d780cf1", "326. d0faf3e3-6eb7-45f4-8e9b-80fb73ec7843", "327. d116f7f7-0de4-4382-b690-09cfadba1120", "328. d12b08d4-6277-46ea-95dd-d495788f4eac", "329. d191e1f7-6b77-4487-9c6c-efa8a70d6f73", "330. d2391da3-ec86-43de-8887-9cc617982a88", "331. d2b8dfc0-78ed-470c-bcb1-babf133f790b", "332. d469d81e-8394-40df-b577-76462adbc883", "333. d623482d-bb3f-4233-b85e-2f9df554a36e", "334. d71bcf4f-115c-4a78-9716-180f3dbc9bb9", "335. d79788bc-9671-4f2f-acf7-ba2c7510754f", "336. d8522a9d-893a-4739-b2fb-23a0b5340f43", "337. d893ed15-2877-4fce-86b0-33ed46faf2b0", "338. d92139f5-e3bb-4855-8ed1-6fcac8f1b7af", "339. d9686ade-52fe-462e-b824-8b3ac1baebf5", "340. daf17411-5455-406c-923b-6cf3ea8637ba", "341. db04c2a0-be37-491e-ab63-db7d0db2a36f", "342. db196285-6710-4a07-882b-c98e14ab49cc", "343. dbffe4f6-9814-47d4-96d7-efdcc8683860", "344. dc513691-4403-4a64-9590-90f3aad13b6f", "345. dcc132b7-790a-47f6-8758-1619a1a62035", "346. dce842ab-99ca-4695-a9e5-c56b4862c2c9", "347. dce9677a-621c-4b81-9ccf-04f9f2b4d480", "348. dd67be27-7ef6-436e-a5a2-3060d490522f", "349. dd6a57f6-4e78-40b6-95d3-5b19273db306", "350. df728f12-3cee-40ee-8fb3-860ebd159bf9", "351. df7dab26-47f8-44fc-b982-a0baaee5334f", "352. dfac3a8e-686e-4ca9-9326-c7aeac74955c", "353. e076c5d0-f581-47e2-882e-7a855d975193", "354. e3287cae-9c7c-4e88-9756-00c1fe8bfde6", "355. e396358d-887f-43d5-9917-74d1f4b93359", "356. e3e827d6-f9c2-435b-82af-33cacd9f303b", "357. e476c53e-a125-454f-8b87-a308b09f6cb4", "358. e49959c2-9fb2-4884-81ac-8af5fec5a570", "359. e50ed713-1945-4323-9409-325b9620caa5", "360. e75df40a-4fdd-4106-bcd4-09be90d91e89", "361. e7682bec-65b7-4807-a35f-dd028933fb82", "362. ea1d708f-d2a2-49cc-84d4-d1701c93fa9d", "363. ea539f00-d5fc-4228-8d33-8fa0d649e61a", "364. ea8b83e3-f4d2-401b-8786-b18079898383", "365. eb7bd9ca-fc6b-4d54-ac28-4fe0287bbb70", "366. ec0e69fd-d2a1-491d-93f2-78d0a004b403", "367. ecca993a-165b-46e2-be8a-0378f4d22b34", "368. ecdba21b-0ebc-42c5-b5f9-602a201dcc9b", "369. ee198dc3-8064-4e4c-9fdd-b88b923262bc", "370. ee5afd89-f260-4bcb-88c5-5b4ad5971d6e", "371. ef4e9bbf-23d2-4ff1-9a0a-43e9e8072470", "372. efa41554-51a8-4749-9d29-d5fa289fb074", "373. efa9ead8-5df2-46f3-88f4-8361cb2426ec", "374. efd2f93e-7c25-48b4-97da-a1090432a671", "375. f0b917f1-af30-4135-86bf-9ab2d739d4e2", "376. f1296f1b-2359-41eb-8e2c-7d0e1165dc88", "377. f13a8e77-a399-455f-b84f-f151e02c9084", "378. f26d9e60-1500-4a4f-8d52-3480a00cbb5c", "379. f3517bf6-a943-4886-9e2d-d89df1f6a662", "380. f362913d-849c-4352-926d-8eeace4aef2d", "381. f400f99c-1a2f-4168-bbc5-42770f70708d", "382. f419b2a0-7dfd-4873-a875-55eacb166915", "383. f5072b3c-21b5-47bc-bba3-87ad162391fa", "384. f59b7555-d33e-4af3-af77-966cff1d7600", "385. f7c29aec-4b46-488c-86f5-2ff2d8cdf44e", "386. f8af29f7-6115-4816-8d50-4eb895fd63ab", "387. f8c5d3ca-f9a7-4a0c-b785-ec4ec4370372", "388. f9f952b0-8673-46e6-9a28-5480bcc25c22", "389. fa75b11e-93a5-4939-b65e-6efba3a6cf60", "390. fab3f8b3-4405-403e-8800-f6f9face5881", "391. fb529333-cc7b-4691-b8b6-0a0d46ab23a0", "392. fbf7eae8-8ca5-4d11-ba58-b61772879043", "393. fc226b89-e5eb-4430-b70d-6d332cf92f93", "394. fc355a2a-48ae-4cd1-bc0c-569a9fa750fc", "395. fce5546c-290c-45c4-9514-207496f923e3", "396. fd18ee47-b8d0-4218-94da-9e577ea111ee", "397. fd5f6a57-ec8a-41ab-9fff-8fa5714bf234", "398. fde2035d-cdfb-42c0-bcbb-0013e00bd0cc", "399. fe24c74f-9db1-4e43-9859-1373543f1d4d", "400. fe9d9127-7ff1-4898-9a8e-ee4c39c1c4a7"],
+    "filter_MaxTakeoffMass": [-881, 10920],
+    "filter_MotorMass": [-96.55, 1093],
+    "filter_Range": [-8206, 218400],
+    "filter_RotorRadius": [-0.6566, 10.96],
+    "filter_tNominal": [-281.1, 7129],
+    "filter_tReserve": [918.9, 8329],
+    "filter_Vehicle": [-0.1, 1.1],
+    "footer_collapse": "Filters",
+    "live_color_palette": "Rainbow",
+    "live_color_rainbow_s": 1,
+    "live_color_rainbow_v": 1,
+    "live_color_variable_factor": "GUID",
+    "live_coloring_max_min": "Maximize",
+    "live_coloring_name": "",
+    "live_coloring_type": "Max/Min",
+    "live_coloring_variable_numeric": "BatteryMass",
+    "master_tabset": "Explore",
+    "num_sd": 6,
+    "remove_missing": false,
+    "remove_outliers": false,
+    "slider_width": 300
+  },
+  "tab_data": {
+    "Explore": {},
+    "DataTable": {},
+    "PETRefinement": {}
+  }
+}
