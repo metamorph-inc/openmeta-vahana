@@ -1,0 +1,17 @@
+{
+  "Kind": 1,
+  "SourceDatasets": [
+    {
+      "Kind": 0,
+      "Time": "",
+      "Name": "0666c480-ea69-4609-9d5a-578530b7515d",
+      "DesignName": "",
+      "Status": "",
+      "Count": 0,
+      "Folders": [
+        ".\\r2017-06-08--13-06-04_gsxyfa5l\\testbench_manifest.json"
+      ],
+      "Selected": true
+    }
+  ]
+}

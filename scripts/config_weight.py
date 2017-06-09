@@ -1,3 +1,5 @@
+'''
+# Name: config_weight.py
 # Company: MetaMorph, Inc.
 # Author(s): Joseph Coombe
 # Email: jcoombe@metamorphsoftware.com
@@ -9,6 +11,7 @@
 # to Python 2.7 for use in the MetaMorph, Inc. OpenMETA environment.
 
 # Mass & weight models for both the tilt-wing and helicopter configurations
+
 # Inputs:
 #   vehicle                 - vehicle type
 #   rProp                   - prop/rotor radius [m]
@@ -45,7 +48,7 @@
 #   mass_tailRotor      - tail rotor mass [kg]
 #   mass_transmission   - transmission mass [kg]
 #   mass_W              - total weight + 10% fudge factor [N]
-
+'''
 
 from __future__ import print_function
 
@@ -147,9 +150,9 @@ class config_weight(Component):
             unknowns['mass_structural'] = unknowns['mass_wing'] + unknowns['mass_canard'] + unknowns['mass_props'] + unknowns['mass_hub'] + unknowns['mass_fuselage'] + unknowns['mass_lg']
             
             # Total mass + 10% Fudge factor
-            unknowns['mass_m'] = 1.1 * (mass.params['payload'] + unknowns['mass_seat'] + unknowns['mass_avionics'] + unknowns['mass_servos'] + \
-                unknowns['mass_tilt'] + unknowns['mass_structural'] +  \
-                unknowns['mass_battery'] + unknowns['mass_motors'] + unknowns['mass_wire'] + unknowns['mass_brs'])            
+            unknowns['mass_m'] = 1.1 * (params['payload'] + unknowns['mass_seat'] + unknowns['mass_avionics'] + unknowns['mass_servos'] + \
+                unknowns['mass_tilt'] + unknowns['mass_structural'] + \
+                unknowns['mass_battery'] + unknowns['mass_motors'] + unknowns['mass_wire'] + unknowns['mass_brs'])
         
         elif (params['vehicle'] == 1 ):
             # Servo weight
@@ -175,7 +178,7 @@ class config_weight(Component):
             
             # Fuselage mass assuming fuselage length of 1.5 m nose plus 1.25x rotor
             # radius for tailboom length, 1 meter wide and 2 meter tall fuselage.
-            unknowns['mass_fuselage'] = params['mass_fuselage']
+            unknowns['mass_fuselage'] = params['fuselage_mass']
             
             # Landing gear mass is assumed to be 2% of MTOW for helicopters
             unknowns['mass_lg'] = 0.02 * params['mtow']
@@ -187,7 +190,7 @@ class config_weight(Component):
             unknowns['mass_structural'] = unknowns['mass_rotor'] + unknowns['mass_hub'] + unknowns['mass_tailRotor'] + unknowns['mass_fuselage'] + unknowns['mass_lg']
             
             # Total mass + 10% Fudge factor
-            unknowns['mass_m'] = 1.1 * (mass.params['payload'] + unknowns['mass_seat'] + unknowns['mass_avionics'] + unknowns['mass_servos'] + \
+            unknowns['mass_m'] = 1.1 * (params['payload'] + unknowns['mass_seat'] + unknowns['mass_avionics'] + unknowns['mass_servos'] + \
                 unknowns['mass_transmission'] + unknowns['mass_structural'] + \
                 unknowns['mass_battery'] + unknowns['mass_motors'] + unknowns['mass_wire'] + unknowns['mass_brs'])
 

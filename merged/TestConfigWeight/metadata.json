@@ -1,0 +1,17 @@
+{
+  "Kind": 1,
+  "SourceDatasets": [
+    {
+      "Kind": 0,
+      "Time": "",
+      "Name": "37d5983a-ec68-4144-85d7-a4d67a40ca6f",
+      "DesignName": "",
+      "Status": "",
+      "Count": 0,
+      "Folders": [
+        ".\\r2017-06-08--08-45-49_3cv2lv3n\\testbench_manifest.json"
+      ],
+      "Selected": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "Kind": 1,
+  "SourceDatasets": [
+    {
+      "Kind": 0,
+      "Time": "",
+      "Name": "c3fc5b88-5e43-4a05-a0a2-27b8fcf2a04d",
+      "DesignName": "",
+      "Status": "",
+      "Count": 0,
+      "Folders": [
+        ".\\r2017-06-08--13-20-41_p2pddfvh\\testbench_manifest.json"
+      ],
+      "Selected": true
+    }
+  ]
+}

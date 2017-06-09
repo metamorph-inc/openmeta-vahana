@@ -1,0 +1,17 @@
+{
+  "Kind": 1,
+  "SourceDatasets": [
+    {
+      "Kind": 0,
+      "Time": "",
+      "Name": "936cd615-33e1-4877-9252-b992b88fbc9b",
+      "DesignName": "",
+      "Status": "",
+      "Count": 0,
+      "Folders": [
+        ".\\r2017-06-08--18-01-45_ndamjcry\\testbench_manifest.json"
+      ],
+      "Selected": true
+    }
+  ]
+}

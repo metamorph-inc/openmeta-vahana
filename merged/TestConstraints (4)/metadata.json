@@ -1,0 +1,17 @@
+{
+  "Kind": 1,
+  "SourceDatasets": [
+    {
+      "Kind": 0,
+      "Time": "",
+      "Name": "ee0042c1-5c0d-4095-aa59-ac224da1e9b1",
+      "DesignName": "",
+      "Status": "",
+      "Count": 0,
+      "Folders": [
+        ".\\r2017-06-08--13-12-19_muttdoyx\\testbench_manifest.json"
+      ],
+      "Selected": true
+    }
+  ]
+}
