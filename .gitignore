@@ -19,3 +19,4 @@ std.out
 /parts/
 *.acm
 *.pyc
+manifest.project.json
