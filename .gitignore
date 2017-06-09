@@ -18,3 +18,4 @@ config.pro
 std.out
 /parts/
 *.acm
+*.pyc
