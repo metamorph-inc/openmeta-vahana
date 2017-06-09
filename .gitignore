@@ -20,3 +20,5 @@ std.out
 *.acm
 *.pyc
 manifest.project.json
+merged/
+_FAILED.txt
