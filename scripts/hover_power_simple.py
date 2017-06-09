@@ -35,6 +35,7 @@ class hover_power(Component):
         self.add_output('hoverPower_PMax', val=0.0)        
         self.add_output('hoverPower_VAutoRotation', val=0.0)
         self.add_output('hoverPower_Vtip', val=0.0)
+        self.add_output('TMax', val=0.0)
         
     def solve_nonlinear(self, params, unknowns, resids):
         # Altitude, compute atmospheric properties
@@ -79,13 +80,13 @@ class hover_power(Component):
             unknowns['hoverPower_PBattery'] = PHover / etaMotor
             
             # Maximum thrust per motor
-            TMax = THover * ToverW
+            unknowns['TMax'] = THover * ToverW
             
             # Maximum shaft power required (for motor sizing)
             # Note: Tilt-wing multirotor increases thrust by increasing RPM at constant collective
-            unknowns['hoverPower_PMax'] = nProp * TMax * \
-                (k * math.sqrt(TMax / (2 * rho * math.pi * params['rProp']**2)) + \
-                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'] * math.sqrt(ToverW))**3 / (TMax / (rho * math.pi * params['rProp']**2)))
+            unknowns['hoverPower_PMax'] = nProp * unknowns['TMax'] * \
+                (k * math.sqrt(unknowns['TMax'] / (2 * rho * math.pi * params['rProp']**2)) + \
+                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'] * math.sqrt(ToverW))**3 / (unknowns['TMax'] / (rho * math.pi * params['rProp']**2)))
             
             # Max battery power
             PMaxBattery = unknowns['hoverPower_PMax'] / etaMotor
@@ -127,13 +128,13 @@ class hover_power(Component):
             unknowns['hoverPower_PBattery'] = (PHover + PTailRotor) / etaMotor
             
             # Maximum thrust per motor
-            TMax = THover * ToverW
+            unknowns['TMax'] = THover * ToverW
             
             # Maximum shaft power required (for motor sizing)
             # Note: Helicopter increases thrust by increasing collective with constant RPM
-            unknowns['hoverPower_PMax'] = nProp * TMax * \
-                (k * math.sqrt(TMax / (2 * rho * math.pi * params['rProp']**2)) + \
-                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'])**3 / (TMax / (rho * math.pi * params['rProp']**2)))
+            unknowns['hoverPower_PMax'] = nProp * unknowns['TMax'] * \
+                (k * math.sqrt(unknowns['TMax'] / (2 * rho * math.pi * params['rProp']**2)) + \
+                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'])**3 / (unknowns['TMax'] / (rho * math.pi * params['rProp']**2)))
                 
             # ~15% power to tail rotor for sizing (see "Princples of Helicopter Aerodynamics" by Leishman)
             unknowns['hoverPower_PMax'] = 1.15 * unknowns['hoverPower_PMax']

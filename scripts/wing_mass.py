@@ -43,6 +43,7 @@ class wing_mass(Component):
         self.add_param('winglet', val=0.0)
         self.add_param('fc', val=0.0)
         #self.add_param('xmotor', val=0.0)
+        self.add_param('rProp', val=0.0)
         self.add_param('cruiseOutput_bRef', val=0.0)
         self.add_param('thrust', val=0.0)
         
@@ -56,21 +57,21 @@ class wing_mass(Component):
         
         # Unidirectional carbon fiber
         self.add_param('uni_rho', val=1660.0)
-        self.add_param('uni_stress', val=450e6)
+        self.add_param('uni_stress', val=450000000.0)
         
         # Bi-directional carbon fiber
         self.add_param('bid_rho', val=1660.0)
-        self.add_param('bid_stress', val=275e6)
-        self.add_param('bid_shear', val=47e6)
+        self.add_param('bid_stress', val=275000000.0)
+        self.add_param('bid_shear', val=47000000.0)
         self.add_param('bid_minThk', val=0.00042)
-        self.add_param('bid_bearing', val=400e6)
+        self.add_param('bid_bearing', val=400000000.0)
         
         # Honeycomb core
-        self.add_param('core_rho', val=52)
+        self.add_param('core_rho', val=52.0)
         self.add_param('core_minThk', val=0.0064)
         
         # Epoxy
-        self.add_param('glue_thk', val=2.54e-4)
+        self.add_param('glue_thk', val=.000254)
         self.add_param('glue_rho', val=1800.0)
         
         # Aluminum ribs
@@ -82,7 +83,7 @@ class wing_mass(Component):
         self.add_param('paint_rho', val=1800.0)
         
         # Aluminum
-        self.add_param('alum_stress', val=350e6)
+        self.add_param('alum_stress', val=350000000.0)
         self.add_param('alum_rho', val=2800.0)
         
         # Acrylic
@@ -90,11 +91,11 @@ class wing_mass(Component):
         self.add_param('canopy_rho', val=1180.0)
         
         # Steel
-        self.add_param('steel_shear', val=500e6)
+        self.add_param('steel_shear', val=500000000.0)
         
         self.add_output('mass', val=0.0)
         
-    def solve_nonlinear(self, params, unknowns, resids): #QUESTION: does this always need to be named solve_nonlinear
+    def solve_nonlinear(self, params, unknowns, resids):
         # Setup
         N = 10  # Number of spanwise points
         sf = 1.5  # Safety factor
@@ -106,9 +107,6 @@ class wing_mass(Component):
         aftWeb = np.array([0.65, 0.75])  # Aft web location x/c
         xShear = 0.25  # Approximate shear center
         fudge = 1.2  # Scale up mass by this to account for misc components
-
-        #function mass = wingMass(W,span,chord,winglet,fc,xmotor,thrust)
-        #mtow*9.8,cruiseOutput.bRef,cruiseOutput.cRef,0.2,0.4,[2*(0.5 + rProp) / cruiseOutput.bRef,2*(0.5 + 3*rProp + 0.05)/cruiseOutput.bRef], hoverOutput.TMax
         
         xmotor = np.array([2*(0.5 + params['rProp'])/params['cruiseOutput_bRef'], 2*(0.5 + 3*params['rProp'] + 0.05)/params['cruiseOutput_bRef']])
         
@@ -241,7 +239,7 @@ class wing_mass(Component):
         mGlue = params['glue_thk']*params['glue_rho']*torsionLength*np.ones(N)
 
         # Flap Bending Analysis
-        tFlap = Mx*np.max(seg[0][:, 1])/(flapInertia*uni_stress)  # Thickness for flap bending  # note: Python appears to have less precision than Matlab
+        tFlap = Mx*np.max(seg[0][:, 1])/(flapInertia*params['uni_stress'])  # Thickness for flap bending  # note: Python appears to have less precision than Matlab
         mFlap = tFlap*flapLength*params['uni_rho']  # Mass for flap bending
         mGlue = mGlue+params['glue_thk']*params['glue_rho']*flapLength*np.ones(N)
 
@@ -251,7 +249,7 @@ class wing_mass(Component):
         mGlue = mGlue+params['glue_thk']*params['glue_rho']*dragLength*np.ones(N)
 
         # Shear Web Analysis: all shear taken in shear web
-        tShear = 1.5*Vz/(bid_shear*h)
+        tShear = 1.5*Vz/(params['bid_shear']*h)
         tShear = np.maximum(tShear, params['bid_minThk']*np.ones(N))  # Min gauge constraint
         mShear = tShear*h*params['bid_rho']
 
