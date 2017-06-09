@@ -13,7 +13,7 @@
 # Mass & weight models for both the tilt-wing and helicopter configurations
 
 # Inputs:
-#   vehicle                 - vehicle type
+#   Vehicle                 - vehicle type
 #   rProp                   - prop/rotor radius [m]
 #   mBattery                - battery mass [kg]
 #   mMotors                 - total motor mass [kg]
@@ -59,7 +59,7 @@ class config_weight(Component):
 
     def __init__(self):
         super(config_weight, self).__init__()
-        self.add_param('vehicle', val=0.0)
+        self.add_param('Vehicle', val=u'abcdef')
         self.add_param('rProp', val=0.0)
         self.add_param('mBattery', val=0.0)
         self.add_param('mMotors', val=0.0)
@@ -94,7 +94,7 @@ class config_weight(Component):
         self.add_output('mass_transmission', val=0.0)
         self.add_output('mass_W', val=0.0)
 
-    def solve_nonlinear(self, params, unknowns, resids): #QUESTION: does this always need to be named solve_nonlinear
+    def solve_nonlinear(self, params, unknowns, resids):
         # Total payload mass
         unknowns['mass_payload'] = params['payload']
         
@@ -109,7 +109,7 @@ class config_weight(Component):
         mPerServo = 0.65 # per servo in class needed
         mPerTilt = 4 # per wing tilt actuator (prelim design)
             
-        if (params['vehicle'] == 0 ):
+        if (params["Vehicle"].lower().replace('-', '') == "tiltwing"):
             # Servo weight
             unknowns['mass_servos'] = mPerServo * 12 # 4 ctrl surfaces + variable pitch actuators
             
@@ -154,7 +154,7 @@ class config_weight(Component):
                 unknowns['mass_tilt'] + unknowns['mass_structural'] + \
                 unknowns['mass_battery'] + unknowns['mass_motors'] + unknowns['mass_wire'] + unknowns['mass_brs'])
         
-        elif (params['vehicle'] == 1 ):
+        elif (params["Vehicle"].lower().replace('-', '') == "helicopter"):
             # Servo weight
             unknowns['mass_servos'] = mPerServo * 8 # 8 for redundant collective, cyclic (2x), tail rotor
            

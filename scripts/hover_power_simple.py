@@ -7,7 +7,7 @@
 # Estimate hover performance
 #
 # Inputs:
-#  vehicle      - Vehicle type ('tiltwing' or 'helicopter')
+#  Vehicle      - Vehicle type ('tiltwing' or 'helicopter')
 #  rProp        - Prop/rotor radius
 #  W            - Weight
 #  cruiseOutput - Cruise data
@@ -26,7 +26,7 @@ class hover_power(Component):
     def __init__(self):
         super(hover_power, self).__init__()
         
-        self.add_param('vehicle', val=0.0, description='0=tiltwing, 1=helicopter')
+        self.add_param('Vehicle', val=u'abcdef', description='tiltwing, helicopter')
         self.add_param('rProp', val=0.0, description='radius of prop/rotor')
         self.add_param('W', val=0.0, description='Weight')
         self.add_param('cruisePower_omega', val=0.0, description='Cruise data omega')
@@ -42,23 +42,23 @@ class hover_power(Component):
         rho = 1.225
 
         # Blade parameters
-        Cd0 = 0.012 # Blade airfoil profile drag coefficient
-        sigma = 0.1 # Solidity (could estimate from Ct assuming some average blade CL)
+        Cd0 = 0.012  # Blade airfoil profile drag coefficient
+        sigma = 0.1  # Solidity (could estimate from Ct assuming some average blade CL)
 
         
         # Different assumptions per vehicle
-        if (params['vehicle'] == 0):
+        if (params["Vehicle"].lower().replace('-', '') == "tiltwing"):
             
-            nProp = 8 # Number of props / motors
-            ToverW = 1.7 # Max required T/W to handle rotor out w/ manuever margin
-            k = 1.15 # Effective disk area factor (see "Helicopter Theory" Section 2-6.2)
-            etaMotor = 0.85 # Assumed electric motor efficiency
+            nProp = 8  # Number of props / motors
+            ToverW = 1.7  # Max required T/W to handle rotor out w/ manuever margin
+            k = 1.15  # Effective disk area factor (see "Helicopter Theory" Section 2-6.2)
+            etaMotor = 0.85  # Assumed electric motor efficiency
             
             # Tip Mach number constraint for noise reasons at max thrust condition
             MTip = 0.65
             
             # Tip speed limit
-            unknowns['hoverPower_Vtip'] = 340.2940 * MTip / math.sqrt(ToverW) # Limit tip speed at max thrust, not hover
+            unknowns['hoverPower_Vtip'] = 340.2940 * MTip / math.sqrt(ToverW)  # Limit tip speed at max thrust, not hover
             omega = unknowns['hoverPower_Vtip'] / params['rProp']
             
             # Thrust per prop / rotor at hover
@@ -68,7 +68,7 @@ class hover_power(Component):
             Ct = THover / (rho * math.pi * params['rProp']**2 * unknowns['hoverPower_Vtip']**2)
             
             # Average blade CL (see "Helicopter Theory" section 2-6.3)
-            AvgCL = 6 * Ct / sigma
+            AvgCL = 6.0 * Ct / sigma
             
             # Hover Power
             PHover = nProp * THover * \
@@ -94,12 +94,12 @@ class hover_power(Component):
             # Maximum torque per motor
             QMax = unknowns['hoverPower_PMax'] / (omega * math.sqrt(ToverW))
 
-        elif (params['vehicle'] == 1):
+        elif (params['Vehicle'].lower().replace('-', '') == "helicopter"):
             
-            nProp = 1 # Number of rotors
-            ToverW = 1.1 # Max required T/W for climb and operating at higher altitudes
-            k = 1.15 # Effective disk area factor (see "Helicopter Theory" Section 2-6.2)
-            etaMotor = 0.85 * 0.98 # Assumed motor and gearbox efficiencies (85% and 98% respectively)
+            nProp = 1  # Number of rotors
+            ToverW = 1.1  # Max required T/W for climb and operating at higher altitudes
+            k = 1.15  # Effective disk area factor (see "Helicopter Theory" Section 2-6.2)
+            etaMotor = 0.85 * 0.98  # Assumed motor and gearbox efficiencies (85% and 98% respectively)
             
             omega = params['cruisePower_omega']
             unknowns['hoverPower_Vtip'] = omega * params['rProp']
@@ -111,7 +111,7 @@ class hover_power(Component):
             Ct = THover / (rho * math.pi * params['rProp']**2 * unknowns['hoverPower_Vtip']**2)
             
             # Average blade CL (see "Helicopter Theory" Section 2-6.4)
-            AvgCL = 6 * Ct / sigma
+            AvgCL = 6.0 * Ct / sigma
             
             # Auto-rotation descent rate (see "Helicopter Theory" Section 3-2)
             unknowns['hoverPower_VAutoRotation'] = 1.16 * math.sqrt(THover / (math.pi * params['rProp']**2))

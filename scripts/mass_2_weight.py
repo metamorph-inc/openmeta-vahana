@@ -32,4 +32,4 @@ class mass_2_weight(Component):
         self.add_output('weight', val=0.0)
     
     def solve_nonlinear(self, params, unknowns, resids):
-        unknowns['weight'] = params['mass']
+        unknowns['weight'] = params['mass']*9.81

@@ -15,7 +15,7 @@
 # components
 
 # Inputs:
-#   vehicle             - Vehicle type (0 = 'tilt-wing' and 1 = 'helicopter')
+#   Vehicle             - Vehicle type (0 = 'tilt-wing' and 1 = 'helicopter')
 #   rProp               - prop radius
 #   cruiseOutput_bRef   - mass of motors [kg]
 #   cruiseOutput_cRef   - maximum take-off mass [kg]
@@ -33,7 +33,7 @@ import math
 class tooling_cost(Component):
     def __init__(self):
         super(tooling_cost, self).__init__()
-        self.add_param('vehicle', val=0.0)
+        self.add_param('Vehicle', val=u'abcdef')
         self.add_param('rProp', val=0.0)
         self.add_param('cruiseOutput_bRef', val=0.0)
         self.add_param('cruiseOutput_cRef', val=0.0)
@@ -100,7 +100,7 @@ class tooling_cost(Component):
             cost = materialCost + roughCost + finishCost 
             return cost  # [$]
             
-        if (params['vehicle'] == 0):  # tilt-wing
+        if (params["Vehicle"].lower().replace('-', '') == "tiltwing"):  # tilt-wing
             fuselageHeight = 1.3  # Guess
             span = params['cruiseOutput_bRef']
             chord = params['cruiseOutput_cRef']
@@ -147,7 +147,7 @@ class tooling_cost(Component):
             # Total tool cost
             totalToolCost = wingToolCost+canardToolCost+fuselageToolCost+propToolCost+controlToolCost+wingletToolCost
         
-        elif (params['vehicle'] == '1'):  # helicopter
+        elif (params["Vehicle"].lower().replace('-', '') == "helicopter"):  # helicopter
             fuselageHeight = 1.6  # Guess
 
             # Fuselage Tooling
