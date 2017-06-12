@@ -58,6 +58,12 @@ class constraints_checker(Component):
         
         
         self.add_output('allPass', val='fail')
+        self.add_output('c1', val=0.0)
+        self.add_output('c2', val=0.0)
+        self.add_output('c3', val=0.0)
+        self.add_output('c4', val=0.0)
+        self.add_output('c5', val=0.0)
+        self.add_output('c6', val=0.0)
     
     def solve_nonlinear(self, params, unknowns, resids):
         # Assumed values
@@ -66,42 +72,42 @@ class constraints_checker(Component):
         dischargeDepthReserve = 0.95  # Can only use 95% of battery energy in reserve mission
         
         # Constraint on available energy (E is in kW-hr)
-        c1 = (0 > (params['EReserve'] - params['mBattery'] * batteryEnergyDensity * dischargeDepthReserve / 1000.0))
+        unknowns['c1'] = (0 > (params['EReserve'] - (params['mBattery'] * batteryEnergyDensity * dischargeDepthReserve / 1000.0)))
         
         # Constraint on available motor power (kW)
-        c2 = (0 > (params['hoverPower_PMax'] / 1000.0 - params['mMotors'] * motorPowerDensity))
+        unknowns['c2'] = (0 > (params['hoverPower_PMax'] / 1000.0 - params['mMotors'] * motorPowerDensity))
         
         # Constraint on max take-off weight
-        c3 = (0 > (params['mass_W'] - params['mtow'] * 9.8))
+        unknowns['c3'] = (0 > (params['mass_W'] - params['mtow'] * 9.8))
         
-        c4 = False
+        unknowns['c4'] = False
         if (params["Vehicle"].lower().replace('-', '') == "helicopter"):  # helicopter
             # Auto-rotation energy constraint => kinetic energy in blades has to be
             # twice that of vehicle in autorotation descent to be able to arrest
             # the descent.
             # See "Helicopter Theory" section 7-5, assume rotor CLmax is twice
             # hover CL. Rotor inertia is approximated as a solid rod. 
-            c4 = (0 > (0.5 * params['mass_m'] * params['hoverPower_VAutoRotation']**2.0 - 0.5 * 1.0 / 3.0 * params['mass_rotor'] * params['hoverPower_Vtip']**2.0))
+            unknowns['c4'] = (0 > (0.5 * params['mass_m'] * params['hoverPower_VAutoRotation']**2.0 - 0.5 * 1.0 / 3.0 * params['mass_rotor'] * params['hoverPower_Vtip']**2.0))
         else:  # tilt-wing
-            c4 = True
+            unknowns['c4'] = True
         
-        c5 = False
+        unknowns['c5'] = False
         if (params["Vehicle"].lower().replace('-', '') == "helicopter"):  # helicopter
             if ((params['rProp'] > 1.0) and (params['rProp'] < 10.0)):
-                c5 = True
+                unknowns['c5'] = True
         else:  #tilt-wing
              if ((params['rProp'] > 0.3) and (params['rProp'] < 2.0)):
-                c5 = True           
+                unknowns['c5'] = True           
         
-        c6 = False
+        unknowns['c6'] = False
         if (params["Vehicle"].lower().replace('-', '') == "helicopter"):  # helicopter
             if ((params['cruiseSpeed'] > 30.0) and (params['cruiseSpeed'] < 80.0)):
-                c6 = True
+                unknowns['c6'] = True
         else:  #tilt-wing
              if ((params['cruiseSpeed'] > (1.3 * 35)) and (params['cruiseSpeed'] < 80.0)):
-                c6 = True           
+                unknowns['c6'] = True           
         
-        test = c1 and c2 and c3 and c4 and c5 and c6
+        test = unknowns['c1'] and unknowns['c2'] and unknowns['c3'] and unknowns['c4'] and unknowns['c5'] and unknowns['c6']
         
         if test:
             unknowns['allPass'] = "pass"

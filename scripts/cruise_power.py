@@ -29,7 +29,7 @@ class CruisePower(Component):
     def __init__(self):
         super(CruisePower, self).__init__()
         
-        self.add_param('Vehicle', val=u'abcdef', description='Vehicle type')  # 'tiltwing' or 'helicopter'
+        self.add_param('Vehicle', val=u'abcdef', description='Vehicle type', pass_by_obj=True)  # 'tiltwing' or 'helicopter'
         self.add_param('rProp', val=0.0, description='prop/rotor radius [m]')
         self.add_param('V', val=0.0, description='Cruise speed [m/s]')
         self.add_param('W', val=0.0, description='Weight of vehicle [N]')
@@ -175,3 +175,34 @@ class CruisePower(Component):
 
         else:
             pass
+            
+if __name__ == "__main__":
+    top = Problem()
+    root = top.root = Group()
+
+    # Sample Inputs
+    indep_vars_constants = [('Vehicle', u'tiltwing', {'pass_by_obj':True}),
+                            ('rProp', 1.4),
+                            ('V', 50.0),
+                            ('W', 2000.0)]
+
+    root.add('Inputs', IndepVarComp(indep_vars_constants))
+
+    root.add('Example', CruisePower())
+
+    root.connect('Inputs.Vehicle', 'Example.Vehicle')
+    root.connect('Inputs.rProp', 'Example.rProp')
+    root.connect('Inputs.V', 'Example.V')
+    root.connect('Inputs.W', 'Example.W')
+
+    top.setup()
+    top.run()
+    
+    print("Tiltwing..     PBattery:", top['Example.PBattery'])
+    
+    top['Inputs.Vehicle'] = u'helicopter'
+    top['Inputs.rProp'] = 4.0
+    
+    top.run()
+    
+    print("Helicopter..   PBattery:", top['Example.PBattery'])

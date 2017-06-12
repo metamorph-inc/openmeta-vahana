@@ -58,7 +58,7 @@ class mission(Component):
             cruiseTime = params['range'] / params['V']
             
             # Compute total energy use [KW-hr]
-            unknowns['E'] = (params['hoverOutput_PBattery'] * hoverTime + params['cruiseOutput_PBattery'] * cruiseTime + params['loiterOutput_PBattery'] * params['loiterTime']) * 2.77778e-7  # kW-hr
+            unknowns['E'] = ((params['hoverOutput_PBattery'] * hoverTime) + (params['cruiseOutput_PBattery'] * cruiseTime) + (params['loiterOutput_PBattery'] * params['loiterTime'])) * 2.77778e-7  # kW-hr
             
             # Compute total flight time [s]
             unknowns['t'] = params['loiterTime'] + hoverTime + cruiseTime

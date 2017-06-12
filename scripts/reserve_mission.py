@@ -48,7 +48,7 @@ class reserve_mission(Component):
     def solve_nonlinear(self, params, unknowns, resids): #QUESTION: does this always need to be named solve_nonlinear
         if (params['vehicle'] == 0 or params['vehicle'] == 1):
             # Reserve mission
-            hoverTime = 180 * 2 # sec to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing and repeated for diversion
+            hoverTime = 180.0 * 2 # sec to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing and repeated for diversion
 
             # Compute cruise time
             cruiseTime = params['range'] / params['V'] # sec
