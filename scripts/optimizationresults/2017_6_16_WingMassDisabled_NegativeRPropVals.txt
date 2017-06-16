@@ -1,0 +1,222 @@
+C:\Users\Joseph Coombe\Documents\Vahana project\openmeta-vahana\scripts>"C:\Program Files (x86)\meta\bin\Python27\Scripts\python.exe" vahana_optimizer.py
+running...
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 2.952557E+01    MAXCV = 0.000000E+00
+   X = 4.612842E-01   5.132325E+01   1.164134E+02   2.971456E+01   6.499614E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 3.350689E+01    MAXCV = 0.000000E+00
+   X = 4.223219E-01   5.127220E+01   1.165089E+02   2.912393E+01   6.500431E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 3.745891E+01    MAXCV = 0.000000E+00
+   X = 3.977946E-01   5.083019E+01   1.158070E+02   2.987364E+01   6.499509E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 4.131628E+01    MAXCV = 0.000000E+00
+   X = 3.839586E-01   5.211277E+01   1.169657E+02   3.023019E+01   6.495813E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 4.526915E+01    MAXCV = 0.000000E+00
+   X = 3.735826E-01   5.197414E+01   1.172084E+02   3.036685E+01   6.496450E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 4.470603E+01    MAXCV = 0.000000E+00
+   X =-8.247727E-01   5.256748E+01   1.165005E+02   3.069799E+01   6.497944E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 4.801709E+01    MAXCV = 0.000000E+00
+   X =-8.218276E-01   5.284306E+01   1.164029E+02   3.075043E+01   6.498561E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 5.137789E+01    MAXCV = 0.000000E+00
+   X =-8.304175E-01   5.297935E+01   1.168481E+02   3.021098E+01   6.495808E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 5.489642E+01    MAXCV = 0.000000E+00
+   X =-8.278121E-01   5.241935E+01   1.170619E+02   3.037909E+01   6.496689E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 5.829741E+01    MAXCV = 0.000000E+00
+   X =-8.257538E-01   5.235735E+01   1.171903E+02   3.030868E+01   6.496446E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 6.161351E+01    MAXCV = 0.000000E+00
+   X =-8.289118E-01   5.252998E+01   1.171232E+02   3.029659E+01   6.496207E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 6.500977E+01    MAXCV = 0.000000E+00
+   X =-8.253855E-01   5.245732E+01   1.171427E+02   3.029380E+01   6.496717E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 6.838657E+01    MAXCV = 0.000000E+00
+   X =-8.266959E-01   5.242733E+01   1.171169E+02   3.022734E+01   6.496755E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 7.165504E+01    MAXCV = 0.000000E+00
+   X =-8.244136E-01   5.272050E+01   1.171468E+02   3.026294E+01   6.496533E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 7.497165E+01    MAXCV = 0.000000E+00
+   X =-8.265803E-01   5.284738E+01   1.171116E+02   3.036867E+01   6.496086E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 7.839093E+01    MAXCV = 0.000000E+00
+   X =-8.237149E-01   5.270513E+01   1.171197E+02   3.027173E+01   6.497419E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 8.191174E+01    MAXCV = 0.000000E+00
+   X =-8.276799E-01   5.239722E+01   1.172076E+02   3.034370E+01   6.497409E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 8.524799E+01    MAXCV = 0.000000E+00
+   X =-8.284234E-01   5.244479E+01   1.171319E+02   3.025908E+01   6.497429E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 8.867665E+01    MAXCV = 0.000000E+00
+   X =-8.273207E-01   5.231638E+01   1.170931E+02   3.016060E+01   6.498269E+02
+Optimization Complete
+-----------------------------------
+
+   Return from subroutine COBYLA because the MAXFUN limit has been reached.
+
+   NFVALS =  200   F = 9.194802E+01    MAXCV = 0.000000E+00
+   X =-8.303811E-01   5.252462E+01   1.171403E+02   3.015810E+01   6.499201E+02
+Optimization Complete
+-----------------------------------
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 29.525568157518844, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 10000.0}
+{'subprob.indep4.batteryMass': 116.41342093446347, 'subprob.indep1.range': 10000.0, 'subprob.indep3.cruiseSpeed': 51.323249844424453, 'subprob.indep6.mtom': 649.96143816566439, 'subprob.indep2.rProp': 0.46128416564303254, 'subprob.indep5.motorMass': 29.714555067790265}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 33.506891758239384, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 20000.0}
+{'subprob.indep4.batteryMass': 116.5088665529149, 'subprob.indep1.range': 20000.0, 'subprob.indep3.cruiseSpeed': 51.272203786620295, 'subprob.indep6.mtom': 650.04307649680482, 'subprob.indep2.rProp': 0.42232193483939895, 'subprob.indep5.motorMass': 29.123928345686767}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 37.458913395732793, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 30000.0}
+{'subprob.indep4.batteryMass': 115.80701868432446, 'subprob.indep1.range': 30000.0, 'subprob.indep3.cruiseSpeed': 50.830194082406955, 'subprob.indep6.mtom': 649.95090877677558, 'subprob.indep2.rProp': 0.39779462799665111, 'subprob.indep5.motorMass': 29.873644017673822}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 41.316278158785387, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 40000.0}
+{'subprob.indep4.batteryMass': 116.96565988638753, 'subprob.indep1.range': 40000.0, 'subprob.indep3.cruiseSpeed': 52.11277142956753, 'subprob.indep6.mtom': 649.58128269229667, 'subprob.indep2.rProp': 0.38395863107551659, 'subprob.indep5.motorMass': 30.230186303751385}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 45.269146850631735, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 50000.0}
+{'subprob.indep4.batteryMass': 117.20839718650339, 'subprob.indep1.range': 50000.0, 'subprob.indep3.cruiseSpeed': 51.97413981432863, 'subprob.indep6.mtom': 649.64501984828746, 'subprob.indep2.rProp': 0.37358256317049993, 'subprob.indep5.motorMass': 30.366853817863866}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 44.706034473373492, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 60000.0}
+{'subprob.indep4.batteryMass': 116.50049762519471, 'subprob.indep1.range': 60000.0, 'subprob.indep3.cruiseSpeed': 52.56747653977127, 'subprob.indep6.mtom': 649.79435352623, 'subprob.indep2.rProp': -0.82477268991015618, 'subprob.indep5.motorMass': 30.697992375000844}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 48.017088094208837, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 70000.0}
+{'subprob.indep4.batteryMass': 116.40290439773868, 'subprob.indep1.range': 70000.0, 'subprob.indep3.cruiseSpeed': 52.843064255713053, 'subprob.indep6.mtom': 649.85610716025769, 'subprob.indep2.rProp': -0.82182762455189617, 'subprob.indep5.motorMass': 30.750429399709606}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 51.377887783053914, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 80000.0}
+{'subprob.indep4.batteryMass': 116.848088111818, 'subprob.indep1.range': 80000.0, 'subprob.indep3.cruiseSpeed': 52.979346942870556, 'subprob.indep6.mtom': 649.58077097891044, 'subprob.indep2.rProp': -0.8304175425201672, 'subprob.indep5.motorMass': 30.210984808711409}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 54.896423420176987, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 90000.0}
+{'subprob.indep4.batteryMass': 117.0619297209393, 'subprob.indep1.range': 90000.0, 'subprob.indep3.cruiseSpeed': 52.41935492954179, 'subprob.indep6.mtom': 649.66888223199828, 'subprob.indep2.rProp': -0.82781210167913155, 'subprob.indep5.motorMass': 30.379090229106993}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 58.297410516997104, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 100000.0}
+{'subprob.indep4.batteryMass': 117.19034443840049, 'subprob.indep1.range': 100000.0, 'subprob.indep3.cruiseSpeed': 52.357351683900859, 'subprob.indep6.mtom': 649.64458992436403, 'subprob.indep2.rProp': -0.82575378038288338, 'subprob.indep5.motorMass': 30.30867996590457}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 61.613512261566008, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 110000.0}
+{'subprob.indep4.batteryMass': 117.12317863960905, 'subprob.indep1.range': 110000.0, 'subprob.indep3.cruiseSpeed': 52.52997712432267, 'subprob.indep6.mtom': 649.62066531350331, 'subprob.indep2.rProp': -0.82891179636538659, 'subprob.indep5.motorMass': 30.29659313070384}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 65.00976850689915, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 120000.0}
+{'subprob.indep4.batteryMass': 117.14274956843239, 'subprob.indep1.range': 120000.0, 'subprob.indep3.cruiseSpeed': 52.457317461592382, 'subprob.indep6.mtom': 649.67172462542999, 'subprob.indep2.rProp': -0.82538551531439786, 'subprob.indep5.motorMass': 30.293802367348146}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 68.38657132568062, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 130000.0}
+{'subprob.indep4.batteryMass': 117.1169065787532, 'subprob.indep1.range': 130000.0, 'subprob.indep3.cruiseSpeed': 52.427332097264845, 'subprob.indep6.mtom': 649.67545967587159, 'subprob.indep2.rProp': -0.82669589367387286, 'subprob.indep5.motorMass': 30.227338862690882}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 71.655036091692494, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 140000.0}
+{'subprob.indep4.batteryMass': 117.14676665628613, 'subprob.indep1.range': 140000.0, 'subprob.indep3.cruiseSpeed': 52.72049791032601, 'subprob.indep6.mtom': 649.65330049533804, 'subprob.indep2.rProp': -0.82441355735884692, 'subprob.indep5.motorMass': 30.262935206364794}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 74.971651932957329, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 150000.0}
+{'subprob.indep4.batteryMass': 117.11164587384089, 'subprob.indep1.range': 150000.0, 'subprob.indep3.cruiseSpeed': 52.847379017290677, 'subprob.indep6.mtom': 649.60864034084113, 'subprob.indep2.rProp': -0.82658028512557769, 'subprob.indep5.motorMass': 30.368670296776973}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 78.390926543874457, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 160000.0}
+{'subprob.indep4.batteryMass': 117.11974378513855, 'subprob.indep1.range': 160000.0, 'subprob.indep3.cruiseSpeed': 52.705131870428318, 'subprob.indep6.mtom': 649.74186106218917, 'subprob.indep2.rProp': -0.82371493664841799, 'subprob.indep5.motorMass': 30.271730529261394}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 81.911740942339875, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 170000.0}
+{'subprob.indep4.batteryMass': 117.20756837571591, 'subprob.indep1.range': 170000.0, 'subprob.indep3.cruiseSpeed': 52.397220804262673, 'subprob.indep6.mtom': 649.74085373642333, 'subprob.indep2.rProp': -0.82767985971880786, 'subprob.indep5.motorMass': 30.343695209645944}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 85.247992432716273, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 180000.0}
+{'subprob.indep4.batteryMass': 117.13186988679918, 'subprob.indep1.range': 180000.0, 'subprob.indep3.cruiseSpeed': 52.444793294766662, 'subprob.indep6.mtom': 649.74287320730798, 'subprob.indep2.rProp': -0.82842342172067773, 'subprob.indep5.motorMass': 30.259075252134675}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 88.676652109939226, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 190000.0}
+{'subprob.indep4.batteryMass': 117.09305804119329, 'subprob.indep1.range': 190000.0, 'subprob.indep3.cruiseSpeed': 52.316376808892514, 'subprob.indep6.mtom': 649.8269351359686, 'subprob.indep2.rProp': -0.82732073191836486, 'subprob.indep5.motorMass': 30.160603044740398}
+
+
+{'indep4.batteryMass': 117.0, 'subprob.OperatingCost.C_costPerFlight': 91.948015368217909, 'indep5.motorMass': 30.0, 'indep2.rProp': 1.0, 'indep3.cruiseSpeed': 50.0, 'indep6.mtom': 650.0, 'indep1.range': 200000.0}
+{'subprob.indep4.batteryMass': 117.14025780383425, 'subprob.indep1.range': 200000.0, 'subprob.indep3.cruiseSpeed': 52.524624030919696, 'subprob.indep6.mtom': 649.92011986224338, 'subprob.indep2.rProp': -0.83038108515525788, 'subprob.indep5.motorMass': 30.158101660715612}
