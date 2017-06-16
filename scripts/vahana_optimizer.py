@@ -73,8 +73,8 @@ class TopLevelSystem(Group):
         self.add('LoiterPower', loiter_power())
         self.add('SimpleMission', mission())
         self.add('ReserveMission', mission())
-        #self.add('WingMass', wing_mass())  # TEMPORARY
-        #self.add('CanardMass', wing_mass())  # TEMPORARY
+        self.add('WingMass', wing_mass())  # TEMPORARY
+        self.add('CanardMass', wing_mass())  # TEMPORARY
         self.add('WireMass', wire_mass())
         self.add('ConfigWeight', config_weight())
         self.add('ToolingCost', tooling_cost())
@@ -94,8 +94,8 @@ class TopLevelSystem(Group):
         self.add('configWeightConst1', IndepVarComp('payload_mass', 114.0))
         self.add('configWeightConst2', IndepVarComp('fuselage_mass', 55.0))
         self.add('configWeightConst3', IndepVarComp('prop_mass', 14.0))
-        self.add('configWeightConst4', IndepVarComp('wing_mass', 40.0))  # TEMPORARY: This constant is a workaround until I add wing_mass.py back
-        self.add('configWeightConst5', IndepVarComp('canard_mass', 38.0))  # TEMPORARY: This constant is a workaround until I add wing_mass.py back
+        #self.add('configWeightConst4', IndepVarComp('wing_mass', 40.0))  # TEMPORARY: This constant is a workaround until I add wing_mass.py back
+        #self.add('configWeightConst5', IndepVarComp('canard_mass', 38.0))  # TEMPORARY: This constant is a workaround until I add wing_mass.py back
         self.add('costBuildupConst1', IndepVarComp('partsPerTool', 1000.0))
         
         # add constraint equations
@@ -153,21 +153,21 @@ class TopLevelSystem(Group):
         self.connect('indep3.cruiseSpeed', 'ReserveMission.V')
         self.connect('indep7.vehicle', 'ReserveMission.Vehicle')
         
-        # self.connect('CruisePower.cRef', 'WingMass.chord')  # WingMass inputs # TEMPORARY 
-        # self.connect('wingMassConst2.fc', 'WingMass.fc')
-        # self.connect('indep2.rProp', 'WingMass.rProp')
-        # self.connect('CruisePower.bRef', 'WingMass.span')
-        # self.connect('HoverPower.TMax', 'WingMass.thrust')
-        # self.connect('MassToWeight.weight', 'WingMass.W')
-        # self.connect('wingMassConst1.winglet', 'WingMass.winglet')
+        self.connect('CruisePower.cRef', 'WingMass.chord')  # WingMass inputs # TEMPORARY 
+        self.connect('wingMassConst2.fc', 'WingMass.fc')
+        self.connect('indep2.rProp', 'WingMass.rProp')
+        self.connect('CruisePower.bRef', 'WingMass.span')
+        self.connect('HoverPower.TMax', 'WingMass.thrust')
+        self.connect('MassToWeight.weight', 'WingMass.W')
+        self.connect('wingMassConst1.winglet', 'WingMass.winglet')
 
-        # self.connect('CruisePower.cRef', 'CanardMass.chord')  # CanardMass inputs # TEMPORARY 
-        # self.connect('canardMassConst2.fc', 'CanardMass.fc')
-        # self.connect('indep2.rProp', 'CanardMass.rProp')
-        # self.connect('CruisePower.bRef', 'CanardMass.span') 
-        # self.connect('HoverPower.TMax', 'CanardMass.thrust')
-        # self.connect('MassToWeight.weight', 'CanardMass.W')
-        # self.connect('canardMassConst1.winglet', 'CanardMass.winglet')
+        self.connect('CruisePower.cRef', 'CanardMass.chord')  # CanardMass inputs # TEMPORARY 
+        self.connect('canardMassConst2.fc', 'CanardMass.fc')
+        self.connect('indep2.rProp', 'CanardMass.rProp')
+        self.connect('CruisePower.bRef', 'CanardMass.span') 
+        self.connect('HoverPower.TMax', 'CanardMass.thrust')
+        self.connect('MassToWeight.weight', 'CanardMass.W')
+        self.connect('canardMassConst1.winglet', 'CanardMass.winglet')
         
         self.connect('wireMassConst2.fuselageHeight', 'WireMass.fuselageHeight')  # WireMass inputs
         self.connect('wireMassConst1.fuselageLength', 'WireMass.fuselageLength')
@@ -175,7 +175,7 @@ class TopLevelSystem(Group):
         self.connect('indep2.rProp', 'WireMass.rProp')
         self.connect('CruisePower.bRef', 'WireMass.span')
         
-        self.connect('configWeightConst5.canard_mass', 'ConfigWeight.canard_mass')  # ConfigWeight inputs # TEMPORARY 
+        self.connect('CanardMass.mass', 'ConfigWeight.canard_mass')  # ConfigWeight inputs # TEMPORARY 
         self.connect('configWeightConst2.fuselage_mass', 'ConfigWeight.fuselage_mass')
         self.connect('HoverPower.hoverPower_PMax', 'ConfigWeight.hoverOutput_PMax')
         self.connect('indep4.batteryMass', 'ConfigWeight.mBattery')
@@ -185,7 +185,7 @@ class TopLevelSystem(Group):
         self.connect('configWeightConst3.prop_mass', 'ConfigWeight.prop_mass')
         self.connect('indep2.rProp', 'ConfigWeight.rProp')
         self.connect('indep7.vehicle', 'ConfigWeight.Vehicle')
-        self.connect('configWeightConst4.wing_mass', 'ConfigWeight.wing_mass')  # TEMPORARY
+        self.connect('WingMass.mass', 'ConfigWeight.wing_mass')  # TEMPORARY
         self.connect('WireMass.mass', 'ConfigWeight.wire_mass')
         
         self.connect('CruisePower.bRef', 'ToolingCost.cruiseOutput_bRef')  # ToolingCost inputs
@@ -220,8 +220,10 @@ if __name__ == '__main__':
     sub.driver.options['optimizer'] = 'COBYLA'  # The 'COBYLA' optimizer is supported by OpenMETA. 
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
-    sub.driver.maxfun = 500  # COBYLA-specific setting: maximum number of iterations
-    
+    sub.driver.maxfun = 1000  # COBYLA-specific setting: maximum number of iterations
+    sub.driver.rhobeg = 100.0  # don't know what this is - yet - but I'm just going to play with some values
+    sub.driver.rhoend = 1.0e-3  #  convergence tolerance
+    # ^ Working here
     
     # SubProblem: set design variables for sub.driver
     sub.driver.add_desvar('indep2.rProp', lower=0.3, upper=2.0)
@@ -233,10 +235,20 @@ if __name__ == '__main__':
     # SubProblem: set design objectives
     sub.driver.add_objective('OperatingCost.C_costPerFlight')
     
-    # SubProblem: set constraints
-    sub.driver.add_constraint("con1.c", lower=0.0)
-    sub.driver.add_constraint("con2.c", lower=0.0)
-    sub.driver.add_constraint("con3.c", lower=0.0)
+    # SubProblem: set design variable constraints - Jonathan says that some of the optimizers
+    # (in particular COBYLA) seem to totally ignore the design variable lower and upper bounds
+    # Jonathan's work-around is to set additional constraints
+    # Interesting article: http://openmdao.org/forum/questions/342/slsqpdriver-not-respecting-paramaters-low-and-high-contraints
+    sub.driver.add_constraint('indep2.rProp', lower=0.3, upper=2.0)
+    sub.driver.add_constraint('indep3.cruiseSpeed', lower=39.0, upper=80.0)
+    sub.driver.add_constraint('indep4.batteryMass', lower=10.0, upper=999.0)
+    sub.driver.add_constraint('indep5.motorMass', lower=1.0, upper=999.0)
+    sub.driver.add_constraint('indep6.mtom', lower=100.0, upper=9999.0)
+    
+    # SubProblem: set design constraints
+    sub.driver.add_constraint('con1.c', lower=0.0)
+    sub.driver.add_constraint('con2.c', lower=0.0)
+    sub.driver.add_constraint('con3.c', lower=0.0)
     
     # TopProblem: define a Problem to set up different optimization cases
     top = Problem(root=Group())

@@ -93,9 +93,9 @@ class tooling_cost(Component):
             h = (a-b)**2.0 / (a+b)**2.0
             p = 0
             if (4.0-3.0*h > 0.0):
-                p = math.pi*(a+b)*(1.0+3.0*h/(10.0+math.sqrt(4.0-3.0*h)))  # Ramanujan 2nd approximation to ellipse perimeter. See: http://paulbourke.net/geometry/ellipsecirc/
+                p = math.pi*(a+b)*(1.0+3.0*h/(10.0+math.sqrt(4.0-3.0*h)))  # Ramanujan's 2nd approximation to ellipse perimeter. See: http://paulbourke.net/geometry/ellipsecirc/
             else:  # 4.0-3.0*h <= 0.0
-                0.25*math.pi*(a+b)*(3*(1+h/4.0)+1/(1-h/4.0))  # Hudson 2nd approximation to ellipse perimeter. Generally less accurate than Ramanujan 2nd
+                0.25*math.pi*(a+b)*(3*(1+h/4.0)+1/(1-h/4.0))  # Hudson's approximation to ellipse perimeter. Generally less accurate than Ramanujan 2nd's 
             cutArea = length*p/2.0  # Amount of material to rough out
             finishTime = cutArea / (finishFeed*finishBitStep) * finishPasses  # Time for roughing
             finishCost = finishTime*finishCostRate  # Roughing cost
