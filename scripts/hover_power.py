@@ -21,10 +21,10 @@ from __future__ import print_function
 from openmdao.api import Component
 import math
 
-class hover_power(Component):
+class HoverPower(Component):
 
     def __init__(self):
-        super(hover_power, self).__init__()
+        super(HoverPower, self).__init__()
         
         self.add_param('Vehicle', val=u'abcdef', description='tiltwing, helicopter')
         self.add_param('rProp', val=0.0, description='radius of prop/rotor')

@@ -24,45 +24,26 @@ from __future__ import print_function  # allows for backwards compatibility with
 import sys
 import math
 
+# OpenMDAO imports
 from openmdao.api import Problem, Group, Component, IndepVarComp, ExecComp, \
                          ScipyOptimizer, SubProblem, FullFactorialDriver, \
-                         SqliteRecorder  # OpenMDAO imports
-
-import sqlitedict  # recorder import
+                         SqliteRecorder  
+ 
+# Recorder import
+import sqlitedict  
 from pprint import pprint
 
+# Component imports
+from test_component import TestSystem
+#from cruise_power import CruisePower
+#from hover_power import HoverPower
+#from loiter_power import loiter_power
+
 #TODO: Add Component imports
+# E.g: from test_component import TestSystem
 #      and(or)
 #      Add Component definitions
-class TestSystem(Component):
-    ''' costPerFlight = range*rProp - cruiseSpeed*batteryMass - (motorMass*mtom)^3
-        - (range*cruiseSpeed)^2 + rProp*motorMass - cruiseSpeed*mtom '''
-    def __init__(self):
-        super(TestSystem, self).__init__()
-        
-        self.add_param('range', val=50.0)
-        self.add_param('rProp', val=1.0)
-        self.add_param('cruiseSpeed', val=50.0)
-        self.add_param('batteryMass', val=117.0)
-        self.add_param('motorMass', val=30.0)
-        self.add_param('mtom', val=650.0)
-        
-        self.add_output('costPerFlight', shape=1)
-        
-    def solve_nonlinear(self, params, unknowns, resids):
-        ''' costPerFlight = range*rProp - cruiseSpeed*batteryMass - (motorMass*mtom)^3
-            - (range*cruiseSpeed)^2 + rProp*motorMass - cruiseSpeed*mtom '''
-        
-        range = params['range']
-        rProp = params['rProp']
-        cruiseSpeed = params['cruiseSpeed']
-        batteryMass = params['batteryMass']
-        motorMass = params['motorMass']
-        mtom = params['mtom']
-        
-        unknowns['costPerFlight'] = range*rProp - cruiseSpeed*batteryMass - (motorMass*mtom)**3 \
-                                    - (range*cruiseSpeed)**2 + rProp*motorMass - cruiseSpeed*mtom
-        
+
 
 #TODO: Add Group imports
 #      and(or)
@@ -87,7 +68,7 @@ class TopLevelSystem(Group):
         # add constraint equations
         self.add('con', ExecComp('c = motorMass + batteryMass - mtom'))
         
-        # connect components and variablesW
+        # connect components and variables
         self.connect('indep1.range', 'comp.range') 
         self.connect('indep2.rProp', 'comp.rProp') 
         self.connect('indep3.cruiseSpeed', 'comp.cruiseSpeed') 
