@@ -37,17 +37,17 @@ class wing_mass(Component):
 
     def __init__(self):
         super(wing_mass, self).__init__()
-        self.add_param('W', val=0.0)
-        self.add_param('span', val=0.0)
+        self.add_param('W', val=1.0)
+        self.add_param('span', val=1.0)
         self.add_param('chord', val=0.0)
-        self.add_param('winglet', val=0.0)
-        self.add_param('fc', val=0.0)
-        #self.add_param('xmotor', val=0.0)
-        self.add_param('rProp', val=0.0)
-        self.add_param('thrust', val=0.0)
+        self.add_param('winglet', val=1.0)
+        self.add_param('fc', val=1.0)
+        #self.add_param('xmotor', val=1.0)
+        self.add_param('rProp', val=1.0)
+        self.add_param('thrust', val=1.0)
         
         
-        self.add_output('mass', val=0.0)
+        self.add_output('mass', val=1.0)
         
     def solve_nonlinear(self, params, unknowns, resids):
         # Setup

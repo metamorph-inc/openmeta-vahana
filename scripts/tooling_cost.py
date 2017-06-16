@@ -90,8 +90,12 @@ class tooling_cost(Component):
             finishBitStep = 0.8*finishBitDiam  # Rougher step size
             a = width/2.0
             b = depth
-            h = (a-b)**2 / (a+b)**2
-            p = math.pi*(a+b)*(1.0+3.0*h/(10.0+math.sqrt(4.0-3.0*h)))  # Approximate solution to ellipse perimeter
+            h = (a-b)**2.0 / (a+b)**2.0
+            p = 0
+            if (4.0-3.0*h > 0.0):
+                p = math.pi*(a+b)*(1.0+3.0*h/(10.0+math.sqrt(4.0-3.0*h)))  # Ramanujan 2nd approximation to ellipse perimeter. See: http://paulbourke.net/geometry/ellipsecirc/
+            else:  # 4.0-3.0*h <= 0.0
+                0.25*math.pi*(a+b)*(3*(1+h/4.0)+1/(1-h/4.0))  # Hudson 2nd approximation to ellipse perimeter. Generally less accurate than Ramanujan 2nd
             cutArea = length*p/2.0  # Amount of material to rough out
             finishTime = cutArea / (finishFeed*finishBitStep) * finishPasses  # Time for roughing
             finishCost = finishTime*finishCostRate  # Roughing cost
