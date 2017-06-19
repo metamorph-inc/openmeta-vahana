@@ -99,10 +99,10 @@ class TopLevelSystem(Group):
         self.add('costBuildupConst1', IndepVarComp('partsPerTool', 1000.0))
         
         # add constraint equations
-        self.add('con1', ExecComp('c = EReserve - (mBattery*230.0*0.95/1000.0)'))
-        self.add('con2', ExecComp('c = hoverPower_PMax / 1000.0 - mMotors*5.0'))
-        self.add('con3', ExecComp('c = mass_W - mtow*9.8'))
-        #self.add('con4', ExecComp('c = 0.5*mass_m*hoverPower_VAutoRotation**2.0 - 0.5*1.0/3.0*mass_rotor*hoverPower_Vtip**2.0'))  # Helicopter only - doesn't work for this version
+        self.add('con1', ExecComp('c = (mBattery*230.0*0.95/1000.0) - EReserve'))
+        self.add('con2', ExecComp('c = mMotors*5.0 - hoverPower_PMax / 1000.0'))
+        self.add('con3', ExecComp('c = mtow*9.8 - mass_W'))
+        #self.add('con4', ExecComp('c = 0.5*1.0/3.0*mass_rotor*hoverPower_Vtip**2.0 - 0.5*mass_m*hoverPower_VAutoRotation**2.0'))  # Helicopter only - doesn't work for this version
         
         # connect components
         self.connect('indep6.mtom', 'MassToWeight.mass')  # MassToWeight inputs
@@ -220,9 +220,9 @@ if __name__ == '__main__':
     sub.driver.options['optimizer'] = 'COBYLA'  # The 'COBYLA' optimizer is supported by OpenMETA. 
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
-    sub.driver.maxfun = 10000  # COBYLA-specific setting: maximum number of iterations
-    sub.driver.rhobeg = 1000.0  # don't know what this is - yet - but I'm just going to play with some values
-    sub.driver.rhoend = 10.0  #  convergence tolerance
+    sub.driver.maxfun = 200  # COBYLA-specific setting: maximum number of iterations
+    sub.driver.rhobeg = 100.0  # don't know what this is - yet - but I'm just going to play with some values
+    sub.driver.rhoend = 1000.0  #  convergence tolerance
     # ^ Working here
     
     # SubProblem: set design variables for sub.driver
@@ -246,9 +246,9 @@ if __name__ == '__main__':
     sub.driver.add_constraint('indep6.mtom', lower=100.0, upper=9999.0)
     
     # SubProblem: set design constraints
-    sub.driver.add_constraint('con1.c', upper=0.0)
-    sub.driver.add_constraint('con2.c', upper=0.0)
-    sub.driver.add_constraint('con3.c', upper=0.0)
+    sub.driver.add_constraint('con1.c', lower=0.0)
+    sub.driver.add_constraint('con2.c', lower=0.0)
+    sub.driver.add_constraint('con3.c', lower=0.0)
     
     # TopProblem: define a Problem to set up different optimization cases
     top = Problem(root=Group())

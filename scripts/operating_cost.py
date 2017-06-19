@@ -29,7 +29,7 @@
 
 from __future__ import print_function
 
-from openmdao.api import Component
+from openmdao.api import Component, IndepVarComp, Problem, Group, FileRef
 import math
 
 class operating_cost(Component):
@@ -180,3 +180,33 @@ class operating_cost(Component):
             unknowns['C_energyCostPerFlight'] + unknowns['C_batteryReplCostPerFlight'] + unknowns['C_motorReplCostPerFlight'] + \
             unknowns['C_servoReplCostPerFlight'] + unknowns['C_laborCostPerFlight']
         
+if __name__ == "__main__":
+    top = Problem()
+    root = top.root = Group()
+    
+    # Sample Inputs
+    indep_vars_constants = [('Vehicle', u'tiltwing', {'pass_by_obj':True}),
+                            ('rProp', 1.4),
+                            ('flightTime', 500.0),
+                            ('E', 150.0),
+                            ('mass_structural', 200.0),
+                            ('mass_battery', 800.0),
+                            ('mass_motors', 400.0),
+                            ('toolingCost', 12000.0)]
+                            
+    root.add('Inputs', IndepVarComp(indep_vars_constants))
+    root.add('Example', operating_cost())
+    
+    root.connect('Inputs.Vehicle', 'Example.Vehicle')
+    root.connect('Inputs.rProp', 'Example.rProp')
+    root.connect('Inputs.flightTime', 'Example.flightTime')
+    root.connect('Inputs.E', 'Example.E')
+    root.connect('Inputs.mass_structural', 'Example.mass_structural')
+    root.connect('Inputs.mass_battery', 'Example.mass_battery')
+    root.connect('Inputs.mass_motors', 'Example.mass_motors')
+    root.connect('Inputs.toolingCost', 'Example.toolingCost')
+    
+    top.setup()
+    top.run()
+    
+    print("OperatingCost:", top['Example.C_costPerFlight'])
