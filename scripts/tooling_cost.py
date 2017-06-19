@@ -27,7 +27,7 @@
 
 from __future__ import print_function
 
-from openmdao.api import Component
+from openmdao.api import Component, IndepVarComp, Problem, Group
 import math
 
 class tooling_cost(Component):
@@ -180,4 +180,29 @@ class tooling_cost(Component):
             pass
             
         unknowns['toolCostPerVehicle'] = totalToolCost / params['partsPerTool']
-            
+
+        
+if __name__ == "__main__":
+    top = Problem()
+    root = top.root = Group()
+    
+    # Sample Inputs
+    indep_vars_constants = [('Vehicle', u'tiltwing', {'pass_by_obj':True}),
+                            ('rProp', 1.4),
+                            ('cruiseOutput_bRef', 14.0),
+                            ('cruiseOutput_cRef', 4.0),
+                            ('partsPerTool', 900.0)]
+                            
+    root.add('Inputs', IndepVarComp(indep_vars_constants))
+    root.add('Example', tooling_cost())
+    
+    root.connect('Inputs.Vehicle', 'Example.Vehicle')
+    root.connect('Inputs.rProp', 'Example.rProp')
+    root.connect('Inputs.cruiseOutput_bRef', 'Example.cruiseOutput_bRef')
+    root.connect('Inputs.cruiseOutput_cRef', 'Example.cruiseOutput_cRef')
+    root.connect('Inputs.partsPerTool', 'Example.partsPerTool')
+    
+    top.setup()
+    top.run()
+    
+    print("toolCostPerVehicle:", top['Example.toolCostPerVehicle'])
