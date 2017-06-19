@@ -220,9 +220,9 @@ if __name__ == '__main__':
     sub.driver.options['optimizer'] = 'COBYLA'  # The 'COBYLA' optimizer is supported by OpenMETA. 
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
-    sub.driver.maxfun = 1000  # COBYLA-specific setting: maximum number of iterations
-    sub.driver.rhobeg = 100.0  # don't know what this is - yet - but I'm just going to play with some values
-    sub.driver.rhoend = 1.0e-3  #  convergence tolerance
+    sub.driver.maxfun = 10000  # COBYLA-specific setting: maximum number of iterations
+    sub.driver.rhobeg = 1000.0  # don't know what this is - yet - but I'm just going to play with some values
+    sub.driver.rhoend = 10.0  #  convergence tolerance
     # ^ Working here
     
     # SubProblem: set design variables for sub.driver
@@ -246,9 +246,9 @@ if __name__ == '__main__':
     sub.driver.add_constraint('indep6.mtom', lower=100.0, upper=9999.0)
     
     # SubProblem: set design constraints
-    sub.driver.add_constraint('con1.c', lower=0.0)
-    sub.driver.add_constraint('con2.c', lower=0.0)
-    sub.driver.add_constraint('con3.c', lower=0.0)
+    sub.driver.add_constraint('con1.c', upper=0.0)
+    sub.driver.add_constraint('con2.c', upper=0.0)
+    sub.driver.add_constraint('con3.c', upper=0.0)
     
     # TopProblem: define a Problem to set up different optimization cases
     top = Problem(root=Group())
