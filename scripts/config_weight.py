@@ -152,7 +152,7 @@ class config_weight(Component):
             # Total mass + 10% Fudge factor
             unknowns['mass_m'] = 1.1 * (params['payload'] + unknowns['mass_seat'] + unknowns['mass_avionics'] + unknowns['mass_servos'] + \
                 unknowns['mass_tilt'] + unknowns['mass_structural'] + \
-                unknowns['mass_battery'] + unknowns['mass_motors'] + unknowns['mass_wire'] + unknowns['mass_brs'])
+               params['mBattery'] + params['mMotors'] + unknowns['mass_wire'] + unknowns['mass_brs'])
         
         elif (params["Vehicle"].lower().replace('-', '') == "helicopter"):
             # Servo weight
@@ -192,7 +192,7 @@ class config_weight(Component):
             # Total mass + 10% Fudge factor
             unknowns['mass_m'] = 1.1 * (params['payload'] + unknowns['mass_seat'] + unknowns['mass_avionics'] + unknowns['mass_servos'] + \
                 unknowns['mass_transmission'] + unknowns['mass_structural'] + \
-                unknowns['mass_battery'] + unknowns['mass_motors'] + unknowns['mass_wire'] + unknowns['mass_brs'])
+                params['mBattery'] + params['mMotors'] + unknowns['mass_wire'] + unknowns['mass_brs'])
 
         else:
             print('Unrecognized vehicle!')

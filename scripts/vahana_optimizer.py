@@ -220,9 +220,13 @@ if __name__ == '__main__':
     sub.driver.options['optimizer'] = 'COBYLA'  # The 'COBYLA' optimizer is supported by OpenMETA. 
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
-    sub.driver.maxfun = 200  # COBYLA-specific setting: maximum number of iterations
-    sub.driver.rhobeg = 100.0  # don't know what this is - yet - but I'm just going to play with some values
-    sub.driver.rhoend = 1000.0  #  convergence tolerance
+    sub.driver.options['maxiter'] = 2000
+    sub.driver.options['tol'] = 0.1
+    sub.driver.opt_settings['rhobeg'] = 1.8
+    #sub.driver.opt_settings['catol'] = 1.0
+    
+    # sub.driver.options['rhobeg'] = 1000 # don't know what this is - yet - but I'm just going to play with some values
+    # sub.driver.rhoend = 0.1  #  convergence tolerance
     # ^ Working here
     
     # SubProblem: set design variables for sub.driver
