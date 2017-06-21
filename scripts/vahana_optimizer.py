@@ -99,9 +99,9 @@ class TopLevelSystem(Group):
         self.add('costBuildupConst1', IndepVarComp('partsPerTool', 1000.0))
         
         # add constraint equations
-        self.add('con1', ExecComp('c = (mBattery*230.0*0.95/1000.0) - EReserve'))
-        self.add('con2', ExecComp('c = mMotors*5.0 - hoverPower_PMax / 1000.0'))
-        self.add('con3', ExecComp('c = mtow*9.8 - mass_W'))
+        self.add('con1', ExecComp('c1 = (mBattery*230.0*0.95/1000.0) - EReserve'))
+        self.add('con2', ExecComp('c2 = mMotors*5.0 - hoverPower_PMax / 1000.0'))
+        self.add('con3', ExecComp('c3 = mtow*9.8 - mass_W'))
         #self.add('con4', ExecComp('c = 0.5*1.0/3.0*mass_rotor*hoverPower_Vtip**2.0 - 0.5*mass_m*hoverPower_VAutoRotation**2.0'))  # Helicopter only - doesn't work for this version
         
         # connect components
@@ -220,10 +220,9 @@ if __name__ == '__main__':
     sub.driver.options['optimizer'] = 'COBYLA'  # The 'COBYLA' optimizer is supported by OpenMETA. 
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
-    sub.driver.options['maxiter'] = 2000
-    sub.driver.options['tol'] = 0.1
-    sub.driver.opt_settings['rhobeg'] = 1.8
-    #sub.driver.opt_settings['catol'] = 1.0
+    sub.driver.options['maxiter'] = 100
+    sub.driver.options['tol'] = 10.0
+    sub.driver.opt_settings['rhobeg'] = 100.0
     
     # sub.driver.options['rhobeg'] = 1000 # don't know what this is - yet - but I'm just going to play with some values
     # sub.driver.rhoend = 0.1  #  convergence tolerance
@@ -250,9 +249,9 @@ if __name__ == '__main__':
     sub.driver.add_constraint('indep6.mtom', lower=100.0, upper=9999.0)
     
     # SubProblem: set design constraints
-    sub.driver.add_constraint('con1.c', lower=0.0)
-    sub.driver.add_constraint('con2.c', lower=0.0)
-    sub.driver.add_constraint('con3.c', lower=0.0)
+    sub.driver.add_constraint('con1.c1', lower=0.0)
+    sub.driver.add_constraint('con2.c2', lower=0.0)
+    sub.driver.add_constraint('con3.c3', lower=0.0)
     
     # TopProblem: define a Problem to set up different optimization cases
     top = Problem(root=Group())
