@@ -23,6 +23,7 @@
 from __future__ import print_function  # allows for backwards compatibility with Python 2.X - OpenMDAO (and OpenMeta) uses Python 2.7
 import sys
 import math
+import csv  # for data export
 
 # OpenMDAO imports
 from openmdao.api import Problem, Group, Component, IndepVarComp, ExecComp, \
@@ -234,12 +235,12 @@ if __name__ == '__main__':
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
     sub.driver.options['maxiter'] = 1000
-    sub.driver.options['tol'] = 0.1
+    sub.driver.options['tol'] = 0.01
     #sub.driver.opt_settings['rhobeg'] = 100.0
     
     # SubProblem: set design variables for sub.driver
     sub.driver.add_desvar('indep2.rProp', lower=30.0, upper=200.0)
-    sub.driver.add_desvar('indep3.cruiseSpeed', lower=46.0, upper=80.0)
+    sub.driver.add_desvar('indep3.cruiseSpeed', lower=45.5, upper=80.0)
     sub.driver.add_desvar('indep4.batteryMass', lower=1.0, upper=99.90)
     sub.driver.add_desvar('indep5.motorMass', lower=0.10, upper=99.90)
     sub.driver.add_desvar('indep6.mtom', lower=1.0, upper=99.990)
@@ -252,7 +253,7 @@ if __name__ == '__main__':
     # Jonathan's work-around is to set additional constraints
     # Interesting article: http://openmdao.org/forum/questions/342/slsqpdriver-not-respecting-paramaters-low-and-high-contraints
     sub.driver.add_constraint('indep2.rProp', lower=30.0, upper=200.0)
-    sub.driver.add_constraint('indep3.cruiseSpeed', lower=46.0, upper=80.0)
+    sub.driver.add_constraint('indep3.cruiseSpeed', lower=45.5, upper=80.0)
     sub.driver.add_constraint('indep4.batteryMass', lower=1.0, upper=99.90)
     sub.driver.add_constraint('indep5.motorMass', lower=0.10, upper=99.90)
     sub.driver.add_constraint('indep6.mtom', lower=1.0, upper=99.990)
@@ -313,13 +314,34 @@ if __name__ == '__main__':
     top.cleanup()
     
     # Data retrieval & display
+    # Old way - good for debugging IndepVars
+    #db = sqlitedict.SqliteDict( 'subprob', 'iterations' )
+    #db_keys = list( db.keys() ) # list() needed for compatibility with Python 3. Not needed for Python 2
+    #for i in db_keys:
+    #    data = db[i]
+    #    print('\n')
+    #    print(data['Unknowns'])
+    #    print(data['Parameters'])
+    
     db = sqlitedict.SqliteDict( 'subprob', 'iterations' )
     db_keys = list( db.keys() ) # list() needed for compatibility with Python 3. Not needed for Python 2
     for i in db_keys:
         data = db[i]
         print('\n')
-        print(data['Unknowns'])
-        print(data['Parameters'])
+        print('Range (m): {}, DOC ($): {}, rProp (m): {}, cruiseSpeed (m/s): {}, batteryMass (kg): {}, motorMass (kg): {}, mtom (kg): {}' \
+            .format(data['Parameters']['subprob.indep1.range'] / 1000.0, data['Unknowns']['subprob.OperatingCost.C_costPerFlight'], \
+            data['Parameters']['subprob.indep2.rProp'] * 0.01, data['Parameters']['subprob.indep3.cruiseSpeed'], \
+            data['Parameters']['subprob.indep4.batteryMass'] * 10.0, data['Parameters']['subprob.indep5.motorMass'] * 10.0, \
+            data['Parameters']['subprob.indep6.mtom'] * 100.0))
     
-    
+    # Data export via .csv      
+    with open('results.csv', 'wb') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        for i in db_keys:
+            data = db[i]
+            writer.writerow([data['Parameters']['subprob.indep1.range'] / 1000.0, data['Unknowns']['subprob.OperatingCost.C_costPerFlight'], \
+            data['Unknowns']['subprob.OperatingCost.C_costPerFlight'] / data['Parameters']['subprob.indep1.range'] * 1000.0, \
+            data['Parameters']['subprob.indep2.rProp'] * 0.01, data['Parameters']['subprob.indep3.cruiseSpeed'], \
+            data['Parameters']['subprob.indep4.batteryMass'] * 10.0, data['Parameters']['subprob.indep5.motorMass'] * 10.0, \
+            data['Parameters']['subprob.indep6.mtom'] * 100.0])
     
