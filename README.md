@@ -1,14 +1,43 @@
 # OpenMETA-Vahana
-An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A^3 by Airbus. The goal was to replicate the tradeoff study that was released by A^3. A CAD model has been added to supplement this analysis. This model has parametric rotation of the wings and canards, as well as changing total wing and canard length based on the design variable "rProp".
+![Image of Creo model](Vahana_V2.PNG)
+
+Figure 1 - Creo Model of a Possible Vahana Configuration
+
+## 1. Intro
+An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A^3 by Airbus. The goal was to replicate the Vahan Configuration Trade Study released by A^3 using OpenMETA. 
+
+## 2. Airbus Vahana Configuration Trade Study
+Project Vahana is an Airbus A^3's campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight fan tilt-wing) using multidisciplinary design optimization (MDO). 
+
+[A^3 Vahana Configuration Trade Study - Part I](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)
+
+[A^3 Vahana Configuration Trade Study - Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93)
+
+[A^3 MATLAB source code](https://github.com/VahanaOpenSource/vahanaTradeStudy)
+
+The A^3 team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A^3 team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements - e.g. The vehicle's effective energy capacity (Battery Mass * Battery Energy Density * Battery Discharge Depth) - had to be greater than the amount of energy required to execute a reserve ("worst case") mission. 
+
+This entire optimization process was executed via the following MATLAB scripts:
+sizingTradeStudy.m
+computePerformance.m
+simpleMission.m
+reserveMission.m
+cruisePower.m
+hoverPower.m
+loiterPower.m
+configWeight.m
+wingMass.m
+wireMass.m
+propMass.m
+fuselageMass.m
+operatingCost.m
+costBuildup.m
+toolingCost.m
+materials.m
+
+As a result of their Sizing Trade Study, the Vahana team concluded that an electric eight fan tilt-wing configuration would best meet their broad design requirements for a low-cost, single-passenger, electric VTOL aircraft.
 
 
-![Image of Creo model](Vahana_V2.PNG "Image of Creo model")
-
-Figure 1 - Image of Creo Model [CENTER]
-
-Project Vahana is an Airbus A^3 project to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to examine two different configurations (an electric helicopter and an electric eight fan tilt-wing) using multidisciplinary design optimization (MDO). 
-
-Airbus released the [MATLAB source code](https://github.com/VahanaOpenSource/vahanaTradeStudy) used in their [Vahana Configuration Trade Study](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93) on GitHub.
 
 Here at MetaMorph, we wanted to see if we could set up the same MDO problem and solve it in OpenMETA. 
 
