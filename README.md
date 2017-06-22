@@ -51,7 +51,13 @@ This involved translating each MATLAB script into Python, placing that translate
 
 Once created, the PythonWrapper Components could then be imported into OpenMETA and manipulated on a Parametric Exploration Tool (PET) canvas. 
 
-In this case, PythonWrapper Components offered the following advantages:
+
+
+Figure 2 -
+
+Figure 3 - 
+
+For this problem, PythonWrapper Components offered the following advantages:
 
 * PythonWrapper Components are represented visually within OpenMETA
 
@@ -66,15 +72,12 @@ In this case, PythonWrapper Components offered the following advantages:
 * The MATLAB scripts had to first be converted to Python
 
 * Converting MATLAB scripts into PythonWrapper Components often changes the structure of the problem. For example, if you have a function x = foo(a, b) that calls another function y = bar(c).  
-In MATLAB, you would have two files (foo.m and bar.m) and your data path would look like this: a,b -> foo -> c -> bar -> y -> foo -> x.  
+In MATLAB, you would have two files (foo.m and bar.m) and your data path would look like this:  
+a,b -> foo -> c -> bar -> y -> foo -> x.  
 a & b are passed into foo. foo passes c into bar. bar returns y to foo. foo returns x.  
-However, for PythonWrapper Components it often makes more sense to first pass c to bar. bar passes y to foo. a & b are also passed to foo. foo outputs x.  
+However, for PythonWrapper Components (foo.py and bar.py) it often makes more sense to first pass c to bar. bar passes y to foo. a & b are also passed to foo. foo outputs x.  
 c -> bar -> y -> foo -> x  
 ........................ a,b -^
-
-
-
-
 
 ### 3.b OpenMETA Parameter Study
 After converting the major MATLAB scripts in PythonWrapper Components, we added a Parameter Study Component to explore the available design space. Figure 5 shows the Parameter Study has 7 Design Variables on its left side and 8 Objectives on its right side.
