@@ -190,7 +190,7 @@ class TopLevelSystem(Group):
         
         self.connect('wireMassConst2.fuselageHeight', 'WireMass.fuselageHeight')  # WireMass inputs
         self.connect('wireMassConst1.fuselageLength', 'WireMass.fuselageLength')
-        self.connect('HoverPower.hoverPower_PMax', 'WireMass.power')
+        self.connect('HoverPower.hoverPower_PMaxBattery', 'WireMass.power')  # Make sure this is actually correct
         self.connect('scale2.scaled', 'WireMass.rProp')
         self.connect('CruisePower.bRef', 'WireMass.span')
         

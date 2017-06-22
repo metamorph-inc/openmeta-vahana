@@ -67,10 +67,11 @@ class config_weight(Component):
         self.add_param('payload', val=0.0)
         self.add_param('hoverOutput_PMax', val=0.0)
         self.add_param('prop_mass', val=0.0)
+        self.add_param('prop_mass_tail', val=0.0)
         self.add_param('fuselage_mass', val=0.0)
         self.add_param('wire_mass', val=0.0)
-        self.add_param('wing_mass', val=0.0)
-        self.add_param('canard_mass', val=0.0)
+        self.add_param('wing_mass', val=1.0)
+        self.add_param('canard_mass', val=1.0)
 
         self.add_output('mass_payload', val=0.0)
         self.add_output('mass_seat', val=0.0)
@@ -168,7 +169,7 @@ class config_weight(Component):
             # Tail rotor mass (20% main rotor radius), assuming moment arm of 1.25x
             # rotor radius, need to be capable of providing 1.5x thrust required to
             # fight max rotor torque
-            unknowns['mass_tailRotor'] = params['prop_mass']
+            unknowns['mass_tailRotor'] = params['prop_mass_tail']
             
             # Transmission mass
             # Estimate from OH-58 gearbox study that has a lower bound of 0.26 lb/Hp

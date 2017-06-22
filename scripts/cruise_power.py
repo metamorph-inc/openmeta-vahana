@@ -149,12 +149,12 @@ class CruisePower(Component):
 
             # Solve for induced velocity /w Newton method (see "Helicopter Theory" section 4.1.1)
             unknowns['lambda'] = unknowns['mu'] * math.tan(unknowns['alpha']) + unknowns['Ct'] / \
-                (2.0 * math.sqrt(unknowns['mu']**2 + unknowns['Ct']/2.0))
+                (2.0 * math.sqrt(unknowns['mu']**2.0 + unknowns['Ct']/2.0))
             for i in range(5):
                 unknowns['lambda']  = (unknowns['mu'] * math.tan(unknowns['alpha']) + \
-                    unknowns['Ct'] / 2.0 * (unknowns['mu']**2 + 2.0*unknowns['lambda']**2) / \
-                    (unknowns['mu']**2 + unknowns['lambda']**2)**1.5) / \
-                    (1 + unknowns['Ct']/2 * unknowns['lambda'] / (unknowns['mu']**2 + unknowns['lambda']**2)**1.5)
+                    unknowns['Ct'] / 2.0 * (unknowns['mu']**2.0 + 2.0*unknowns['lambda']**2) / \
+                    (unknowns['mu']**2.0 + unknowns['lambda']**2)**1.5) / \
+                    (1.0 + unknowns['Ct']/2.0 * unknowns['lambda'] / (unknowns['mu']**2 + unknowns['lambda']**2.0)**1.5)
             unknowns['v'] = unknowns['lambda'] * unknowns['omega'] * params['rProp'] - params['V'] * math.sin(unknowns['alpha'])
 
             # Power in forward flight (see "Helicopter Theory" section 5-12)
@@ -201,8 +201,28 @@ if __name__ == "__main__":
     print("Tiltwing..     PBattery:", top['Example.PBattery'])
     
     top['Inputs.Vehicle'] = u'helicopter'
-    top['Inputs.rProp'] = 4.0
     
     top.run()
     
     print("Helicopter..   PBattery:", top['Example.PBattery'])
+    print("Helicopter..   mu:", top['Example.mu'])
+    print("Helicopter..   alpha:", top['Example.alpha'])
+    print("Helicopter..   omega:", top['Example.omega'])    
+    
+    top['Inputs.V'] = 30.0
+    
+    top.run()
+    print("Inputs.V..     V:", top['Inputs.V'])
+    print("Helicopter..   PBattery:", top['Example.PBattery'])
+    print("Helicopter..   mu:", top['Example.mu'])
+    print("Helicopter..   alpha:", top['Example.alpha'])
+    print("Helicopter..   omega:", top['Example.omega'])
+    
+    top['Inputs.V'] = 80.0
+    
+    top.run()
+    print("Inputs.V..     V:", top['Inputs.V'])
+    print("Helicopter..   PBattery:", top['Example.PBattery'])
+    print("Helicopter..   mu:", top['Example.mu'])
+    print("Helicopter..   alpha:", top['Example.alpha'])
+    print("Helicopter..   omega:", top['Example.omega'])

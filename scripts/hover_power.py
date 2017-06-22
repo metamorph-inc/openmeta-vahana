@@ -36,6 +36,7 @@ class HoverPower(Component):
         self.add_output('hoverPower_VAutoRotation', val=0.0)
         self.add_output('hoverPower_Vtip', val=0.0)
         self.add_output('TMax', val=0.0)
+        self.add_output('hoverPower_PMaxBattery', val=0.0)
         
     def solve_nonlinear(self, params, unknowns, resids):
         # Altitude, compute atmospheric properties
@@ -89,14 +90,14 @@ class HoverPower(Component):
                 sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'] * math.sqrt(ToverW))**3 / (unknowns['TMax'] / (rho * math.pi * params['rProp']**2)))
             
             # Max battery power
-            PMaxBattery = unknowns['hoverPower_PMax'] / etaMotor
+            unknowns['hoverPower_PMaxBattery'] = unknowns['hoverPower_PMax'] / etaMotor
             
             # Maximum torque per motor
             QMax = unknowns['hoverPower_PMax'] / (omega * math.sqrt(ToverW))
 
         elif (params['Vehicle'].lower().replace('-', '') == "helicopter"):
             
-            nProp = 1  # Number of rotors
+            nProp = 1.0  # Number of rotors
             ToverW = 1.1  # Max required T/W for climb and operating at higher altitudes
             k = 1.15  # Effective disk area factor (see "Helicopter Theory" Section 2-6.2)
             etaMotor = 0.85 * 0.98  # Assumed motor and gearbox efficiencies (85% and 98% respectively)
@@ -108,19 +109,19 @@ class HoverPower(Component):
             THover = params['W'] / nProp
             
             # Compute thrust coefficient
-            Ct = THover / (rho * math.pi * params['rProp']**2 * unknowns['hoverPower_Vtip']**2)
+            Ct = THover / (rho * math.pi * params['rProp']**2.0 * unknowns['hoverPower_Vtip']**2.0)
             
             # Average blade CL (see "Helicopter Theory" Section 2-6.4)
             AvgCL = 6.0 * Ct / sigma
             
             # Auto-rotation descent rate (see "Helicopter Theory" Section 3-2)
-            unknowns['hoverPower_VAutoRotation'] = 1.16 * math.sqrt(THover / (math.pi * params['rProp']**2))
+            unknowns['hoverPower_VAutoRotation'] = 1.16 * math.sqrt(THover / (math.pi * params['rProp']**2.0))
             
             # Hover Power
             PHover = nProp * THover * \
-                (k * math.sqrt(THover / (2 * rho * math.pi * params['rProp']**2)) + \
-                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'])**3 / (THover / (rho * math.pi * params['rProp']**2)))
-            FOM = nProp * THover * math.sqrt(THover / (2 * rho * math.pi * params['rProp']**2)) / PHover
+                (k * math.sqrt(THover / (2.0 * rho * math.pi * params['rProp']**2.0)) + \
+                sigma * Cd0 / 8.0 * (unknowns['hoverPower_Vtip'])**3.0 / (THover / (rho * math.pi * params['rProp']**2.0)))
+            FOM = nProp * THover * math.sqrt(THover / (2.0 * rho * math.pi * params['rProp']**2.0)) / PHover
             
             # Battery power
             # ~10% power to tail rotor (see "Princples of Helicopter Aerodynamics" by Leishman)
@@ -133,14 +134,14 @@ class HoverPower(Component):
             # Maximum shaft power required (for motor sizing)
             # Note: Helicopter increases thrust by increasing collective with constant RPM
             unknowns['hoverPower_PMax'] = nProp * unknowns['TMax'] * \
-                (k * math.sqrt(unknowns['TMax'] / (2 * rho * math.pi * params['rProp']**2)) + \
-                sigma * Cd0 / 8 * (unknowns['hoverPower_Vtip'])**3 / (unknowns['TMax'] / (rho * math.pi * params['rProp']**2)))
+                (k * math.sqrt(unknowns['TMax'] / (2.0 * rho * math.pi * params['rProp']**2.0)) + \
+                sigma * Cd0 / 8.0 * (unknowns['hoverPower_Vtip'])**3.0 / (unknowns['TMax'] / (rho * math.pi * params['rProp']**2.0)))
                 
             # ~15% power to tail rotor for sizing (see "Princples of Helicopter Aerodynamics" by Leishman)
             unknowns['hoverPower_PMax'] = 1.15 * unknowns['hoverPower_PMax']
             
             # Max battery power
-            PMaxBattery = unknowns['hoverPower_PMax'] / etaMotor
+            unknowns['hoverPower_PMaxBattery'] = unknowns['hoverPower_PMax'] / etaMotor
             
             # Maximum torque per motor
             QMax = unknowns['hoverPower_PMax'] / omega

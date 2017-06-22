@@ -39,7 +39,7 @@ class wing_mass(Component):
         super(wing_mass, self).__init__()
         self.add_param('W', val=1.0)
         self.add_param('span', val=1.0)
-        self.add_param('chord', val=0.0)
+        self.add_param('chord', val=1.0)
         self.add_param('winglet', val=1.0)
         self.add_param('fc', val=1.0)
         #self.add_param('xmotor', val=1.0)
