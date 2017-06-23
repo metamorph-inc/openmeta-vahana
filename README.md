@@ -1,8 +1,4 @@
 # OpenMETA-Vahana
-
-**Figure** - OpenMETA Creo Model of a Possible Vahana Configuration
-![Image of OpenMETA Vahana Creo model](images/Vahana_V2.PNG)
-
 ## Introduction
 
 An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A³ by Airbus. The goal was to replicate the Vahana Configuration Trade Study released by A³ using OpenMETA. 
@@ -124,6 +120,9 @@ While this functionality is not currently within OpenMETA, we were able build it
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
 COMING SOON
+
+**Figure** - OpenMETA Creo Model of a Possible Vahana Configuration
+![Image of OpenMETA Vahana Creo model](images/Vahana_V2.PNG)
 
 ## References
 [Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)
