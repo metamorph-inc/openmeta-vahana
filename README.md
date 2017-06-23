@@ -50,7 +50,8 @@ mass = configWeight(vehicle,rProp,mBattery,mMoters,mtow,hoverOutput,cruiseOutput
 
 We converted the `configWeight.m` script to a PythonWrapper component `config_weight.py` script. When this component is placed within an OpenMETA PET, a block appears representing the script with inputs and outputs on the left and right sides, respectively.
 
-<p align="center">PythonWrapper Component in PET representing `config_weight.py`</p>
+<p align="center">PythonWrapper Component in PET representing `config_weight.py`</p>  
+
 <img src="images\Vahana_PET_ConfigWeight.PNG" alt="Image of config_weight.py" style="width: 600px;"/>
 
 For our purposes, the conversion from MATLAB to Python was not always exact. We had to find substitutes for many of the build-in MATLAB functions/constructs, and we took some liberties in recomposing parts of the problem to better fit within the OpenMETA architecture.  
