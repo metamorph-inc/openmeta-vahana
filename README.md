@@ -124,7 +124,6 @@ While this functionality is not currently within OpenMETA, we were able build it
 **Figure 8** - vahana_optimizer.py vs sizingTradeStudy.m
 ![vahana_optimizer.py](vahana_optimizer.PNG)
 
-Now, in the 4th paragraph of 'Trade Study Results' in [A^3's Vahana Configuration Trade Study - Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93) 
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
 
