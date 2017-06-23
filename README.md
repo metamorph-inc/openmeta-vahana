@@ -67,6 +67,8 @@ In general, PythonWrapper components:
 * can be modified, copied, or imported into other designs
 * are fully-compatible with OpenMETA's underlying OpenMDAO engine
 
+In combination with other OpenMETA components, Python wrappers are used as 'building blocks' in building larger systems and models within the Parametric Exploration Tool (PET) canvas.
+
 <!--
 ...and the following disadvantages:
 
@@ -83,8 +85,6 @@ c -> bar -> y -> foo -> x
 ### OpenMETA Using a 'Parameter Study' Driver
 
 <!-- Talk about composition and what a Parameter Study is.-->
-
-PythonWrapper Components could then be imported into OpenMETA and manipulated on a Parametric Exploration Tool (PET) canvas.  <!--'building block' within your design.-->
 
 After converting the major MATLAB scripts in PythonWrapper Components, we added a 'Parameter Study' driver to explore the available design space. The 'Parameter Study' driver allows the user to vary Design Variables (inputs) within defined ranges and record Objectives (outputs). In essence, the 'Parameter Study' driver allows the user to quickly explore the available design space and then view the results of that exploration via the OpenMETA PET Visualizer (or as a raw .csv).
 
