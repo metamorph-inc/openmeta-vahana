@@ -1,7 +1,7 @@
 # OpenMETA-Vahana
 
 **Figure 1** - OpenMETA Creo Model of a Possible Vahana Configuration
-![Image of OpenMETA Vahana Creo model](images\Vahana_V2.PNG)
+![Image of OpenMETA Vahana Creo model](images/Vahana_V2.PNG)
 
 ## Introduction
 
@@ -97,12 +97,12 @@ Note: The Tilt-Wing and Helicopter configuration have slightly different ranges 
 The 'Parameter Study' driver also contains several Objectives, which record system outputs - including DOC and the constraint functions - for each combination of Design Variables injected into the system.
 
 **Figure 4** - 'Parameter Study' driver within Larger PET
-![Parameter Study](images\Vahana_PET_ParameterStudy.PNG)
+![Parameter Study](images/Vahana_PET_ParameterStudy.PNG)
 
 Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in **Figure 6**.
 
 **Figure 5** - Parameter Study PET Results 
-![Parameter Study Results](images\Vahana_PET_Results1MilTo397.PNG)
+![Parameter Study Results](images/Vahana_PET_Results1MilTo397.PNG)
 
 ### OpenMETA Using an 'Optimizer' Driver
 
@@ -121,7 +121,7 @@ The OpenMETA 'Optimizer' produced good results, and if that particular model wer
 
 While this functionality is not currently within OpenMETA, we were able build it (using all those PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. **Figure 8** shows results from the Vahana Configuration Trade Study and the Parameter Study + Optimizer on the same graph. While there is obviously room for improvement in the current PythonWrapper Components modeling the MDO problem, it is a good stepping stone towards replication.
 
-![vahana_optimizer.py](images\Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
+![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
 *Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results*
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
