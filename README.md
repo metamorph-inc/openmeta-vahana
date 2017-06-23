@@ -118,6 +118,7 @@ The OpenMETA 'Optimizer' produced reasonable results, and if that particular mod
 While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. While the PythonWrapper components modeling the MDO problem can obviously be refined further still, this represents a good stepping stone towards replication.
 
 <p align="center">Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results</p>
+
 ![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
 
 ## Improvements to Vahana Configuration Trade Study / Future Plans
@@ -128,14 +129,17 @@ A CAD model can provide a more accurate representation of a vehicle's geometry, 
 
 The model (shown below) is based on the sketches of the Tilt-Wing configuration that A³ released in the Vahana Trade Study Report. This model is composed within GME and contains parametric features that align with the design requirements outlined within the Vahana Trade Study's MATLAB code. The rotational orientation of the wings and canards can be varied between the cruise and hover positions (or 0-90 degrees).
 
+
 <p align="center">Vahana in hover mode</p>
 
 ![Image of 90 deg rotation](images/Vahana_V2_90Deg.PNG "Image of Vahana in hover configuration")
 
 
+
 <p align="center">Vahana transitioning from hover mode to cruise mode</p>
 
 ![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise")
+
 
 
 <p align="center">Vahana in cruise mode
