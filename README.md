@@ -43,7 +43,7 @@ Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade 
 
 ### Conversion of MATLAB Scripts to PythonWrapper Components
 
-In order to set the problem up in OpenMETA, the relevant MATLAB scripts were first converted to **PythonWrapper** components. A PythonWrapper allows us to define an arbitrary block of Python code, e.g. a model, system, or calculation, with specific inputs and outputs. This PythonWrapper component can then be placed within an OpenMETA PET where the inputs and outputs are exposed as ports.
+In order to set the problem up in OpenMETA, the relevant MATLAB scripts were first converted to PythonWrapper components. A PythonWrapper allows us to define an arbitrary block of Python code, e.g. a model, system, or calculation, with specific inputs and outputs. This PythonWrapper component can then be placed within an OpenMETA PET where the inputs and outputs are exposed as ports.
 
 For example, the function `configWeight()` (defined within `configWeight.m`) is called within `computePerformance.m` in the Vahana Configuration Trade Study as seen below.
 
@@ -52,10 +52,10 @@ For example, the function `configWeight()` (defined within `configWeight.m`) is 
 mass = configWeight(vehicle,rProp,mBattery,mMoters,mtow,hoverOutput,cruiseOutput,payload);
 ```
 
-We converted the `configWeight.m` script to a PythonWrapper component `config_weight.py`. When this component is placed within inside an OpenMETA PET, a block appears representing the script with inputs and outputs on the left and right sides, respectively.
+We converted the `configWeight.m` script to a PythonWrapper component `config_weight.py` script. When this component is placed within inside an OpenMETA PET, a block appears representing the script with inputs and outputs on the left and right sides, respectively.
 
+**Figure** - PythonWrapper Component in PET representing `config_weight.py`
 <img src="images\Vahana_PET_ConfigWeight.PNG" alt="Image of config_weight.py" style="width: 600px;"/>  
-*PythonWrapper Component in PET representing `config_weight.py`*
 
 Difficulties/Caveats:
 - The MATLAB script configWeight.m returns a single array of values. PythonWrapper Components can also return arrays but in this case, the PythonWrapper Components's outputs were returned as individual scalar values.Once created, the 
@@ -96,12 +96,12 @@ Note: The Tilt-Wing and Helicopter configuration have slightly different ranges 
 
 The 'Parameter Study' driver also contains several Objectives, which record system outputs - including DOC and the constraint functions - for each combination of Design Variables injected into the system.
 
-**Figure 4** - 'Parameter Study' driver within Larger PET
+**Figure** - 'Parameter Study' driver within Larger PET
 ![Parameter Study](images/Vahana_PET_ParameterStudy.PNG)
 
 Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in **Figure 6**.
 
-**Figure 5** - Parameter Study PET Results 
+**Figure** - Parameter Study PET Results 
 ![Parameter Study Results](images/Vahana_PET_Results1MilTo397.PNG)
 
 ### OpenMETA Using an 'Optimizer' Driver
@@ -110,8 +110,8 @@ Fortunately, OpenMETA also has an 'Optimizer' driver that uses the COBYLA Optimi
 
 |                        | Range (km) | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
 |:----------------------:|:----------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
-| OpenMETA Optimizer PET |     100    |   96.9  |    0.97    |    0.71   |        47.2       |        352       |      42.9      |    567    |
-|   Vahana Trade Study   |     100    |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    967    |
+| OpenMETA |     100    |   96.9  |    0.97    |    0.71   |        47.2       |        352       |      42.9      |    567    |
+|   Vahana Study   |     100    |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    967    |
 
 While the OpenMETA Optimizer obtained similar values, there are differences. In particular the maximum takeoff mass obtained by the Vahana Trade Study is almost twice the value of the Optimizer. The primary reason for this was several of the mass computation modules (wings, canards, fuselage, prop) were not connected at this time and instead the `config_weight.py` block was being supplied by constant values.
 
@@ -121,8 +121,8 @@ The OpenMETA 'Optimizer' produced good results, and if that particular model wer
 
 While this functionality is not currently within OpenMETA, we were able build it (using all those PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. **Figure 8** shows results from the Vahana Configuration Trade Study and the Parameter Study + Optimizer on the same graph. While there is obviously room for improvement in the current PythonWrapper Components modeling the MDO problem, it is a good stepping stone towards replication.
 
+**Figure** - Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results
 ![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
-*Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results*
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
 
