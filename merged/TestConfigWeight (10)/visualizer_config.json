@@ -1,9 +1,146 @@
 {
   "pet_config": "pet_config.json",
   "raw_data": "mergedPET.csv",
-  "tabs": [
-    "Explore.R",
-    "DataTable.R",
-    "PETRefinement.R"
-  ]
+  "tabs": ["Explore.R", "DataTable.R", "PETRefinement.R"],
+  "augmented_data": "visualizer_config_data.csv",
+  "variables": {
+    "BatteryMass": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "BatteryMass"
+    },
+    "canard_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "canard_mass"
+    },
+    "CfgID": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "CfgID"
+    },
+    "CruiseSpeed": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "CruiseSpeed"
+    },
+    "ENominal": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "ENominal"
+    },
+    "EReserve": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "EReserve"
+    },
+    "fuselage_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "fuselage_mass"
+    },
+    "GUID": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "GUID"
+    },
+    "MaxTakeoffMass": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "MaxTakeoffMass"
+    },
+    "MotorMass": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "MotorMass"
+    },
+    "payload_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "payload_mass"
+    },
+    "prop_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "prop_mass"
+    },
+    "Range": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "Range"
+    },
+    "RotorRadius": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "RotorRadius"
+    },
+    "tNominal": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "tNominal"
+    },
+    "tReserve": {
+      "type": "Objective",
+      "units": "",
+      "name_with_units": "tReserve"
+    },
+    "Vehicle": {
+      "type": "Design Variable",
+      "units": "",
+      "name_with_units": "Vehicle"
+    },
+    "wing_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "wing_mass"
+    },
+    "wire_mass": {
+      "type": "Unknown",
+      "units": {},
+      "name_with_units": "wire_mass"
+    }
+  },
+  "colorings": [],
+  "sets": [],
+  "inputs": {
+    "coloring_source": "None",
+    "DataTable-process_method": "None",
+    "DataTable-use_filtered": true,
+    "DataTable-weightMetrics": {},
+    "Explore-add_contour": false,
+    "Explore-add_pareto": false,
+    "Explore-auto_render": true,
+    "Explore-contour_var": "",
+    "Explore-display": {},
+    "Explore-explore_tabset": "Pairs Plot",
+    "Explore-pairs_click": {},
+    "Explore-pairs_plot_collapse": {},
+    "Explore-pairs_plot_marker": "1",
+    "Explore-pairs_plot_marker_size": 1,
+    "Explore-pairs_trendlines": false,
+    "Explore-pairs_upper_panel": false,
+    "Explore-single_plot_collapse": "Variables",
+    "Explore-single_plot_marker": "1",
+    "Explore-single_plot_marker_size": 1,
+    "Explore-x_input": "",
+    "Explore-y_input": "",
+    "footer_collapse": "Filters",
+    "live_color_palette": "Rainbow",
+    "live_color_rainbow_s": 1,
+    "live_color_rainbow_v": 1,
+    "live_color_variable_factor": "",
+    "live_coloring_max_min": "Maximize",
+    "live_coloring_name": "",
+    "live_coloring_type": "Max/Min",
+    "live_coloring_variable_numeric": "",
+    "master_tabset": "Explore",
+    "num_sd": 6,
+    "remove_missing": false,
+    "remove_outliers": false
+  },
+  "tab_data": {
+    "Explore": {},
+    "DataTable": {},
+    "PETRefinement": {}
+  }
 }
