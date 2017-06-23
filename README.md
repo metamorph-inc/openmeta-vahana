@@ -52,22 +52,20 @@ For example, the function `configWeight()` (defined within `configWeight.m`) is 
 mass = configWeight(vehicle,rProp,mBattery,mMoters,mtow,hoverOutput,cruiseOutput,payload);
 ```
 
-We converted the `configWeight.m` script to a PythonWrapper component `config_weight.py` script. When this component is placed within inside an OpenMETA PET, a block appears representing the script with inputs and outputs on the left and right sides, respectively.
+We converted the `configWeight.m` script to a PythonWrapper component `config_weight.py` script. When this component is placed within an OpenMETA PET, a block appears representing the script with inputs and outputs on the left and right sides, respectively.
 
 **Figure** - PythonWrapper Component in PET representing `config_weight.py`
 <img src="images\Vahana_PET_ConfigWeight.PNG" alt="Image of config_weight.py" style="width: 600px;"/>  
 
-Difficulties/Caveats:
-- The MATLAB script configWeight.m returns a single array of values. PythonWrapper Components can also return arrays but in this case, the PythonWrapper Components's outputs were returned as individual scalar values.Once created, the 
-- Notice that many of the subfunctions that were encapsulated within configWeight.m have been placed in seperate PythonWrapper Components.
-- The conversion was not always exact (E.g. costBuildup.m and toolingCost.m were combined into tooling_cost.py). We had to find substitutes for many of the build-in MATLAB functions and constructs. We took some liberties to refactor slightly.
+For our purposes, the conversion from MATLAB to Python was not always exact. We had to find substitutes for many of the build-in MATLAB functions/constructs, and we took some liberties in recomposing parts of the problem to better fit within the OpenMETA architecture.  
+For example, The MATLAB script 'configWeight.m' returns a single array of values. PythonWrapper components can also output arrays but in this case, we wanted the PythonWrapper 'ConfigWeight' to expose individual scalar values as its outputs.
 
-In general, the OpenMETA representation of the PythonWrapper Components offered the following advantages:
+In general, PythonWrapper Components offer several advantages to the user in that they:
 
-* PythonWrapper Components are represented visually within OpenMETA
-* PythonWrapper Components can be easily connected to other components (just draw a line)
-* PythonWrapper Components can be modified, copied, or imported into other designs
-* PythonWrapper Components are fully-compatible with the underlying OpenMDAO framework
+* are represented visually within OpenMETA
+* can be easily connected to other components (just draw a line)
+* can be modified, copied, or imported into other designs
+* are fully-compatible with OpenMETA's underlying OpenMDAO engine
 
 <!--
 ...and the following disadvantages:
