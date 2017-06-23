@@ -103,6 +103,7 @@ Unfortunately, after the first few runs, we quickly realized that - due to the s
 Fortunately, OpenMETA also has an 'Optimizer' driver that uses the COBYLA Optimizer. We replaced the 'Parameter Study' Driver with an 'Optimizer' driver and ran the PET again. The table below compares the results from an Optimizer PET to the results from the `tradeStudyResult.mat` file produced by the A³ Vahana Configuration Trade Study.
 
 **OpenMETA 'Optimizer' Results and Vahana Trade Study Results at for Range of 100 km:**
+
 |                        | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
 |:----------------------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
 | OpenMETA |   96.9  |    0.97    |    0.71   |        47.2       |        352       |      42.9      |    567    |
