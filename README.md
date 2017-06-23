@@ -101,13 +101,11 @@ The Parameter Study Component also contains several Objectives, which record sys
 ![Parameter Study](Vahana_PET_ParameterStudy.PNG)
 
 
-Now we can set the ranges of the design variables in the Parameter Study Component and run the Master Interpreter to generate some data. Let's set the Parameter Study to 1 million samples and run the PET.
+Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in **Figure 6**.
 
-Here's a filtered subset of our data in the OpenMETA Visualizer - 397 points to be exact:
+**Figure 6** - Parameter Study Results 
+![Parameter Study Results](Vahana_PET_Results1MilTo397.PNG)
 
-![Filtered PET Result in Visualizer](1MilFilteredVisualizerResults.PNG) <- Get a higher res image if possible
-
-Figure 5 - Filtered PET Result in Visualizer
 
 ### 3.c. OpenMETA Optimizer
 
