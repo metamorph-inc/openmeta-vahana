@@ -1,7 +1,6 @@
 # OpenMETA-Vahana
-![Image of Creo model](Vahana_V2.PNG)
-
-Figure 1 - Creo Model of a Possible Vahana Configuration
+**Figure 1** - OpenMETA Creo Model of a Possible Vahana Configuration
+![Image of OpenMETA Vahana Creo model](Vahana_V2.PNG)
 
 ## 1. Intro
 An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A^3 by Airbus. The goal was to replicate the Vahan Configuration Trade Study released by A^3 using OpenMETA. 
@@ -40,7 +39,7 @@ As a result of their Sizing Trade Study, the Vahana team concluded that an elect
 ## 3. OpenMETA Vahana Configuration Trade Study 
 Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade Study's results using the OpenMETA toolset. Since OpenMETA is designed for Multidisciplinary Design Analysis and Optimization, we thought that it would be interesting to see if we could reproduce the A^3 team's results using the OpenMETA toolset.
 
-### 3.a Conversion from MATLAB Scripts to PythonWrapper Components
+### 3.a. Conversion from MATLAB Scripts to PythonWrapper Components
 In order to set the problem up in OpenMETA, the important MATLAB scripts were first converted to PythonWrapper Components. 
 
 A PythonWrapper is a shell that you can load with a PythonWrapper Component. A PythonWrapper Component is a Python file that contains your model/system/calculations as well as other code that tells OpenMETA what its inputs are, what its outputs are, and how to initialize it. 
@@ -49,15 +48,23 @@ So, if you have a model/system/calculation that you want to place in OpenMETA, y
 
 This involved translating each MATLAB script into Python, placing that translated Python into a Python Wrapper Component, and then adding the appropriate parameters/outputs to that Python file. The conversion was not always exact (E.g. costBuildup.m and toolingCost.m were combined into tooling_cost.py). 
 
-Once created, the PythonWrapper Components could then be imported into OpenMETA and manipulated on a Parametric Exploration Tool (PET) canvas. 
+Once created, the PythonWrapper Components could then be imported into OpenMETA and manipulated on a Parametric Exploration Tool (PET) canvas.  
+**Figure 2** below shows the function configWeight.m being called within computePerformance.m in the Vahana Configuration Trade Study.  
+**Figure 3** shows the converted PythonWrapper Component config_weight.py inside an OpenMETA PET. Inputs are on the left side and outputs are on the right side.
+
+**Figure 2** - configWeight.m MATLAB function inside computePerformance.m
+![Image of configWeight.m](Vahana_PET_configWeightCode.PNG)
 
 
+**Figure 3** - config_weight.py PythonWrapper Component in PET
+![Image of config_weight.py](Vahana_PET_ConfigWeight.PNG)
 
-Figure 2 -
 
-Figure 3 - 
+Note 1: The MATLAB script configWeight.m returns a single array of values. PythonWrapper Components can also return arrays but in this case, the PythonWrapper Components's outputs were returned as individual scalar values. 
 
-For this problem, PythonWrapper Components offered the following advantages:
+Note 2: Notice that many of the subfunctions that were encapsulated within configWeight.m have been placed in seperate PythonWrapper Components.
+
+In general, PythonWrapper Components offered the following advantages:
 
 * PythonWrapper Components are represented visually within OpenMETA
 
@@ -71,6 +78,8 @@ For this problem, PythonWrapper Components offered the following advantages:
 
 * The MATLAB scripts had to first be converted to Python
 
+* It is easy to make mistakes when converting complex algorithms between languages
+
 * Converting MATLAB scripts into PythonWrapper Components often changes the structure of the problem. For example, if you have a function x = foo(a, b) that calls another function y = bar(c).  
 In MATLAB, you would have two files (foo.m and bar.m) and your data path would look like this:  
 a,b -> foo -> c -> bar -> y -> foo -> x.  
@@ -79,13 +88,18 @@ However, for PythonWrapper Components (foo.py and bar.py) it often makes more se
 c -> bar -> y -> foo -> x  
 ........................ a,b -^
 
-### 3.b OpenMETA Parameter Study
-After converting the major MATLAB scripts in PythonWrapper Components, we added a Parameter Study Component to explore the available design space. Figure 5 shows the Parameter Study has 7 Design Variables on its left side and 8 Objectives on its right side.
+### 3.b. OpenMETA Parameter Study
+After converting the major MATLAB scripts in PythonWrapper Components, we added a Parameter Study Component to explore the available design space. The Parameter Study Component allows the user to vary Design Variables (inputs) within defined ranges and record Objectives (outputs). In essence, the Parameter Study Component allows the user to quickly explore the available design space and then view the results of that exploration via the OpenMETA PET Visualizer (or as a raw .csv).
 
+**Figure 4** shows the Parameter Study placed within the larger PET. The Parameter Study is highlighted with a red box. All the other boxes are PythonWrapper Components or Constants Components. The Paremter Study contains 6 design variables (Vehicle, Rotor Radius, Cruise Speed, Battery Mass, Motor Mass, and Maximum Takeoff Weight (actually mass) which it varies between defined lower and upper bounds (taken from sizingTradeStudy.m). For example, Battery Mass is varied betweed 10-999 kg. 
 
+Note: The Tilt-Wing and Helicopter configuration have slightly different ranges for Rotor Radius and Cruise Speed, but for simplicity, those variables were set to cover the ranges of both configurations and extra constraint ouputs were added to check if the specific vehicle's design ranges were violated.
+
+The Parameter Study Component also contains several Objectives, which record system outputs - including DOC and the constraint functions - for each combination of Design Variables injected into the system.
+
+**Figure 5** - Parameter Study Component within Larger PET
 ![Parameter Study](Vahana_PET_ParameterStudy.PNG)
 
-Figure 5 - Parameter Study Component
 
 Now we can set the ranges of the design variables in the Parameter Study Component and run the Master Interpreter to generate some data. Let's set the Parameter Study to 1 million samples and run the PET.
 
@@ -95,9 +109,9 @@ Here's a filtered subset of our data in the OpenMETA Visualizer - 397 points to 
 
 Figure 5 - Filtered PET Result in Visualizer
 
-### 3.c OpenMETA Optimizer
+### 3.c. OpenMETA Optimizer
 
-### 3.d Parameter Study + Optimizer
+### 3.d. Parameter Study + Optimizer
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
 
