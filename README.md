@@ -159,10 +159,11 @@ The Vahana Trade Study set battery mass and motor mass as design variables while
 
 Using Euler's linear method of numerical integration (method shown [here](https://docs.google.com/spreadsheets/d/170VYNoF4OTg8ZG605DoPC1EO5k4rxNIF8a00Ac6IGiI/edit?usp=sharing)) the required battery mass and motor mass can be solved for within 0.01% of the theoretical value in 10 interation for ranges up to ten times larger than the assumed payload of 150 kg.
 
+<!-- Image isn't in images/ ...
 <p align="center">Image of Mass Convergence at 1500 kg</p>
 
 ![Image of mass convergence](images/mass_convergence.PNG)
-
+-->
 
 ## References
 [Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)
