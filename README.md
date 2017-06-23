@@ -147,7 +147,7 @@ The model (shown below) is based on the sketches of the Tilt-Wing configuration 
 ![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")
 
 
-The model is located in RootFolder/ComponentAssemblies/Vahana2. By changing the values of the 'Canard_Rotation' and 'Wing_Rotation' parameters, a user can be change the orientation for a specific analysis. The 'rProp' parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
+The model is located in `RootFolder/ComponentAssemblies/Vahana2` of openmeta-vahana.xme. By changing the values of the 'Canard_Rotation' and 'Wing_Rotation' parameters, a user can be change the orientation for a specific analysis. The 'rProp' parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
 
 ### Iterative mass Calculations
 In replicating the analysis done, it was noted that there was a very low success rate caused by the vehicles not meeting two of the design constraints:
