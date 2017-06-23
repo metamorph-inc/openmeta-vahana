@@ -132,12 +132,10 @@ The model (shown below) is based on the sketches of the Tilt-Wing configuration 
 
 
 **Vahana transitioning from hover mode to cruise mode:**
-
 ![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise")
 
 
 **Vahana in cruise mode:**
-
 ![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")
 
 
