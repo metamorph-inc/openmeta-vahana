@@ -142,27 +142,27 @@ The model (shown below) is based on the sketches of the Tilt-Wing configuration 
 
 
 
-<p align="center">Vahana in cruise mode
+<p align="center">Vahana in cruise mode</p>
 
 ![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")
 
 
-The model is located in `RootFolder/ComponentAssemblies/Vahana2` of openmeta-vahana.xme. By changing the values of the 'Canard_Rotation' and 'Wing_Rotation' parameters, a user can be change the orientation for a specific analysis. The 'rProp' parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
+The model is located in `RootFolder/ComponentAssemblies/Vahana2` of openmeta-vahana.xme. By changing the values of the `Canard_Rotation` and `Wing_Rotation` parameters, a user can be change the orientation for a specific analysis. The `rProp` parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
 
-### Iterative mass Calculations
-In replicating the analysis done, it was noted that there was a very low success rate caused by the vehicles not meeting two of the design constraints:
+### Iterative Mass Calculations
+When running the PET 'Parameter Study' we noticed that the low success rate of less than 0.04% was primarily caused by designs failing the first two design constraints:
 
 * The vehicle battery must contain more energy than the energy required to complete its mission 
-* The vehicle motors must have an availale power that is least 1.7 times the maximum power required for hover
+* The vehicle motors must the capacity to provide at least 1.7 times the maximum power required for hover mode
 
-While the specific energy of the battery and specific power of the motors to be used were known, the masses of these components were made design varibales. With a known specific energy and specific power, the necessary masses of the battery and rotors resectively 
-can be solved for to always satisfy these design constraints. This requires an iterative solving method as the component mass (motor or battery) is dependent on the total vehicle mass. Using Euler's linear method of numerical integration, tested and proven [here](https://docs.google.com/spreadsheets/d/170VYNoF4OTg8ZG605DoPC1EO5k4rxNIF8a00Ac6IGiI/edit?usp=sharing), a soultion can easily be found. The required mass of the battery and motors can be solved within 0.01% of the theoretical value in 10 iterations for ranges up to ten times larger than the assumed payload of 150 kg. 
+The Vahana Trade Study set battery mass and motor mass as design variables while using assumed values for battery specific energy and motor specific power. Since 95% of all 'Parameter Study' PET runs failed as a result of the first two constraints, we looked into making battery mass and motor mass dependent variables which could be solved using an iterative method and the other design variables.
 
-Image of Mass Convergence at 1500 kg
+Using Euler's linear method of numerical integration (method shown [here](https://docs.google.com/spreadsheets/d/170VYNoF4OTg8ZG605DoPC1EO5k4rxNIF8a00Ac6IGiI/edit?usp=sharing)) the required battery mass and motor mass can be solved for within 0.01% of the theoretical value in 10 interation for ranges up to ten times larger than the assumed payload of 150 kg.
+
+<p align="center">Image of Mass Convergence at 1500 kg</p>
 
 ![Image of mass convergence](images/mass_convergence.PNG)
 
-Implementing this iterative mass calculation ensures all vehicles satisfy these constraints, which drastically reduces overhead as 95% of all runs failed because either of these mass constraints were not satisfied. 
 
 ## References
 [Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)
