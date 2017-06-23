@@ -91,11 +91,13 @@ The Tilt-Wing and Helicopter configuration have slightly different ranges for Ro
 The 'Parameter Study' driver also contains several Objectives, which record system outputs - including DOC and the constraint functions - for each combination of Design Variables injected into the system.
 
 <p align="center">'Parameter Study' driver within Larger PET</p>
+
 ![Parameter Study](images/Vahana_PET_ParameterStudy.PNG)
 
 Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in the figure below.
 
 <p align="center">Parameter Study PET Results</p>
+
 ![Parameter Study Results](images/Vahana_PET_Results1MilTo397.PNG)
 
 ### OpenMETA Using an 'Optimizer' Driver
@@ -127,14 +129,17 @@ A CAD model can provide a more accurate representation of a vehicle's geometry, 
 The model (shown below) is based on the sketches of the Tilt-Wing configuration that A³ released in the Vahana Trade Study Report. This model is composed within GME and contains parametric features that align with the design requirements outlined within the Vahana Trade Study's MATLAB code. The rotational orientation of the wings and canards can be varied between the cruise and hover positions (or 0-90 degrees).
 
 <p align="center">Vahana in hover mode</p>
+
 ![Image of 90 deg rotation](images/Vahana_V2_90Deg.PNG "Image of Vahana in hover configuration")
 
 
 <p align="center">Vahana transitioning from hover mode to cruise mode</p>
+
 ![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise")
 
 
 <p align="center">Vahana in cruise mode
+
 ![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")
 
 
@@ -150,6 +155,7 @@ While the specific energy of the battery and specific power of the motors to be 
 can be solved for to always satisfy these design constraints. This requires an iterative solving method as the component mass (motor or battery) is dependent on the total vehicle mass. Using Euler's linear method of numerical integration, tested and proven [here](https://docs.google.com/spreadsheets/d/170VYNoF4OTg8ZG605DoPC1EO5k4rxNIF8a00Ac6IGiI/edit?usp=sharing), a soultion can easily be found. The required mass of the battery and motors can be solved within 0.01% of the theoretical value in 10 iterations for ranges up to ten times larger than the assumed payload of 150 kg. 
 
 Image of Mass Convergence at 1500 kg
+
 ![Image of mass convergence](images/mass_convergence.PNG)
 
 Implementing this iterative mass calculation ensures all vehicles satisfy these constraints, which drastically reduces overhead as 95% of all runs failed because either of these mass constraints were not satisfied. 
