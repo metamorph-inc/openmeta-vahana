@@ -3,10 +3,10 @@
 ![Image of OpenMETA Vahana Creo model](Vahana_V2.PNG)
 
 ## 1. Intro
-An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A^3 by Airbus. The goal was to replicate the Vahan Configuration Trade Study released by A^3 using OpenMETA. 
+An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from (A<sup>3</sup>) by Airbus. The goal was to replicate the Vahan Configuration Trade Study released by (A<sup>3</sup>) using OpenMETA. 
 
 ## 2. Airbus Vahana Configuration Trade Study
-Project Vahana is an Airbus A^3's campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight fan tilt-wing) using multidisciplinary design optimization (MDO). 
+Project Vahana is an Airbus (A<sup>3</sup>) campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight fan tilt-wing) using multidisciplinary design optimization (MDO). 
 
 [A^3 Vahana Configuration Trade Study - Part I](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)
 
@@ -14,7 +14,7 @@ Project Vahana is an Airbus A^3's campaign to create a low-cost, single-passenge
 
 [A^3 MATLAB source code](https://github.com/VahanaOpenSource/vahanaTradeStudy)
 
-The A^3 team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A^3 team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements - e.g. The vehicle's effective energy capacity (Battery Mass * Battery Energy Density * Battery Discharge Depth) had to be greater than the amount of energy required to execute a reserve ("worst case") mission. 
+The A^3 team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The (A<sup>3</sup>) team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements - e.g. The vehicle's effective energy capacity (Battery Mass * Battery Energy Density * Battery Discharge Depth) had to be greater than the amount of energy required to execute a reserve ("worst case") mission. 
 
 This entire optimization process was executed via the following MATLAB scripts:  
 sizingTradeStudy.m  
@@ -37,7 +37,7 @@ materials.m
 As a result of their Sizing Trade Study, the Vahana team concluded that an electric eight fan tilt-wing configuration would best meet their broad design requirements for a low-cost, single-passenger, electric VTOL aircraft.
 
 ## 3. OpenMETA Vahana Configuration Trade Study 
-Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade Study's results using the OpenMETA toolset. Since OpenMETA is designed for Multidisciplinary Design Analysis and Optimization, we thought that it would be interesting to see if we could reproduce the A^3 team's results using the OpenMETA toolset.
+Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade Study's results using the OpenMETA toolset. Since OpenMETA is designed for Multidisciplinary Design Analysis and Optimization, we thought that it would be interesting to see if we could reproduce the (A<sup>3</sup>) team's results using the OpenMETA toolset.
 
 ### 3.a. Conversion from MATLAB Scripts to PythonWrapper Components
 In order to set the problem up in OpenMETA, the important MATLAB scripts were first converted to PythonWrapper Components. 
@@ -108,7 +108,7 @@ Unfortunately, after the first few runs, we quickly realized that - due to the s
 
 
 ### 3.c. OpenMETA Optimizer
-Fortunately, OpenMETA also has an Optimizer Component that uses the COBYLA Optimizer. We replaced the Parameter Study Component with an Optimizer Component and ran the PET again. In **Figure 7** shows the results from an Optimizer PET run compared to results from the tradeStudyResult.mat file produced by the A^3 Vahana Configuration Trade Study.
+Fortunately, OpenMETA also has an Optimizer Component that uses the COBYLA Optimizer. We replaced the Parameter Study Component with an Optimizer Component and ran the PET again. In **Figure 7** shows the results from an Optimizer PET run compared to results from the tradeStudyResult.mat file produced by the (A<sup>3</sup>) Vahana Configuration Trade Study.
 
 **Figure 7** - Optimizer PET Results for Tilt-Wing Configuration at a Range of 100 km
 ![Optimizer PET Results](Vahana_PET_OptimizerVsTradeStudy.PNG)
