@@ -119,11 +119,12 @@ Note: While the OpenMETA Optimizer obtained similar values, there are difference
 ### 3.d. Parameter Study + Optimizer
 The OpenMETA Optimizer produced, and if that particular model were developed more, the differences between it and the Vahana Trade Study would be shrink. However, what we really wanted to do was place an OpenMETA Optimizer Component *inside* of an OpenMETA Parameter Study Component - like the Vahana team - so that we could easily generate optimized designs over a range of operating distances from 10 km to 100 km.
 
-While this functionality is not currently within OpenMETA, we were able build it (using all those PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. **Figure 8** shows results from the Vahana Configuration Trade Study and the Parameter Study + Optimizer on the same graph. While there is obviously room for improvement in the current PythonWrapper Components modeling the MDO problem, it is a good stepping stone towards replication that was built in 2 weeks by a new MetaMorph employee and an intern - neither of whom had previous exposure to OpenMETA or Project Vahana.
+While this functionality is not currently within OpenMETA, we were able build it (using all those PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. **Figure 8** shows results from the Vahana Configuration Trade Study and the Parameter Study + Optimizer on the same graph. While there is obviously room for improvement in the current PythonWrapper Components modeling the MDO problem, it is a good stepping stone towards replication.
 
 **Figure 8** - vahana_optimizer.py vs sizingTradeStudy.m
 ![vahana_optimizer.py](vahana_optimizer.PNG)
 
+Now, in the 4th paragraph of 'Trade Study Results' in [A^3's Vahana Configuration Trade Study - Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93) 
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
 
