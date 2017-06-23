@@ -51,7 +51,7 @@ mass = configWeight(vehicle,rProp,mBattery,mMoters,mtow,hoverOutput,cruiseOutput
 We converted the `configWeight.m` script to a PythonWrapper component `config_weight.py` script. When this component is placed within an OpenMETA PET, a block appears representing the script with inputs and outputs on the left and right sides, respectively.
 
 <p align="center">PythonWrapper Component in PET representing `config_weight.py`</p>
-<p align="center"><img src="images\Vahana_PET_ConfigWeight.PNG" alt="Image of config_weight.py" style="width: 600px;"/></p>
+<img src="images\Vahana_PET_ConfigWeight.PNG" alt="Image of config_weight.py" style="width: 600px;"/>
 
 For our purposes, the conversion from MATLAB to Python was not always exact. We had to find substitutes for many of the build-in MATLAB functions/constructs, and we took some liberties in recomposing parts of the problem to better fit within the OpenMETA architecture.  
 For example, The MATLAB script 'configWeight.m' returns a single array of values. PythonWrapper components can also output arrays but in this case, we wanted the PythonWrapper 'ConfigWeight' to expose individual scalar values as its outputs.
@@ -91,12 +91,12 @@ The Tilt-Wing and Helicopter configuration have slightly different ranges for Ro
 The 'Parameter Study' driver also contains several Objectives, which record system outputs - including DOC and the constraint functions - for each combination of Design Variables injected into the system.
 
 <p align="center">'Parameter Study' driver within Larger PET</p>
-<p align="center">![Parameter Study](images/Vahana_PET_ParameterStudy.PNG)</p>
+![Parameter Study](images/Vahana_PET_ParameterStudy.PNG)
 
 Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in the figure below.
 
 <p align="center">Parameter Study PET Results</p>
-<p align="center">![Parameter Study Results](images/Vahana_PET_Results1MilTo397.PNG)</p>
+![Parameter Study Results](images/Vahana_PET_Results1MilTo397.PNG)
 
 ### OpenMETA Using an 'Optimizer' Driver
 
@@ -116,7 +116,7 @@ The OpenMETA 'Optimizer' produced reasonable results, and if that particular mod
 While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. While the PythonWrapper components modeling the MDO problem can obviously be refined further still, this represents a good stepping stone towards replication.
 
 <p align="center">Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results</p>
-<p align="center">![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)</p>
+![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
 
 ## Improvements to Vahana Configuration Trade Study / Future Plans
 Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using the OpenMDAO 'Optimizer' driver, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there is little reason to recreate the Vahana Configuration Trade Study - it already served its purpose and Aribus has since moved on to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
@@ -127,15 +127,15 @@ A CAD model can provide a more accurate representation of a vehicle's geometry, 
 The model (shown below) is based on the sketches of the Tilt-Wing configuration that A³ released in the Vahana Trade Study Report. This model is composed within GME and contains parametric features that align with the design requirements outlined within the Vahana Trade Study's MATLAB code. The rotational orientation of the wings and canards can be varied between the cruise and hover positions (or 0-90 degrees).
 
 <p align="center">Vahana in hover mode</p>
-<p align="center">![Image of 90 deg rotation](images/Vahana_V2_90Deg.PNG "Image of Vahana in hover configuration")</p>
+![Image of 90 deg rotation](images/Vahana_V2_90Deg.PNG "Image of Vahana in hover configuration")
 
 
 <p align="center">Vahana transitioning from hover mode to cruise mode</p>
-<p align="center">![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise")</p>
+![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise")
 
 
 <p align="center">Vahana in cruise mode
-<p align="center">![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")</p>
+![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")
 
 
 The model is located in RootFolder/ComponentAssemblies/Vahana2. By changing the values of the 'Canard_Rotation' and 'Wing_Rotation' parameters, a user can be change the orientation for a specific analysis. The 'rProp' parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
