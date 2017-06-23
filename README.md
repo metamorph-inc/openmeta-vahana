@@ -5,7 +5,7 @@
 
 ## Introduction
 
-An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A³ by Airbus. The goal was to replicate the Vahan Configuration Trade Study released by A³ using OpenMETA. 
+An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A³ by Airbus. The goal was to replicate the Vahana Configuration Trade Study released by A³ using OpenMETA. 
 
 ## Airbus Vahana Configuration Trade Study
 
@@ -115,14 +115,15 @@ While the OpenMETA Optimizer obtained similar values, there are differences. In 
 
 ### 'Optimizer' PET Nested Within 'Parameter Study' PET
 
-The OpenMETA 'Optimizer' produced good results, and if that particular model were developed more, the differences between it and the Vahana Trade Study would be shrink. However, what we really wanted to do was place an OpenMETA Optimizer Component *inside* of an OpenMETA 'Parameter Study' driver - similar to the  Vahana team's approach of nesting a MATLAB `fmincon()` function within a high-level DoE - so that we could easily generate optimized designs over a range of operating distances from 10 km to 100 km.
+The OpenMETA 'Optimizer' produced reasonable results, and if that particular model were developed more, the differences between it and the Vahana Trade Study would shrink. However, what we really wanted to do was place an OpenMETA 'Optimizer' driver *inside* of an OpenMETA 'Parameter Study' driver - similar to the  Vahana team's approach of nesting a MATLAB `fmincon()` function within a high-level DoE - so that we could easily generate optimized designs over a range of operating distances from 10 km to 100 km.
 
-While this functionality is not currently within OpenMETA, we were able build it (using all those PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. **Figure 8** shows results from the Vahana Configuration Trade Study and the Parameter Study + Optimizer on the same graph. While there is obviously room for improvement in the current PythonWrapper Components modeling the MDO problem, it is a good stepping stone towards replication.
+While this functionality is not currently within OpenMETA, we were able build it (using all those PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. While there is obviously room for improvement in the current PythonWrapper components modeling the MDO problem, it is a good stepping stone towards replication.
 
 **Figure** - Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results
 ![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
+COMING SOON
 
 ## References
 [Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)
