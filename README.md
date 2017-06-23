@@ -96,7 +96,7 @@ The 'Parameter Study' driver also contains several Objectives, which record syst
 
 Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in the figure below. The `Parameter Study` PET is located at `RootFolder/Testing/ParametricExploration/Vahana Parametric Study PET` within openmeta-vahana.xme.
 
-<p align="center">Parameter Study PET Results</p>
+<p align="center">'Parameter Study' PET Results</p>
 
 ![Parameter Study Results](images/Vahana_PET_Results1MilTo397.PNG)
 
