@@ -111,10 +111,19 @@ Unfortunately, after the first few runs, we quickly realized that - due to the s
 Fortunately, OpenMETA also has an Optimizer Component that uses the COBYLA Optimizer. We replaced the Parameter Study Component with an Optimizer Component and ran the PET again. In **Figure 7** shows the results from an Optimizer PET run compared to results from the tradeStudyResult.mat file produced by the A^3 Vahana Configuration Trade Study.
 
 **Figure 7** - Optimizer PET Results for Tilt-Wing Configuration at a Range of 100 km
+![Optimizer PET Results](Vahana_PET_OptimizerVsTradeStudy.PNG)
 
+Note: While the OpenMETA Optimizer obtained similar values, there are differences. In particular the maximum takeoff mass obtained by the Vahana Trade Study is almost twice the value of the Optimizer. The primary reason for this was several of the mass computation modules (wings, canards, fuselage, prop) were not connected at this time and instead the config_weight.py block was being supplied by constant values.
 
 
 ### 3.d. Parameter Study + Optimizer
+The OpenMETA Optimizer got nice values, and if that particular model were developed more, the differences between it and the Vahana Trade Study's result would be shrink. However, what we would really like to do is place an OpenMETA Optimizer Component *inside* of an OpenMETA Parameter Study Component - like the Vahana team - so that we can easily generate optimized designs over a range of operating distances from 10 km to 100 km.
+
+While this functionality is not currently within OpenMETA, we were able build it (using all those PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. **Figure 8** shows results from the Vahana Configuration Trade Study and the Parameter Study + Optimizer on the same graph. While there is obviously room for improvement in the current PythonWrapper Components modeling the MDO problem, it is a good building block towards replication and was built in 2 weeks by a new MetaMorph employee who was previously unfamiliar with either OpenMETA and Project Vahana.
+
+**Figure 8** - 
+
+
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
 
