@@ -1,7 +1,7 @@
 # OpenMETA-Vahana
 An OpenMETA model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A^3 by Airbus.
 
-![Image of Creo model](Vahana_V2.PNG "Image of Creo model")
+![Image of Creo model](Vahana_V2_2.PNG "Image of Creo model")
 
 Figure 1 - Image of Creo Model [CENTER]
 
