@@ -63,7 +63,7 @@ In general, PythonWrapper components:
 * can be modified, copied, or imported into other designs
 * are fully-compatible with OpenMETA's underlying OpenMDAO engine
 
-In combination with other OpenMETA components, Python wrappers are used as 'building blocks' in building larger systems and models within the Parametric Exploration Tool (PET) canvas.
+In combination with other OpenMETA components, PythonWrappers are used as 'building blocks' in building larger systems and models within the Parametric Exploration Tool (PET) canvas. The converted PythonWrapper components are located in `openmeta-vahana/scripts`.
 
 <!--
 ...and the following disadvantages:
