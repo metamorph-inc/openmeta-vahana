@@ -1,6 +1,6 @@
 # OpenMETA-Vahana
 
-**Figure 1** - OpenMETA Creo Model of a Possible Vahana Configuration
+**Figure** - OpenMETA Creo Model of a Possible Vahana Configuration
 ![Image of OpenMETA Vahana Creo model](images/Vahana_V2.PNG)
 
 ## Introduction
