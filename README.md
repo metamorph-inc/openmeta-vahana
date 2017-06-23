@@ -103,12 +103,15 @@ The Parameter Study Component also contains several Objectives, which record sys
 
 Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in **Figure 6**.
 
-**Figure 6** - Parameter Study Results 
+**Figure 6** - Parameter Study PET Results 
 ![Parameter Study Results](Vahana_PET_Results1MilTo397.PNG)
 
 
 ### 3.c. OpenMETA Optimizer
-Fortunately, OpenMETA also has an Optimizer PET 
+Fortunately, OpenMETA also has an Optimizer Component that uses the COBYLA Optimizer. We replaced the Parameter Study Component with an Optimizer Component and ran the PET again. In **Figure 7** shows the results from an Optimizer PET run compared to results from the tradeStudyResult.mat file produced by the A^3 Vahana Configuration Trade Study.
+
+**Figure 7** - Optimizer PET Results for Tilt-Wing Configuration at a Range of 100 km
+
 
 
 ### 3.d. Parameter Study + Optimizer
