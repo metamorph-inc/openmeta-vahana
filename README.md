@@ -118,11 +118,38 @@ While this functionality is not currently within OpenMETA, we were able build it
 **Figure** - Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results
 ![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
 
-## 4. Improving the Vahana Configuration Trade Study / Future Plans
-COMING SOON
+## Improvements to Vahana Configuration Trade Study / Future Plans
+Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using the OpenMDAO 'Optimizer' driver, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there is little reason to recreate the Vahana Configuration Trade Study - it already served its purpose and Aribus has since moved on to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
 
-**Figure** - OpenMETA Creo Model of a Possible Vahana Configuration
-![Image of OpenMETA Vahana Creo model](images/Vahana_V2.PNG)
+### Meta-Link CAD Model
+A CAD model can provide a more accurate representation of a vehicle's geometry, mass, and mass distribution. In creating a CREO model of the Tilt-Wing Configuration, we hoped to provide a more model that could eventually be used to calculate mass, center of gravity, and production costs.
+
+The model (shown below) is based on the sketches of the Tilt-Wing configuration that A³ released in the Vahana Trade Study Report. This model is composed within GME and contains parametric features that align with the design requirements outlined within the Vahana Trade Study's MATLAB code. The rotational orientation of the wings and canards can be varied between the cruise and hover positions (or 0-90 degrees).
+
+![Image of 90 deg rotation](images/Vahana_V2_90Deg.PNG "Image of Vahana in hover configuration")
+<p align="center">Vahana in hover mode</p>
+
+![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise") 
+<p align="center">Vahana transitioning from hover mode to cruise mode</p>
+
+![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")  
+<p align="center">Vahana in cruise mode</p>
+
+The model is located in RootFolder/ComponentAssemblies/Vahana2. By changing the values of the 'Canard_Rotation' and 'Wing_Rotation' parameters, a user can be change the orientation for a specific analysis. The 'rProp' parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
+
+### Iterative mass Calculations
+In replicating the analysis done, it was noted that there was a very low success rate caused by the vehicles not meeting two of the design constraints:
+
+* The vehicle battery must contain more energy than the energy required to complete its mission 
+* The vehicle motors must have an availale power that is least 1.7 times the maximum power required for hover
+
+While the specific energy of the battery and specific power of the motors to be used were known, the masses of these components were made design varibales. With a known specific energy and specific power, the necessary masses of the battery and rotors resectively 
+can be solved for to always satisfy these design constraints. This requires an iterative solving method as the component mass (motor or battery) is dependent on the total vehicle mass. Using Euler's linear method of numerical integration, tested and proven [here](https://docs.google.com/spreadsheets/d/170VYNoF4OTg8ZG605DoPC1EO5k4rxNIF8a00Ac6IGiI/edit?usp=sharing), a soultion can easily be found. The required mass of the battery and motors can be solved within 0.01% of the theoretical value in 10 iterations for ranges up to ten times larger than the assumed payload of 150 kg. 
+
+Image of Mass Convergence at 1500 kg
+![Image of mass convergence](images/mass_convergence.PNG)
+
+Implementing this iterative mass calculation ensures all vehicles satisfy these constraints, which drastically reduces overhead as 95% of all runs failed because either of these mass constraints were not satisfied. 
 
 ## References
 [Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)
