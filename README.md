@@ -60,7 +60,7 @@ We converted the `configWeight.m` script to a PythonWrapper component `config_we
 For our purposes, the conversion from MATLAB to Python was not always exact. We had to find substitutes for many of the build-in MATLAB functions/constructs, and we took some liberties in recomposing parts of the problem to better fit within the OpenMETA architecture.  
 For example, The MATLAB script 'configWeight.m' returns a single array of values. PythonWrapper components can also output arrays but in this case, we wanted the PythonWrapper 'ConfigWeight' to expose individual scalar values as its outputs.
 
-In general, PythonWrapper Components offer several advantages to the user in that they:
+In general, PythonWrapper components:
 
 * are represented visually within OpenMETA
 * can be easily connected to other components (just draw a line)
