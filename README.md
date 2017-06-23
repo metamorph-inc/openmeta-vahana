@@ -121,8 +121,8 @@ The OpenMETA Optimizer got nice values, and if that particular model were develo
 
 While this functionality is not currently within OpenMETA, we were able build it (using all those PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. **Figure 8** shows results from the Vahana Configuration Trade Study and the Parameter Study + Optimizer on the same graph. While there is obviously room for improvement in the current PythonWrapper Components modeling the MDO problem, it is a good stepping stone towards replication that was built in 2 weeks by a new MetaMorph employee and an intern - neither of whom had previous exposure to OpenMETA or Project Vahana.
 
-**Figure 8** - 
-
+**Figure 8** - vahana_optimizer.py vs sizingTradeStudy.m
+![vahana_optimizer.py](vahana_optimizer.PNG)
 
 
 ## 4. Improving the Vahana Configuration Trade Study / Future Plans
