@@ -97,7 +97,6 @@
     "DataTable": {},
     "Histogram": {},
     "PETRefinement": {},
-    "Scratch": {},
     "ParallelAxisPlot": {},
     "UncertaintyQuantification": {
       "probability_queries": {},
