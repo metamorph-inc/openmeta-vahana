@@ -94,7 +94,7 @@ The 'Parameter Study' driver also contains several Objectives, which record syst
 
 ![Parameter Study](images/Vahana_PET_ParameterStudy.PNG)
 
-Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in the figure below.
+Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in the figure below. The `Parameter Study` PET is located at `RootFolder/Testing/ParametricExploration/Vahana Parametric Study PET` within openmeta-vahana.xme.
 
 <p align="center">Parameter Study PET Results</p>
 
@@ -109,13 +109,13 @@ Fortunately, OpenMETA also has an 'Optimizer' driver that uses the COBYLA Optimi
 | OpenMETA |     100    |   96.9  |    0.97    |    0.71   |        47.2       |        352       |      42.9      |    567    |
 |   Vahana Study   |     100    |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    967    |
 
-While the OpenMETA Optimizer obtained similar values, there are differences. In particular the maximum takeoff mass obtained by the Vahana Trade Study is almost twice the value of the Optimizer. The primary reason for this was that several of the mass computation modules (wings, canards, fuselage, prop) were not connected at this time and instead the `config_weight.py` block was being supplied by constant values.
+While the OpenMETA Optimizer obtained similar values, there are differences. In particular the maximum takeoff mass obtained by the Vahana Trade Study is almost twice the value of the Optimizer. The primary reason for this was that several of the mass computation modules (wings, canards, fuselage, prop) were not connected at this time and instead the `config_weight.py` block was being supplied by constant values. The 'Optimizer' PET is located at `RootFolder/Testing/ParametricExploration/Vahana Optimizer PET` within openmeta-vahana.xme.
 
 ### 'Optimizer' PET Nested Within 'Parameter Study' PET
 
 The OpenMETA 'Optimizer' produced reasonable results, and if that particular model were developed more, the differences between it and the Vahana Trade Study would shrink. However, what we really wanted to do was place an OpenMETA 'Optimizer' driver *inside* of an OpenMETA 'Parameter Study' driver - similar to the  Vahana team's approach of nesting a MATLAB `fmincon()` function within a high-level DoE - so that we could easily generate optimized designs over a range of operating distances from 10 km to 100 km.
 
-While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. While the PythonWrapper components modeling the MDO problem can obviously be refined further still, this represents a good stepping stone towards replication.
+While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. While the PythonWrapper components modeling the MDO problem can obviously be refined further still, this represents a good stepping stone towards replication. The nested 'Parameter Study' and 'Optimizer' OpenMDAO drivers are located in `openmeta-vahana/scripts/vahana_optimizer.py`.
 
 <p align="center">Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results</p>
 
@@ -147,7 +147,7 @@ The model (shown below) is based on the sketches of the Tilt-Wing configuration 
 ![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")
 
 
-The model is located in `RootFolder/ComponentAssemblies/Vahana2` of openmeta-vahana.xme. By changing the values of the `Canard_Rotation` and `Wing_Rotation` parameters, a user can be change the orientation for a specific analysis. The `rProp` parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
+The model assembly is located at `RootFolder/ComponentAssemblies/Vahana2` within openmeta-vahana.xme. By changing the values of the `Canard_Rotation` and `Wing_Rotation` parameters, a user can be change the orientation for a specific analysis. The `rProp` parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
 
 ### Iterative Mass Calculations
 When running the PET 'Parameter Study' we noticed that the low success rate of less than 0.04% was primarily caused by designs failing the first two design constraints:
