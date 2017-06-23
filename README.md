@@ -108,6 +108,8 @@ Unfortunately, after the first few runs, we quickly realized that - due to the s
 
 
 ### 3.c. OpenMETA Optimizer
+Fortunately, OpenMETA also has an Optimizer PET 
+
 
 ### 3.d. Parameter Study + Optimizer
 
