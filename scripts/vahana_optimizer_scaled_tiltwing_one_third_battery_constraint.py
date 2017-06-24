@@ -238,6 +238,16 @@ class TopLevelSystem(Group):
         self.connect('scale4.scaled', 'con5.mBattery')
         self.connect('scale6.scaled', 'con5.mtow')
         
+        ### Experiment
+        #self.add('con1scaled', ExecComp('c1 = raw/10.0'))  # Scale constraints - this would be worth looking into later. Didn't make a huge difference here but apparently optimizers are very dumb.
+        #self.add('con2scaled', ExecComp('c2 = raw/10.0'))
+        #self.add('con3scaled', ExecComp('c3 = raw/100.0'))
+        #self.add('con5scaled', ExecComp('c5 = raw/10.0'))
+        #self.connect('con1.c1', 'con1scaled.raw')
+        #self.connect('con2.c2', 'con2scaled.raw')
+        #self.connect('con3.c3', 'con3scaled.raw')
+        #self.connect('con5.c5', 'con5scaled.raw')
+        ###
         
 if __name__ == '__main__':
     # SubProblem: define a Problem to optimize the system
