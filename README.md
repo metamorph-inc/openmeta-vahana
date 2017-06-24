@@ -120,6 +120,10 @@ While this functionality is not currently within OpenMETA, we were able build it
 **Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results:**
 ![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
 
+
+**Effect of Added Constraint Limiting Fuel Weight to less than 1/3 of MTOW**
+![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
+
 ## Improvements to Vahana Configuration Trade Study / Future Plans
 Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using the OpenMDAO 'Optimizer' driver, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there is little reason to recreate the Vahana Configuration Trade Study - it already served its purpose and Aribus has since moved on to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
 
