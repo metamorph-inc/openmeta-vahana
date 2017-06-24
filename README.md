@@ -122,7 +122,7 @@ While this functionality is not currently within OpenMETA, we were able build it
 
 In the 4th paragraph of the 'Trade Study Results' section of [Vahana Configuration Trade Study — Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93), A³ Team Member Mr. Geoffrey Bower states that for most transport aircraft the maximum fuel weight is roughly a third of the maximum takeoff weight. Therefore, we added an additional constraint to the OpenMDAO model that limited battery mass to less than one third of the maximum takeoff mass. This OpenMDAO driver is located in 'openmeta-vahana/scripts/fuel-constraint.py', and results can be seen below. 
 
-**Effect of Added Constraint Limiting Fuel Weight to less than 1/3 of MTOW**
+**Effect of Added Constraint Limiting Fuel Weight to less than 1/3 of MTOW:**
 ![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
 
 Enforcing this constraint changes the Tilt-Wing Configuration's DOC curve, causing it to start rising rapidly for operating ranges of 70 km and greater. If the Vahana aircraft has a target operational range of 100 km, this weight restriction translates into $0.25 difference in DOC per a km ($25 per 100 km trip). The extent to which Airbus can create designs that safely exceed this fuel weight restriction and lobby for favorable regulations governing the emerging body of personal, electric VTOL aircraft will have a significant impact on the operating costs of the Vahana.
