@@ -100,26 +100,26 @@ class config_weight(Component):
         unknowns['mass_payload'] = params['payload']
         
         # Fixed weight components between configs
-        unknowns['mass_seat'] = 15 # kg
-        unknowns['mass_avionics'] = 15 # kg, Flight computer, sensors, BMS, backup power battery
+        unknowns['mass_seat'] = 15.0 # kg
+        unknowns['mass_avionics'] = 15.0 # kg, Flight computer, sensors, BMS, backup power battery
         
         # Motor and battery weight (design variables)
         unknowns['mass_motors'] = params['mMotors']
         unknowns['mass_battery'] = params['mBattery']
         
         mPerServo = 0.65 # per servo in class needed
-        mPerTilt = 4 # per wing tilt actuator (prelim design)
+        mPerTilt = 4.0 # per wing tilt actuator (prelim design)
             
         if (params["Vehicle"].lower().replace('-', '') == "tiltwing"):
             # Servo weight
-            unknowns['mass_servos'] = mPerServo * 12 # 4 ctrl surfaces + variable pitch actuators
+            unknowns['mass_servos'] = mPerServo * 12.0 # 4 ctrl surfaces + variable pitch actuators
             
             # Tilt mechanism weight
-            unknowns['mass_tilt'] = 2 * mPerTilt # 2 wing tilt mechanisms
+            unknowns['mass_tilt'] = 2.0 * mPerTilt # 2 wing tilt mechanisms
         
             # Ballistic Recovery System 
             # For 1600 lbf experimental aircraft, should actually scale with size
-            unknowns['mass_brs'] = 16
+            unknowns['mass_brs'] = 16.0
         
             # Wing weight estimate (taking 40% of load w/ 20% semi-span winglets)
             # Inboard motor tips located 0.5 m from centerline, with 0.05 m gap to
@@ -132,8 +132,8 @@ class config_weight(Component):
             unknowns['mass_canard'] = params['canard_mass']
             
             # Propeller blade mass plus 2 kg per VP hub
-            unknowns['mass_props'] = 8 * params['prop_mass']
-            unknowns['mass_hub'] = 8 * 2
+            unknowns['mass_props'] = 8.0 * params['prop_mass']
+            unknowns['mass_hub'] = 8.0 * 2.0
             
             # Fuselage mass assuming 5 m long fuselage, 1 m wide fuselage, and 1.65
             # m tall fuselage
