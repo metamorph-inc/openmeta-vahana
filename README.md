@@ -115,7 +115,7 @@ While the OpenMETA Optimizer obtained similar values, there are differences. In 
 
 The OpenMETA 'Optimizer' produced reasonable results, and if that particular model were developed more, the differences between it and the Vahana Trade Study would shrink. However, what we really wanted to do was place an OpenMETA 'Optimizer' driver *inside* of an OpenMETA 'Parameter Study' driver - similar to the  Vahana team's approach of nesting a MATLAB `fmincon()` function within a high-level DoE - so that we could easily generate optimized designs over a range of operating distances from 10 km to 100 km.
 
-While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. While the PythonWrapper components modeling the MDO problem can obviously be refined further still, this represents a good stepping stone towards replication. The nested 'Parameter Study' and 'Optimizer' OpenMDAO drivers are located in `openmeta-vahana/scripts/vahana_optimizer.py`.
+While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. The nested 'Parameter Study' and 'Optimizer' OpenMDAO drivers are located in `openmeta-vahana/scripts/vahana_optimizer.py`.
 
 **Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results:**
 ![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
@@ -125,7 +125,7 @@ In the 4th paragraph of the 'Trade Study Results' section of [Vahana Configurati
 **Effect of Added Constraint Limiting Fuel Weight to less than 1/3 of MTOW:**
 ![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
 
-Enforcing this constraint changes the Tilt-Wing Configuration's DOC curve, causing it to start rising rapidly for operating ranges of 70 km and greater. If the Vahana aircraft has a target operational range of 100 km, this weight restriction translates into $0.25 difference in DOC per a km ($25 per 100 km trip). The extent to which Airbus can create designs that safely exceed this fuel weight restriction and lobby for favorable regulations governing the emerging body of personal, electric VTOL aircraft will have a significant impact on the operating costs of the Vahana.
+Enforcing this constraint changes the Tilt-Wing Configuration's DOC curve, causing it to start rising rapidly for operating ranges of 70 km and greater. If the Vahana aircraft has a target operational range of 100 km, this weight restriction translates into a $0.32 difference in DOC per a km ($25 per 100 km trip). The extent to which Airbus can create designs that safely exceed this fuel weight restriction and lobby for favorable regulations governing the emerging body of personal, electric VTOL aircraft will have a significant impact on the operating costs of the Vahana.
 
 We are currently exploring the possibility of adding the ability for users to place 'Optimizer' drivers inside of 'Parameter Study' drivers within OpenMETA, so that they can easily compose DoE-type optimization problems similar to this one.
 
