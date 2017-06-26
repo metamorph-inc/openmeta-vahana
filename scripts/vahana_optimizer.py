@@ -113,8 +113,6 @@ class TopLevelSystem(Group):
         self.add('configWeightConst1', IndepVarComp('payload_mass', 114.0))
         #self.add('configWeightConst2', IndepVarComp('fuselage_mass', 55.0))  # TEMPORARY: This constant is a workaround until I add fuselage_mass.py
         self.add('configWeightConst3', IndepVarComp('prop_mass', 2.5))  # TEMPORARY: This constant is a workaround until I add prop_mass.py
-        #self.add('configWeightConst4', IndepVarComp('wing_mass', 40.0))  # TEMPORARY: This constant is a workaround until I add wing_mass.py
-        #self.add('configWeightConst5', IndepVarComp('canard_mass', 38.0))  # TEMPORARY: This constant is a workaround until I add wing_mass.py
         self.add('costBuildupConst1', IndepVarComp('partsPerTool', 1000.0))
         
         # add constraint equations
@@ -348,7 +346,7 @@ if __name__ == '__main__':
     # Data export via .csv      
     with open('results.csv', 'wb') as csvfile:
         writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow(['Range', 'DOC', 'DOC $/km', 'RotorRadius', 'CruiseSpeed', 'BatteryMass ()', 'MotorMass', 'MaxTakeOffMass'])
+        writer.writerow(['Range [km]', 'DOC [$]', 'DOC [$/km]', 'RotorRadius [m]', 'CruiseSpeed [m/s]', 'BatteryMass [kg]', 'MotorMass [kg]', 'MaxTakeOffMass [kg]'])
         for i in db_keys:
             data = db[i]
             writer.writerow([data['Parameters']['subprob.indep1.range'] / 1000.0, data['Unknowns']['subprob.OperatingCost.C_costPerFlight'], \
