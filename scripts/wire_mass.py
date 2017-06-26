@@ -43,8 +43,8 @@ class wire_mass(Component):
     
     def solve_nonlinear(self, params, unknowns, resids):
         # In the future, xmotor should be a parameter array that gets passed in from the outside
-        xmotor = np.concatenate((2*(0.5 + params['rProp'])/params['fuselageLength']*np.ones(4), \
-            2*(0.5 + 3*params['rProp'] + 0.05)/params['fuselageLength']*np.ones(4)))
+        xmotor = np.concatenate((2.0*(0.5 + params['rProp'])/params['span']*np.ones(4), \
+            2.0*(0.5 + 3.0*params['rProp'] + 0.05)/params['span']*np.ones(4)))
         
         nMotors = max(len(xmotor), 1)
         
@@ -53,13 +53,13 @@ class wire_mass(Component):
         cableDensity = 1e-5 # Approximate power cable pair density [kg/m/W], ~500 g/m for pair of wires carrying 50 kW
         
         # Wires for each motor runs half fuselage length and height on average. Also runs out from center to location on wing.  
-        L = nMotors * params['fuselageLength'] / 2 + nMotors * params['fuselageHeight'] / 2 + sum(xmotor) * params['span'] / 2
+        L = nMotors * params['fuselageLength'] / 2.0 + nMotors * params['fuselageHeight'] / 2.0 + sum(xmotor) * params['span'] / 2.0
         massCables = cableDensity * P * L
         
         # Sensor Wires
         wireDensity = 0.0046 # kg/m
         wiresPerBundle = 6 # Wires per bundle
-        L = L + 10 * params['fuselageLength'] + 4 * params['span'] # Additional wires for motor controllers, airdata, lights, servos, sensors
-        massWires = 2 * wireDensity * wiresPerBundle * L # Sensor wires for motors
+        L = L + 10.0 * params['fuselageLength'] + 4.0 * params['span'] # Additional wires for motor controllers, airdata, lights, servos, sensors
+        massWires = 2.0 * wireDensity * wiresPerBundle * L # Sensor wires for motors
         
         unknowns['mass'] = massCables + massWires
