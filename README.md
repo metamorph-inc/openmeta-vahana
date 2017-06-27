@@ -120,7 +120,7 @@ While this functionality is not currently within OpenMETA, we were able build it
 **Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results:**
 ![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
 
-In the 4th paragraph of the 'Trade Study Results' section of [Vahana Configuration Trade Study — Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93), A³ Team Member Mr. Geoffrey Bower states that for most transport aircraft the maximum fuel weight is roughly a third of the maximum takeoff weight. Therefore, we added an additional constraint to the OpenMDAO model that limited battery mass to less than one third of the maximum takeoff mass. This OpenMDAO driver is located in `openmeta-vahana/scripts/fuel-constraint.py`, and results can be seen below. 
+In the 4th paragraph of the 'Trade Study Results' section of [Vahana Configuration Trade Study — Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93), A³ Team Member Mr. Geoffrey Bower states that for most transport aircraft the maximum fuel weight is roughly a third of the maximum takeoff weight. Therefore, we added another constraint to the OpenMDAO model that limited battery mass to less than one third of the maximum takeoff mass. This OpenMDAO driver is located in `openmeta-vahana/scripts/fuel-constraint.py`, and results can be seen below. 
 
 **Effect of Added Constraint Limiting Fuel Weight to less than 1/3 of MTOW:**
 ![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
