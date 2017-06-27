@@ -282,7 +282,7 @@ if __name__ == '__main__':
     top.root.add('indep4', IndepVarComp('batteryMass', 11.70))
     top.root.add('indep5', IndepVarComp('motorMass', 3.00))
     top.root.add('indep6', IndepVarComp('mtom', 6.500))
-    top.root.add('indep7', IndepVarComp('vehicle', 'tiltwing'))  # 1st get this working with just the tiltwing
+    # top.root.add('indep7', IndepVarComp('vehicle', 'tiltwing'))  # 1st get this working with just the tiltwing
     
     # TopProblem: add the SubProblem
     top.root.add('subprob', SubProblem(sub, params=['indep1.range', 'indep2.rProp', \
@@ -292,9 +292,9 @@ if __name__ == '__main__':
     
     # TopProblem: connect top's independent variables to sub's params
     top.root.connect('indep1.range', 'subprob.indep1.range')
-    top.root.connect('indep2.rProp', 'subprob.indep2.rProp')
-    top.root.connect('indep3.cruiseSpeed', 'subprob.indep3.cruiseSpeed')
-    top.root.connect('indep4.batteryMass', 'subprob.indep4.batteryMass')
+    top.root.connect('indep2.rProp', 'subprob.indep2.rProp')  # Each of SubProblem's IndepVarComp components has to be connected (maybe promoted works too) to a 
+    top.root.connect('indep3.cruiseSpeed', 'subprob.indep3.cruiseSpeed')  # IndepVarComp component in the top level. 
+    top.root.connect('indep4.batteryMass', 'subprob.indep4.batteryMass')  # Alternatively it might make more sense to output the design variables states as metrics.
     top.root.connect('indep5.motorMass', 'subprob.indep5.motorMass')
     top.root.connect('indep6.mtom', 'subprob.indep6.mtom')
     
