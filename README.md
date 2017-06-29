@@ -1,7 +1,7 @@
 # OpenMETA-Vahana
 ## Summary
 
-We made an OpenMETA/OpenMDAO model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A³ by Airbus. We built OpenMETA/OpenMDAO models of the Vahana Tilt-Wing Multirotor aircraft using A³'s released source code as a template. These OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study. Results from two analysis using the OpenMDAO model are shown below.
+We made an OpenMETA/OpenMDAO model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A³ by Airbus. We built OpenMETA/OpenMDAO models of the Vahana Tilt-Wing Multirotor aircraft using A³'s released source code as a template. These OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study. Results from two analyses using the OpenMDAO model are shown below.
 
 **OpenMDAO model results:**
 ![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
