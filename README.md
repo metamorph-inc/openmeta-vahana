@@ -8,7 +8,18 @@ A parametric CAD model of the Vahana was also built within OpenMETA with the goa
 **Vahana CAD model:**
 ![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise")
 
-The OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study. Results from two analyses using the OpenMDAO model are shown below.
+The OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study. 
+
+Results from an OpenMETA 'Optimizer' and the Vahana Configuration Trade Study are shown below.
+
+**OpenMETA 'Optimizer' Results and Vahana Trade Study Results for Range of 100 km:**
+
+|                        | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
+|:----------------------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
+| OpenMETA |   115.8  |    1.16    |    1.12   |        45.5       |        406       |      65.2      |    954    |
+|   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    967    |
+
+Results from two analyses using the OpenMDAO model are shown below.
 
 **OpenMDAO model results:**
 ![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
