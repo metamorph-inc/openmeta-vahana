@@ -4,28 +4,31 @@
   "tabs": ["Explore.R", "DataTable.R", "Histogram.R", "PETRefinement.R", "Scratch.R", "ParallelAxisPlot.R", "UncertaintyQuantification.R"],
   "augmented_data": "results_viz_config_data.csv",
   "variables": {
-    "X10.0": {
+    "GUID": {
       "type": "Unknown"
     },
-    "X33.921567940374018": {
+    "Range": {
       "type": "Unknown"
     },
-    "X3.3921567940374016": {
+    "DOC": {
       "type": "Unknown"
     },
-    "X1.0240171214227793": {
+    "DOC.1": {
       "type": "Unknown"
     },
-    "X46.390324844850412": {
+    "RotorRadius": {
       "type": "Unknown"
     },
-    "X143.66549982358708": {
+    "CruiseSpeed": {
       "type": "Unknown"
     },
-    "X46.570785993910455": {
+    "BatteryMass": {
       "type": "Unknown"
     },
-    "X699.82731157467344": {
+    "MotorMass": {
+      "type": "Unknown"
+    },
+    "MaxTakeOffMass": {
       "type": "Unknown"
     }
   },
@@ -33,42 +36,40 @@
   "sets": [],
   "inputs": {
     "coloring_source": "None",
-    "DataTable-dataTable_cell_clicked": {},
-    "DataTable-dataTable_rows_all": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
-    "DataTable-dataTable_rows_current": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    "DataTable-dataTable_rows_selected": {},
-    "DataTable-dataTable_search": "",
-    "DataTable-dataTable_state": {},
     "DataTable-process_method": "None",
     "DataTable-use_filtered": true,
     "DataTable-weightMetrics": {},
     "Explore-add_contour": false,
     "Explore-add_pareto": false,
+    "Explore-add_regression": false,
     "Explore-auto_render": true,
-    "Explore-contour_var": "X10.0",
-    "Explore-display": ["X10.0", "X33.921567940374018"],
-    "Explore-explore_tabset": "Single Plot",
+    "Explore-contour_var": "Range",
+    "Explore-details_guid": "7",
+    "Explore-display": ["Range", "DOC"],
+    "Explore-file_images": "",
+    "Explore-file_simdis": "",
     "Explore-pairs_click": {},
     "Explore-pairs_plot_collapse": {},
     "Explore-pairs_plot_marker": "1",
     "Explore-pairs_plot_marker_size": 1,
     "Explore-pairs_trendlines": false,
     "Explore-pairs_upper_panel": false,
+    "Explore-regression_type": "Linear",
     "Explore-single_plot_collapse": "Variables",
     "Explore-single_plot_marker": "1",
     "Explore-single_plot_marker_size": 1,
-    "Explore-x_input": "X10.0",
-    "Explore-y_input": "X33.921567940374018",
-    "filter_X1.0240171214227793": [0.9485, 1.709],
-    "filter_X10.0": [20, 200],
-    "filter_X143.66549982358708": [103.8, 947.9],
-    "filter_X3.3921567940374016": [1.198, 2.195],
-    "filter_X33.921567940374018": [15.43, 337.2],
-    "filter_X46.390324844850412": [45.04, 46.4],
-    "filter_X46.570785993910455": [43.33, 124.1],
-    "filter_X699.82731157467344": [638.7, 1872],
-    "footer_collapse": {},
-    "Histogram-variable": "X10.0",
+    "Explore-tabset": "Pairs Plot",
+    "Explore-x_input": "Range",
+    "Explore-y_input": "DOC",
+    "filter_BatteryMass": [119.9, 154],
+    "filter_DOC": [29.7, 38.43],
+    "filter_DOC.1": [1.769, 3.159],
+    "filter_MaxTakeOffMass": [531.6, 584.1],
+    "filter_MotorMass": [35.48, 39.6],
+    "filter_Range": [9, 21],
+    "filter_RotorRadius": [0.8757, 0.8981],
+    "footer_collapse": "Filters",
+    "Histogram-variable": "Range",
     "live_color_palette": "Rainbow",
     "live_color_rainbow_s": 1,
     "live_color_rainbow_v": 1,
@@ -76,13 +77,14 @@
     "live_coloring_max_min": "Maximize",
     "live_coloring_name": "",
     "live_coloring_type": "Max/Min",
-    "live_coloring_variable_numeric": "X10.0",
+    "live_coloring_variable_numeric": "Range",
     "master_tabset": "Explore",
     "num_sd": 6,
     "remove_missing": false,
     "remove_outliers": false,
+    "slider_width": 237,
     "UncertaintyQuantification-design_config_choice": "",
-    "UncertaintyQuantification-design_config_var": "",
+    "UncertaintyQuantification-design_config_var": "CfgID",
     "UncertaintyQuantification-design_configs_present": false,
     "UncertaintyQuantification-display": {},
     "UncertaintyQuantification-display_all": true,
@@ -97,6 +99,7 @@
     "DataTable": {},
     "Histogram": {},
     "PETRefinement": {},
+    "Scratch": {},
     "ParallelAxisPlot": {},
     "UncertaintyQuantification": {
       "probability_queries": {},

@@ -73,7 +73,7 @@ class constraints_checker(Component):
         unknowns['c1'] = params['EReserve'] - (params['mBattery'] * batteryEnergyDensity * dischargeDepthReserve / 1000.0)
         
         # Constraint on available motor power (kW)
-        unknowns['c2'] = params['hoverPower_PMax'] / 1000.0 - (params['mMotors'] * motorPowerDensity)
+        unknowns['c2'] = (params['hoverPower_PMax'] / 1000.0) - (params['mMotors'] * motorPowerDensity)
         
         # Constraint on max take-off weight
         unknowns['c3'] = params['mass_W'] - (params['mtow'] * 9.8)
