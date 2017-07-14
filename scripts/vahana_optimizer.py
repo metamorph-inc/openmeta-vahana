@@ -341,7 +341,7 @@ if __name__ == '__main__':
             data['Parameters']['subprob.indep2.rProp'] * 0.01, data['Parameters']['subprob.indep3.cruiseSpeed'], \
             data['Parameters']['subprob.indep4.batteryMass'] * 10.0, data['Parameters']['subprob.indep5.motorMass'] * 10.0, \
             data['Parameters']['subprob.indep6.mtom'] * 100.0))
-    
+
     # Data export via .csv      
     with open('results.csv', 'wb') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
