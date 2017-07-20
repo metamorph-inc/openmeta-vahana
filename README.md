@@ -15,7 +15,7 @@ The OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those 
 
 |                        | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
 |:----------------------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
-| OpenMETA |   115.8  |    1.16    |    1.12   |        45.5       |        406       |      65.2      |    954    |
+| OpenMETA |   116.5  |    1.16    |    1.10   |        45.5       |        413       |      67.0      |    970    |
 |   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    967    |
 
 **OpenMDAO model results:**
@@ -124,16 +124,16 @@ Fortunately, OpenMETA also has an 'Optimizer' driver that uses the COBYLA Optimi
 
 |                        | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
 |:----------------------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
-| OpenMETA |   115.8  |    1.16    |    1.12   |        45.5       |        406       |      65.2      |    954    |
+| OpenMETA |   116.5  |    1.16    |    1.10   |        45.5       |        413       |      67.0      |    970    |
 |   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    967    |
 
-As shown above, for the range of 100 km, the OpenMETA Optimizer obtained similar values to those obtained by the Vahana Configuration Trade Study. The slight differences are a result of `propMass.m` not being converted yet - for this example a constant mass value was used in its place. The 'Optimizer' PET is located at `RootFolder/Testing/ParametricExploration/Vahana Optimizer PET` within openmeta-vahana.xme.
+As shown above, for the range of 100 km, the OpenMETA Optimizer obtained similar values to those obtained by the Vahana Configuration Trade Study. The 'Optimizer' PET is located at `RootFolder/Testing/ParametricExploration/Vahana Optimizer PET` within openmeta-vahana.xme.
 
 ### 'Optimizer' PET Nested Within 'Parameter Study' PET
 
 The OpenMETA 'Optimizer' produced the same results as the Vahana Configuration Trade Study. However, in OpenMETA's current form, we would have to manually change the Range value and rerun the PET analysis 20 times to recreate the full dataset found in the Vahana Configuration Trade Study. In order to meet this need, we wanted to be able to place an OpenMETA 'Optimizer' driver *inside* of an OpenMETA 'Parameter Study' driver - similar to the  Vahana team's approach of nesting a MATLAB `fmincon()` function within a high-level DoE - so that we could easily generate optimized designs over a range of operating distances from 10 km to 100 km.
 
-While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain some good proof-of-concept results. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. The nested 'Parameter Study' and 'Optimizer' OpenMDAO drivers are located in `openmeta-vahana/scripts/vahana_optimizer.py`.
+While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain good proof-of-concept results that were almost identical to produced by the Vahana Configuration Trade Study. The figure below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. The nested 'Parameter Study' and 'Optimizer' OpenMDAO drivers are located in `openmeta-vahana/scripts/vahana_optimizer.py`.
 
 **Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results:**
 ![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
