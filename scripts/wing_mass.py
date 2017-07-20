@@ -244,7 +244,7 @@ class wing_mass(Component):
         mGlue = mGlue+glue_thk*glue_rho*flapLength*np.ones(N)
 
         # Drag Bending Analysis
-        tDrag = Mz*max(seg[2][:, 0])/(dragInertia*uni_stress)  # Thickness for flap bending
+        tDrag = Mz*np.max(seg[2][:, 0])/(dragInertia*uni_stress)  # Thickness for flap bending
         mDrag = tDrag*dragLength*uni_rho  # Mass for flap bending
         mGlue = mGlue+glue_thk*glue_rho*dragLength*np.ones(N)
 

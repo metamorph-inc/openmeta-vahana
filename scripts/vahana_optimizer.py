@@ -4,7 +4,7 @@
 # Author(s): Joseph Coombe
 # Email: jcoombe@metamorphsoftware.com
 # Create Date: 6/15/2017
-# Edit Date: 6/22/2017
+# Edit Date: 7/20/2017
 
 # Conversion of Airbus A^3's vahanaTradeStudy>reserveMission.mat code
 # (located here: https://github.com/VahanaOpenSource/vahanaTradeStudy ) 
@@ -42,6 +42,7 @@ from loiter_power import loiter_power
 from mission import mission
 from wing_mass import wing_mass
 from wire_mass import wire_mass
+from prop_mass import prop_mass
 from fuselage_mass import fuselage_mass
 from config_weight import config_weight
 from tooling_cost import tooling_cost
@@ -91,6 +92,7 @@ class TopLevelSystem(Group):
         self.add('WingMass', wing_mass())
         self.add('CanardMass', wing_mass())
         self.add('WireMass', wire_mass())
+        self.add('PropMass', prop_mass())
         self.add('FuselageMass', fuselage_mass())
         self.add('ConfigWeight', config_weight())
         self.add('ToolingCost', tooling_cost())
@@ -111,7 +113,7 @@ class TopLevelSystem(Group):
         self.add('fuselageMassConst2', IndepVarComp('width', 1.0))
         self.add('fuselageMassConst3', IndepVarComp('height', 1.65))
         self.add('configWeightConst1', IndepVarComp('payload_mass', 114.0))
-        self.add('configWeightConst3', IndepVarComp('prop_mass', 2.5))  # TEMPORARY: This constant is a workaround until I add prop_mass.py
+        #self.add('configWeightConst3', IndepVarComp('prop_mass', 2.5))  # TEMPORARY: This constant is a workaround until I add prop_mass.py
         self.add('costBuildupConst1', IndepVarComp('partsPerTool', 1000.0))
         
         # add constraint equations
@@ -191,6 +193,9 @@ class TopLevelSystem(Group):
         self.connect('scale2.scaled', 'WireMass.rProp')
         self.connect('CruisePower.bRef', 'WireMass.span')
         
+        self.connect('scale2.scaled', 'PropMass.rProp')  # PropMass inputs
+        self.connect('HoverPower.TMax', 'PropMass.thrust')
+        
         self.connect('fuselageMassConst1.length', 'FuselageMass.length')  # FuselageMass inputs
         self.connect('fuselageMassConst2.width', 'FuselageMass.width')
         self.connect('fuselageMassConst3.height', 'FuselageMass.height')
@@ -204,7 +209,7 @@ class TopLevelSystem(Group):
         self.connect('scale5.scaled', 'ConfigWeight.mMotors')
         self.connect('scale6.scaled', 'ConfigWeight.mtow')
         self.connect('configWeightConst1.payload_mass', 'ConfigWeight.payload')
-        self.connect('configWeightConst3.prop_mass', 'ConfigWeight.prop_mass')
+        self.connect('PropMass.mass', 'ConfigWeight.prop_mass')
         self.connect('scale2.scaled', 'ConfigWeight.rProp')
         self.connect('indep7.vehicle', 'ConfigWeight.Vehicle')
         self.connect('WingMass.mass', 'ConfigWeight.wing_mass')
