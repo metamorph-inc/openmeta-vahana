@@ -249,7 +249,7 @@ if __name__ == '__main__':
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
     sub.driver.options['maxiter'] = 1000
-    sub.driver.options['tol'] = 0.01
+    sub.driver.options['tol'] = 0.001
     #sub.driver.opt_settings['rhobeg'] = 100.0
     
     # SubProblem: set design variables for sub.driver
@@ -294,14 +294,7 @@ if __name__ == '__main__':
     top.root.add('subprob', SubProblem(sub, params=['indep1.range', 'indep2.rProp', \
                                                     'indep3.cruiseSpeed', 'indep4.batteryMass', \
                                                     'indep5.motorMass', 'indep6.mtom'],
-                                            unknowns=['OperatingCost.C_costPerFlight', \
-                                                    'ConfigWeight.mass_rotor', \
-                                                    'ConfigWeight.mass_tailRotor', \
-                                                    'ConfigWeight.mass_wire', \
-                                                    'ConfigWeight.mass_fuselage', \
-                                                    'ConfigWeight.mass_m', \
-                                                    'HoverPower.hoverPower_PMax', \
-                                                    'HoverPower.hoverPower_PMaxBattery']))
+                                            unknowns=['OperatingCost.C_costPerFlight']))
     
     # TopProblem: connect top's independent variables to sub's params
     top.root.connect('indep1.range', 'subprob.indep1.range')
@@ -350,16 +343,11 @@ if __name__ == '__main__':
     for i in db_keys:
         data = db[i]
         print('\n')
-        print('Range (m): {}, DOC ($): {}, rProp (m): {}, cruiseSpeed (m/s): {}, batteryMass (kg): {}, motorMass (kg): {}, mtom (kg): {}, \
-            DEBUG: mass_rotor = {}, DEBUG: mass_tailRotor = {}, DEBUG: mass_wire = {}, DEBUG: mass_fuselage = {}, DEBUG: mass_m = {}, \
-            DEBUG: hoverPower_PMax = {}, DEBUG: hoverPower_PMaxBattery = {}' \
+        print('Range (m): {}, DOC ($): {}, rProp (m): {}, cruiseSpeed (m/s): {}, batteryMass (kg): {}, motorMass (kg): {}, mtom (kg): {}' \
             .format(data['Parameters']['subprob.indep1.range'] / 1000.0, data['Unknowns']['subprob.OperatingCost.C_costPerFlight'], \
             data['Parameters']['subprob.indep2.rProp'] * 0.1, data['Parameters']['subprob.indep3.cruiseSpeed'], \
             data['Parameters']['subprob.indep4.batteryMass'] * 10.0, data['Parameters']['subprob.indep5.motorMass'] * 10.0, \
-            data['Parameters']['subprob.indep6.mtom'] * 100.0, data['Unknowns']['subprob.ConfigWeight.mass_rotor'], \
-            data['Unknowns']['subprob.ConfigWeight.mass_tailRotor'], data['Unknowns']['subprob.ConfigWeight.mass_wire'], \
-            data['Unknowns']['subprob.ConfigWeight.mass_fuselage'], data['Unknowns']['subprob.ConfigWeight.mass_m'], \
-            data['Unknowns']['subprob.HoverPower.hoverPower_PMax'], data['Unknowns']['subprob.HoverPower.hoverPower_PMaxBattery']))
+            data['Parameters']['subprob.indep6.mtom'] * 100.0))
 
     # Data export via .csv      
     with open('results.csv', 'wb') as csvfile:

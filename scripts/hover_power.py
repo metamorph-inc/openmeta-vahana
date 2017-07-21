@@ -122,7 +122,7 @@ class HoverPower(Component):
                 (k * math.sqrt(THover / (2.0 * rho * math.pi * params['rProp']**2.0)) + \
                 sigma * Cd0 / 8.0 * (unknowns['hoverPower_Vtip']**3.0) / (THover / (rho * math.pi * params['rProp']**2.0)))
             FOM = nProp * THover * math.sqrt(THover / (2.0 * rho * math.pi * params['rProp']**2.0)) / PHover
-            print("PHover =", PHover)
+
             # Battery power
             # ~10% power to tail rotor (see "Princples of Helicopter Aerodynamics" by Leishman)
             PTailRotor = 0.1 * PHover

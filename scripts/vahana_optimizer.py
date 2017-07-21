@@ -340,7 +340,7 @@ if __name__ == '__main__':
     for i in db_keys:
         data = db[i]
         print('\n')
-        print('Range (m): {}, DOC ($): {}, rProp (m): {}, cruiseSpeed (m/s): {}, batteryMass (kg): {}, motorMass (kg): {}, mtom (kg): {}' \
+        print('Range (km): {}, DOC ($): {}, rProp (m): {}, cruiseSpeed (m/s): {}, batteryMass (kg): {}, motorMass (kg): {}, mtom (kg): {}' \
             .format(data['Parameters']['subprob.indep1.range'] / 1000.0, data['Unknowns']['subprob.OperatingCost.C_costPerFlight'], \
             data['Parameters']['subprob.indep2.rProp'] * 0.01, data['Parameters']['subprob.indep3.cruiseSpeed'], \
             data['Parameters']['subprob.indep4.batteryMass'] * 10.0, data['Parameters']['subprob.indep5.motorMass'] * 10.0, \
