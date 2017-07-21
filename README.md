@@ -19,6 +19,9 @@ The OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those 
 |   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
 
 **OpenMDAO model results:**
+
+![comparison](images/Vahana_OpenMDAOOptimizer_TiltwingVsHelicopter.png)
+
 ![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
 
 ## Airbus Vahana Configuration Trade Study
@@ -136,10 +139,10 @@ The OpenMETA 'Optimizer' produced the same results as the Vahana Configuration T
 While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain good proof-of-concept results that were almost identical to produced by the Vahana Configuration Trade Study. The two figures below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. The nested 'Parameter Study' and 'Optimizer' OpenMDAO drivers are located in `openmeta-vahana/scripts/vahana_optimizer.py` and `openmeta-vahana/scripts/vahana_optimizer_helicopter.py`.
 
 **Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results:**
-![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
+![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.png)
 
 **Comparison of `vahana_optimizer_helicopter.py` and `sizingTradeStudy.m` results:**
-![vahana_optimizer_helicopter.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy_Helicopter.PNG)
+![vahana_optimizer_helicopter.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy_Helicopter.png)
 
 The figure below compares the DOC results of the two configurations.
 
