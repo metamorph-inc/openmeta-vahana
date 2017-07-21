@@ -11,7 +11,7 @@ A parametric CAD model of the Vahana was also built within OpenMETA with the goa
 
 The OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study. 
 
-**OpenMETA 'Optimizer' Results and Vahana Trade Study Results for Range of 100 km:**
+**OpenMETA 'Optimizer' Results and Vahana Trade Study Results for Tilt-Wing Configuration at Range of 100 km:**
 
 |                        | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
 |:----------------------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
@@ -120,12 +120,12 @@ Unfortunately, after the first few runs, we quickly realized that - due to the s
 
 Fortunately, OpenMETA also has an 'Optimizer' driver that uses the COBYLA Optimizer. We replaced the 'Parameter Study' Driver with an 'Optimizer' driver and ran the PET again. The table below compares the results from an Optimizer PET to the results from the `tradeStudyResult.mat` file produced by the A³ Vahana Configuration Trade Study.
 
-**OpenMETA 'Optimizer' Results and Vahana Trade Study Results at for Range of 100 km:**
+**OpenMETA 'Optimizer' Results and Vahana Trade Study Results for Tilt-Wing Configuration at Range of 100 km:**
 
 |                        | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
 |:----------------------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
-| OpenMETA |   116.5  |    1.16    |    1.10   |        45.5       |        413       |      67.0      |    970    |
-|   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    967    |
+| OpenMETA |   116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
+|   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
 
 As shown above, for the range of 100 km, the OpenMETA Optimizer obtained similar values to those obtained by the Vahana Configuration Trade Study. The 'Optimizer' PET is located at `RootFolder/Testing/ParametricExploration/Vahana Optimizer PET` within openmeta-vahana.xme.
 
