@@ -20,7 +20,7 @@ The OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those 
 
 **OpenMDAO model results:**
 
-![comparison](images/Vahana_OpenMDAOOptimizer_TiltwingVsHelicopter.png)
+![comparison](images/Vahana_OpenMDAOOptimizer_TilwingVsHelicopter.png)
 
 ![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
 
@@ -139,7 +139,7 @@ The OpenMETA 'Optimizer' produced the same results as the Vahana Configuration T
 While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain good proof-of-concept results that were almost identical to produced by the Vahana Configuration Trade Study. The two figures below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. The nested 'Parameter Study' and 'Optimizer' OpenMDAO drivers are located in `openmeta-vahana/scripts/vahana_optimizer.py` and `openmeta-vahana/scripts/vahana_optimizer_helicopter.py`.
 
 **Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results:**
-![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.png)
+![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
 
 **Comparison of `vahana_optimizer_helicopter.py` and `sizingTradeStudy.m` results:**
 ![vahana_optimizer_helicopter.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy_Helicopter.png)
@@ -147,7 +147,7 @@ While this functionality is not currently within OpenMETA, we were able build it
 The figure below compares the DOC results of the two configurations.
 
 **Comparison of `vahana_optimizer.py` and `vahana_optimizer_helicopter.py` results:**
-![comparison](images/Vahana_OpenMDAOOptimizer_TiltwingVsHelicopter.png)
+![comparison](images/Vahana_OpenMDAOOptimizer_TilwingVsHelicopter.png)
 
 In the 4th paragraph of the 'Trade Study Results' section of [Vahana Configuration Trade Study — Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93), A³ Team Member Mr. Geoffrey Bower states that for most transport aircraft the maximum fuel weight is roughly a third of the maximum takeoff weight. Therefore, we added another constraint to the OpenMDAO model that limited battery mass to less than one third of the maximum takeoff mass. This OpenMDAO driver is located in `openmeta-vahana/scripts/fuel-constraint.py`, and results can be seen below. 
 
