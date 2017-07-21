@@ -105,9 +105,9 @@ class operating_cost(Component):
         
         # servo cost 
         if (params["Vehicle"].lower().replace('-', '') == "tiltwing"):
-            nServo = 14 # 8 props, 4 surfaces, 2 tilt
+            nServo = 14  # 8 props, 4 surfaces, 2 tilt
         elif (params["Vehicle"].lower().replace('-', '') == "helicopter"):
-            nServo = 8 # For cyclic (2x) / collective, tail rotor w/ redundancy
+            nServo = 8  # For cyclic (2x) / collective, tail rotor w/ redundancy
         
         unknowns['C_servoCost'] = nServo * 800 # Estimate $800 per servo in large quantities
         
@@ -134,9 +134,9 @@ class operating_cost(Component):
         if (params["Vehicle"].lower().replace('-', '') == "tiltwing"):
             unknowns['C_vehicleFootprint'] = 1.2 * (8 * params['rProp'] + 1) * (4 * params['rProp'] + 3) # m^2, 20% for movement around aircraft for maintenance, etc.
         elif (params["Vehicle"].lower().replace('-', '') == "helicopter"):
-            unknowns['C_vehicleFootprint'] = 1.2 * (2 * params['rProp'])**2 # m^2, 20% for movement around aircraft for maintenance, etc.
+            unknowns['C_vehicleFootprint'] = 1.2 * (2 * params['rProp'])**2  # m^2, 20% for movement around aircraft for maintenance, etc.
         
-        unknowns['C_areaCost'] = 10.7639 * 2 * 12 # $/m^2, $2/ft^2 per month assumed
+        unknowns['C_areaCost'] = 10.7639 * 2 * 12  # $/m^2, $2/ft^2 per month assumed
         
         # Facility cost = Vehicle footprint + 10x footprint for operations,
         # averaged over # of vehicles at each facility
@@ -164,11 +164,11 @@ class operating_cost(Component):
         # Maintenance cost
         unknowns['C_humanCostPerHour'] = 60.0
         if (params["Vehicle"].lower().replace('-', '') == "tiltwing"):
-            unknowns['C_manHrPerFlightHour'] = 0.10 # periodic maintenance estimate
-            unknowns['C_manHrPerFlight'] = 0.2 # Inspection, battery swap estimate
+            unknowns['C_manHrPerFlightHour'] = 0.10  # periodic maintenance estimate
+            unknowns['C_manHrPerFlight'] = 0.2  # Inspection, battery swap estimate
         elif (params["Vehicle"].lower().replace('-', '') == "helicopter"):
-            unknowns['C_manHrPerFlightHour'] = 0.05 # periodic maintenance estimate
-            unknowns['C_manHrPerFlight'] = 0.2 # Inspection, battery swap estimate
+            unknowns['C_manHrPerFlightHour'] = 0.05  # periodic maintenance estimate
+            unknowns['C_manHrPerFlight'] = 0.2  # Inspection, battery swap estimate
         else:
             pass
             error('Vehicle not recognized!')

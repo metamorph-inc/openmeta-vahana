@@ -99,7 +99,7 @@ class fuselage_mass(Component):
         # Skin Mass - approximate area of ellipsoid given length, width, height,
         # (see https://en.wikipedia.org/wiki/Ellipsoid#Surface_area)
         Swet = 4.0 * math.pi * (((params['length'] * params['width'] / 4.0) ** 1.6 + (params['length'] * params['height'] / 4.0) ** 1.6 + \
-        (params['width'] * params['height'] / 4.0) ** 1.6) / 3.0) ** (1.0 / 1.6)
+            (params['width'] * params['height'] / 4.0) ** 1.6) / 3.0) ** (1.0 / 1.6)
         skinMass = Swet * arealWeight
 
         # Bulkhead Mass

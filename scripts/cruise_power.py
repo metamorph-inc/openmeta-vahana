@@ -136,14 +136,14 @@ class CruisePower(Component):
             unknowns['omega'] = (340.2940 * MTip - params['V']) / params['rProp']
 
             # Fuselage drag
-            unknowns['D'] = 0.5 * rho * params['V']**2 * unknowns['SCdFuse']
+            unknowns['D'] = 0.5 * rho * (params['V']**2) * unknowns['SCdFuse']
 
             # Inflow angle 
             unknowns['alpha'] = math.atan2(unknowns['D'], params['W'])
 
             # Compute advance ratio
             unknowns['mu'] = params['V'] * math.cos(unknowns['alpha']) / (unknowns['omega'] * params['rProp'])
-                
+
             # Thrust coefficient (including tip loss factor for effective disk area)
             unknowns['Ct'] = params['W'] / (rho * math.pi * params['rProp']**2 * unknowns['B']**2 * unknowns['omega']**2 * params['rProp']**2)
 
@@ -175,13 +175,14 @@ class CruisePower(Component):
 
         else:
             pass
-            
+
+
 if __name__ == "__main__":
     top = Problem()
     root = top.root = Group()
 
     # Sample Inputs
-    indep_vars_constants = [('Vehicle', u'tiltwing', {'pass_by_obj':True}),
+    indep_vars_constants = [('Vehicle', u'helicopter', {'pass_by_obj':True}),
                             ('rProp', 1.4),
                             ('V', 50.0),
                             ('W', 2000.0)]
@@ -198,31 +199,58 @@ if __name__ == "__main__":
     top.setup()
     top.run()
     
-    print("Tiltwing..     PBattery:", top['Example.PBattery'])
+    print("Helicopter..")
+    print("PBattery:", top['Example.PBattery'])
+    print("etaProp:", top['Example.etaProp'])
+    print("etaMotor:", top['Example.etaMotor'])
+    print("CLmax:", top['Example.CLmax'])
+    print("bRef:", top['Example.bRef'])
+    print("SRef:", top['Example.SRef'])
+    print("cRef:", top['Example.cRef'])
+    print("AR:", top['Example.AR'])
+    print("D:", top['Example.D'])
+    print("PCruise:", top['Example.PCruise'])
+    print("PBattery:", top['Example.PBattery'])
+    print("Cd0:", top['Example.Cd0'])
+    print("CL:", top['Example.CL'])
+    print("LoverD:", top['Example.LoverD'])
+    print("omega:", top['Example.omega'])
+    print("alpha:", top['Example.alpha'])
+    print("mu:", top['Example.mu'])
+    print("Ct:", top['Example.Ct'])
+    print("lamda:", top['Example.lambda'])
+    print("v:", top['Example.v'])
+    print("SCdFuse:", top['Example.SCdFuse'])
+    print("Cd0Wing:", top['Example.Cd0Wing'])
+    print("e:", top['Example.e'])
+    print("B:", top['Example.B'])
+    print("sigma:", top['Example.sigma'])
     
-    top['Inputs.Vehicle'] = u'helicopter'
     
-    top.run()
+    # Example
+    # top['Inputs.Vehicle'] = u'helicopter'
     
-    print("Helicopter..   PBattery:", top['Example.PBattery'])
-    print("Helicopter..   mu:", top['Example.mu'])
-    print("Helicopter..   alpha:", top['Example.alpha'])
-    print("Helicopter..   omega:", top['Example.omega'])    
+    # top.run()
     
-    top['Inputs.V'] = 30.0
+    # print("Helicopter..   PBattery:", top['Example.PBattery'])
+    # print("Helicopter..   mu:", top['Example.mu'])
+    # print("Helicopter..   alpha:", top['Example.alpha'])
+    # print("Helicopter..   omega:", top['Example.omega'])    
     
-    top.run()
-    print("Inputs.V..     V:", top['Inputs.V'])
-    print("Helicopter..   PBattery:", top['Example.PBattery'])
-    print("Helicopter..   mu:", top['Example.mu'])
-    print("Helicopter..   alpha:", top['Example.alpha'])
-    print("Helicopter..   omega:", top['Example.omega'])
+    # top['Inputs.V'] = 30.0
     
-    top['Inputs.V'] = 80.0
+    # top.run()
+    # print("Inputs.V..     V:", top['Inputs.V'])
+    # print("Helicopter..   PBattery:", top['Example.PBattery'])
+    # print("Helicopter..   mu:", top['Example.mu'])
+    # print("Helicopter..   alpha:", top['Example.alpha'])
+    # print("Helicopter..   omega:", top['Example.omega'])
     
-    top.run()
-    print("Inputs.V..     V:", top['Inputs.V'])
-    print("Helicopter..   PBattery:", top['Example.PBattery'])
-    print("Helicopter..   mu:", top['Example.mu'])
-    print("Helicopter..   alpha:", top['Example.alpha'])
-    print("Helicopter..   omega:", top['Example.omega'])
+    # top['Inputs.V'] = 80.0
+    
+    # top.run()
+    # print("Inputs.V..     V:", top['Inputs.V'])
+    # print("Helicopter..   PBattery:", top['Example.PBattery'])
+    # print("Helicopter..   mu:", top['Example.mu'])
+    # print("Helicopter..   alpha:", top['Example.alpha'])
+    # print("Helicopter..   omega:", top['Example.omega'])

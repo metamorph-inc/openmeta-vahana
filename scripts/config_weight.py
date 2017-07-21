@@ -157,7 +157,7 @@ class config_weight(Component):
         
         elif (params["Vehicle"].lower().replace('-', '') == "helicopter"):
             # Servo weight
-            unknowns['mass_servos'] = mPerServo * 8 # 8 for redundant collective, cyclic (2x), tail rotor
+            unknowns['mass_servos'] = mPerServo * 8  # 8 for redundant collective, cyclic (2x), tail rotor
            
             # No BRS for helicopter
             unknowns['mass_brs'] = 0
@@ -175,7 +175,7 @@ class config_weight(Component):
             # Estimate from OH-58 gearbox study that has a lower bound of 0.26 lb/Hp
             # https://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19880020744.pdf    
             transmissionPowerDensity = 6.3 # kW/kg
-            unknowns['mass_transmission'] = params['hoverOutput_PMax'] / 1000 / transmissionPowerDensity
+            unknowns['mass_transmission'] = params['hoverOutput_PMax'] / 1000.0 / transmissionPowerDensity
             
             # Fuselage mass assuming fuselage length of 1.5 m nose plus 1.25x rotor
             # radius for tailboom length, 1 meter wide and 2 meter tall fuselage.
@@ -185,7 +185,7 @@ class config_weight(Component):
             unknowns['mass_lg'] = 0.02 * params['mtow']
             
             # Wire mass assuming motors located close to battery
-            unknowns['mass_wire'] = unknowns['mass_wire']
+            unknowns['mass_wire'] = params['wire_mass']
             
             # Total structural mass (material cost)
             unknowns['mass_structural'] = unknowns['mass_rotor'] + unknowns['mass_hub'] + unknowns['mass_tailRotor'] + unknowns['mass_fuselage'] + unknowns['mass_lg']

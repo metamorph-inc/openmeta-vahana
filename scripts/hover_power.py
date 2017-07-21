@@ -18,7 +18,7 @@
 
 from __future__ import print_function
 
-from openmdao.api import Component
+from openmdao.api import Component, Group, Problem, IndepVarComp
 import math
 
 class HoverPower(Component):
@@ -37,6 +37,7 @@ class HoverPower(Component):
         self.add_output('hoverPower_Vtip', val=0.0)
         self.add_output('TMax', val=0.0)
         self.add_output('hoverPower_PMaxBattery', val=0.0)
+        self.add_output('QMax', val=0.0)
         
     def solve_nonlinear(self, params, unknowns, resids):
         # Altitude, compute atmospheric properties
@@ -46,7 +47,6 @@ class HoverPower(Component):
         Cd0 = 0.012  # Blade airfoil profile drag coefficient
         sigma = 0.1  # Solidity (could estimate from Ct assuming some average blade CL)
 
-        
         # Different assumptions per vehicle
         if (params["Vehicle"].lower().replace('-', '') == "tiltwing"):
             
@@ -120,9 +120,9 @@ class HoverPower(Component):
             # Hover Power
             PHover = nProp * THover * \
                 (k * math.sqrt(THover / (2.0 * rho * math.pi * params['rProp']**2.0)) + \
-                sigma * Cd0 / 8.0 * (unknowns['hoverPower_Vtip'])**3.0 / (THover / (rho * math.pi * params['rProp']**2.0)))
+                sigma * Cd0 / 8.0 * (unknowns['hoverPower_Vtip']**3.0) / (THover / (rho * math.pi * params['rProp']**2.0)))
             FOM = nProp * THover * math.sqrt(THover / (2.0 * rho * math.pi * params['rProp']**2.0)) / PHover
-            
+            print("PHover =", PHover)
             # Battery power
             # ~10% power to tail rotor (see "Princples of Helicopter Aerodynamics" by Leishman)
             PTailRotor = 0.1 * PHover
@@ -135,7 +135,7 @@ class HoverPower(Component):
             # Note: Helicopter increases thrust by increasing collective with constant RPM
             unknowns['hoverPower_PMax'] = nProp * unknowns['TMax'] * \
                 (k * math.sqrt(unknowns['TMax'] / (2.0 * rho * math.pi * params['rProp']**2.0)) + \
-                sigma * Cd0 / 8.0 * (unknowns['hoverPower_Vtip'])**3.0 / (unknowns['TMax'] / (rho * math.pi * params['rProp']**2.0)))
+                sigma * Cd0 / 8.0 * (unknowns['hoverPower_Vtip']**3.0) / (unknowns['TMax'] / (rho * math.pi * params['rProp']**2.0)))
                 
             # ~15% power to tail rotor for sizing (see "Princples of Helicopter Aerodynamics" by Leishman)
             unknowns['hoverPower_PMax'] = 1.15 * unknowns['hoverPower_PMax']
@@ -144,9 +144,40 @@ class HoverPower(Component):
             unknowns['hoverPower_PMaxBattery'] = unknowns['hoverPower_PMax'] / etaMotor
             
             # Maximum torque per motor
-            QMax = unknowns['hoverPower_PMax'] / omega
+            unknowns['QMax'] = unknowns['hoverPower_PMax'] / omega
             
         else:
             pass
             #TODO: raise OpenMDAO exception
 
+if __name__ == "__main__":
+    top = Problem()
+    root = top.root = Group()
+
+    # Sample Inputs
+    indep_vars_constants = [('Vehicle', u'helicopter', {'pass_by_obj':True}),
+                            ('rProp', 1.4),
+                            ('W', 2000.0),
+                            ('cruisePower_omega', 122.0)]
+
+    root.add('Inputs', IndepVarComp(indep_vars_constants))
+
+    root.add('Example', HoverPower())
+
+    root.connect('Inputs.Vehicle', 'Example.Vehicle')
+    root.connect('Inputs.rProp', 'Example.rProp')
+    root.connect('Inputs.W', 'Example.W')
+    root.connect('Inputs.cruisePower_omega', 'Example.cruisePower_omega')
+
+    top.setup()
+    top.run()
+    
+    print("Helicopter..")
+    print("Vtip:", top['Example.hoverPower_Vtip'])
+    print("VAutoRotation:", top['Example.hoverPower_VAutoRotation'])
+    print("PBattery:", top['Example.hoverPower_PBattery'])
+    print("TMax:", top['Example.TMax'])
+    print("PMax:", top['Example.hoverPower_PMax'])
+    print("PMaxBattery:", top['Example.hoverPower_PMaxBattery'])
+    print("QMax:", top['Example.QMax'])
+    
