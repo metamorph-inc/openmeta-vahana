@@ -1,5 +1,5 @@
 '''
-# Name: vahana_optimizer_scaled_helicopter.py
+# Name: vahana_optimizer_helicopter.py
 # Company: MetaMorph, Inc.
 # Author(s): Joseph Coombe
 # Email: jcoombe@metamorphsoftware.com

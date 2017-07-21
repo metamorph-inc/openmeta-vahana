@@ -1,5 +1,5 @@
 '''
-# Name: vahana_optimizer_scaled_tiltwing_one_third_battery_constraint.py
+# Name: vahana_optimizer_scaled_helicopter_one_third_constraint.py
 # Company: MetaMorph, Inc.
 # Author(s): Joseph Coombe
 # Email: jcoombe@metamorphsoftware.com
@@ -40,8 +40,7 @@ from cruise_power import CruisePower
 from hover_power import HoverPower
 from loiter_power import loiter_power
 from mission import mission
-from wing_mass import wing_mass
-from wire_mass import wire_mass
+from wire_mass_helicopter import wire_mass
 from prop_mass import prop_mass
 from fuselage_mass import fuselage_mass
 from config_weight import config_weight
@@ -62,15 +61,15 @@ class TopLevelSystem(Group):
         
         # add design variables
         self.add('indep1', IndepVarComp('range', 50.0))
-        self.add('indep2', IndepVarComp('rProp', 100.0))
+        self.add('indep2', IndepVarComp('rProp', 30.0))
         self.add('indep3', IndepVarComp('cruiseSpeed', 50.0))
         self.add('indep4', IndepVarComp('batteryMass', 11.70))
         self.add('indep5', IndepVarComp('motorMass', 3.00))
         self.add('indep6', IndepVarComp('mtom', 6.500))
-        self.add('indep7', IndepVarComp('vehicle', u'tiltwing'))  # TypeError: In subproblem 'subprob': Type <type 'str'> of source 'indep7.vehicle' must be the same as type <type 'unicode'> of target 'ConfigWeight.Vehicle'.
+        self.add('indep7', IndepVarComp('vehicle', u'helicopter'))  # TypeError: In subproblem 'subprob': Type <type 'str'> of source 'indep7.vehicle' must be the same as type <type 'unicode'> of target 'ConfigWeight.Vehicle'.
         
         # design variable scaling - this is CRITICAL or else the COBYLA optimizer WILL NOT WORK
-        self.add('scale2', ExecComp('scaled = orig*0.01'))
+        self.add('scale2', ExecComp('scaled = orig*0.1'))
         self.add('scale3', ExecComp('scaled = orig*1.0'))
         self.add('scale4', ExecComp('scaled = orig*10.0'))
         self.add('scale5', ExecComp('scaled = orig*10.0'))
@@ -89,10 +88,9 @@ class TopLevelSystem(Group):
         self.add('LoiterPower', loiter_power())
         self.add('SimpleMission', mission())
         self.add('ReserveMission', mission())
-        self.add('WingMass', wing_mass())
-        self.add('CanardMass', wing_mass())
         self.add('WireMass', wire_mass())
         self.add('PropMass', prop_mass())
+        self.add('PropMass_Tail', prop_mass())
         self.add('FuselageMass', fuselage_mass())
         self.add('ConfigWeight', config_weight())
         self.add('ToolingCost', tooling_cost())
@@ -107,11 +105,14 @@ class TopLevelSystem(Group):
         self.add('wingMassConst2', IndepVarComp('fc', 0.4))
         self.add('canardMassConst1', IndepVarComp('winglet', 0.0))
         self.add('canardMassConst2', IndepVarComp('fc', 0.6))
-        self.add('wireMassConst1', IndepVarComp('fuselageLength', 5.0))
-        self.add('wireMassConst2', IndepVarComp('fuselageHeight', 1.65))
-        self.add('fuselageMassConst1', IndepVarComp('length', 5.0))
+        #self.add('wireMassConst1', IndepVarComp('fuselageLength', 5.0))
+        self.add('wireMassConst2', IndepVarComp('fuselageHeight', 2.0))
+        self.add('wireMassConst3', IndepVarComp('span', 0.0))
+        self.add('wireMassConst4', IndepVarComp('xmotor', 0.0))
+        #self.add('fuselageMassConst1', IndepVarComp('length', 5.0))  # Not needed for Helicopter configuration
         self.add('fuselageMassConst2', IndepVarComp('width', 1.0))
-        self.add('fuselageMassConst3', IndepVarComp('height', 1.65))
+        self.add('fuselageMassConst3', IndepVarComp('height', 2.0))
+        self.add('fuselageMassConst4', IndepVarComp('span', 1.0))
         self.add('configWeightConst1', IndepVarComp('payload_mass', 113.398))
         self.add('costBuildupConst1', IndepVarComp('partsPerTool', 1000.0))
         
@@ -119,6 +120,7 @@ class TopLevelSystem(Group):
         self.add('con1', ExecComp('c1 = (mBattery*230.0*0.95/1000.0) - EReserve'))
         self.add('con2', ExecComp('c2 = mMotors*5.0 - hoverPower_PMax / 1000.0'))
         self.add('con3', ExecComp('c3 = mtow*9.8 - mass_W'))
+        self.add('con4', ExecComp('c4 = (0.5*1.0/3.0*mass_rotor*(hoverPower_Vtip**2.0)) - (0.5*mass_m*(hoverPower_VAutoRotation**2.0))'))
         self.add('con5', ExecComp('c5 = ((1.0/3.0)*mtow) - mBattery'))  # "Most transport aircraft have a maximum fuel weight that is roughly 1/3 of the maximum takeoff weight..."
         
         # connect components - as Jonathan pointed out, the alternative is to use a consistent naming convetion and promote variables. This is a pain without a wrapper *cough* OpenMETA *cough*.
@@ -170,48 +172,46 @@ class TopLevelSystem(Group):
         self.connect('scale3.scaled', 'ReserveMission.V')
         self.connect('indep7.vehicle', 'ReserveMission.Vehicle')
         
-        self.connect('CruisePower.cRef', 'WingMass.chord')  # WingMass inputs
-        self.connect('wingMassConst2.fc', 'WingMass.fc')
-        self.connect('scale2.scaled', 'WingMass.rProp')
-        self.connect('CruisePower.bRef', 'WingMass.span')
-        self.connect('HoverPower.TMax', 'WingMass.thrust')
-        self.connect('MassToWeight.weight', 'WingMass.W')
-        self.connect('wingMassConst1.winglet', 'WingMass.winglet')
-
-        self.connect('CruisePower.cRef', 'CanardMass.chord')  # CanardMass inputs
-        self.connect('canardMassConst2.fc', 'CanardMass.fc')
-        self.connect('scale2.scaled', 'CanardMass.rProp')
-        self.connect('CruisePower.bRef', 'CanardMass.span') 
-        self.connect('HoverPower.TMax', 'CanardMass.thrust')
-        self.connect('MassToWeight.weight', 'CanardMass.W')
-        self.connect('canardMassConst1.winglet', 'CanardMass.winglet')
+        self.add('WireMassInput1', ExecComp('length = 1.5+1.25*rProp'))
+        self.connect('scale2.scaled', 'WireMassInput1.rProp')
         
         self.connect('wireMassConst2.fuselageHeight', 'WireMass.fuselageHeight')  # WireMass inputs
-        self.connect('wireMassConst1.fuselageLength', 'WireMass.fuselageLength')
+        self.connect('WireMassInput1.length', 'WireMass.fuselageLength')
         self.connect('HoverPower.hoverPower_PMaxBattery', 'WireMass.power')
-        self.connect('scale2.scaled', 'WireMass.rProp')
-        self.connect('CruisePower.bRef', 'WireMass.span')
+        self.connect('wireMassConst4.xmotor', 'WireMass.xmotor')
+        self.connect('wireMassConst3.span', 'WireMass.span')
         
         self.connect('scale2.scaled', 'PropMass.rProp')  # PropMass inputs
         self.connect('HoverPower.TMax', 'PropMass.thrust')
         
-        self.connect('fuselageMassConst1.length', 'FuselageMass.length')  # FuselageMass inputs
+        self.add('PropMassInput1', ExecComp('R = rProp/5.0'))
+        self.add('PropMassInput2', ExecComp('T = 1.5*hoverOutput_QMax/(1.25*rProp)'))
+        self.connect('scale2.scaled', 'PropMassInput1.rProp')
+        self.connect('HoverPower.QMax', 'PropMassInput2.hoverOutput_QMax')
+        self.connect('scale2.scaled', 'PropMassInput2.rProp')
+
+        self.connect('PropMassInput1.R', 'PropMass_Tail.rProp')  # PropMass_Tail inputs
+        self.connect('PropMassInput2.T', 'PropMass_Tail.thrust')
+        
+        self.add('FuselageMassInput1', ExecComp('length = 1.5+1.25*rProp'))
+        self.connect('scale2.scaled', 'FuselageMassInput1.rProp')
+        
+        self.connect('FuselageMassInput1.length', 'FuselageMass.length')  # FuselageMass inputs
         self.connect('fuselageMassConst2.width', 'FuselageMass.width')
         self.connect('fuselageMassConst3.height', 'FuselageMass.height')
-        self.connect('CruisePower.bRef', 'FuselageMass.span')
+        self.connect('fuselageMassConst4.span', 'FuselageMass.span')
         self.connect('MassToWeight.weight', 'FuselageMass.weight')
         
-        self.connect('CanardMass.mass', 'ConfigWeight.canard_mass')  # ConfigWeight inputs
-        self.connect('FuselageMass.mass', 'ConfigWeight.fuselage_mass')
+        self.connect('FuselageMass.mass', 'ConfigWeight.fuselage_mass') # ConfigWeight inputs
         self.connect('HoverPower.hoverPower_PMax', 'ConfigWeight.hoverOutput_PMax')
         self.connect('scale4.scaled', 'ConfigWeight.mBattery')
         self.connect('scale5.scaled', 'ConfigWeight.mMotors')
         self.connect('scale6.scaled', 'ConfigWeight.mtow')
         self.connect('configWeightConst1.payload_mass', 'ConfigWeight.payload')
         self.connect('PropMass.mass', 'ConfigWeight.prop_mass')
+        self.connect('PropMass_Tail.mass', 'ConfigWeight.prop_mass_tail')
         self.connect('scale2.scaled', 'ConfigWeight.rProp')
         self.connect('indep7.vehicle', 'ConfigWeight.Vehicle')
-        self.connect('WingMass.mass', 'ConfigWeight.wing_mass')
         self.connect('WireMass.mass', 'ConfigWeight.wire_mass')
         
         self.connect('CruisePower.bRef', 'ToolingCost.cruiseOutput_bRef')  # ToolingCost inputs
@@ -235,6 +235,9 @@ class TopLevelSystem(Group):
         self.connect('scale5.scaled', 'con2.mMotors')
         self.connect('ConfigWeight.mass_W', 'con3.mass_W')
         self.connect('scale6.scaled', 'con3.mtow')
+        self.connect('ConfigWeight.mass_rotor', 'con4.mass_rotor')
+        self.connect('HoverPower.hoverPower_Vtip', 'con4.hoverPower_Vtip')
+        self.connect('HoverPower.hoverPower_VAutoRotation', 'con4.hoverPower_VAutoRotation')
         self.connect('scale4.scaled', 'con5.mBattery')
         self.connect('scale6.scaled', 'con5.mtow')
         
@@ -249,12 +252,12 @@ if __name__ == '__main__':
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
     sub.driver.options['maxiter'] = 1000
-    sub.driver.options['tol'] = 0.01
+    sub.driver.options['tol'] = 0.001
     #sub.driver.opt_settings['rhobeg'] = 100.0
     
     # SubProblem: set design variables for sub.driver
-    sub.driver.add_desvar('indep2.rProp', lower=30.0, upper=200.0)
-    sub.driver.add_desvar('indep3.cruiseSpeed', lower=45.5, upper=80.0)
+    sub.driver.add_desvar('indep2.rProp', lower=10.0, upper=100.0)
+    sub.driver.add_desvar('indep3.cruiseSpeed', lower=30.0, upper=80.0)
     sub.driver.add_desvar('indep4.batteryMass', lower=1.0, upper=99.90)
     sub.driver.add_desvar('indep5.motorMass', lower=0.10, upper=99.90)
     sub.driver.add_desvar('indep6.mtom', lower=1.0, upper=99.990)
@@ -266,8 +269,8 @@ if __name__ == '__main__':
     # (in particular COBYLA) seem to totally ignore the design variable lower and upper bounds
     # Jonathan's work-around is to set additional constraints
     # Interesting article: http://openmdao.org/forum/questions/342/slsqpdriver-not-respecting-paramaters-low-and-high-contraints
-    sub.driver.add_constraint('indep2.rProp', lower=30.0, upper=200.0)
-    sub.driver.add_constraint('indep3.cruiseSpeed', lower=45.5, upper=80.0)
+    sub.driver.add_constraint('indep2.rProp', lower=10.0, upper=100.0)
+    sub.driver.add_constraint('indep3.cruiseSpeed', lower=30.0, upper=80.0)
     sub.driver.add_constraint('indep4.batteryMass', lower=1.0, upper=99.90)
     sub.driver.add_constraint('indep5.motorMass', lower=0.10, upper=99.90)
     sub.driver.add_constraint('indep6.mtom', lower=1.0, upper=99.990)
@@ -276,6 +279,7 @@ if __name__ == '__main__':
     sub.driver.add_constraint('con1.c1', lower=0.0)
     sub.driver.add_constraint('con2.c2', lower=0.0)
     sub.driver.add_constraint('con3.c3', lower=0.0)
+    sub.driver.add_constraint('con4.c4', lower=0.0)
     sub.driver.add_constraint('con5.c5', lower=0.0)
     
     # TopProblem: define a Problem to set up different optimization cases
@@ -283,7 +287,7 @@ if __name__ == '__main__':
     
     # TopProblem: add independent variables
     top.root.add('indep1', IndepVarComp('range', 50.0))
-    top.root.add('indep2', IndepVarComp('rProp', 100.0))
+    top.root.add('indep2', IndepVarComp('rProp', 30.0))
     top.root.add('indep3', IndepVarComp('cruiseSpeed', 50.0))
     top.root.add('indep4', IndepVarComp('batteryMass', 11.70))
     top.root.add('indep5', IndepVarComp('motorMass', 3.00))
@@ -294,7 +298,9 @@ if __name__ == '__main__':
     top.root.add('subprob', SubProblem(sub, params=['indep1.range', 'indep2.rProp', \
                                                     'indep3.cruiseSpeed', 'indep4.batteryMass', \
                                                     'indep5.motorMass', 'indep6.mtom'],
-                                            unknowns=['OperatingCost.C_costPerFlight']))
+                                            unknowns=['OperatingCost.C_costPerFlight', \
+                                                    'con1.c1', 'con2.c2', 'con3.c3', \
+                                                    'con4.c4', 'con5.c5']))
     
     # TopProblem: connect top's independent variables to sub's params
     top.root.connect('indep1.range', 'subprob.indep1.range')
@@ -308,10 +314,10 @@ if __name__ == '__main__':
     # for a parameter study, the following drivers can be used:
     # UniformDriver, FullFactorialDriver, LatinHypercubeDriver, OptimizedLatinHypercubeDriver
     # in this case, we will use FullFactorialDriver
-    top.driver = FullFactorialDriver(num_levels=77)
+    top.driver = FullFactorialDriver(num_levels=41)
     
     # TopProblem: add top.driver's design variables
-    top.driver.add_desvar('indep1.range', lower=10000.0, upper=200000.0)
+    top.driver.add_desvar('indep1.range', lower=10000.0, upper=110000.0)
     
     # Data collection
     recorder = SqliteRecorder('subprob')
@@ -343,11 +349,12 @@ if __name__ == '__main__':
     for i in db_keys:
         data = db[i]
         print('\n')
-        print('Range (km): {}, DOC ($): {}, rProp (m): {}, cruiseSpeed (m/s): {}, batteryMass (kg): {}, motorMass (kg): {}, mtom (kg): {}' \
+        print('Range (m): {}, DOC ($): {}, rProp (m): {}, cruiseSpeed (m/s): {}, batteryMass (kg): {}, motorMass (kg): {}, mtom (kg): {}, c1: {}, c2: {}, c3: {}, c4: {}, c5: {}' \
             .format(data['Parameters']['subprob.indep1.range'] / 1000.0, data['Unknowns']['subprob.OperatingCost.C_costPerFlight'], \
-            data['Parameters']['subprob.indep2.rProp'] * 0.01, data['Parameters']['subprob.indep3.cruiseSpeed'], \
+            data['Parameters']['subprob.indep2.rProp'] * 0.1, data['Parameters']['subprob.indep3.cruiseSpeed'], \
             data['Parameters']['subprob.indep4.batteryMass'] * 10.0, data['Parameters']['subprob.indep5.motorMass'] * 10.0, \
-            data['Parameters']['subprob.indep6.mtom'] * 100.0))
+            data['Parameters']['subprob.indep6.mtom'] * 100.0, data['Unknowns']['subprob.con1.c1'], data['Unknowns']['subprob.con2.c2'], \
+            data['Unknowns']['subprob.con3.c3'], data['Unknowns']['subprob.con4.c4'], data['Unknowns']['subprob.con5.c5']))
 
     # Data export via .csv      
     with open('results.csv', 'wb') as csvfile:
@@ -357,7 +364,7 @@ if __name__ == '__main__':
             data = db[i]
             writer.writerow([data['Parameters']['subprob.indep1.range'] / 1000.0, data['Unknowns']['subprob.OperatingCost.C_costPerFlight'], \
             data['Unknowns']['subprob.OperatingCost.C_costPerFlight'] / data['Parameters']['subprob.indep1.range'] * 1000.0, \
-            data['Parameters']['subprob.indep2.rProp'] * 0.01, data['Parameters']['subprob.indep3.cruiseSpeed'], \
+            data['Parameters']['subprob.indep2.rProp'] * 0.1, data['Parameters']['subprob.indep3.cruiseSpeed'], \
             data['Parameters']['subprob.indep4.batteryMass'] * 10.0, data['Parameters']['subprob.indep5.motorMass'] * 10.0, \
             data['Parameters']['subprob.indep6.mtom'] * 100.0])
     

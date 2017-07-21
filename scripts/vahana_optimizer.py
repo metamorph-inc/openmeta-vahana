@@ -119,7 +119,6 @@ class TopLevelSystem(Group):
         self.add('con1', ExecComp('c1 = (mBattery*230.0*0.95/1000.0) - EReserve'))
         self.add('con2', ExecComp('c2 = mMotors*5.0 - hoverPower_PMax / 1000.0'))
         self.add('con3', ExecComp('c3 = mtow*9.8 - mass_W'))
-        #self.add('con4', ExecComp('c = 0.5*1.0/3.0*mass_rotor*hoverPower_Vtip**2.0 - 0.5*mass_m*hoverPower_VAutoRotation**2.0'))  # Helicopter only - doesn't work for this version
         
         # connect components - as Jonathan pointed out, the alternative is to use a consistent naming convetion and promote variables. This is a pain without a wrapper *cough* OpenMETA *cough*.
         self.connect('scale6.scaled', 'MassToWeight.mass')  # MassToWeight inputs

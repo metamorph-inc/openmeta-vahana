@@ -153,6 +153,11 @@ In the 4th paragraph of the 'Trade Study Results' section of [Vahana Configurati
 
 Enforcing this constraint changes the Tilt-Wing Configuration's DOC curve, causing it to start rising rapidly for operating ranges of 70 km and greater. For the Vahana aircraft's target operational range of 100 km, this weight restriction translates into a $0.32 difference in DOC per a km ($32 per 100 km trip). The Vahana's future operating costs will be substantially affected by Airbus's ability to create designs that can safely exceed this fuel weight restriction as well as the company's success in lobbying for favorable government regulations on this new emerging class of personal, electric VTOL aircraft.
 
+Below is a figure comparing the DOC results of the two configurations with the added fuel weight constraint.
+
+**Comparison of Tilt-Wing and Helicopter results with added fuel weight constraint:**
+![comparison with fuel weight constraint](images/Vahana_OpenMDAOOptimizerWithFuelConstraint_TiltwingVsHelicopter.png)
+
 We are currently exploring the possibility of adding the ability for users to place 'Optimizer' drivers inside of 'Parameter Study' drivers within OpenMETA, so that they can easily compose DoE-type optimization problems similar to this one.
 
 ## Improvements to Vahana Configuration Trade Study / Future Plans
