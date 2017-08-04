@@ -1,0 +1,17 @@
+naca ${Naca_Code}
+plop
+g
+
+oper
+visc ${Reynolds_Number}
+pacc
+polar.txt
+
+alfa ${Alpha}
+!
+!
+pacc
+pplo
+hard
+
+quit
