@@ -111,8 +111,12 @@ if __name__ == '__main__':
         print ">>> {}".format(xfoil_script[i][:-1])
         p.stdin.write(xfoil_script[i])
     
-    converged = True
+    p.stdin.close()  # Needed or else the script hangs. 
+    p.stdout.close() # See: https://stackoverflow.com/questions/21141712/subprocess-popen-communicate-vs-stdin-write-and-stdout-read
+    p.stderr.close() # and: https://stackoverflow.com/questions/27451182/proper-way-to-close-all-files-after-subprocess-popen-and-communicate?rq=1
     
+    
+    converged = True 
     # result = p.communicate(input=xfoil_script)
     result = ["",""]
 
@@ -128,24 +132,24 @@ if __name__ == '__main__':
             # empty file
             pass
 
-    if converged:
-        with open('polar.txt', 'r') as f_in:
-            polar_lines = f_in.readlines()
+    # if converged:
+        # with open('polar.txt', 'r') as f_in:
+            # polar_lines = f_in.readlines()
             
-        for line in polar_lines:
-            print line[:-1]
+        # for line in polar_lines:
+            # print line[:-1]
             
-        print len(polar_lines)
-        final_line=polar_lines[-1].split()
+        # print len(polar_lines)
+        # final_line=polar_lines[-1].split()
         
-        # Alpha = final_line[0]
-        CL = final_line[1]
-        CD = final_line[2]
-        CM = final_line[4]
+        # # Alpha = final_line[0]
+        # CL = final_line[1]
+        # CD = final_line[2]
+        # CM = final_line[4]
         
-        print CL
-        print CD
-        print CM
+        # print CL
+        # print CD
+        # print CM
     
     
     #Add artifacts to "artifacts" in testbench_manifest.json

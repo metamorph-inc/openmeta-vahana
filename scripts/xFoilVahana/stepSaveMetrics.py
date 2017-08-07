@@ -11,6 +11,7 @@ if __name__ == '__main__':
         polar_lines = list()
         for line in f_in:
             polar_lines.append(line)
+            print line
         
     #Convert to Matrix
     for x in range(len(polar_lines)):
@@ -31,6 +32,8 @@ if __name__ == '__main__':
             break
     x+=1
 
+    print x
+    print polar_lines[x]
     maximum_glide_ratio = float(polar_lines[x][1])/float(polar_lines[x][2])
     optimal_alpha_cl_cd = polar_lines[x][:3]
     Alpha = polar_lines[x][0]
@@ -47,13 +50,13 @@ if __name__ == '__main__':
             row.append(float(polar_lines[x][y]))
         cl_cd_cm_table.append(row)
         #Remember location of optimal Alpha/CL/CD
-        if row[1]/row[2] > maximum_glide_ratio:
-            maximum_glide_ratio = row[1]/row[2]
-            optimal_alpha_cl_cd = row[:3]
-            Alpha = row[0]
-            CL = row[1]
-            CD = row[2]
-            CM = row[4]
+        #if row[1]/row[2] > maximum_glide_ratio:
+        maximum_glide_ratio = row[1]/row[2]
+        optimal_alpha_cl_cd = row[:3]
+        Alpha = row[0]
+        CL = row[1]
+        CD = row[2]
+        CM = row[4]
         x=x+1
 
     #Open 'testbench_manifest.json'
