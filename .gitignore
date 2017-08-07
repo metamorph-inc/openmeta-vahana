@@ -8,6 +8,7 @@ log/
 requirements/
 results/
 stats/
+tmp/
 test-benches/
 *.mga
 Metalink_*/

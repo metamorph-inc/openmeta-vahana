@@ -38,7 +38,7 @@ class fuselage_mass(Component):
         self.add_param('width', val=0.0)
         self.add_param('height', val=0.0)
         self.add_param('span', val=0.0)
-        self.add_param('weight', val=0.0)
+        self.add_param('weight', val=1.0)
         
         self.add_output('mass', val=0.0)
         
@@ -124,7 +124,7 @@ class fuselage_mass(Component):
         massKeel = massKeel + 2 * (beamHeight + beamWidth) * t * bid_rho
 
         # Keel Mass due to landing
-        F = sf * params['weight'] * nl * math.sqrt(1 ** 2 + 0.8 ** 2) / 2  # Landing force, side landing
+        F = sf * params['weight'] * nl * math.sqrt(1 ** 2 + 0.8 ** 2) / 2.0  # Landing force, side landing
         A = F / steel_shear  # Required bolt area
         d = 2 * math.sqrt(A / math.pi)  # Bolt diameter
         t = F / (d * bid_bearing)  # Laminate thickness

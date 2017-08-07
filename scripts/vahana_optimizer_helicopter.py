@@ -237,7 +237,7 @@ class TopLevelSystem(Group):
         self.connect('ConfigWeight.mass_rotor', 'con4.mass_rotor')
         self.connect('HoverPower.hoverPower_Vtip', 'con4.hoverPower_Vtip')
         self.connect('HoverPower.hoverPower_VAutoRotation', 'con4.hoverPower_VAutoRotation')
-        
+        self.connect('ConfigWeight.mass_m', 'con4.mass_m')
         
 if __name__ == '__main__':
     # SubProblem: define a Problem to optimize the system
@@ -248,8 +248,8 @@ if __name__ == '__main__':
     sub.driver.options['optimizer'] = 'COBYLA'  # The 'COBYLA' optimizer is supported by OpenMETA. 
                                                 # Unlike the 'SLSQP' optimizer, the 'COBYLA' optimizer doesn't require a Jacobian matrix.
     sub.driver.options['disp'] = True  # enable optimizer output
-    sub.driver.options['maxiter'] = 1000
-    sub.driver.options['tol'] = 0.001
+    sub.driver.options['maxiter'] = 3000
+    sub.driver.options['tol'] = 0.01
     #sub.driver.opt_settings['rhobeg'] = 100.0
     
     # SubProblem: set design variables for sub.driver
