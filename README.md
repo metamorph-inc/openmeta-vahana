@@ -1,8 +1,9 @@
 # OpenMETA-Vahana
+_An OpenMETA model for the conceptual design of an autonomous transport aircraft_
 
 **Table of Contents**
 * [Summary](#summary)
-* [A³ Vahana Configuration Trade Study](vahana-configuration-trade-study)
+* [A³ Vahana Configuration Trade Study](#vahana-configuration-trade-study)
 * [OpenMETA Vahana Configuration Trade Study](#openmeta-vahana-configuration-trade-study)
 * [Getting Started with the OpenMETA Vahana Model](#getting-started-with-the-openmeta-vahana-model)
   * [Installing OpenMETA](#installing-openmeta)
@@ -17,8 +18,6 @@
 * [Future Plans](#future-plans-and-improvements-to-vahana-configuration-trade-study)
 
 ## Summary
-_An OpenMETA model for the conceptual design of an autonomous transport aircraft_
-
 Inspired by the Vahana Project from A³ by Airbus, we built OpenMETA models of the Vahana Tilt-Wing Multirotor aircraft using A³'s publicly released source code as a template. 
 
 A parametric CAD model of the Vahana was also built within OpenMETA with the goal of using CAD analysis to improve the accuracy of future studies. The most recent draft of this CAD model is shown below with its rotors angled to transition between the hover and cruise modes.
@@ -43,11 +42,12 @@ DOC vs. Range for Tilt Wing and Helicopter Configurations
 
 DOC vs. Range for Tilt Wing Configuration with and without Fuel Weight Constraint
 ![tilt wing fuel_constraint doc vs. range comparison](images/openmeta-vahana-tilt-wing-fuel-weight-constraint.png)
+---
 
 ## Vahana Configuration Trade Study
-Project Vahana is an Airbus A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight fan tilt-wing) using multidisciplinary design optimization (MDO). 
+Project Vahana is an Airbus A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight-fan tilt-wing) using multidisciplinary design optimization (MDO). 
 
-The A³ team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements - E.g. the vehicle's effective energy capacity had to be greater than the amount of energy required to execute a reserve ("worst case") mission. 
+The A³ team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight-fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements - E.g. the vehicle's effective energy capacity had to be greater than the amount of energy required to execute a reserve ("worst case") mission. 
 
 As a result of their Sizing Trade Study, the Vahana team concluded that an eight-fan, tilt-wing configuration would best meet their broad design requirements for a low-cost, single-passenger, electric VTOL aircraft.
 
@@ -57,6 +57,7 @@ Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade 
 To read about the OpenMETA Vahana Configuration Trade Study, check out our blog post.
 
 To start working with the OpenMETA Vahana Model, check out the sections below.
+---
 
 ## Getting Started with the OpenMETA Vahana Model
 
@@ -86,10 +87,12 @@ to expand the root folder.
 1. Left-click on the '+' next to 'Testing' to expand the testing folder.
 1. Left-click on the '+' next to 'ParametricExploration' to expand the parametric exploration folder.
 1. You should now see a number of PETs ![PETs](images/viewing-the-pet-models-1.png "PET models within GME Browser window").
-1. Within the GME Browser window, double-click on 'DEMOVahanaTiltWingPET' to open it. ![DEMOVahanaTiltWingPET](images/viewing-the-pet-models-2.png "Vahana Tilt Wing PET")
+1. Within the GME Browser window, double-click on 'DEMOVahanaTiltWingPET' to open it.   
+![DEMOVahanaTiltWingPET](images/viewing-the-pet-models-2.png "Vahana Tilt Wing PET")
 
 ### Running a PET model
-1. Left-click the CyPhy Master Interpreter button located on the top toolbar. ![CyPhyMasterInterpreter](images/running-a-pet-model-1 "CyPhy Master Interpreter")
+1. Left-click the CyPhy Master Interpreter button located on the top toolbar.   
+![CyPhyMasterInterpreter](images/running-a-pet-model-1 "CyPhy Master Interpreter")
 1. The 'CyPhy Master Interpreter' window will open. Make sure 'Post to META Job Manager' is checked and left-click 'OK'.
 1. The 'Results Browser' window will open. The running PET will be listed under the 'Active Jobs' tab. Blue means the Master Interpreter
 is still running, red means the Master Interpreter failed, and green means that the Master Interpreter succeeded.
@@ -105,26 +108,26 @@ is still running, red means the Master Interpreter failed, and green means that 
 The following PETs are included in the openmeta-vahana project in the `RootFolder>Testing>ParametricExploration` directory.
 
 *Tilt Wing Configuration*  
-DEMOVahanaTiltWingPET  
-DEMOVahanaTiltWingPETExposedParameters  
-DEMOVahanaTiltWingPETFuelWeightCon  
-DEMOVahanaTiltWingPETHigherCruiseSpeed  
-DEMOOrganizedVahanaTiltWingPET  
+VahanaTiltWingPET   
+VahanaTiltWingPETExposedParameters  
+VahanaTiltWingPETFuelWeightCon  
+VahanaTiltWingPETHigherCruiseSpeed    
+OrganizedVahanaTiltWingPET  
   
-DEMOVahanaTiltWingOptimizerPET  
-DEMOVahanaTiltWingOptimizerPETCostBreakdown  
-DEMOVahanaTiltWingOptimizerPETMassBreakdown  
+VahanaTiltWingOptimizerPET   
+VahanaTiltWingOptimizerPETCostBreakdown  
+VahanaTiltWingOptimizerPETMassBreakdown  
   
-DEMOVahanaTiltWingParametricStudyPET  
+VahanaTiltWingParametricStudyPET  
   
 *Helicopter Configuration*  
-DEMOVahanaHelicopterPET  
-DEMOVahanaHelicopterPETFuelWeightCon  
+VahanaHelicopterPET  
+VahanaHelicopterPETFuelWeightCon  
   
-DEMOVahanaHelicopterOptimizerPET  
-DEMOVahanaHelicopterOptimizerPETCostBreakdown  
-DEMOVahanaHelicopterOptimizerPETMassBreakdown  
-
+VahanaHelicopterOptimizerPET  
+VahanaHelicopterOptimizerPETCostBreakdown  
+VahanaHelicopterOptimizerPETMassBreakdown  
+  
 ### Python Wrapper component scripts
 All the Python Wrapper component scripts used to build the openmeta-vahana PETs are located in the `openmeta-vahana/scripts` folder. We encourage you to compare them with the A³ MATLAB scripts. To learn more, check out OpenMETA's Python Wrapper documentation as well as [OpenMDAO's documentation](http://openmdao.readthedocs.io/en/1.7.3/).
 
@@ -133,6 +136,7 @@ For additional information regarding the OpenMETA toolset, please consult the [d
 
 Quick links:
 #TODO: Add some quick links here / or scrap the Quick links section entirely
+---
 
 ## Future Plans and Improvements to Vahana Configuration Trade Study
 Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using OpenMETA, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there was little reason to recreate the Vahana Configuration Trade Study - it had already served its purpose and Airbus had already progressed to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
