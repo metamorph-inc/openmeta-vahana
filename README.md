@@ -2,7 +2,7 @@
 
 **Table of Contents**
 * [Summary](#summary)
-* [A³ Vahana Configuration Trade Study](#A³-vahana-configuration-trade-study)
+* [A³ Vahana Configuration Trade Study](vahana-configuration-trade-study)
 * [OpenMETA Vahana Configuration Trade Study](#openmeta-vahana-configuration-trade-study)
 * [Getting Started with the OpenMETA Vahana Model](#getting-started-with-the-openmeta-vahana-model)
   * [Installing OpenMETA](#installing-openmeta)
@@ -10,7 +10,7 @@
   * [Opening the openmeta-vahana project](#opening-the-openmeta-vahana-project)
   * [Viewing a PET model](#viewing-a-pet-model)
   * [Running a PET model](#running-a-pet-model)
-  * [Viewing a PET model's results in the Visualizer](#viewing-a-pet-model's-results-in-the-visualizer)
+  * [Viewing a PET model's results in the Visualizer](#viewing-a-pet-model\'s-results-in-the-visualizer)
   * [PETs included in openmeta-vahana](#pets-included-in-openmeta-vahana)
   * [Python Wrapper component scripts](#python-wrapper-component-scripts)
   * [Documentation](#documentation)
@@ -44,7 +44,7 @@ DOC vs. Range for Tilt Wing and Helicopter Configurations
 DOC vs. Range for Tilt Wing Configuration with and without Fuel Weight Constraint
 ![tilt wing fuel_constraint doc vs. range comparison](images/openmeta-vahana-tilt-wing-fuel-weight-constraint.png)
 
-## A³ Vahana Configuration Trade Study
+## Vahana Configuration Trade Study
 Project Vahana is an Airbus A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight fan tilt-wing) using multidisciplinary design optimization (MDO). 
 
 The A³ team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements - E.g. the vehicle's effective energy capacity had to be greater than the amount of energy required to execute a reserve ("worst case") mission. 
