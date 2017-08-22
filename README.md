@@ -2,19 +2,19 @@
 
 **Table of Contents**
 * [Summary](#summary)
-* [Vahana Configuration Trade Study](vahana-configuration-trade-study)
-* [OpenMETA Vahana Configuration Trade Study](openmeta-vahana-configuration-trade-study)
-* [Getting Started with the OpenMETA Vahana Model](getting-started-with-the-openmeta-vahana-model)
-  * [Installing OpenMETA](installing-openmeta)
-  * [Cloning the openmeta-vahana repository](cloning-the-openmeta-vahana-repository)
-  * [Opening the openmeta-vahana project](opening-the-openmeta-vahana-project)
-  * [Viewing a PET model](viewing-a-pet-model)
-  * [Running a PET model](running-a-pet-model)
-  * [Viewing a PET model's results in the Visualizer](viewing-a-pet-model's-results-in-the-visualizer)
-  * [PETs included in openmeta-vahana](pets-included-in-openmeta-vahana)
-  * [Python Wrapper component scripts](python-wrapper-component-scripts)
-  * [Documentation](documentation)
-* [Future Plans](future-plans-/-improvements-to-vahana-configuration-trade-study)
+* [Vahana Configuration Trade Study](#vahana-configuration-trade-study)
+* [OpenMETA Vahana Configuration Trade Study](#openmeta-vahana-configuration-trade-study)
+* [Getting Started with the OpenMETA Vahana Model](#getting-started-with-the-openmeta-vahana-model)
+  * [Installing OpenMETA](#installing-openmeta)
+  * [Cloning the openmeta-vahana repository](#cloning-the-openmeta-vahana-repository)
+  * [Opening the openmeta-vahana project](#opening-the-openmeta-vahana-project)
+  * [Viewing a PET model](#viewing-a-pet-model)
+  * [Running a PET model](#running-a-pet-model)
+  * [Viewing a PET model's results in the Visualizer](#viewing-a-pet-model's-results-in-the-visualizer)
+  * [PETs included in openmeta-vahana](#pets-included-in-openmeta-vahana)
+  * [Python Wrapper component scripts](#python-wrapper-component-scripts)
+  * [Documentation](#documentation)
+* [Future Plans](#future-plans-/-improvements-to-vahana-configuration-trade-study)
 
 ## Summary
 _An OpenMETA model for the conceptual design of an autonomous transport aircraft_
