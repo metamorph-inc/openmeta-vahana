@@ -86,7 +86,8 @@ of the tools!*
 to expand the root folder.
 1. Left-click on the '+' next to 'Testing' to expand the testing folder.
 1. Left-click on the '+' next to 'ParametricExploration' to expand the parametric exploration folder.
-1. You should now see a number of PETs ![PETs](images/viewing-the-pet-models-1.png "PET models within GME Browser window").
+1. You should now see a number of PETs  
+![PETs](images/viewing-the-pet-models-1.png "PET models within GME Browser window").  
 1. Within the GME Browser window, double-click on 'DEMOVahanaTiltWingPET' to open it.   
 ![DEMOVahanaTiltWingPET](images/viewing-the-pet-models-2.png "Vahana Tilt Wing PET")
 
