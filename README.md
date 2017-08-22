@@ -93,7 +93,7 @@ to expand the root folder.
 
 ### Running a PET model
 1. Left-click the CyPhy Master Interpreter button located on the top toolbar.   
-![CyPhyMasterInterpreter](images/running-a-pet-model-1 "CyPhy Master Interpreter")
+![CyPhyMasterInterpreter](images/running-a-pet-model-1.png "CyPhy Master Interpreter")  
 1. The 'CyPhy Master Interpreter' window will open. Make sure 'Post to META Job Manager' is checked and left-click 'OK'.
 1. The 'Results Browser' window will open. The running PET will be listed under the 'Active Jobs' tab. Blue means the Master Interpreter
 is still running, red means the Master Interpreter failed, and green means that the Master Interpreter succeeded.
