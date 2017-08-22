@@ -42,7 +42,6 @@ DOC vs. Range for Tilt Wing and Helicopter Configurations
 
 DOC vs. Range for Tilt Wing Configuration with and without Fuel Weight Constraint
 ![tilt wing fuel_constraint doc vs. range comparison](images/openmeta-vahana-tilt-wing-fuel-weight-constraint.png)
----
 
 ## Vahana Configuration Trade Study
 Project Vahana is an Airbus A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight-fan tilt-wing) using multidisciplinary design optimization (MDO). 
@@ -57,7 +56,6 @@ Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade 
 To read about the OpenMETA Vahana Configuration Trade Study, check out our blog post.
 
 To start working with the OpenMETA Vahana Model, check out the sections below.
----
 
 ## Getting Started with the OpenMETA Vahana Model
 
@@ -135,9 +133,8 @@ All the Python Wrapper component scripts used to build the openmeta-vahana PETs 
 ### Documentation
 For additional information regarding the OpenMETA toolset, please consult the [documentation](http://docs.metamorphsoftware.com/doc/index.html).
 
-Quick links:  
-TODO: Add some quick links here / or scrap the Quick links section entirely
----
+**Quick links**   
+TODO Add some quick links here / or scrap the Quick links section entirely
 
 ## Future Plans and Improvements to Vahana Configuration Trade Study
 Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using OpenMETA, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there was little reason to recreate the Vahana Configuration Trade Study - it had already served its purpose and Airbus had already progressed to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
