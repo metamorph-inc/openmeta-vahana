@@ -1,7 +1,25 @@
 # OpenMETA-Vahana
-## Summary
 
-We made an OpenMETA/OpenMDAO model for the conceptual design of an autonomous transport aircraft, inspired by the Vahana Project from A³ by Airbus. We built OpenMETA/OpenMDAO models of the Vahana Tilt-Wing Multirotor aircraft using A³'s released source code as a template. 
+**Table of Contents**
+* [Summary](#summary)
+* [Vahana Configuration Trade Study](vahana-configuration-trade-study)
+* [OpenMETA Vahana Configuration Trade Study](openmeta-vahana-configuration-trade-study)
+* [Getting Started with the OpenMETA Vahana Model](getting-started-with-the-openmeta-vahana-model)
+  * [Installing OpenMETA](installing-openmeta)
+  * [Cloning the openmeta-vahana repository](cloning-the-openmeta-vahana-repository)
+  * [Opening the openmeta-vahana project](opening-the-openmeta-vahana-project)
+  * [Viewing a PET model](viewing-a-pet-model)
+  * [Running a PET model](running-a-pet-model)
+  * [Viewing a PET model's results in the Visualizer](viewing-a-pet-model's-results-in-the-visualizer)
+  * [PETs included in openmeta-vahana](pets-included-in-openmeta-vahana)
+  * [Python Wrapper component scripts](python-wrapper-component-scripts)
+  * [Documentation](documentation)
+* [Future Plans](future-plans-/-improvements-to-vahana-configuration-trade-study)
+
+## Summary
+_An OpenMETA model for the conceptual design of an autonomous transport aircraft_
+
+Inspired by the Vahana Project from A³ by Airbus, we built OpenMETA models of the Vahana Tilt-Wing Multirotor aircraft using A³'s publicly released source code as a template. 
 
 A parametric CAD model of the Vahana was also built within OpenMETA with the goal of using CAD analysis to improve the accuracy of future studies. The most recent draft of this CAD model is shown below with its rotors angled to transition between the hover and cruise modes.
 
@@ -9,7 +27,7 @@ A parametric CAD model of the Vahana was also built within OpenMETA with the goa
   
 ![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise")
 
-The OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study. 
+The OpenMETA models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study. 
 
 **OpenMETA 'Optimizer' Results and Vahana Trade Study Results for Tilt-Wing Configuration at Range of 100 km:**
 
@@ -18,159 +36,111 @@ The OpenMETA/OpenMDAO models were used to perform similar DOC analyses to those 
 | OpenMETA |   116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
 |   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
 
-**OpenMDAO model results:**
+**OpenMETA PET model results:**
 
-![comparison](images/Vahana_OpenMDAOOptimizer_TilwingVsHelicopter.png)
+DOC vs. Range for Tilt Wing and Helicopter Configurations
+![tilt wing and helicopter doc vs. range comparison](images/openmeta-vahana-doc-vs-range.png)
 
-![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
+DOC vs. Range for Tilt Wing Configuration with and without Fuel Weight Constraint
+![tilt wing fuel_constraint doc vs. range comparison](images/openmeta-vahana-tilt-wing-fuel-weight-constraint.png)
 
-## Airbus Vahana Configuration Trade Study
-
+## A³ Vahana Configuration Trade Study
 Project Vahana is an Airbus A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight fan tilt-wing) using multidisciplinary design optimization (MDO). 
 
-- [A³ Vahana Configuration Trade Study - Part I](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)
-- [A³ Vahana Configuration Trade Study - Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93)
-- [A³ MATLAB source code](https://github.com/VahanaOpenSource/vahanaTradeStudy)
-
-The A³ team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements - e.g. The vehicle's effective energy capacity (Battery Mass * Battery Energy Density * Battery Discharge Depth) had to be greater than the amount of energy required to execute a reserve ("worst case") mission. 
-
-This entire optimization process was executed via the following MATLAB scripts:  
-
-- `sizingTradeStudy.m`  
-- `computePerformance.m`  
-- `simpleMission.m`  
-- `reserveMission.m`  
-- `cruisePower.m`  
-- `hoverPower.m`  
-- `loiterPower.m`  
-- `configWeight.m`  
-- `wingMass.m`  
-- `wireMass.m`  
-- `propMass.m`  
-- `fuselageMass.m`  
-- `operatingCost.m`  
-- `costBuildup.m`  
-- `toolingCost.m`  
-- `materials.m`  
+The A³ team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements - E.g. the vehicle's effective energy capacity had to be greater than the amount of energy required to execute a reserve ("worst case") mission. 
 
 As a result of their Sizing Trade Study, the Vahana team concluded that an eight-fan, tilt-wing configuration would best meet their broad design requirements for a low-cost, single-passenger, electric VTOL aircraft.
 
 ## OpenMETA Vahana Configuration Trade Study 
 Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade Study's results using the OpenMETA toolset. Since OpenMETA is designed for Multidisciplinary Design Analysis and Optimization, we thought that it would be interesting to see if we could reproduce the A³ team's results using the OpenMETA toolset.
 
-### Conversion of MATLAB Scripts to PythonWrapper Components
+To read about the OpenMETA Vahana Configuration Trade Study, check out our blog post.
 
-In order to set the problem up in OpenMETA, the relevant MATLAB scripts were first converted to PythonWrapper components. A PythonWrapper allows us to define an arbitrary block of Python code, e.g. a model, system, or calculation, with specific inputs and outputs. This PythonWrapper component can then be placed within an OpenMETA PET where the inputs and outputs are exposed as ports.
+To start working with the OpenMETA Vahana Model, check out the sections below.
 
-For example, the function `configWeight()` (defined within `configWeight.m`) is called within `computePerformance.m` in the Vahana Configuration Trade Study as seen below.
+## Getting Started with the OpenMETA Vahana Model
 
-```Matlab
-% Mass estimate  
-mass = configWeight(vehicle,rProp,mBattery,mMoters,mtow,hoverOutput,cruiseOutput,payload);
-```
+### Installing OpenMETA
+1. Download the latest version of OpenMETA from https://www.metamorphsoftware.com/openmeta/.
+1. Open the installer.
+1. Agree to the license terms and conditions.
+1. Left-click 'Install'.
 
-We converted the `configWeight.m` script to a PythonWrapper component `config_weight.py` script. When this component is placed within an OpenMETA PET, a block appears representing the script with inputs and outputs on the left and right sides, respectively.
+*Note: If this is your first time using OpenMETA, we recommend that you complete the PET Tutorial to develop a basic understanding
+of the tools!*
 
-**PythonWrapper Component in PET representing `config_weight.py`:**
-<img src="images\Vahana_PET_ConfigWeight.PNG" alt="Image of config_weight.py" style="width: 600px;"/>
+### Cloning the openmeta-vahana repository
+1. Copy the following key onto your clipboard: `git@github.com:metamorph-inc/openmeta-vahana.git`
+1. Open Git Bash in your desired project directory.
+1. Run the following command in Git Bash: `git clone git@github.com:metamorph-inc/openmeta-vahana.git`
 
-For our purposes, the conversion from MATLAB to Python was not always exact. We had to find substitutes for many of the build-in MATLAB functions/constructs, and we took some liberties in recomposing parts of the problem to better fit within the OpenMETA architecture.  
-For example, The MATLAB script 'configWeight.m' returns a single array of values. PythonWrapper components can also output arrays but in this case, we wanted the PythonWrapper 'ConfigWeight' to expose individual scalar values as its outputs.
+### Opening the openmeta-vahana project
+1. Open the openmeta-vahana folder.
+1. Double-click on the openmeta-vahana.xme file.
+1. GME will open and display a pop-up 'Import to new project' window. Select 'Create project file' and click 'Next >'.
+1. The 'Save As' window will open. Click 'Save' to save 'openmeta-vahana.mga' inside the openmeta-vahana folder
 
-In general, PythonWrapper components:
+### Viewing a PET model
+1. Within GME, to your right, there should be a 'GME Browser' window with a single 'RootFolder' object inside. Click on the '+'
+to expand the root folder.
+1. Left-click on the '+' next to 'Testing' to expand the testing folder.
+1. Left-click on the '+' next to 'ParametricExploration' to expand the parametric exploration folder.
+1. You should now see a number of PETs ![PETs](images/viewing-the-pet-models-1.png "PET models within GME Browser window").
+1. Within the GME Browser window, double-click on 'DEMOVahanaTiltWingPET' to open it. ![DEMOVahanaTiltWingPET](images/viewing-the-pet-models-2.png "Vahana Tilt Wing PET")
 
-* are represented visually within OpenMETA
-* can be easily connected to other components (just draw a line)
-* can be modified, copied, or imported into other designs
-* are fully-compatible with OpenMETA's underlying OpenMDAO engine
+### Running a PET model
+1. Left-click the CyPhy Master Interpreter button located on the top toolbar. ![CyPhyMasterInterpreter](images/running-a-pet-model-1 "CyPhy Master Interpreter")
+1. The 'CyPhy Master Interpreter' window will open. Make sure 'Post to META Job Manager' is checked and left-click 'OK'.
+1. The 'Results Browser' window will open. The running PET will be listed under the 'Active Jobs' tab. Blue means the Master Interpreter
+is still running, red means the Master Interpreter failed, and green means that the Master Interpreter succeeded.
+1. Once the DemoVahanaTiltWingPET finishes running, left-click the PET tab of the Results Browser.
+1. Information from the PET run will be displayed to your right within the Results Browser window.
 
-In combination with other OpenMETA components, PythonWrappers are used as 'building blocks' in building larger systems and models within the Parametric Exploration Tool (PET) canvas. The converted PythonWrapper components are located in `openmeta-vahana/scripts`.
+### Viewing a PET model's results in the Visualizer
+1. Left-click the 'Launch in Visualizer' button in the bottom-right corner to view the results in the PET Visualizer.
+1. The Visualizer will open in a browser window. Left-click the 'Explore>Single Plot' tab.
+1. Under the 'Variables' section, set the X-Axis to 'Range' and the 'Y-Axis' to 'DOCPerKm'.
 
-<!--
-...and the following disadvantages:
+### PETs included in openmeta-vahana
+The following PETs are included in the openmeta-vahana project in the `RootFolder>Testing>ParametricExploration` directory.
 
-* The MATLAB scripts had to first be converted to Python
-* It is easy to make mistakes when converting complex algorithms between languages
-* Converting MATLAB scripts into PythonWrapper Components often changes the structure of the problem. For example, if you have a function x = foo(a, b) that calls another function y = bar(c).  
-In MATLAB, you would have two files (foo.m and bar.m) and your data path would look like this:  
-a,b -> foo -> c -> bar -> y -> foo -> x.  
-a & b are passed into foo. foo passes c into bar. bar returns y to foo. foo returns x.  
-However, for PythonWrapper Components (foo.py and bar.py) it often makes more sense to first pass c to bar. bar passes y to foo. a & b are also passed to foo. foo outputs x.  
-c -> bar -> y -> foo -> x  
-........................ a,b -^ -->
+*Tilt Wing Configuration*  
+DEMOVahanaTiltWingPET  
+DEMOVahanaTiltWingPETExposedParameters  
+DEMOVahanaTiltWingPETFuelWeightCon  
+DEMOVahanaTiltWingPETHigherCruiseSpeed  
+DEMOOrganizedVahanaTiltWingPET  
+  
+DEMOVahanaTiltWingOptimizerPET  
+DEMOVahanaTiltWingOptimizerPETCostBreakdown  
+DEMOVahanaTiltWingOptimizerPETMassBreakdown  
+  
+DEMOVahanaTiltWingParametricStudyPET  
+  
+*Helicopter Configuration*  
+DEMOVahanaHelicopterPET  
+DEMOVahanaHelicopterPETFuelWeightCon  
+  
+DEMOVahanaHelicopterOptimizerPET  
+DEMOVahanaHelicopterOptimizerPETCostBreakdown  
+DEMOVahanaHelicopterOptimizerPETMassBreakdown  
 
-### OpenMETA Using a 'Parameter Study' Driver
+### Python Wrapper component scripts
+All the Python Wrapper component scripts used to build the openmeta-vahana PETs are located in the `openmeta-vahana/scripts` folder. We encourage you to compare them with the A³ MATLAB scripts. To learn more, check out OpenMETA's Python Wrapper documentation as well as [OpenMDAO's documentation](http://openmdao.readthedocs.io/en/1.7.3/).
 
-<!-- Talk about composition and what a Parameter Study is.-->
+### Documentation
+For additional information regarding the OpenMETA toolset, please consult the [documentation](http://docs.metamorphsoftware.com/doc/index.html).
 
-After converting the major MATLAB scripts in PythonWrapper Components, we added a 'Parameter Study' driver to explore the available design space. The 'Parameter Study' driver allows the user to vary Design Variables (inputs) within defined ranges and record Objectives (outputs). In essence, the 'Parameter Study' driver allows the user to quickly explore the available design space and then view the results of that exploration via the OpenMETA PET Visualizer (or as a raw .csv).
+Quick links:
+#TODO: Add some quick links here / or scrap the Quick links section entirely
 
-The figure below shows the 'Parameter Study' driver located within the larger PET. The 'Parameter Study' is highlighted with a red box. All the other boxes are PythonWrapper components or Constants components. The 'Parameter Study' contains 6 design variables - Vehicle, Rotor Radius, Cruise Speed, Battery Mass, Motor Mass, and Maximum Takeoff Weight (actually mass) - which it varies between defined lower and upper bounds (taken from 'sizingTradeStudy.m'). For example, Battery Mass is varied betweed 10-999 kg. 
-
-The Tilt-Wing and Helicopter configuration have slightly different ranges for Rotor Radius and Cruise Speed, but for simplicity, those variables were set to cover the ranges of both configurations and extra constraint ouputs were added to check if the specific vehicle's design ranges were violated.
-
-The 'Parameter Study' driver also contains several Objectives, which record system outputs - including DOC and the constraint functions - for each combination of Design Variables injected into the system.
-
-**'Parameter Study' driver within Larger PET:**
-![Parameter Study](images/Vahana_PET_ParameterStudy.PNG)
-
-Unfortunately, after the first few runs, we quickly realized that - due to the size of the available design space, the constraints, and the desire for a minimized value - a brute force design space exploration was too inefficient for this particular problem. We ran the Parameter Study for 1 million samples using a full factorial approach, but after filtering out the results that violated design constraints, we had only 397 valid designs - a yield rate of less than 0.04%. The valid designs are shown inside the OpenMETA PET Visualizer in the figure below. The `Parameter Study` PET is located at `RootFolder/Testing/ParametricExploration/Vahana Parametric Study PET` within openmeta-vahana.xme.
-
-**'Parameter Study' PET Results:**
-![Parameter Study Results](images/Vahana_PET_Results1MilTo397.PNG)
-
-### OpenMETA Using an 'Optimizer' Driver
-
-Fortunately, OpenMETA also has an 'Optimizer' driver that uses the COBYLA Optimizer. We replaced the 'Parameter Study' Driver with an 'Optimizer' driver and ran the PET again. The table below compares the results from an Optimizer PET to the results from the `tradeStudyResult.mat` file produced by the A³ Vahana Configuration Trade Study.
-
-**OpenMETA 'Optimizer' Results and Vahana Trade Study Results for Tilt-Wing Configuration at Range of 100 km:**
-
-|                        | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
-|:----------------------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
-| OpenMETA |   116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
-|   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
-
-As shown above, for the range of 100 km, the OpenMETA Optimizer obtained similar values to those obtained by the Vahana Configuration Trade Study. The 'Optimizer' PET is located at `RootFolder/Testing/ParametricExploration/Vahana Optimizer PET` within openmeta-vahana.xme.
-
-### 'Optimizer' PET Nested Within 'Parameter Study' PET
-
-The OpenMETA 'Optimizer' produced the same results as the Vahana Configuration Trade Study. However, in OpenMETA's current form, we would have to manually change the Range value and rerun the PET analysis 20 times to recreate the full dataset found in the Vahana Configuration Trade Study. In order to meet this need, we wanted to be able to place an OpenMETA 'Optimizer' driver *inside* of an OpenMETA 'Parameter Study' driver - similar to the  Vahana team's approach of nesting a MATLAB `fmincon()` function within a high-level DoE - so that we could easily generate optimized designs over a range of operating distances from 10 km to 100 km.
-
-While this functionality is not currently within OpenMETA, we were able build it (using PythonWrapper Components) directly on OpenMETA's underlying OpenMDAO framework and obtain good proof-of-concept results that were almost identical to produced by the Vahana Configuration Trade Study. The two figures below shows results from the Vahana Configuration Trade Study and the OpenMDAO Optimizer on the same graph. The nested 'Parameter Study' and 'Optimizer' OpenMDAO drivers are located in `openmeta-vahana/scripts/vahana_optimizer.py` and `openmeta-vahana/scripts/vahana_optimizer_helicopter.py`.
-
-**Comparison of `vahana_optimizer.py` and `sizingTradeStudy.m` results:**
-![vahana_optimizer.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy.PNG)
-
-**Comparison of `vahana_optimizer_helicopter.py` and `sizingTradeStudy.m` results:**
-![vahana_optimizer_helicopter.py](images/Vahana_OpenMDAOOptimizerVsTradeStudy_Helicopter.png)
-
-The figure below compares the DOC results of the two configurations.
-
-**Comparison of `vahana_optimizer.py` and `vahana_optimizer_helicopter.py` results:**
-![comparison](images/Vahana_OpenMDAOOptimizer_TilwingVsHelicopter.png)
-
-In the 4th paragraph of the 'Trade Study Results' section of [Vahana Configuration Trade Study — Part II](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93), A³ Team Member Mr. Geoffrey Bower states that for most transport aircraft the maximum fuel weight is roughly a third of the maximum takeoff weight. Therefore, we added another constraint to the OpenMDAO model that limited battery mass to less than one third of the maximum takeoff mass. This OpenMDAO driver is located in `openmeta-vahana/scripts/fuel-constraint.py`, and results can be seen below. 
-
-**Effect of Added Constraint Limiting Fuel Weight to less than 1/3 of MTOW:**
-![vahana_optimizer_fuel_constraint.py](images/Vahana_OpenMDAOOptimizerWithFuelConstraint.png)
-
-Enforcing this constraint changes the Tilt-Wing Configuration's DOC curve, causing it to start rising rapidly for operating ranges of 70 km and greater. For the Vahana aircraft's target operational range of 100 km, this weight restriction translates into a $0.32 difference in DOC per a km ($32 per 100 km trip). The Vahana's future operating costs will be substantially affected by Airbus's ability to create designs that can safely exceed this fuel weight restriction as well as the company's success in lobbying for favorable government regulations on this new emerging class of personal, electric VTOL aircraft.
-
-Below is a figure comparing the DOC results of the two configurations with the added fuel weight constraint.
-
-**Comparison of Tilt-Wing and Helicopter results with added fuel weight constraint:**
-![comparison with fuel weight constraint](images/Vahana_OpenMDAOOptimizerWithFuelConstraint_TiltwingVsHelicopter.png)
-
-We are currently exploring the possibility of adding the ability for users to place 'Optimizer' drivers inside of 'Parameter Study' drivers within OpenMETA, so that they can easily compose DoE-type optimization problems similar to this one.
-
-## Improvements to Vahana Configuration Trade Study / Future Plans
-Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using the OpenMDAO 'Optimizer' driver, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there is little reason to recreate the Vahana Configuration Trade Study - it already served its purpose and Aribus has since moved on to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
+## Future Plans / Improvements to Vahana Configuration Trade Study
+Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using OpenMETA, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there was little reason to recreate the Vahana Configuration Trade Study - it had already served its purpose and Airbus had already progressed to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
 
 ### Meta-Link CAD Model
 A CAD model can provide a more accurate representation of a vehicle's geometry, mass, and mass distribution. In creating a CREO model of the Tilt-Wing Configuration, we hoped to provide a more model that could eventually be used to calculate mass, center of gravity, and production costs.
 
 The model (shown below) is based on the sketches of the Tilt-Wing configuration that A³ released in the Vahana Trade Study Report. This model is composed within GME and contains parametric features that align with the design requirements outlined within the Vahana Trade Study's MATLAB code. The rotational orientation of the wings and canards can be varied between the cruise and hover positions (or 0-90 degrees).
-
 
 **Vahana in hover mode:**
 ![Image of 90 deg rotation](images/Vahana_V2_90Deg.PNG "Image of Vahana in hover configuration")
@@ -183,8 +153,10 @@ The model (shown below) is based on the sketches of the Tilt-Wing configuration 
 **Vahana in cruise mode:**
 ![Image of 0 deg rotation](images/Vahana_V2_0Deg.PNG "Image of Vahana in cruise configuration")
 
-
 The model assembly is located at `RootFolder/ComponentAssemblies/Vahana2` within openmeta-vahana.xme. By changing the values of the `Canard_Rotation` and `Wing_Rotation` parameters, a user can be change the orientation for a specific analysis. The `rProp` parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
+
+### xFOIL Integration
+Work in progress...
 
 ### Iterative Mass Calculations
 When running the PET 'Parameter Study' we noticed that the low success rate of less than 0.04% was primarily caused by designs failing the first two design constraints:
@@ -203,6 +175,6 @@ Using Euler's linear method of numerical integration (method shown [here](https:
 -->
 
 ## References
-[Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)  
-[Vahana Configuration Trade Study Part - 2](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93)  
-[MATLAB Code](https://github.com/VahanaOpenSource/vahanaTradeStudy)
+[A³ Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)  
+[A³ Vahana Configuration Trade Study Part - 2](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93)  
+[A³ MATLAB Code](https://github.com/VahanaOpenSource/vahanaTradeStudy)
