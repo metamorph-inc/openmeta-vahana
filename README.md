@@ -10,11 +10,11 @@
   * [Opening the openmeta-vahana project](#opening-the-openmeta-vahana-project)
   * [Viewing a PET model](#viewing-a-pet-model)
   * [Running a PET model](#running-a-pet-model)
-  * [Viewing a PET model's results in the Visualizer](#viewing-a-pet-model\'s-results-in-the-visualizer)
+  * [Viewing PET model results in the Visualizer](#viewing-pet-model-results-in-the-visualizer)
   * [PETs included in openmeta-vahana](#pets-included-in-openmeta-vahana)
   * [Python Wrapper component scripts](#python-wrapper-component-scripts)
   * [Documentation](#documentation)
-* [Future Plans](#future-plans-/-improvements-to-vahana-configuration-trade-study)
+* [Future Plans](#future-plans-and-improvements-to-vahana-configuration-trade-study)
 
 ## Summary
 _An OpenMETA model for the conceptual design of an autonomous transport aircraft_
@@ -96,7 +96,7 @@ is still running, red means the Master Interpreter failed, and green means that 
 1. Once the DemoVahanaTiltWingPET finishes running, left-click the PET tab of the Results Browser.
 1. Information from the PET run will be displayed to your right within the Results Browser window.
 
-### Viewing a PET model's results in the Visualizer
+### Viewing PET model results in the Visualizer
 1. Left-click the 'Launch in Visualizer' button in the bottom-right corner to view the results in the PET Visualizer.
 1. The Visualizer will open in a browser window. Left-click the 'Explore>Single Plot' tab.
 1. Under the 'Variables' section, set the X-Axis to 'Range' and the 'Y-Axis' to 'DOCPerKm'.
@@ -134,7 +134,7 @@ For additional information regarding the OpenMETA toolset, please consult the [d
 Quick links:
 #TODO: Add some quick links here / or scrap the Quick links section entirely
 
-## Future Plans / Improvements to Vahana Configuration Trade Study
+## Future Plans and Improvements to Vahana Configuration Trade Study
 Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using OpenMETA, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there was little reason to recreate the Vahana Configuration Trade Study - it had already served its purpose and Airbus had already progressed to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
 
 ### Meta-Link CAD Model
