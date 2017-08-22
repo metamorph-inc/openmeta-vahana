@@ -2,7 +2,7 @@
 
 **Table of Contents**
 * [Summary](#summary)
-* [Vahana Configuration Trade Study](#vahana-configuration-trade-study)
+* [A³ Vahana Configuration Trade Study](#A³-vahana-configuration-trade-study)
 * [OpenMETA Vahana Configuration Trade Study](#openmeta-vahana-configuration-trade-study)
 * [Getting Started with the OpenMETA Vahana Model](#getting-started-with-the-openmeta-vahana-model)
   * [Installing OpenMETA](#installing-openmeta)
