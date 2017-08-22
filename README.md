@@ -135,8 +135,8 @@ All the Python Wrapper component scripts used to build the openmeta-vahana PETs 
 ### Documentation
 For additional information regarding the OpenMETA toolset, please consult the [documentation](http://docs.metamorphsoftware.com/doc/index.html).
 
-Quick links:
-#TODO: Add some quick links here / or scrap the Quick links section entirely
+Quick links:  
+TODO: Add some quick links here / or scrap the Quick links section entirely
 ---
 
 ## Future Plans and Improvements to Vahana Configuration Trade Study
