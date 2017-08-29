@@ -15,6 +15,7 @@ _An OpenMETA model for the conceptual design of an autonomous transport aircraft
   * [PETs included in openmeta-vahana](#pets-included-in-openmeta-vahana)
   * [Python Wrapper component scripts](#python-wrapper-component-scripts)
   * [Documentation](#documentation)
+  * [Viewing the Meta-Link CAD Model](#viewing-the-meta-link-cad-model)
 * [Future Plans](#future-plans-and-improvements-to-vahana-configuration-trade-study)
 
 ## Summary
