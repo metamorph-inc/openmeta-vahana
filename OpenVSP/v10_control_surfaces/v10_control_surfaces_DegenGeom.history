@@ -1,0 +1,592 @@
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 180.0000000 Lunit^2             
+Cref_                   3.0000000 Lunit               
+Bref_                  30.0000000 Lunit               
+Xcg_                    0.0000000 Lunit               
+Ycg_                    0.0000000 Lunit               
+Zcg_                    0.0000000 Lunit               
+Mach_                   0.1340000 no_unit             
+AoA_                    1.0000000 deg                 
+Beta_                   0.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 150.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+
+
+Solver Case: 1 
+
+  Iter      Mach       AoA      Beta       CL         CDo       CDi      CDtot      CS        L/D        E        CFx       CFy       CFz       CMx       CMy       CMz       T/QS 
+        1   0.13400   1.00000   0.00000  -0.38541   0.02632  -0.61635  -0.59003  -0.00000   0.65321  -0.01534  -0.60953  -0.00000  -0.39611  -0.00000   1.39471  -0.00000   6.74945
+        2   0.13400   1.00000   0.00000  -0.40602   0.02632  -0.61663  -0.59031   0.00003   0.68781  -0.01702  -0.60945   0.00003  -0.41672   0.00000   1.47746   0.00000   6.74945
+        3   0.13400   1.00000   0.00000  -0.42211   0.02632  -0.61790  -0.59157   0.00001   0.71354  -0.01836  -0.61043   0.00001  -0.43283  -0.00000   1.54165   0.00001   6.74945
+
+
+
+Skin Friction Drag Break Out:
+
+
+Surface                                      CDo 
+
+CanardGeom,0,FHZDKZPLAO                     0.00437 
+CanardGeom,1,FHZDKZPLAO                     0.00437 
+WingGeom,0,FVJRWHEIIU                       0.00529 
+WingGeom,1,FVJRWHEIIU                       0.00529 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 180.0000000 Lunit^2             
+Cref_                   3.0000000 Lunit               
+Bref_                  30.0000000 Lunit               
+Xcg_                    0.0000000 Lunit               
+Ycg_                    0.0000000 Lunit               
+Zcg_                    0.0000000 Lunit               
+Mach_                   0.1340000 no_unit             
+AoA_                    9.0000000 deg                 
+Beta_                   0.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 150.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+
+
+Solver Case: 2 
+
+  Iter      Mach       AoA      Beta       CL         CDo       CDi      CDtot      CS        L/D        E        CFx       CFy       CFz       CMx       CMy       CMz       T/QS 
+        1   0.13400   9.00000   0.00000   0.60078   0.02644  -0.39134  -0.36490  -0.00001  -1.64642  -0.05872  -0.48050  -0.00001   0.53216  -0.00000  -0.81524  -0.00000   6.74945
+        2   0.13400   9.00000   0.00000   0.57190   0.02644  -0.40192  -0.37549   0.00001  -1.52310  -0.05181  -0.48644   0.00001   0.50199   0.00000  -0.68672   0.00001   6.74945
+        3   0.13400   9.00000   0.00000   0.52833   0.02644  -0.41970  -0.39326  -0.00002  -1.34346  -0.04234  -0.49718  -0.00002   0.45617   0.00000  -0.49412  -0.00001   6.74945
+
+
+
+Skin Friction Drag Break Out:
+
+
+Surface                                      CDo 
+
+CanardGeom,0,FHZDKZPLAO                     0.00440 
+CanardGeom,1,FHZDKZPLAO                     0.00440 
+WingGeom,0,FVJRWHEIIU                       0.00533 
+WingGeom,1,FVJRWHEIIU                       0.00533 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 180.0000000 Lunit^2             
+Cref_                   3.0000000 Lunit               
+Bref_                  30.0000000 Lunit               
+Xcg_                    0.0000000 Lunit               
+Ycg_                    0.0000000 Lunit               
+Zcg_                    0.0000000 Lunit               
+Mach_                   0.2200000 no_unit             
+AoA_                    1.0000000 deg                 
+Beta_                   0.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 150.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+
+
+Solver Case: 3 
+
+  Iter      Mach       AoA      Beta       CL         CDo       CDi      CDtot      CS        L/D        E        CFx       CFy       CFz       CMx       CMy       CMz       T/QS 
+        1   0.22000   1.00000   0.00000  -0.41057   0.02632  -0.65749  -0.63117  -0.00000   0.65050  -0.01632  -0.65022  -0.00000  -0.42198  -0.00000   1.45172  -0.00000   6.74945
+        2   0.22000   1.00000   0.00000  -0.43306   0.02632  -0.65820  -0.63188   0.00006   0.68535  -0.01814  -0.65054   0.00006  -0.44448   0.00000   1.54227   0.00000   6.74945
+        3   0.22000   1.00000   0.00000  -0.45148   0.02632  -0.66024  -0.63391   0.00001   0.71220  -0.01965  -0.65226   0.00001  -0.46293  -0.00000   1.61551   0.00001   6.74945
+
+
+
+Skin Friction Drag Break Out:
+
+
+Surface                                      CDo 
+
+CanardGeom,0,FHZDKZPLAO                     0.00437 
+CanardGeom,1,FHZDKZPLAO                     0.00437 
+WingGeom,0,FVJRWHEIIU                       0.00529 
+WingGeom,1,FVJRWHEIIU                       0.00529 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 180.0000000 Lunit^2             
+Cref_                   3.0000000 Lunit               
+Bref_                  30.0000000 Lunit               
+Xcg_                    0.0000000 Lunit               
+Ycg_                    0.0000000 Lunit               
+Zcg_                    0.0000000 Lunit               
+Mach_                   0.2200000 no_unit             
+AoA_                    9.0000000 deg                 
+Beta_                   0.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 150.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+
+
+Solver Case: 4 
+
+  Iter      Mach       AoA      Beta       CL         CDo       CDi      CDtot      CS        L/D        E        CFx       CFy       CFz       CMx       CMy       CMz       T/QS 
+        1   0.22000   9.00000   0.00000   0.67161   0.02644  -0.41335  -0.38692  -0.00001  -1.73580  -0.06947  -0.51333  -0.00001   0.59868  -0.00000  -0.89245  -0.00000   6.74945
+        2   0.22000   9.00000   0.00000   0.64062   0.02644  -0.42519  -0.39876   0.00001  -1.60654  -0.06145  -0.52017   0.00001   0.56622   0.00000  -0.75736   0.00001   6.74945
+        3   0.22000   9.00000   0.00000   0.59377   0.02644  -0.44507  -0.41864  -0.00002  -1.41833  -0.05043  -0.53248  -0.00002   0.51683   0.00000  -0.55274  -0.00001   6.74945
+
+
+
+Skin Friction Drag Break Out:
+
+
+Surface                                      CDo 
+
+CanardGeom,0,FHZDKZPLAO                     0.00440 
+CanardGeom,1,FHZDKZPLAO                     0.00440 
+WingGeom,0,FVJRWHEIIU                       0.00533 
+WingGeom,1,FVJRWHEIIU                       0.00533 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 180.0000000 Lunit^2             
+Cref_                   3.0000000 Lunit               
+Bref_                  30.0000000 Lunit               
+Xcg_                    0.0000000 Lunit               
+Ycg_                    0.0000000 Lunit               
+Zcg_                    0.0000000 Lunit               
+Mach_                   0.1340000 no_unit             
+AoA_                    1.0000000 deg                 
+Beta_                   5.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 150.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+
+
+Solver Case: 5 
+
+  Iter      Mach       AoA      Beta       CL         CDo       CDi      CDtot      CS        L/D        E        CFx       CFy       CFz       CMx       CMy       CMz       T/QS 
+        1   0.13400   1.00000   5.00000  -0.40921   0.02634  -0.62296  -0.59662  -0.22154   0.68588  -0.01711  -0.63266  -0.16640  -0.42031   0.00109   1.49099  -0.03802   6.74945
+        2   0.13400   1.00000   5.00000  -0.42329   0.02634  -0.62391  -0.59757  -0.22375   0.70835  -0.01828  -0.63355  -0.16852  -0.43441   0.00377   1.55593  -0.03988   6.74945
+        3   0.13400   1.00000   5.00000  -0.43217   0.02634  -0.62556  -0.59921  -0.22418   0.72123  -0.01901  -0.63507  -0.16881  -0.44332   0.00643   1.58100  -0.04004   6.74945
+
+
+
+Skin Friction Drag Break Out:
+
+
+Surface                                      CDo 
+
+CanardGeom,0,FHZDKZPLAO                     0.00438 
+CanardGeom,1,FHZDKZPLAO                     0.00438 
+WingGeom,0,FVJRWHEIIU                       0.00530 
+WingGeom,1,FVJRWHEIIU                       0.00530 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 180.0000000 Lunit^2             
+Cref_                   3.0000000 Lunit               
+Bref_                  30.0000000 Lunit               
+Xcg_                    0.0000000 Lunit               
+Ycg_                    0.0000000 Lunit               
+Zcg_                    0.0000000 Lunit               
+Mach_                   0.1340000 no_unit             
+AoA_                    9.0000000 deg                 
+Beta_                   5.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 150.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+
+
+Solver Case: 6 
+
+  Iter      Mach       AoA      Beta       CL         CDo       CDi      CDtot      CS        L/D        E        CFx       CFy       CFz       CMx       CMy       CMz       T/QS 
+        1   0.13400   9.00000   5.00000   0.62306   0.02646  -0.44717  -0.42071  -0.28594  -1.48096  -0.05527  -0.56207  -0.24588   0.54180  -0.00146  -0.70065  -0.05301   6.74945
+        2   0.13400   9.00000   5.00000   0.60698   0.02646  -0.45494  -0.42848  -0.26898  -1.41658  -0.05156  -0.56574  -0.22830   0.52494   0.00485  -0.58493  -0.04773   6.74945
+        3   0.13400   9.00000   5.00000   0.57687   0.02646  -0.46214  -0.43569  -0.23698  -1.32406  -0.04584  -0.56536  -0.19580   0.49452   0.00670  -0.45551  -0.03500   6.74945
+
+
+
+Skin Friction Drag Break Out:
+
+
+Surface                                      CDo 
+
+CanardGeom,0,FHZDKZPLAO                     0.00440 
+CanardGeom,1,FHZDKZPLAO                     0.00440 
+WingGeom,0,FVJRWHEIIU                       0.00533 
+WingGeom,1,FVJRWHEIIU                       0.00533 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 180.0000000 Lunit^2             
+Cref_                   3.0000000 Lunit               
+Bref_                  30.0000000 Lunit               
+Xcg_                    0.0000000 Lunit               
+Ycg_                    0.0000000 Lunit               
+Zcg_                    0.0000000 Lunit               
+Mach_                   0.2200000 no_unit             
+AoA_                    1.0000000 deg                 
+Beta_                   5.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 150.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+
+
+Solver Case: 7 
+
+  Iter      Mach       AoA      Beta       CL         CDo       CDi      CDtot      CS        L/D        E        CFx       CFy       CFz       CMx       CMy       CMz       T/QS 
+        1   0.22000   1.00000   5.00000  -0.43363   0.02634  -0.66575  -0.63941  -0.22759   0.67818  -0.01798  -0.67538  -0.16870  -0.44549   0.00107   1.54379  -0.03919   6.74945
+        2   0.22000   1.00000   5.00000  -0.44871   0.02634  -0.66687  -0.64052  -0.23228   0.70053  -0.01922  -0.67664  -0.17328  -0.46059   0.00409   1.61345  -0.04218   6.74945
+        3   0.22000   1.00000   5.00000  -0.45618   0.02634  -0.66870  -0.64236  -0.23768   0.71016  -0.01981  -0.67881  -0.17849  -0.46810   0.00742   1.63715  -0.04473   6.74945
+
+
+
+Skin Friction Drag Break Out:
+
+
+Surface                                      CDo 
+
+CanardGeom,0,FHZDKZPLAO                     0.00438 
+CanardGeom,1,FHZDKZPLAO                     0.00438 
+WingGeom,0,FVJRWHEIIU                       0.00530 
+WingGeom,1,FVJRWHEIIU                       0.00530 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+***************************************************************************************************************************************************************************************** 
+
+# Name                   Value      Units             
+Sref_                 180.0000000 Lunit^2             
+Cref_                   3.0000000 Lunit               
+Bref_                  30.0000000 Lunit               
+Xcg_                    0.0000000 Lunit               
+Ycg_                    0.0000000 Lunit               
+Zcg_                    0.0000000 Lunit               
+Mach_                   0.2200000 no_unit             
+AoA_                    9.0000000 deg                 
+Beta_                   5.0000000 deg                 
+Rho_                    0.0023770 Munit/Lunit^3       
+Vinf_                 150.0000000 Lunit/Tunit         
+Roll__Rate              0.0000000 rad/Tunit           
+Pitch_Rate              0.0000000 rad/Tunit           
+Yaw___Rate              0.0000000 rad/Tunit           
+
+
+
+Solver Case: 8 
+
+  Iter      Mach       AoA      Beta       CL         CDo       CDi      CDtot      CS        L/D        E        CFx       CFy       CFz       CMx       CMy       CMz       T/QS 
+        1   0.22000   9.00000   5.00000   0.69493   0.02646  -0.47515  -0.44869  -0.29217  -1.54881  -0.06470  -0.60137  -0.24965   0.60834  -0.00208  -0.78472  -0.05395   6.74945
+        2   0.22000   9.00000   5.00000   0.67522   0.02646  -0.48348  -0.45702  -0.27879  -1.47742  -0.06003  -0.60534  -0.23559   0.58776   0.00449  -0.65490  -0.05011   6.74945
+        3   0.22000   9.00000   5.00000   0.63961   0.02646  -0.49156  -0.46510  -0.24415  -1.37522  -0.05298  -0.60473  -0.20038   0.55180   0.00698  -0.49737  -0.03616   6.74945
+
+
+
+Skin Friction Drag Break Out:
+
+
+Surface                                      CDo 
+
+CanardGeom,0,FHZDKZPLAO                     0.00440 
+CanardGeom,1,FHZDKZPLAO                     0.00440 
+WingGeom,0,FVJRWHEIIU                       0.00533 
+WingGeom,1,FVJRWHEIIU                       0.00533 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+FuselageGeom,0,EGGHNGXMDJ                   0.00120 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,0,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,1,URAECKJIRN                      0.00007 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,0,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,1,ATKKKHKEJL                      0.00006 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,0,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,1,HUXVZFCYNY                      0.00007 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,0,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 
+MotorGeom,1,RVWDTWLQFW                      0.00006 

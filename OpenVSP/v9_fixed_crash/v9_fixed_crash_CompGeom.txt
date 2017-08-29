@@ -1,0 +1,252 @@
+...Comp Geom...
+21 Num Comps
+181 Total Num Meshes
+193910 Total Num Tris
+
+Theo_Area   Wet_Area   Theo_Vol    Wet_Vol  Name
+  177.206     65.029    146.065     57.361  FuselageGeom0  
+  185.029     98.128     22.835     12.960  CanardGeom0    
+    9.380      4.168      1.465      0.697  MotorGeom0     
+    9.380      4.130      1.465      0.691  MotorGeom1     
+    9.380      3.258      1.465      0.545  MotorGeom0     
+    9.380      3.260      1.465      0.545  MotorGeom1     
+  185.029    101.398     22.835     13.392  WingGeom0      
+    9.380      4.180      1.465      0.699  MotorGeom0     
+    9.380      4.137      1.465      0.692  MotorGeom1     
+    9.380      3.280      1.465      0.548  MotorGeom0     
+    9.380      3.253      1.465      0.544  MotorGeom1     
+  346.394     43.655    286.552     38.647  MeshGeom0      
+  315.017    107.970     28.913     10.605  MeshGeom0      
+   17.494      5.046      8.905      2.749  MeshGeom0      
+   17.494      3.383      8.905      1.843  MeshGeom0      
+   15.369      2.402      2.605      0.436  MeshGeom0      
+   15.369      2.230      2.605      0.404  MeshGeom0      
+  320.671    105.289     33.229     11.676  MeshGeom0      
+   17.494      4.169      8.785      2.240  MeshGeom0      
+   17.494      3.832      8.785      2.060  MeshGeom0      
+   15.369      2.897      1.743      0.352  MeshGeom0      
+   15.369      3.295      1.743      0.400  MeshGeom0      
+  198.012     89.920     32.157     15.627  MeshGeom0      
+    9.761      4.406      6.977      3.370  MeshGeom0      
+    9.783      2.143      6.898      1.617  MeshGeom0      
+   16.050      1.466      2.583      0.253  MeshGeom0      
+   16.037      0.356      2.688      0.064  MeshGeom0      
+  201.004     98.495    -32.311    -33.112  MeshGeom0      
+    9.750      3.810      7.416      3.101  MeshGeom0      
+    9.778      2.106      7.284      1.679  MeshGeom0      
+    8.129      1.716      1.894      0.428  MeshGeom0      
+   11.742      1.059      1.002      0.097  MeshGeom0      
+    5.244      0.735      3.803      0.571  MeshGeom0      
+    2.414      0.754      2.337      0.780  MeshGeom0      
+  254.017     59.973    210.190     53.107  MeshGeom0      
+    2.552      0.995      5.188      2.165  MeshGeom0      
+    2.265      0.975      4.246      1.955  MeshGeom0      
+    3.553      1.256      9.020      3.412  MeshGeom0      
+    2.826      0.992      5.108      1.920  MeshGeom0      
+    8.071      1.156      5.246      0.804  MeshGeom0      
+    3.646      0.263     -2.657     -2.667  MeshGeom0      
+    3.058      0.331     -0.519     -0.522  MeshGeom0      
+    4.525      1.206      1.786      0.509  MeshGeom0      
+    8.129      0.101      0.718      0.010  MeshGeom0      
+    7.817      0.249     -0.098     -0.098  MeshGeom0      
+    1.911      0.636      1.785      0.636  MeshGeom0      
+    2.681      0.367      2.315      0.340  MeshGeom0      
+    1.526      0.127      1.684      0.149  MeshGeom0      
+  247.727    185.806    207.675    166.692  MeshGeom0      
+    2.072      0.884      3.712      1.694  MeshGeom0      
+    1.792      0.849      3.849      1.952  MeshGeom0      
+    3.383      2.174      9.068      6.236  MeshGeom0      
+    2.674      1.612      5.290      3.414  MeshGeom0      
+    7.004      6.271      5.091      4.878  MeshGeom0      
+    3.441      3.034     -2.816     -2.942  MeshGeom0      
+    2.859      2.057     -0.651     -0.674  MeshGeom0      
+    4.408      3.050      1.892      1.401  MeshGeom0      
+    6.253      6.095     -1.663     -1.745  MeshGeom0      
+    7.648      5.288     -0.170     -0.176  MeshGeom0      
+-------------------------------------------------
+ 2829.376   1071.105   1114.245    397.007  Totals         
+
+Tag_Theo_Area   Tag_Wet_Area    Tag_Name
+      177.206         65.029    FuselageGeom0  
+       92.515         49.103    CanardGeom0    
+       92.515         49.024    CanardGeom1    
+        0.000          0.000    Disk0          
+        0.000          0.000    Disk0          
+        9.380          4.168    MotorGeom0     
+        9.380          4.130    MotorGeom1     
+        9.380          3.258    MotorGeom0     
+        9.380          3.260    MotorGeom1     
+        0.000          0.000    Disk0          
+        0.000          0.000    Disk0          
+       92.515         50.663    WingGeom0      
+       92.515         50.735    WingGeom1      
+        0.000          0.000    Disk0          
+        0.000          0.000    Disk0          
+        9.380          4.180    MotorGeom0     
+        9.380          4.137    MotorGeom1     
+        9.380          3.280    MotorGeom0     
+        9.380          3.253    MotorGeom1     
+        0.000          0.000    Disk0          
+        0.000          0.000    Disk0          
+      173.197         21.828    MeshGeom0      
+      157.508         53.964    MeshGeom0      
+        8.747          2.524    MeshGeom0      
+        8.747          1.697    MeshGeom0      
+        7.684          1.201    MeshGeom0      
+        7.684          1.112    MeshGeom0      
+      160.335         52.630    MeshGeom0      
+        8.747          2.084    MeshGeom0      
+        8.747          1.914    MeshGeom0      
+        7.684          1.449    MeshGeom0      
+        7.684          1.648    MeshGeom0      
+      173.197         21.828    MeshGeom0      
+      157.508         54.006    MeshGeom0      
+        8.747          2.522    MeshGeom0      
+        8.747          1.686    MeshGeom0      
+        7.684          1.201    MeshGeom0      
+        7.684          1.118    MeshGeom0      
+      160.335         52.659    MeshGeom0      
+        8.747          2.084    MeshGeom0      
+        8.747          1.919    MeshGeom0      
+        7.684          1.449    MeshGeom0      
+        7.684          1.648    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+      198.012         89.920    MeshGeom0      
+        9.761          4.406    MeshGeom0      
+        9.783          2.143    MeshGeom0      
+        8.151          0.733    MeshGeom0      
+        8.164          0.178    MeshGeom0      
+      201.004         98.495    MeshGeom0      
+        9.750          3.810    MeshGeom0      
+        9.778          2.106    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        8.129          1.716    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        7.899          0.733    MeshGeom0      
+        7.873          0.178    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        7.893          0.749    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        2.600          0.358    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        3.850          0.310    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        2.414          0.754    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+      254.017         59.973    MeshGeom0      
+        2.552          0.995    MeshGeom0      
+        2.265          0.975    MeshGeom0      
+        3.553          1.256    MeshGeom0      
+        2.826          0.992    MeshGeom0      
+        8.071          1.156    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        3.646          0.263    MeshGeom0      
+        3.058          0.331    MeshGeom0      
+        4.525          1.206    MeshGeom0      
+        8.129          0.101    MeshGeom0      
+        7.817          0.249    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        2.644          0.377    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        1.911          0.636    MeshGeom0      
+        2.681          0.367    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        1.526          0.127    MeshGeom0      
+      247.727        185.806    MeshGeom0      
+        2.072          0.884    MeshGeom0      
+        1.792          0.849    MeshGeom0      
+        3.383          2.174    MeshGeom0      
+        2.674          1.612    MeshGeom0      
+        7.004          6.271    MeshGeom0      
+        3.441          3.034    MeshGeom0      
+        2.859          2.057    MeshGeom0      
+        4.408          3.050    MeshGeom0      
+        6.253          6.095    MeshGeom0      
+        7.648          5.288    MeshGeom0      
+WARNING: 90 open meshes removed
+WARNING: 32 open meshes merged

@@ -1,0 +1,55 @@
+...Comp Geom...
+16 Num Comps
+32 Total Num Meshes
+21994 Total Num Tris
+
+Theo_Area   Wet_Area   Theo_Vol    Wet_Vol  Name
+  176.815    172.795    144.978    144.742  FuselageGeom0  
+  184.978    156.807     22.775     19.724  CanardGeom0    
+    9.380      8.749      1.465      1.396  MotorGeom0     
+    9.380      8.749      1.465      1.396  MotorGeom1     
+    9.380      7.689      1.465      1.227  MotorGeom0     
+    9.380      7.689      1.465      1.227  MotorGeom1     
+  184.978    161.144     22.775     20.269  WingGeom0      
+    9.380      8.749      1.465      1.396  MotorGeom0     
+    9.380      8.749      1.465      1.396  MotorGeom1     
+    9.380      7.689      1.465      1.227  MotorGeom0     
+    9.380      7.689      1.465      1.227  MotorGeom1     
+-------------------------------------------------
+  621.813    556.497    202.251    195.229  Totals         
+
+Tag_Theo_Area   Tag_Wet_Area    Tag_Name
+      176.815        172.795    FuselageGeom0  
+       92.489         78.373    CanardGeom0    
+       92.489         78.434    CanardGeom1    
+        0.000          0.000    Disk0          
+        0.000          0.000    Disk0          
+        9.380          8.749    MotorGeom0     
+        9.380          8.749    MotorGeom1     
+        9.380          7.689    MotorGeom0     
+        9.380          7.689    MotorGeom1     
+        0.000          0.000    Disk0          
+        0.000          0.000    Disk0          
+       92.489         80.572    WingGeom0      
+       92.489         80.572    WingGeom1      
+        0.000          0.000    Disk0          
+        0.000          0.000    Disk0          
+        9.380          8.749    MotorGeom0     
+        9.380          8.749    MotorGeom1     
+        9.380          7.689    MotorGeom0     
+        9.380          7.689    MotorGeom1     
+        0.000          0.000    Disk0          
+        0.000          0.000    Disk0          
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+        0.000          0.000    MeshGeom0      
+WARNING: 19 open meshes removed
+WARNING: 2 open meshes merged
