@@ -99,7 +99,7 @@ is still running, red means the Master Interpreter failed, and green means that 
 1. Information from the PET run will be displayed to your right within the Results Browser window.
 
 ### Viewing PET model results in the Visualizer
-1. Left-click the 'Launch in Visualizer' button in the bottom-right corner to view the results in the PET Visualizer.
+1. Left-click the 'Launch in Visualizer' button in the bottom-right corner (of the Results Browser window) to view the results in the PET Visualizer.
 1. The Visualizer will open in a browser window. Left-click the 'Explore>Single Plot' tab.
 1. Under the 'Variables' section, set the X-Axis to 'Range' and the 'Y-Axis' to 'DOCPerKm'.
 
@@ -129,6 +129,17 @@ VahanaHelicopterOptimizerPETMassBreakdown
   
 ### Python Wrapper component scripts
 All the Python Wrapper component scripts used to build the openmeta-vahana PETs are located in the `openmeta-vahana/scripts` folder. We encourage you to compare them with the A³ MATLAB scripts. To learn more, check out OpenMETA's Python Wrapper documentation as well as [OpenMDAO's documentation](http://openmdao.readthedocs.io/en/1.7.3/).
+
+### Viewing the Meta-Link CAD Model
+(You must have a CREO Parametric license to view the Meta-Link CAD Model)
+1. In the openmeta-vahana project, navigate to `RootFolder>ComponentAssembly>VahanaV2`.
+1. Left-click on the Meta-Link button located on the top toolbar.   
+![Meta-Link](images/viewing-the-meta-link-cad-model.png "Meta-Link")  
+1. The 'CyPhyMLSync' windows will pop up. Left-click 'OK'.
+1. CREO Parametric will start (this may take a few seconds).
+1. For best viewing in CREO, turn off all the axis displays and turn on 'Shading With Reflections'.
+1. Changing the 'Canard_Rotation', 'rProp', and 'Wing_Rotation' parameters in the OpenMETA VahanaV2 model will
+automatically update the CAD model in CREO Parametric.
 
 ### Documentation
 For additional information regarding the OpenMETA toolset, please consult the [documentation](http://docs.metamorphsoftware.com/doc/index.html).
