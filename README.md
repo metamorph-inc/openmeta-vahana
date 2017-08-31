@@ -54,7 +54,7 @@ As a result of their Sizing Trade Study, the Vahana team concluded that an eight
 ## OpenMETA Vahana Configuration Trade Study 
 Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade Study's results using the OpenMETA toolset. Since OpenMETA is designed for Multidisciplinary Design Analysis and Optimization, we thought that it would be interesting to see if we could reproduce the A³ team's results using the OpenMETA toolset.
 
-To read about the OpenMETA Vahana Configuration Trade Study, check out our blog post.
+To read about the OpenMETA Vahana Configuration Trade Study, check out our [blog post](https://www.metamorphsoftware.com/blog/2017/8/31/openmeta-vahana-case-study-part-i).
 
 To start working with the OpenMETA Vahana Model, check out the sections below.
 
@@ -190,10 +190,10 @@ A future model may implement these mass calculations in order to allow a more ef
 ![Image of mass convergence](images/mass_convergence.PNG)
 -->
 
-## References
-[OpenMETA Vahana Case Study - Part 1](https://www.metamorphsoftware.com/blog/2017/8/31/openmeta-vahana-case-study-part-i)
-[OpenMETA Installer](https://www.metamorphsoftware.com/openmeta/)
-[OpenMETA Documentation](http://docs.metamorphsoftware.com/doc/index.html)
+## References  
+[OpenMETA Vahana Case Study - Part 1](https://www.metamorphsoftware.com/blog/2017/8/31/openmeta-vahana-case-study-part-i)  
+[OpenMETA Installer](https://www.metamorphsoftware.com/openmeta/)  
+[OpenMETA Documentation](http://docs.metamorphsoftware.com/doc/index.html)  
 [A³ Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)  
 [A³ Vahana Configuration Trade Study Part - 2](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93)  
-[A³ MATLAB Code](https://github.com/VahanaOpenSource/vahanaTradeStudy)
+[A³ MATLAB Code](https://github.com/VahanaOpenSource/vahanaTradeStudy)  
