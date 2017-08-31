@@ -45,14 +45,14 @@ DOC vs. Range for Tilt Wing Configuration with and without Fuel Weight Constrain
 ![tilt wing fuel_constraint doc vs. range comparison](images/openmeta-vahana-tilt-wing-fuel-weight-constraint.png)
 
 ## Vahana Configuration Trade Study
-Vahana is an Airbus A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, Airbus conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight-fan tilt-wing) using multidisciplinary design optimization (MDO). 
+Vahana is an A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, A³ conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight-fan tilt-wing) using multidisciplinary design optimization (MDO). 
 
-The A³ team set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight-fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements _(e.g.: the vehicle's effective energy capacity had to be greater than the amount of energy required to execute a reserve ("worst case") mission)_. 
+A³ set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight-fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements _(e.g.: the vehicle's effective energy capacity had to be greater than the amount of energy required to execute a reserve ("worst case") mission)_. 
 
 As a result of their Sizing Trade Study, the Vahana team concluded that an eight-fan, tilt-wing configuration would best meet their broad design requirements for a low-cost, single-passenger, electric VTOL aircraft.
 
 ## OpenMETA Vahana Configuration Trade Study 
-Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade Study's results using the OpenMETA toolset. Since OpenMETA is designed for Multidisciplinary Design Analysis and Optimization, we thought that it would be interesting to see if we could reproduce the A³ team's results using the OpenMETA toolset.
+Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade Study's results using the OpenMETA toolset. Since OpenMETA is designed for Multidisciplinary Design Analysis and Optimization, we thought that it would be interesting to see if we could reproduce the A³'s results using the OpenMETA toolset.
 
 To read about the OpenMETA Vahana Configuration Trade Study, check out our [blog post](https://www.metamorphsoftware.com/blog/2017/8/31/openmeta-vahana-case-study-part-i).
 
@@ -149,7 +149,7 @@ For additional information regarding the OpenMETA toolset, please consult the [d
 TODO Add some quick links here / or scrap the Quick links section entirely
 
 ## Future Plans and Improvements to Vahana Configuration Trade Study
-Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using OpenMETA, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there was little reason to recreate the Vahana Configuration Trade Study - it had already served its purpose and Airbus had already progressed to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
+Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using OpenMETA, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there was little reason to recreate the Vahana Configuration Trade Study - it had already served its purpose and A³ had already progressed to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
 
 ### Meta-Link CAD Model
 A CAD model can provide a more accurate representation of a vehicle's geometry, mass, and mass distribution. In creating a CREO model of the Tilt-Wing Configuration, we hoped to provide a more model that could eventually be used to calculate mass, center of gravity, and production costs.
