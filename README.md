@@ -191,6 +191,9 @@ A future model may implement these mass calculations in order to allow a more ef
 -->
 
 ## References
+[OpenMETA Vahana Case Study - Part 1](https://www.metamorphsoftware.com/blog/2017/8/31/openmeta-vahana-case-study-part-i)
+[OpenMETA Installer](https://www.metamorphsoftware.com/openmeta/)
+[OpenMETA Documentation](http://docs.metamorphsoftware.com/doc/index.html)
 [A³ Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)  
 [A³ Vahana Configuration Trade Study Part - 2](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93)  
 [A³ MATLAB Code](https://github.com/VahanaOpenSource/vahanaTradeStudy)
