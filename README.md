@@ -14,7 +14,7 @@ _An OpenMETA model for the conceptual design of an autonomous transport aircraft
   * [Viewing PET model results in the Visualizer](#viewing-pet-model-results-in-the-visualizer)
   * [PETs included in openmeta-vahana](#pets-included-in-openmeta-vahana)
   * [Python Wrapper component scripts](#python-wrapper-component-scripts)
-  * [Documentation](#documentation)
+  * [Documentation](#openmeta-documentation)
   * [Viewing the Meta-Link CAD Model](#viewing-the-meta-link-cad-model)
 * [Future Plans](#future-plans-and-improvements-to-vahana-configuration-trade-study)
 
@@ -129,7 +129,7 @@ HelicopterOptimizerPETCostBreakdown
 HelicopterOptimizerPETMassBreakdown  
   
 ### Python Wrapper component scripts
-All the Python Wrapper component scripts used to build the openmeta-vahana PETs are located in the `openmeta-vahana/scripts` folder. We encourage you to compare them with the A³ MATLAB scripts. To learn more, check out OpenMETA's Python Wrapper documentation as well as [OpenMDAO's documentation](http://openmdao.readthedocs.io/en/1.7.3/).
+All the Python Wrapper component scripts used to build the openmeta-vahana PETs are located in the `openmeta-vahana/scripts` folder. We encourage you to compare them with the A³ MATLAB scripts. To learn more, check out OpenMETA's [Python Wrapper documentation](http://docs.metamorphsoftware.com/doc/pet/pet_analysis_blocks.html#pythonwrappers) as well as [OpenMDAO's documentation](http://openmdao.readthedocs.io/en/1.7.3/).
 
 ### Viewing the Meta-Link CAD Model
 (You must have a CREO Parametric license to view the Meta-Link CAD Model)
@@ -142,11 +142,15 @@ All the Python Wrapper component scripts used to build the openmeta-vahana PETs 
 1. Changing the 'Canard_Rotation', 'rProp', and 'Wing_Rotation' parameters in the OpenMETA VahanaV2 model will
 automatically update the CAD model in CREO Parametric.
 
-### Documentation
+### OpenMETA Documentation
 For additional information regarding the OpenMETA toolset, please consult the [documentation](http://docs.metamorphsoftware.com/doc/index.html).
 
-**Quick links**   
-TODO Add some quick links here / or scrap the Quick links section entirely
+*Quick links:*  
+[Introduction](http://docs.metamorphsoftware.com/doc/introduction/introduction.html)  
+[PET Tutorial](http://docs.metamorphsoftware.com/doc/tutorials/pet_tutorial/pet_tutorial.html)  
+[PET Nesting](http://docs.metamorphsoftware.com/doc/pet/pet_nesting.html)  
+[Results Browser](http://docs.metamorphsoftware.com/doc/resultsbrowser/resultsbrowser.html)  
+[Visualizer](http://docs.metamorphsoftware.com/doc/visualizer/visualizer.html)  
 
 ## Future Plans and Improvements to Vahana Configuration Trade Study
 Since we were able to produce similar trends to those in the Vahana Configuration Trade Study using OpenMETA, we wanted to explore ways in which to improve on the Trade Study's results. Outside of exercising the OpenMETA toolset, there was little reason to recreate the Vahana Configuration Trade Study - it had already served its purpose and A³ had already progressed to the next stage in the design process. Therefore, our next goal was to see how we could improve the Trade Study's model and provide more detailed anaylsis for design purposes.
