@@ -1,0 +1,99 @@
+
+
+//==== Init Is Called Once During Each Custom Geom Construction  ============================//
+//==== Avoid Global Variables Unless You Want Shared With All Custom Geoms of This Type =====//
+void Init()
+{
+	//==== Add Parm Types  =====//
+	string height   = AddParm( PARM_DOUBLE_TYPE, "Height", "Design" );
+	SetParmValLimits( height, 4.0, 0.001, 1.0e12 );
+    	SetParmDescript( height, "Height of Cone" );
+
+	string diameter = AddParm( PARM_DOUBLE_TYPE, "Diameter", "Design" );
+	SetParmValLimits( diameter, 8.0, 0.001, 1.0e12 );
+    	SetParmDescript( diameter, "Diameter of Cone" );
+
+	//==== Add Cross Sections  =====//
+	string xsec_surf = AddXSecSurf();
+	AppendCustomXSec( xsec_surf, XS_POINT);
+	AppendCustomXSec( xsec_surf, XS_CIRCLE);
+	AppendCustomXSec( xsec_surf, XS_POINT);
+
+	//==== Add A Default Point Source At Nose ====//
+	SetupCustomDefaultSource( POINT_SOURCE, 0, 0.1, 1.0, 1.0, 1.0 );
+
+}
+
+//==== Global Gui IDs - These Are Consistent For All Created Boxes And Used In UpdateGUI====// 
+int DesignTab;
+int HeightSlider;
+int DiameterSlider;
+
+//==== InitGui Is Called Once During Each Custom Geom Construction ====//
+void InitGui()
+{
+	AddGui( GDEV_TAB, "Design"  );
+	AddGui( GDEV_YGAP  );
+	AddGui( GDEV_DIVIDER_BOX, "Design" );
+	AddGui( GDEV_SLIDER_ADJ_RANGE_INPUT, "Height", "Height", "Design"  );
+	AddGui( GDEV_SLIDER_ADJ_RANGE_INPUT, "Diameter", "Diameter", "Design"  );
+	AddGui( GDEV_YGAP, ""  );
+} 
+
+//==== UpdateGui Is Called Every Time The Gui is Updated ====//
+void UpdateGui()
+{
+} 
+
+//==== UpdateSurf Is Called Every Time The Geom is Updated ====//
+void UpdateSurf()
+{
+	string geom_id = GetCurrCustomGeom();
+
+	//==== Set Base XSec Diameter ====//
+	string dia_parm = GetParm( geom_id, "Diameter", "Design" );
+	double dia_val  = GetParmVal( dia_parm );
+
+	//==== Get The XSecs To Change ====//
+	string xsec_surf = GetXSecSurf( geom_id, 0 );
+	string xsec1 = GetXSec( xsec_surf, 1 );
+	string xsec2 = GetXSec( xsec_surf, 2 );
+
+	//==== Set The Diameter ====//
+	string xsec1_dia = GetXSecParm( xsec1, "Circle_Diameter" );
+	SetParmVal( xsec1_dia, dia_val );
+
+	//==== Set The Height ====//
+	double ht_val  = GetParmVal( GetParm( geom_id, "Height", "Design" ) );
+	SetCustomXSecLoc( xsec2, vec3d( ht_val, 0, 0 ) );
+
+	SkinXSecSurf();
+
+}
+
+//==== Optional Scale =====//
+void Scale(double curr_scale )
+{
+	string geom_id = GetCurrCustomGeom();
+
+	string dia_id   = GetParm( geom_id, "Diameter", "Design" );
+	string ht_id    = GetParm( geom_id, "Height", "Design" );
+
+	double ht  = curr_scale*GetParmVal( ht_id );
+	double dia = curr_scale*GetParmVal( dia_id );
+
+	SetParmVal( ht_id, ht );
+	SetParmVal( dia_id, dia );
+}
+
+//==== Optional Compute Center ====//
+void ComputeCenter()
+{
+	string geom_id = GetCurrCustomGeom();
+
+	double ht= GetParmVal( GetParm( geom_id, "Height", "Design" ) );
+	double origin = GetParmVal( GetParm( geom_id, "Origin", "XForm" ) );
+	SetCustomCenter( ht*origin, 0, 0 );
+
+}
+

@@ -1,0 +1,53 @@
+//==== Template *.vspscript file for use with OpenMETA testbench scripts ====// 
+
+//==== Load a Geometry, modify a parameter in it, and generate a degen geometry file for it ====//
+
+void main()
+{
+	Print( string( "Begin vspscript..." ) );
+	Print( string("") );
+	
+	//==== Clear all geometry ====//
+	ClearVSPModel();
+
+	Print( string( "Loading OpenVSP Model File" ) );
+	Print( string("") );
+	
+    //==== Load OpenVSP Model File ====//
+	string importModelFileName = "${VSP_Filename}.vsp3";
+    ReadVSPFile( importModelFileName );
+
+	Print( string( "Updating Geometry" ) );
+	Print( string("") );	
+	
+    //==== Update Geometry ====//
+	Update();
+	
+	Print( string( "Loading Design Variables File" ) );
+	Print( string("") );
+	
+	//==== Load Design Variables File ====//
+	string importDesVarFileName = "${VSP_Filename}.des";
+	ReadApplyDESFile( importDesVarFileName );
+	ReadApplyDESFile( importDesVarFileName );
+	ReadApplyDESFile( importDesVarFileName );
+
+	Print( string( "Updating Geometry" ) );
+	Print( string("") );	
+	
+	//==== Update Geometry ====//
+	Update();
+	
+	//==== Generate DegenGeometry for VSPAERO ====//
+	string degenGeomFileName = "${VSP_Filename}_DegenGeom.csv";
+	SetComputationFileName( DEGEN_GEOM_CSV_TYPE, degenGeomFileName );
+	ComputeDegenGeom( SET_ALL, DEGEN_GEOM_CSV_TYPE );
+
+    //==== Check For API Errors ====//
+    while ( GetNumTotalErrors() > 0 )
+    {
+        ErrorObj err = PopLastError();
+        Print( err.GetErrorString() );
+    }
+
+}

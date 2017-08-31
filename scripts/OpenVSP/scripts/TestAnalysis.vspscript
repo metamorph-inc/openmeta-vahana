@@ -1,0 +1,253 @@
+
+// PrintAnalysisInputs is now available as an API routine.
+// However, this provides a nice example of using the API to interacti with
+// the analysis input information, so it is preserved here.
+void PrintAnalysisInputsExample( string analysis )
+{
+    Print( "Analysis: " + analysis );
+    Print( "Inputs:" );
+
+    array < string > @ inp_array = GetAnalysisInputNames( analysis );
+
+    for ( int j = 0; j < int( inp_array.size() ); j++ )
+    {
+        Print( inp_array[j], false );
+
+        int typ = GetAnalysisInputType( analysis, inp_array[j] );
+        int ndat = GetNumAnalysisInputData( analysis, inp_array[j] );
+
+        if ( typ == INT_DATA )
+        {
+            for ( int indx = 0; indx < ndat; indx++ )
+            {
+                array<int>@ dat = GetIntAnalysisInput( analysis, inp_array[j], indx );
+
+                for ( int m = 0; m < int( dat.size() ); m++ )
+                {
+                    Print( dat[m], false );
+                }
+                Print( "" );
+            }
+        }
+        else if ( typ == DOUBLE_DATA )
+        {
+            for ( int indx = 0; indx < ndat; indx++ )
+            {
+                array<double>@ dat = GetDoubleAnalysisInput( analysis, inp_array[j], indx );
+
+                for ( int m = 0; m < int( dat.size() ); m++ )
+                {
+                    Print( dat[m], false );
+                }
+                Print( "" );
+            }
+        }
+        else if ( typ == STRING_DATA )
+        {
+            for ( int indx = 0; indx < ndat; indx++ )
+            {
+                array<string>@ dat = GetStringAnalysisInput( analysis, inp_array[j], indx );
+
+                for ( int m = 0; m < int( dat.size() ); m++ )
+                {
+                    Print( dat[m], false );
+                }
+                Print( "" );
+            }
+        }
+        else if ( typ == VEC3D_DATA )
+        {
+            for ( int indx = 0; indx < ndat; indx++ )
+            {
+                array<vec3d>@ dat = GetVec3dAnalysisInput( analysis, inp_array[j], indx );
+
+                for ( int m = 0; m < int( dat.size() ); m++ )
+                {
+                    Print( dat[m], false );
+                }
+                Print( "" );
+            }
+        }
+        else
+        {
+            Print( "Unrecognized type." );
+        }
+    }
+}
+
+// PrintResults is now available as an API routine.
+// However, this provides a nice example of using the API to interacti with
+// the analysis result information, so it is preserved here.
+void PrintResultsExample( string results )
+{
+    Print( "Results ID: " + results );
+
+    array < string > @ res_array = GetAllDataNames( results );
+
+    for ( int j = 0; j < int( res_array.size() ); j++ )
+    {
+        Print( res_array[j], false );
+
+        int typ = GetResultsType( results, res_array[j] );
+        int ndat = GetNumData( results, res_array[j] );
+
+        if ( typ == INT_DATA )
+        {
+            for ( int indx = 0; indx < ndat; indx++ )
+            {
+                array<int>@ dat = GetIntResults( results, res_array[j], indx );
+
+                for ( int m = 0; m < int( dat.size() ); m++ )
+                {
+                    Print( dat[m], false );
+                    Print( "" );
+                }
+            }
+        }
+        else if ( typ == DOUBLE_DATA )
+        {
+            for ( int indx = 0; indx < ndat; indx++ )
+            {
+                array<double>@ dat = GetDoubleResults( results, res_array[j], indx );
+
+                for ( int m = 0; m < int( dat.size() ); m++ )
+                {
+                    Print( dat[m], false );
+                }
+                Print( "" );
+            }
+        }
+        else if ( typ == STRING_DATA )
+        {
+            for ( int indx = 0; indx < ndat; indx++ )
+            {
+                array<string>@ dat = GetStringResults( results, res_array[j], indx );
+
+                for ( int m = 0; m < int( dat.size() ); m++ )
+                {
+                    Print( dat[m], false );
+                }
+                Print( "" );
+            }
+        }
+        else if ( typ == VEC3D_DATA )
+        {
+            for ( int indx = 0; indx < ndat; indx++ )
+            {
+                array<vec3d>@ dat = GetVec3dResults( results, res_array[j], indx );
+
+                for ( int m = 0; m < int( dat.size() ); m++ )
+                {
+                    Print( dat[m], false );
+                }
+                Print( "" );
+            }
+        }
+        else
+        {
+            Print( "Unrecognized type." );
+        }
+    }
+    Print( "" );
+}
+
+
+void main()
+{
+    string fid = AddGeom( "POD", "" );
+    string wid = AddGeom( "WING", "" );
+
+    SetParmVal( wid, "X_Rel_Location", "XForm", 2.5 );
+    SetParmVal( wid, "TotalArea", "WingGeom", 25 );
+
+    Update();
+
+
+    int nanalysis = GetNumAnalysis();
+
+    Print( "Number of registered analyses: " + nanalysis );
+    Print( "" );
+
+    array< string > @analysis_array = ListAnalysis();
+
+    for ( int i = 0; i < int( analysis_array.size() ); i++ )
+    {
+        PrintAnalysisInputsExample( analysis_array[i] );
+        Print( "" );
+    }
+
+    // CompGeom
+    array<int> halfmeshinput = GetIntAnalysisInput( "CompGeom", "HalfMeshFlag" );
+    halfmeshinput[0] = 1;
+    SetIntAnalysisInput( "CompGeom", "HalfMeshFlag", halfmeshinput );
+
+    array<int> writecsvflag = GetIntAnalysisInput( "CompGeom", "WriteCSVFlag" );
+    writecsvflag[0] = 0;
+    SetIntAnalysisInput( "CompGeom", "WriteCSVFlag", writecsvflag );
+
+    string rid = ExecAnalysis( "CompGeom" );
+    PrintResultsExample( rid );
+    DeleteGeomVec( GetStringResults( rid, "Mesh_GeomID" ) );
+
+    // MassProp
+    string ridmp = ExecAnalysis( "MassProp" );
+    PrintResultsExample( ridmp );
+    DeleteGeomVec( GetStringResults( ridmp, "Mesh_GeomID" ) );
+
+    // ParasiteDrag
+    string ridpd = ExecAnalysis( "ParasiteDrag" );
+    PrintResultsExample( ridpd );
+
+    // PlanarSlice
+    array<vec3d> norm = GetVec3dAnalysisInput( "PlanarSlice", "Norm" );
+    norm[0].set_xyz( 0.23, 0.6, 0.15 );
+    SetVec3dAnalysisInput( "PlanarSlice", "Norm", norm );
+
+    array<int> abnd = GetIntAnalysisInput( "PlanarSlice", "AutoBoundFlag" );
+    abnd[0] = 0;
+    SetIntAnalysisInput( "PlanarSlice", "AutoBoundFlag", abnd );
+
+    array<double> send = GetDoubleAnalysisInput( "PlanarSlice", "EndVal" );
+    send[0] = 5;
+    SetDoubleAnalysisInput( "PlanarSlice", "EndVal", send );
+
+    string ridslice = ExecAnalysis( "PlanarSlice" );
+    PrintResultsExample( ridslice );
+    DeleteGeomVec( GetStringResults( ridslice, "Mesh_GeomID" ) );
+
+    // WaveDrag
+    string ridwd = ExecAnalysis( "WaveDrag" );
+    PrintResultsExample( ridwd );
+    DeleteGeomVec( GetStringResults( ridwd, "Mesh_GeomID" ) );
+
+    // EmintonLord
+    int npt = 21;
+    array<double> x_vec = GetDoubleAnalysisInput( "EmintonLord", "X_vec" );
+    x_vec.resize( npt );
+
+    array<double> area_vec = GetDoubleAnalysisInput( "EmintonLord", "Area_vec" );
+    area_vec.resize( npt );
+
+    for ( int i = 0; i < npt; i++ )
+    {
+        double xi = i * 1.0 / ( npt - 1 );
+        x_vec[i] = xi * 5;
+        area_vec[i] = sin( xi * 3.14159 ) * sin( xi * 3.14159 );
+    }
+    area_vec[0] = 0;
+    area_vec[npt - 1] = 0;
+
+    SetDoubleAnalysisInput( "EmintonLord", "X_vec", x_vec );
+    SetDoubleAnalysisInput( "EmintonLord", "Area_vec", area_vec );
+
+    string ridel = ExecAnalysis( "EmintonLord" );
+    PrintResultsExample( ridel );
+
+    //==== Check For API Errors ====//
+    while ( GetNumTotalErrors() > 0 )
+    {
+        ErrorObj err = PopLastError();
+        Print( err.GetErrorString() );
+    }
+
+}

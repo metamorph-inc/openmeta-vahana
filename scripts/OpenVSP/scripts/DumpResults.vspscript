@@ -1,0 +1,21 @@
+void main()
+{
+    array< string > @results_array = GetAllResultsNames();
+
+    for ( int i = 0; i < int( results_array.size() ); i++ )
+    {
+        Print( results_array[i] );
+        string resid = FindLatestResultsID( results_array[i] );
+        PrintResults( resid );
+        Print( "" );
+    }
+
+
+    //==== Check For API Errors ====//
+    while ( GetNumTotalErrors() > 0 )
+    {
+        ErrorObj err = PopLastError();
+        Print( err.GetErrorString() );
+    }
+
+}
