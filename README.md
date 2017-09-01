@@ -19,9 +19,9 @@ _An OpenMETA model for the conceptual design of an autonomous transport aircraft
 * [Future Plans](#future-plans-and-improvements-to-vahana-configuration-trade-study)
 
 ## Summary
-Inspired by the Project Vahana from A³ by Airbus, we built OpenMETA models of the Vahana Tilt-Wing Multirotor aircraft using A³'s publicly released source code as a template. 
+Inspired by Project Vahana from A³ by Airbus, we built OpenMETA models of the Vahana Tilt-Wing Multirotor aircraft using A³'s publicly released source code as a template. 
 
-A parametric CAD model of the Vahana was also built within OpenMETA with the goal of using CAD analysis to improve the accuracy of future studies. The most recent draft of this CAD model is shown below with its rotors angled to transition between the hover and cruise modes.
+A parametric CAD model of Vahana was also built within OpenMETA with the goal of using CAD analysis to improve the accuracy of future studies. The most recent draft of this CAD model is shown below with its rotors angled to transition between the hover and cruise modes.
 
 **Vahana CAD model:**
   
