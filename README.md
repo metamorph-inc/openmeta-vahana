@@ -110,7 +110,7 @@ The following PETs are included in the openmeta-vahana project in the `RootFolde
 #### Tilt-Wing Model
 | *Parametric Study + Optimizer*      | *These PETs optimize the Tilt-Wing model for DOC over a series of ranges*       |
 |:------------------------------------|:--------------------------------------------------------------------------------|
-| TiltWingPET                         | Base Model                                                                      |
+| TiltWingPET                         | Base Model, re-creates Vahana Trade Study tilt-wing configuration results       |
 | TiltWingPETOrganized                | Model organized by subsystem using sub-PET blocks                               |
 | TiltWingPETExposedParameters        | Model with exposed top-level design parameters for easy experiments             |
 | TiltWingPETFuelWeightCon            | Model with additional constraint limiting fuel weight to 1/3 of MTOW            |
@@ -125,11 +125,12 @@ The following PETs are included in the openmeta-vahana project in the `RootFolde
 | *Parametric Study*                  | *This PET explores the Tilt-Wing model design space via a parametric study*     |
 |:------------------------------------|:--------------------------------------------------------------------------------|
 | TiltWingParametricStudyPET          | Base model                                                                      |
-
+  
+  
 #### Helicopter Model
 | *Parametric Study + Optimizer*      | *These PETs optimize the Helicopter model for DOC over a series of ranges*      |
 |:------------------------------------|:--------------------------------------------------------------------------------|
-| HelicopterPET                       | Base model                                                                      |
+| HelicopterPET                       | Base model, re-creates Vahana Trade Study helicopter configuration results      |
 | HelicopterPETFuelWeightCon          | Model with additional constraint limiting fuel weight to 1/3 of MTOW            |
 
 | *Optimizer*                         | *These PETs optimize the Helicopter model for DOC at a single range*            |
