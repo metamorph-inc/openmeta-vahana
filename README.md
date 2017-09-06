@@ -107,27 +107,38 @@ is still running, red means the Master Interpreter failed, and green means that 
 ### PETs included in openmeta-vahana
 The following PETs are included in the openmeta-vahana project in the `RootFolder>Testing>ParametricExploration` directory.
 
-*Tilt Wing Configuration*  
-TiltWingPET   
-TiltWingPETExposedParameters  
-TiltWingPETFuelWeightCon  
-TiltWingPETHigherCruiseSpeed    
-TiltWingPETOrganized
+#### Tilt-Wing Model
+| *Parametric Study + Optimizer*      | *These PETs optimize the Tilt-Wing model for DOC over a series of ranges*       |
+|:------------------------------------|:--------------------------------------------------------------------------------|
+| TiltWingPET                         | Base Model, re-creates Vahana Trade Study tilt-wing configuration results       |
+| TiltWingPETOrganized                | Model organized by subsystem using sub-PET blocks                               |
+| TiltWingPETExposedParameters        | Model with exposed top-level design parameters for easy experiments             |
+| TiltWingPETFuelWeightCon            | Model with additional constraint limiting fuel weight to 1/3 of MTOW            |
+| TiltWingPETHigherCruiseSpeed        | Model with increased minimum cruise speed of 60 m/s                             |
+
+| *Optimizer*                         | *These PETs optimize the Tilt-Wing model for DOC at a single range*             |
+|:------------------------------------|:--------------------------------------------------------------------------------|
+| TiltWingOptimizerPET                | Base model                                                                      |
+| TiltWingOptimizerPETCostBreakdown   | Model with cost breakdown metrics recorded by driver for analysis               |
+| TiltWingOptimizerPETMassBreakdown   | Model with mass breakdown metrics recorded by driver for analysis               |
+
+| *Parametric Study*                  | *This PET explores the Tilt-Wing model design space via a parametric study*     |
+|:------------------------------------|:--------------------------------------------------------------------------------|
+| TiltWingParametricStudyPET          | Base model                                                                      |
   
-TiltWingOptimizerPET   
-TiltWingOptimizerPETCostBreakdown  
-TiltWingOptimizerPETMassBreakdown  
   
-TiltWingParametricStudyPET  
-  
-*Helicopter Configuration*  
-HelicopterPET  
-HelicopterPETFuelWeightCon  
-  
-HelicopterOptimizerPET  
-HelicopterOptimizerPETCostBreakdown  
-HelicopterOptimizerPETMassBreakdown  
-  
+#### Helicopter Model
+| *Parametric Study + Optimizer*      | *These PETs optimize the Helicopter model for DOC over a series of ranges*      |
+|:------------------------------------|:--------------------------------------------------------------------------------|
+| HelicopterPET                       | Base model, re-creates Vahana Trade Study helicopter configuration results      |
+| HelicopterPETFuelWeightCon          | Model with additional constraint limiting fuel weight to 1/3 of MTOW            |
+
+| *Optimizer*                         | *These PETs optimize the Helicopter model for DOC at a single range*            |
+|:------------------------------------|:--------------------------------------------------------------------------------|
+| HelicopterOptimizerPET              | Base model                                                                      |
+| HelicopterOptimizerPETCostBreakdown | Model with cost breakdown metrics recorded by driver for analysis               |
+| HelicopterOptimizerPETMassBreakdown | Model with mass breakdown metrics recorded by driver for analysis               |
+
 ### Python Wrapper component scripts
 All the Python Wrapper component scripts used to build the openmeta-vahana PETs are located in the `openmeta-vahana/scripts` folder. We encourage you to compare them with the A³ MATLAB scripts. To learn more, check out OpenMETA's [Python Wrapper documentation](http://docs.metamorphsoftware.com/doc/pet/pet_analysis_blocks.html#pythonwrappers) as well as [OpenMDAO's documentation](http://openmdao.readthedocs.io/en/1.7.3/).
 
