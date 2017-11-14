@@ -71,8 +71,13 @@ To start working with the OpenMETA Vahana Model, check out the sections below.
 of the tools!*
 
 ### Downloading Xfoil (required to run Xfoil TestBenches)
+For Windows:  
 1. Download `xfoil6.99.tgz` (Xfoil 6.99 for Unix and Win32) from http://web.mit.edu/drela/Public/web/xfoil/.
 1. Extract the contents of `xfoil6.99.tgz` to `C:/OpenMETA/xfoil-and-nrel-codes/bin/` (you may need to create this directory).
+  
+For Mac:  
+1. Download `xfoil.dmg` (Independent 3rd-party build of Xfoil for Mac) from http://xfoil4mac.altervista.org/.
+1. Drag-and-drop `Xfoil.app` into your Applications folder.
 
 ### Cloning the openmeta-vahana repository
 1. Copy the following key onto your clipboard: `git@github.com:metamorph-inc/openmeta-vahana.git`
