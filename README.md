@@ -7,6 +7,7 @@ _An OpenMETA model for the conceptual design of an autonomous transport aircraft
 * [OpenMETA Vahana Configuration Trade Study](#openmeta-vahana-configuration-trade-study)
 * [Getting Started with the OpenMETA Vahana Model](#getting-started-with-the-openmeta-vahana-model)
   * [Installing OpenMETA](#installing-openmeta)
+  * [Downloading Xfoil](#downloading-xfoil-required-to-run-xfoil-testbenches)
   * [Cloning the openmeta-vahana repository](#cloning-the-openmeta-vahana-repository)
   * [Opening the openmeta-vahana project](#opening-the-openmeta-vahana-project)
   * [Viewing a PET model](#viewing-a-pet-model)
