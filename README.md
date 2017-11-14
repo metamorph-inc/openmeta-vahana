@@ -69,6 +69,10 @@ To start working with the OpenMETA Vahana Model, check out the sections below.
 *Note: If this is your first time using OpenMETA, we recommend that you complete the PET Tutorial to develop a basic understanding
 of the tools!*
 
+### Downloading Xfoil (required to run Xfoil TestBenches)
+1. Download `xfoil6.99.tgz` (Xfoil 6.99 for Unix and Win32) from http://web.mit.edu/drela/Public/web/xfoil/.
+1. Extract the contents of `xfoil6.99.tgz` to `C:/OpenMETA/xfoil-and-nrel-codes/bin/` (you may need to create this directory).
+
 ### Cloning the openmeta-vahana repository
 1. Copy the following key onto your clipboard: `git@github.com:metamorph-inc/openmeta-vahana.git`
 1. Open Git Bash in your desired project directory.
