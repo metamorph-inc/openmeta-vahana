@@ -7,6 +7,7 @@ _An OpenMETA model for the conceptual design of an autonomous transport aircraft
 * [OpenMETA Vahana Configuration Trade Study](#openmeta-vahana-configuration-trade-study)
 * [Getting Started with the OpenMETA Vahana Model](#getting-started-with-the-openmeta-vahana-model)
   * [Installing OpenMETA](#installing-openmeta)
+  * [Downloading Xfoil](#downloading-xfoil-required-to-run-xfoil-testbenches)
   * [Cloning the openmeta-vahana repository](#cloning-the-openmeta-vahana-repository)
   * [Opening the openmeta-vahana project](#opening-the-openmeta-vahana-project)
   * [Viewing a PET model](#viewing-a-pet-model)
@@ -68,6 +69,15 @@ To start working with the OpenMETA Vahana Model, check out the sections below.
 
 *Note: If this is your first time using OpenMETA, we recommend that you complete the PET Tutorial to develop a basic understanding
 of the tools!*
+
+### Downloading Xfoil (required to run Xfoil TestBenches)
+For Windows:  
+1. Download `XFOIL6.99.zip` (Xfoil 6.99 for Unix and Win32) from http://web.mit.edu/drela/Public/web/xfoil/.
+1. Extract the contents of `XFOIL6.99.zip` to `C:/OpenMETA/xfoil-and-nrel-codes/bin/` (you may need to create this directory).
+  
+For Mac:  
+1. Download `xfoil.dmg` (Independent 3rd-party build of Xfoil for Mac) from http://xfoil4mac.altervista.org/.
+1. Drag-and-drop `Xfoil.app` into your Applications folder.
 
 ### Cloning the openmeta-vahana repository
 1. Copy the following key onto your clipboard: `git@github.com:metamorph-inc/openmeta-vahana.git`
