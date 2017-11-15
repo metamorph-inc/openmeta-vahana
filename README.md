@@ -72,7 +72,7 @@ of the tools!*
 
 ### Downloading Xfoil (required to run Xfoil TestBenches)
 For Windows:  
-1. Download `XFOIL6.99.zip` (Xfoil 6.99 for Unix and Win32) from http://web.mit.edu/drela/Public/web/xfoil/.
+1. Download `XFOIL6.99.zip` (Xfoil 6.99 for Windows) from http://web.mit.edu/drela/Public/web/xfoil/.
 1. Extract the contents of `XFOIL6.99.zip` to `C:/OpenMETA/xfoil-and-nrel-codes/bin/` (you may need to create this directory).
   
 For Mac:  
