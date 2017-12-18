@@ -37,7 +37,7 @@ The OpenMETA models were used to perform similar DOC analyses to those in the Va
 | OpenMETA* |   92.78  |    0.93    |    0.98   |        48.6       |        304.2       |      55.6      |    799    |
 |   Vahana Study   |  92.78  |    0.93    |    0.98   |        48.6       |        304.2       |      55.6      |    799    |
 
-*after correcting for double fuselage drag typo
+*after correcting for double fuselage drag [typo](https://github.com/VahanaOpenSource/vahanaTradeStudy/commit/35d2e0bb7d475783cbc85ec1ceb5dd6948a5696b).
 
 **OpenMETA PET model results:**
 
