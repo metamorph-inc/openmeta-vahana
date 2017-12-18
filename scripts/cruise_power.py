@@ -105,7 +105,7 @@ class CruisePower(Component):
 
             # Estimate drag at cruise using quadratic drag polar
             unknowns['D'] = 0.5 * rho * params['V']**2 * (unknowns['SRef'] * (unknowns['Cd0'] + \
-                unknowns['CL']**2 / (math.pi * unknowns['AR'] * unknowns['e'])) + unknowns['SCdFuse'])
+                unknowns['CL']**2 / (math.pi * unknowns['AR'] * unknowns['e'])))
 
             # Compute cruise power estimate
             unknowns['PCruise'] = unknowns['D'] * params['V']
