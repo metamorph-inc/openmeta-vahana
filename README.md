@@ -20,22 +20,24 @@ _An OpenMETA model for the conceptual design of an autonomous transport aircraft
 * [Future Plans](#future-plans-and-improvements-to-vahana-configuration-trade-study)
 
 ## Summary
-Inspired by Project Vahana from A³ by Airbus, we built OpenMETA models of the Vahana Tilt-Wing Multirotor aircraft using A³'s publicly released source code as a template. 
+Inspired by Project Vahana from A³ by Airbus, we built OpenMETA models of the Vahana Tilt-Wing Multirotor aircraft using A³'s publicly released source code as a template.
 
 A parametric CAD model of Vahana was also built within OpenMETA with the goal of using CAD analysis to improve the accuracy of future studies. The most recent draft of this CAD model is shown below with its rotors angled to transition between the hover and cruise modes.
 
 **Vahana CAD model:**
-  
+
 ![Image of 45 deg rotation](images/Vahana_V2_2.PNG "Image of Vahana transitioning from hover to cruise")
 
-The OpenMETA models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study. 
+The OpenMETA models were used to perform similar DOC analyses to those in the Vahana Configuration Trade Study as well as improve on the original study.
 
 **OpenMETA 'Optimizer' Results and Vahana Trade Study Results for Tilt-Wing Configuration at Range of 100 km:**
 
 |                        | DOC ($) | DOC (km/$) | rProp (m) | cruiseSpeed (m/s) | batteryMass (kg) | motorMass (kg) | mtom (kg) |
 |:----------------------:|:-------:|:----------:|:---------:|:-----------------:|:----------------:|:--------------:|:---------:|
-| OpenMETA |   116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
-|   Vahana Study   |  116.3  |    1.16    |    1.10   |        45.5       |        413       |      66.7      |    968    |
+| OpenMETA* |   92.78  |    0.93    |    0.98   |        48.6       |        304.2       |      55.6      |    799    |
+|   Vahana Study   |  92.78  |    0.93    |    0.98   |        48.6       |        304.2       |      55.6      |    799    |
+
+*after correcting for double fuselage drag typo
 
 **OpenMETA PET model results:**
 
@@ -46,13 +48,13 @@ DOC vs. Range for Tilt Wing Configuration with and without Fuel Weight Constrain
 ![tilt wing fuel_constraint doc vs. range comparison](images/openmeta-vahana-tilt-wing-fuel-weight-constraint.png)
 
 ## Vahana Configuration Trade Study
-Vahana is an A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, A³ conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight-fan tilt-wing) using multidisciplinary design optimization (MDO). 
+Vahana is an A³ campaign to create a low-cost, single-passenger, electric VTOL aircraft. As part of their design process, A³ conducted the Vahana Configuration Trade Study to better examine 2 different configurations (an electric helicopter and an electric eight-fan tilt-wing) using multidisciplinary design optimization (MDO).
 
-A³ set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight-fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements _(e.g.: the vehicle's effective energy capacity had to be greater than the amount of energy required to execute a reserve ("worst case") mission)_. 
+A³ set up a MDO sizing problem in which they compared an electric helicopter model and an electric eight-fan tilt-wing model over a range of operating distances (10 km to 200 km in 10 km steps). At each distance, both vehicle models were optimized seperately for Direct Operating Cost (DOC) by varying 5 design variables: Cruise Speed, Rotor Radius, Battery Mass, and Takeoff Mass. The A³ team also provided the optimizer with 3 constraint equations (4 if the vehicle was a helicopter) that defined certain design requirements _(e.g.: the vehicle's effective energy capacity had to be greater than the amount of energy required to execute a reserve ("worst case") mission)_.
 
 As a result of their Sizing Trade Study, the Vahana team concluded that an eight-fan, tilt-wing configuration would best meet their broad design requirements for a low-cost, single-passenger, electric VTOL aircraft.
 
-## OpenMETA Vahana Configuration Trade Study 
+## OpenMETA Vahana Configuration Trade Study
 Here at MetaMorph, we set out to first replicate the Vahana Configuration Trade Study's results using the OpenMETA toolset. Since OpenMETA is designed for Multidisciplinary Design Analysis and Optimization, we thought that it would be interesting to see if we could reproduce the A³'s results using the OpenMETA toolset.
 
 To read about the OpenMETA Vahana Configuration Trade Study, check out our [blog post](https://www.metamorphsoftware.com/blog/2017/8/31/openmeta-vahana-case-study-part-i).
@@ -74,7 +76,7 @@ of the tools!*
 For Windows:  
 1. Download `XFOIL6.99.zip` (Xfoil 6.99 for Windows) from http://web.mit.edu/drela/Public/web/xfoil/.
 1. Extract the contents of `XFOIL6.99.zip` to `C:/OpenMETA/xfoil-and-nrel-codes/bin/` (you may need to create this directory).
-  
+
 For Mac:  
 1. Download `xfoil.dmg` (Independent 3rd-party build of Xfoil for Mac) from http://xfoil4mac.altervista.org/.
 1. Drag-and-drop `Xfoil.app` into your Applications folder.
@@ -135,8 +137,8 @@ The following PETs are included in the openmeta-vahana project in the `RootFolde
 | *Parametric Study*                  | *This PET explores the Tilt-Wing model design space via a parametric study*     |
 |:------------------------------------|:--------------------------------------------------------------------------------|
 | TiltWingParametricStudyPET          | Base model                                                                      |
-  
-  
+
+
 #### Helicopter Model
 | *Parametric Study + Optimizer*      | *These PETs optimize the Helicopter model for DOC over a series of ranges*      |
 |:------------------------------------|:--------------------------------------------------------------------------------|
@@ -195,18 +197,18 @@ The model (shown below) is based on the sketches of the Tilt-Wing configuration 
 The model assembly is located at `RootFolder/ComponentAssemblies/Vahana2` within openmeta-vahana.xme. By changing the values of the `Canard_Rotation` and `Wing_Rotation` parameters, a user can be change the orientation for a specific analysis. The `rProp` parameter allows the user to change vary the length of the propeller blades. Changing the propeller blade radius also changes the span of both flight surfaces as well as the positions of the rotors in order to maintain an appropriate spacing between the neighboring rotors.
 
 ### Iterative Mass Calculations
-When exploring the Vahana model's design space with the TiltWingParametricStudyPET, we observed that less than 0.04% of the design generated met our design requirements. 
+When exploring the Vahana model's design space with the TiltWingParametricStudyPET, we observed that less than 0.04% of the design generated met our design requirements.
 This low success rate was primarily caused by designs failing the first two design constraints:
 
-* The vehicle battery must contain more energy than the energy required to complete the reserve mission 
+* The vehicle battery must contain more energy than the energy required to complete the reserve mission
 * The vehicle motors must be capable of providing at least 1.7 times the maximum power required for hover mode
 
-The Vahana Trade Study set battery mass and motor mass as design variables while using assumed values for battery specific energy and motor specific power. 
-Since 95% of all 'Parameter Study' PET runs failed as a result of the first two constraints, we looked into making battery mass and motor mass dependent 
+The Vahana Trade Study set battery mass and motor mass as design variables while using assumed values for battery specific energy and motor specific power.
+Since 95% of all 'Parameter Study' PET runs failed as a result of the first two constraints, we looked into making battery mass and motor mass dependent
 variables which could be solved using an iterative method and the other design variables.
 
-Using Euler's linear method of numerical integration (method shown [here](https://docs.google.com/spreadsheets/d/170VYNoF4OTg8ZG605DoPC1EO5k4rxNIF8a00Ac6IGiI/edit?usp=sharing)) 
-the required battery mass and motor mass can be solved for within 0.01% of the theoretical value in 10 interation for ranges up to ten times larger than the assumed payload of 150 kg. 
+Using Euler's linear method of numerical integration (method shown [here](https://docs.google.com/spreadsheets/d/170VYNoF4OTg8ZG605DoPC1EO5k4rxNIF8a00Ac6IGiI/edit?usp=sharing))
+the required battery mass and motor mass can be solved for within 0.01% of the theoretical value in 10 interation for ranges up to ten times larger than the assumed payload of 150 kg.
 A future model may implement these mass calculations in order to allow a more efficient parametric exploration of the design space.
 
 <!-- Image isn't in images/ ...
