@@ -9,7 +9,9 @@ if __name__ == '__main__':
     #Add metrics
     print "Saving Metrics to testbench_manifest.json..."
     for metric in testbench_manifest["Metrics"]:
-        if str(metric["Name"])=="CenterOfMass":
+        if not metric["Value"]:
+            print "Not cleaning {} because it has no Value".format(metric["Name"])
+        elif str(metric["Name"])=="CenterOfMass":
             metric["Value"]=float(metric["Value"].split(';')[2])
         elif str(metric["Name"])=="CanardPt":
             metric["Value"]=float(metric["Value"].split(';')[2])
