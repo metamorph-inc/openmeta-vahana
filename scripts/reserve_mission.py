@@ -32,7 +32,7 @@ class reserve_mission(Component):
 
     def __init__(self):
         super(reserve_mission, self).__init__()
-        self.add_param('vehicle', val=0.0, desciption='vehicle type - tilt-wing or helicopter')
+        self.add_param('Vehicle', val=u'abcdef', description='Vehicle type')  # 'tiltwing' or 'helicopter'
         self.add_param('rProp', val=0.0, description='propellor/rotor radius')
         self.add_param('V', val=0.0, description='cruise speed')
         self.add_param('W', val=0.0, description='weight')
@@ -46,7 +46,7 @@ class reserve_mission(Component):
 
 
     def solve_nonlinear(self, params, unknowns, resids): #QUESTION: does this always need to be named solve_nonlinear
-        if (params['vehicle'] == 0 or params['vehicle'] == 1):
+        if params['Vehicle'].lower() in ('tiltwing', 'helicopter'):
             # Reserve mission
             hoverTime = 180.0 * 2 # sec to account for VTOL takeoff and climb, transition, transition, VTOL descent and landing and repeated for diversion
 
