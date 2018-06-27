@@ -64,7 +64,7 @@ To start working with the OpenMETA Vahana Model, check out the sections below.
 ## Getting Started with the OpenMETA Vahana Model
 
 ### Installing OpenMETA
-1. Download the latest version of OpenMETA from https://www.metamorphsoftware.com/openmeta/.
+1. Download the latest version of OpenMETA from https://openmeta.metamorphsoftware.com/
 1. Open the installer.
 1. Agree to the license terms and conditions.
 1. Left-click 'Install'.
@@ -219,7 +219,7 @@ A future model may implement these mass calculations in order to allow a more ef
 
 ## References  
 [OpenMETA Vahana Case Study - Part 1](https://www.metamorphsoftware.com/blog/2017/8/31/openmeta-vahana-case-study-part-i)  
-[OpenMETA Installer](https://www.metamorphsoftware.com/openmeta/)  
+[OpenMETA Installer](https://openmeta.metamorphsoftware.com/)  
 [OpenMETA Documentation](http://docs.metamorphsoftware.com/doc/index.html)  
 [A³ Vahana Configuration Trade Study Part - 1](https://vahana.aero/vahana-configuration-trade-study-part-i-47729eed1cdf)  
 [A³ Vahana Configuration Trade Study Part - 2](https://vahana.aero/vahana-configuration-trade-study-part-ii-1edcdac8ad93)  
